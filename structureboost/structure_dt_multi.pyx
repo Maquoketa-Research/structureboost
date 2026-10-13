@@ -16,6 +16,7 @@ import structure_dt as stdt
 cimport numpy as np
 np.import_array()
 cimport cython
+from cython.parallel cimport prange
 
 
 class StructureDecisionTreeMulti(StructureDecisionTree):
@@ -35,6 +36,88 @@ class StructureDecisionTreeMulti(StructureDecisionTree):
                          reg_lambda=reg_lambda,
                          feature_graphs=feature_graphs)
         self.num_classes = num_classes
+
+    def _process_tree_node(self, curr_node):
+        """StructureDecisionTree._process_tree_node with the numerical split search batched across features.
+
+        Every random draw happens in the original order (features in order: a numerical feature's split points and
+        its NA coin flip, a categorical feature's spanning trees), so results are unchanged. Only the per-row work
+        of the numerical features, binning each row among the candidate splits and summing its gradients per bin,
+        runs in one parallel pass over the features (numerical_bin_sums); the scoring that follows is the original
+        NumPy code on those sums."""
+        mask = curr_node['mask']
+        X_train_node = self.X_train[mask]
+        g_h_train_node = self.g_h_train[mask]
+        num_dp = g_h_train_node.shape[0]
+        curr_node['num_data_points'] = num_dp
+        curr_node['node_summary_val'] = self._node_summary_gh(g_h_train_node)
+        curr_node['node_index'] = self.node_counter
+        self.node_counter += 1
+        wrap_up_now = self._check_stopping_condition(num_dp, curr_node['depth'], g_h_train_node)
+        if wrap_up_now:
+            self._wrap_up_node(curr_node, g_h_train_node.shape[0])
+            return None
+
+        features_to_search = self._get_features_to_search()
+        results, jobs = [], []
+        for feature in features_to_search:
+            fc = self.feature_configs[feature]
+            if fc['feature_type'] == 'numerical':
+                fvec = X_train_node[feature].to_numpy()
+                interp_mode = fc.get('interp_mode', 'random')
+                splits = self._get_numerical_splits(fvec, self.uv_dict[feature], interp_mode=interp_mode)
+                if len(splits) == 0:
+                    results.append(stdt._initialize_best_split_dict())
+                    continue
+                splits = np.ascontiguousarray(stdt._subset_splits(splits, fc), dtype=np.float64)
+                has_na = bool(np.isnan(splits[-1]))
+                coin = None if (has_na and len(splits) > 2) else int(random.random() < .5)
+                jobs.append((len(results), np.ascontiguousarray(fvec, dtype=np.float64), splits, coin))
+                results.append(None)
+            else:
+                results.append(self.evaluate_feature(fc, curr_node['feature_graphs'], feature, X_train_node,
+                                                     g_h_train_node, self.uv_dict))
+        if jobs:
+            g_h = np.ascontiguousarray(g_h_train_node, dtype=np.float64)
+            sums = numerical_bin_sums([j[1] for j in jobs], [j[2] for j in jobs], g_h, self.num_classes)
+            for (slot, _, splits, coin), (g_sum_bins, h_sum_bins) in zip(jobs, sums):
+                best_loss, best_spl_val, na_left, na_rnd = self._score_numerical_splits(g_sum_bins, h_sum_bins, splits, coin)
+                results[slot] = {'loss_score': best_loss, 'left_split': best_spl_val, 'feature_type': 'numerical',
+                                 'na_left': na_left, 'na_dir_random': na_rnd}
+
+        best_split_dict = stdt._initialize_best_split_dict()
+        for feature, best_split_for_feature in zip(features_to_search, results):
+            if best_split_for_feature:
+                best_split_for_feature['split_feature'] = feature
+                if best_split_for_feature['loss_score'] < best_split_dict['loss_score']:
+                    best_split_dict = best_split_for_feature
+        if best_split_dict['loss_score'] < np.inf:
+            self._execute_split(curr_node, best_split_dict, curr_node['feature_graphs'])
+        else:
+            self._wrap_up_node(curr_node, g_h_train_node.shape[0])
+
+    def _score_numerical_splits(self, g_sum_bins, h_sum_bins, split_vec, coin):
+        """The scoring half of _evaluate_numerical_splits, from precomputed bin sums; coin is the NA coin flip drawn
+        in the original order (None when the NA branch below decides the side)."""
+        has_na_vals = np.isnan(split_vec[-1])
+        g_sum_total, g_sum_left, g_sum_right = get_left_right_sums_mc(g_sum_bins)
+        h_sum_total, h_sum_left, h_sum_right = get_left_right_sums_mc(h_sum_bins)
+        score_vec = (-1)*_get_gh_score_array_mc(g_sum_left, g_sum_right, h_sum_left, h_sum_right, self.gamma, self.reg_lambda)
+        best_loss, best_split_val = stdt._get_best_vals(score_vec, split_vec)
+        if has_na_vals and (len(split_vec) > 2):
+            g_sum_left_nal = (g_sum_left + (g_sum_total - g_sum_left[-1,:]))[:-1,:]
+            h_sum_left_nal = (h_sum_left + (h_sum_total - h_sum_left[-1,:]))[:-1,:]
+            g_sum_right_nal = g_sum_total - g_sum_left_nal
+            h_sum_right_nal = h_sum_total - h_sum_left_nal
+            score_vec_nal = (-1)*_get_gh_score_array_mc(g_sum_left_nal, g_sum_right_nal, h_sum_left_nal, h_sum_right_nal,
+                                                     self.gamma, self.reg_lambda)
+            best_loss_nal, best_split_val_nal = stdt._get_best_vals(score_vec_nal, split_vec)
+            if best_loss_nal < best_loss:
+                return best_loss_nal, best_split_val_nal, 1, 0
+            else:
+                return best_loss, best_split_val, 0, 0
+        else:
+            return best_loss, best_split_val, coin, 1
 
     def _node_summary_gh(self, g_h_mat):
         if (g_h_mat.shape[0] == 0):
@@ -243,3 +326,57 @@ def get_left_right_sums_mc(bin_sums):
 
 
 
+
+
+@cython.boundscheck(False)
+@cython.wraparound(False)
+cdef inline long _upper_bound_nan(const double[::1] arr, long n, double key) noexcept nogil:
+    """np.searchsorted(arr, key, side='right') with NumPy's ordering (NaN sorts after every number): the number of
+    elements of the sorted arr that are <= key in that ordering."""
+    cdef long lo = 0, hi = n, mid
+    cdef double a
+    cdef bint key_nan = key != key
+    while lo < hi:
+        mid = lo + ((hi - lo) >> 1)
+        a = arr[mid]
+        # key < a in NumPy's order: a is NaN and key is not, or both numbers and key < a
+        if (a != a and not key_nan) or (key < a):
+            hi = mid
+        else:
+            lo = mid + 1
+    return lo
+
+
+@cython.boundscheck(False)
+@cython.wraparound(False)
+def numerical_bin_sums(list feature_vecs, list split_vecs, double[:, ::1] g_h_mat, long num_classes):
+    """For each numerical feature j: bin every row by searchsorted(split_vecs[j], x, side='right') and sum its g and h
+    per bin and class, exactly as get_bin_sums_c_mc after np.searchsorted (rows added in order). Features run in
+    parallel. Returns [(g_sum_bins, h_sum_bins)] with shape (len(split_vecs[j]) + 1, num_classes) each."""
+    cdef long nf = len(feature_vecs), n = g_h_mat.shape[0], j, i, c, b, ns
+    cdef np.ndarray[np.int64_t] offs = np.zeros(nf + 1, dtype=np.int64)
+    cdef np.ndarray[np.int64_t] soffs = np.zeros(nf + 1, dtype=np.int64)
+    for j in range(nf):
+        offs[j + 1] = offs[j] + (len(split_vecs[j]) + 1) * num_classes
+        soffs[j + 1] = soffs[j] + len(split_vecs[j])
+    cdef np.ndarray[double, ndim=2] X = np.empty((nf, n), dtype=np.float64)
+    for j in range(nf):
+        X[j, :] = feature_vecs[j]
+    cdef np.ndarray[double] S = np.concatenate(split_vecs).astype(np.float64) if nf else np.empty(0)
+    cdef np.ndarray[double] G = np.zeros(offs[nf], dtype=np.float64)
+    cdef np.ndarray[double] H = np.zeros(offs[nf], dtype=np.float64)
+    cdef double[:, ::1] Xv = X
+    cdef double[::1] Sv = S, Gv = G, Hv = H
+    cdef long[::1] ov = offs, sv = soffs
+    with nogil:
+        for j in prange(nf, schedule='dynamic'):
+            for i in range(n):
+                b = _upper_bound_nan(Sv[sv[j]:sv[j + 1]], sv[j + 1] - sv[j], Xv[j, i])
+                for c in range(num_classes):
+                    Gv[ov[j] + b * num_classes + c] += g_h_mat[i, c]
+                    Hv[ov[j] + b * num_classes + c] += g_h_mat[i, num_classes + c]
+    out = []
+    for j in range(nf):
+        ns = soffs[j + 1] - soffs[j] + 1
+        out.append((G[offs[j]:offs[j + 1]].reshape(ns, num_classes), H[offs[j]:offs[j + 1]].reshape(ns, num_classes)))
+    return out
