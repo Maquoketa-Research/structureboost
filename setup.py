@@ -1,44 +1,25 @@
-"""Setup for the structureboost package."""
+"""Setup for the structureboost package.
 
-from setuptools import Extension, setup
-from Cython.Build import cythonize
+Builds the extension modules from the .pyx sources (the shipped .c files are regenerated, not compiled as-is), so
+source changes take effect. Environment switches:
+  STB_PROFILE=1   compile with Cython profiling hooks (function-level times in cProfile); slower
+  STB_OPENMP=0    build without OpenMP (parallel loops then run single-threaded)
+"""
+import os
+
 import numpy
+from Cython.Build import cythonize
+from setuptools import Extension, find_packages, setup
 
-setup(
-    ext_modules=[Extension("graphs",
-                                      ["structureboost/graphs.c"],
-                                      include_dirs=[numpy.get_include()]),
-                 Extension("structure_dt",
-                                      ["structureboost/structure_dt.c"],
-                                      include_dirs=[numpy.get_include()]),
-                 Extension("structure_gb",
-                                      ["structureboost/structure_gb.c"],
-                                      include_dirs=[numpy.get_include()]),
-                 Extension("structure_gb_multi",
-                                      ["structureboost/structure_gb_multi.c"],
-                                      include_dirs=[numpy.get_include()]),
-                 Extension("pdf_discrete",
-                                      ["structureboost/pdf_discrete.c"],
-                                      include_dirs=[numpy.get_include()]),
-                 Extension("pdf_group",
-                                      ["structureboost/pdf_group.c"],
-                                      include_dirs=[numpy.get_include()]),
-                 Extension("pdf_set",
-                                      ["structureboost/pdf_set.c"],
-                                      include_dirs=[numpy.get_include()]),
-                 Extension("prob_regr_unit",
-                                      ["structureboost/prob_regr_unit.c"],
-                                      include_dirs=[numpy.get_include()]),
-                 Extension("prob_regressor",
-                                      ["structureboost/prob_regressor.c"],
-                                      include_dirs=[numpy.get_include()]),
-                 Extension("coarsage",
-                                      ["structureboost/coarsage.c"],
-                                      include_dirs=[numpy.get_include()]),
-                 Extension("pdf_conformal",
-                                      ["structureboost/pdf_conformal.c"],
-                                      include_dirs=[numpy.get_include()]),
-                 Extension("structure_dt_multi",
-                                      ["structureboost/structure_dt_multi.c"],
-                                      include_dirs=[numpy.get_include()])],
-)
+MODULES = ["graphs", "structure_dt", "structure_gb", "structure_gb_multi", "pdf_discrete", "pdf_group", "pdf_set",
+           "prob_regr_unit", "prob_regressor", "coarsage", "pdf_conformal",
+           "structure_dt_multi"]
+PROFILE = os.environ.get("STB_PROFILE") == "1"
+OPENMP = os.environ.get("STB_OPENMP", "1") == "1"
+cflags = ["-O3"] + (["-fopenmp"] if OPENMP else [])
+lflags = ["-fopenmp"] if OPENMP else []
+
+extensions = [Extension(m, [f"structureboost/{m}.pyx"], include_dirs=[numpy.get_include()],
+                        extra_compile_args=cflags, extra_link_args=lflags) for m in MODULES]
+
+setup(packages=find_packages(include=["structureboost", "structureboost.*"]), ext_modules=cythonize(extensions, compiler_directives={"language_level": 3, "profile": PROFILE}, annotate=False))

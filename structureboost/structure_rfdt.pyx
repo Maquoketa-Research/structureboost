@@ -1,4 +1,4 @@
-# cython: profile=True
+# cython: profile=False
 # cython: language_level=3
 
 """Decision Tree based on Discrete Graph structure"""

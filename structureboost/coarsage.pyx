@@ -1,4 +1,4 @@
-# cython: profile=True
+# cython: profile=False
 # cython: language_level=3
 
 from structure_gb_multi import StructureBoostMulti, get_one_hot_mat, c_crps_disc_link_der_12_vec_sp
@@ -14,6 +14,7 @@ import warnings
 cimport numpy as np
 np.import_array()
 cimport cython
+from cython.parallel cimport prange
 from libc.math cimport log as clog
 
 
@@ -762,35 +763,46 @@ def predict_with_tensor_c_mc(np.ndarray[double, ndim=3] dtm_float,
 
 @cython.boundscheck(False)  # Deactivate bounds checking
 @cython.wraparound(False)   # Deactivate negative indexing.
-def update_densities_to_logprobs(np.ndarray[double, ndim=2] densitymat, 
-                               np.ndarray[double] density_binpts, 
-                               np.ndarray[double, ndim=2] deltamat, 
+def update_densities_to_logprobs(np.ndarray[double, ndim=2] densitymat,
+                               np.ndarray[double] density_binpts,
+                               np.ndarray[double, ndim=2] deltamat,
                                np.ndarray[double] delta_binpts,
                                np.ndarray[double] fine_binpts,
                                np.ndarray[double] fine_bin_widths,
                                double lr):
+    """log(max(width * density, eps)) + lr * delta on the fine bins, for every row.
+
+    Each fine bin's density and delta columns are found once (the original pointer walk), then rows are processed
+    in parallel, each over its contiguous row: the same arithmetic per element as the original column-major loop."""
     cdef long num_rows = densitymat.shape[0]
     cdef long num_fine_bins = len(fine_binpts)-1
     cdef double eps=1e-16
-    cdef long dens_ptr =0
-    cdef long delta_ptr = 0
-    cdef long row_ptr, fine_ptr
-    cdef double fine_prob, fbw, curr_delta
-    cdef np.ndarray[double, ndim=2] fine_logprobmat = np.zeros((num_rows, num_fine_bins))
-    
+    cdef long dens_ptr = 0, delta_ptr = 0, row_ptr, fine_ptr
+    cdef double fine_prob
+    cdef np.ndarray[np.int64_t] dens_idx = np.empty(num_fine_bins, dtype=np.int64)
+    cdef np.ndarray[np.int64_t] delta_idx = np.empty(num_fine_bins, dtype=np.int64)
     for fine_ptr in range(num_fine_bins):
-        fbw = fine_bin_widths[fine_ptr]
-        for row_ptr in range(num_rows):
-            fine_prob = fbw*densitymat[row_ptr, dens_ptr]
-            curr_delta = deltamat[row_ptr,delta_ptr]
-            if fine_prob<eps:
-                fine_prob=eps
-            fine_logprobmat[row_ptr, fine_ptr] = clog(fine_prob) + lr*curr_delta
+        dens_idx[fine_ptr] = dens_ptr
+        delta_idx[fine_ptr] = delta_ptr
         if fine_binpts[fine_ptr+1] >= density_binpts[dens_ptr+1]:
             dens_ptr+=1
         if fine_binpts[fine_ptr+1] >= delta_binpts[delta_ptr+1]:
             delta_ptr+=1
-    return(fine_logprobmat)
+    cdef np.ndarray[double, ndim=2] out = np.zeros((num_rows, num_fine_bins))
+    cdef double[:, ::1] o = out
+    cdef double[:, ::1] dm = np.ascontiguousarray(densitymat)
+    cdef double[:, ::1] dl = np.ascontiguousarray(deltamat)
+    cdef double[::1] fbw = np.ascontiguousarray(fine_bin_widths)
+    cdef long[::1] di = dens_idx
+    cdef long[::1] li = delta_idx
+    with nogil:
+        for row_ptr in prange(num_rows, schedule='static'):
+            for fine_ptr in range(num_fine_bins):
+                fine_prob = fbw[fine_ptr]*dm[row_ptr, di[fine_ptr]]
+                if fine_prob<eps:
+                    fine_prob=eps
+                o[row_ptr, fine_ptr] = clog(fine_prob) + lr*dl[row_ptr, li[fine_ptr]]
+    return(out)
 
 @cython.boundscheck(False)  # Deactivate bounds checking
 @cython.wraparound(False)   # Deactivate negative indexing.

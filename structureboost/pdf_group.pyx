@@ -1,4 +1,4 @@
-# cython: profile=True
+# cython: profile=False
 # cython: language_level=3
 
 import numpy as np
@@ -8,6 +8,7 @@ import warnings
 cimport numpy as np
 np.import_array()
 cimport cython
+from cython.parallel cimport prange
 
 class PdfGroup(object):
     """Represents a group of PdfDiscrete objects with the same bin points.
@@ -214,20 +215,26 @@ def test_between_quantiles_pdf(test_vals, pdf_set, q_left, q_right):
 
 @cython.boundscheck(False)  # Deactivate bounds checking
 @cython.wraparound(False)   # Deactivate negative indexing.
-def explode_densities(np.ndarray[double, ndim=2] densitymat, 
-                               np.ndarray[double] density_binpts, 
+def explode_densities(np.ndarray[double, ndim=2] densitymat,
+                               np.ndarray[double] density_binpts,
                                np.ndarray[double] fine_binpts):
-
+    """Each row's densities on the fine bins: the coarse column of each fine bin is found once, then rows are copied
+    in parallel along their contiguous rows (same values as the original column-major loop)."""
     cdef long num_rows = densitymat.shape[0]
     cdef long num_fine_bins = len(fine_binpts)-1
-    cdef np.ndarray[double, ndim=2] fine_densitymat=np.zeros((num_rows, num_fine_bins))
-    cdef long dens_ptr =0
-    cdef long row_ptr, fine_ptr
-    
+    cdef long dens_ptr = 0, row_ptr, fine_ptr
+    cdef np.ndarray[np.int64_t] dens_idx = np.empty(num_fine_bins, dtype=np.int64)
     for fine_ptr in range(num_fine_bins):
-        for row_ptr in range(num_rows):            
-            fine_densitymat[row_ptr, fine_ptr] = densitymat[row_ptr, dens_ptr]
+        dens_idx[fine_ptr] = dens_ptr
         if fine_binpts[fine_ptr+1] >= density_binpts[dens_ptr+1]:
             dens_ptr+=1
+    cdef np.ndarray[double, ndim=2] fine_densitymat=np.zeros((num_rows, num_fine_bins))
+    cdef double[:, ::1] o = fine_densitymat
+    cdef double[:, ::1] dm = np.ascontiguousarray(densitymat)
+    cdef long[::1] di = dens_idx
+    with nogil:
+        for row_ptr in prange(num_rows, schedule='static'):
+            for fine_ptr in range(num_fine_bins):
+                o[row_ptr, fine_ptr] = dm[row_ptr, di[fine_ptr]]
     return fine_densitymat
 
