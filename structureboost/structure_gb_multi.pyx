@@ -13,6 +13,7 @@ from libc.math cimport log as clog
 from libc.math cimport exp
 from structure_dt_multi import StructureDecisionTreeMulti
 from scipy.special import softmax
+from pdf_group import row_map
 cimport numpy as np
 np.import_array()
 cimport cython
@@ -409,7 +410,8 @@ class StructureBoostMulti(StructureBoost):
     #     return(exp_mat/(exp_sum_vec.reshape(-1,1)))
 
     def softmax_mat(self, phi_mat):
-        return(softmax(phi_mat, axis=1))
+        # row blocks in threads: SciPy's softmax per row, so the same values as one call on the whole matrix
+        return(row_map(lambda m: softmax(m, axis=1), phi_mat))
 
     def get_tensors_for_predict(self):
         if self.optimizable:

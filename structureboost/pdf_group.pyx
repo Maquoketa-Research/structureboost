@@ -4,6 +4,38 @@
 import numpy as np
 from pdf_discrete import PdfDiscrete
 import warnings
+import os
+from concurrent.futures import ThreadPoolExecutor
+
+# Row-parallel NumPy: per-row operations run on blocks of rows in threads (NumPy releases the GIL in its loops). Each
+# row goes through the same calls as before, so results are identical; STB_THREADS=1 turns it off.
+STB_THREADS = int(os.environ.get("STB_THREADS") or os.cpu_count() or 1)
+_POOL = None
+
+
+def row_blocks(fn, nrows, min_rows=2000):
+    """[fn(lo, hi) for each block of rows], in order, run in threads when there are enough rows."""
+    global _POOL
+    k = min(STB_THREADS, nrows // min_rows)
+    if k <= 1:
+        return [fn(0, nrows)]
+    if _POOL is None:
+        _POOL = ThreadPoolExecutor(STB_THREADS)
+    edges = np.linspace(0, nrows, k + 1).astype(np.int64)
+    return list(_POOL.map(lambda i: fn(edges[i], edges[i + 1]), range(k)))
+
+
+def row_map(fn, mat, ncols=None):
+    """out[lo:hi] = fn(mat[lo:hi]) over row blocks, into a new array (the same per-row results as fn(mat))."""
+    out = np.empty((mat.shape[0], mat.shape[1] if ncols is None else ncols))
+    def blk(lo, hi):
+        out[lo:hi] = fn(mat[lo:hi])
+    row_blocks(blk, mat.shape[0])
+    return out
+
+
+def _rows_sum_close(mat, ptol):
+    return all(row_blocks(lambda lo, hi: bool(np.allclose(np.abs(np.sum(mat[lo:hi], axis=1)), 1.0, ptol, ptol)), mat.shape[0]))
 
 cimport numpy as np
 np.import_array()
@@ -58,10 +90,11 @@ class PdfGroup(object):
             if probmat.shape[1]!=self.num_bins:
                 warnings.warn('Number of probabilities does not match number of bins.')
             if check_sum:
-                if not np.allclose(np.abs(np.sum(self.probmat, axis=1)),1.0,ptol,ptol):
+                if not _rows_sum_close(self.probmat, ptol):
                     warnings.warn('The Probabilities do not sum to 1.')
             self.bin_widths = self.binvec[1:] - self.binvec[:-1]
-            self.densitymat = self.probmat / self.bin_widths
+            bw = self.bin_widths
+            self.densitymat = row_map(lambda m: m / bw, self.probmat)
             if densitymat is not None:
                 warnings.warn('Both probs and densities given, ignoring densities.')
         elif densitymat is not None:
@@ -69,9 +102,10 @@ class PdfGroup(object):
                 warnings.warn('Number of columns of densitymat does not match number of bins.')
             self.densitymat = densitymat
             self.bin_widths = self.binvec[1:] - self.binvec[:-1]
-            self.probmat = self.densitymat * self.bin_widths
+            bw = self.bin_widths
+            self.probmat = row_map(lambda m: m * bw, self.densitymat)
             if check_sum:
-                if not np.allclose(np.abs(np.sum(self.probmat, axis=1)),1.0,ptol,ptol):
+                if not _rows_sum_close(self.probmat, ptol):
                     warnings.warn('The Probabilities do not sum to 1.')
         self.bin_midpts = (self.binvec[:-1]+self.binvec[1:])/2
         self.support_min, self.support_max = self.binvec[0], self.binvec[-1]
@@ -172,23 +206,25 @@ class PdfGroup(object):
         return(np.array([pdf.pred_region(coverage) for pdf in self.pdf_list], dtype=object))
 
     def bins_to_probs(self, new_binpt_vec, eps=1e-16):
-        """Assumes new_binpt_vec contains same first and last point"""
+        """Assumes new_binpt_vec contains same first and last point. Row blocks run in threads; each row gets the
+        same values as when the whole matrix is processed at once."""
         no_new_binpts = np.all(np.isin(new_binpt_vec, self.binvec))
-        numrows = self.densitymat.shape[0]
         if not no_new_binpts:
             finebins = np.union1d(self.binvec, new_binpt_vec)
-            bigmat = explode_densities(self.densitymat, self.binvec, finebins)
+            src = explode_densities(self.densitymat, self.binvec, finebins)   # already parallel over rows
             fbw = np.diff(finebins)
-            bigmat = bigmat*fbw
-            bigmat = np.cumsum(bigmat,axis=1)
         else:
-            finebins=self.binvec
-            bigmat = np.cumsum(self.probmat, axis=1)
+            finebins = self.binvec
+            src, fbw = self.probmat, None
         indices = (np.argwhere(np.isin(finebins, new_binpt_vec)).reshape(-1)-1).tolist()
-        new_probs = np.diff(bigmat[:,indices[1:]], axis=1, prepend=0)
-        new_probs = np.maximum(new_probs, eps)
-        new_probs = new_probs/np.sum(new_probs, axis=1).reshape(-1,1)
-        return(new_probs)
+        cols = indices[1:]
+
+        def blk(m):
+            bigmat = np.cumsum(m*fbw if fbw is not None else m, axis=1)
+            new_probs = np.diff(bigmat[:, cols], axis=1, prepend=0)
+            new_probs = np.maximum(new_probs, eps)
+            return new_probs/np.sum(new_probs, axis=1).reshape(-1,1)
+        return(row_map(blk, src, ncols=len(cols)))
 
 
 def test_in_pred_regions(test_vals, regions):
