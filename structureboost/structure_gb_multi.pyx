@@ -17,6 +17,7 @@ from pdf_group import row_map
 cimport numpy as np
 np.import_array()
 cimport cython
+from cython.parallel cimport prange
 from libc.math cimport fabs
 
 class StructureBoostMulti(StructureBoost):
@@ -581,20 +582,22 @@ def c_crps_disc_link_der_12_vec_sp(np.ndarray[np.int32_t] y_true,
 def c_entropy_link_der_12_vec_sp(np.ndarray[np.int32_t] y_true,
                          double[:,:] exp_phi_pred,
                          double[:] exp_phi_sum_vec):
-    """In this variant, y_true is just a vector of correct classes (not one hot)"""
+    """In this variant, y_true is just a vector of correct classes (not one hot). Rows run in parallel."""
     cdef long N = len(y_true)
     cdef long m = exp_phi_pred.shape[1]
     cdef double[:,:] Y = np.zeros((N,m+m))
+    cdef np.int32_t[:] yv = y_true
     cdef long i,j,k
 
-    for i in range(N):
-        for j in range(m):
-            if y_true[i]==j:
-                Y[i,j]=(exp_phi_pred[i,j]/exp_phi_sum_vec[i])-1
-            else:
-                Y[i,j]=(exp_phi_pred[i,j]/exp_phi_sum_vec[i])
-            Y[i,j+m]=-(exp_phi_pred[i,j]*(exp_phi_pred[i,j]-exp_phi_sum_vec[i])/
-                                             (exp_phi_sum_vec[i]*exp_phi_sum_vec[i]))
+    with nogil:
+        for i in prange(N, schedule='static'):
+            for j in range(m):
+                if yv[i]==j:
+                    Y[i,j]=(exp_phi_pred[i,j]/exp_phi_sum_vec[i])-1
+                else:
+                    Y[i,j]=(exp_phi_pred[i,j]/exp_phi_sum_vec[i])
+                Y[i,j+m]=-(exp_phi_pred[i,j]*(exp_phi_pred[i,j]-exp_phi_sum_vec[i])/
+                                                 (exp_phi_sum_vec[i]*exp_phi_sum_vec[i]))
     return np.asarray(Y)
 
 @cython.boundscheck(False)  # Deactivate bounds checking
@@ -618,32 +621,36 @@ def c_str_entropy_link_der_12_vec_sp(np.ndarray[np.int32_t] y_true,
     cdef long num_part = rp_tensor.shape[0]
     cdef long i,j,k,t
     cdef double jt, jk
-
-    for qqq in range(num_part):
-        curr_wt = weight_vec[ind]
-        for i in range(N):
-            xyz=0
-            # get y_true value from y_true onehot (passed in)
-            yval = y_true[i]
-            while (rp_tensor[qqq,xyz,yval]==0):
-                xyz+=1
-            set_sum = 0
-            for t in range(m):
-                if (rp_tensor[qqq,xyz,t]==1):
-                    set_sum+=exp_phi_pred[i,t]
-            for j in range(m):
-                jt = (exp_phi_pred[i,j]/set_sum)
-                jk = (exp_phi_pred[i,j]/exp_phi_sum_vec[i])
-                # if j in set containing y_true
-                if (rp_tensor[qqq,xyz,j]==1):
-                    #Y[i,j]+= value when j in T * weight
-                    Y[i,j]+=(-curr_wt * (exp_phi_pred[i,j]*(exp_phi_sum_vec[i]-set_sum)/
-                                        (set_sum*exp_phi_sum_vec[i])))
-                    Y[i,j+m]+=(curr_wt * (jt-jk+jk*jk-jt*jt))
-                else:
-                    #Y[i,j]+= value when j not in T * weight
-                    Y[i,j]+=curr_wt * exp_phi_pred[i,j]/exp_phi_sum_vec[i]
-                    Y[i,j+m]+=(-curr_wt * (-jk+jk*jk))
+    cdef np.int32_t[:] yv = y_true
+    # The original loops ran partition-major (for qqq: for i); rows are independent and each Y[i, :] still gets the
+    # partitions added in qqq order, so running rows in parallel (for i: for qqq) gives the same values. The weight
+    # was always weight_vec[ind] with ind = 0; kept as is.
+    curr_wt = weight_vec[ind]
+    with nogil:
+        for i in prange(N, schedule='static'):
+            for qqq in range(num_part):
+                xyz=0
+                # get y_true value from y_true onehot (passed in)
+                yval = yv[i]
+                while (rp_tensor[qqq,xyz,yval]==0):
+                    xyz=xyz+1
+                set_sum = 0
+                for t in range(m):
+                    if (rp_tensor[qqq,xyz,t]==1):
+                        set_sum = set_sum + exp_phi_pred[i,t]
+                for j in range(m):
+                    jt = (exp_phi_pred[i,j]/set_sum)
+                    jk = (exp_phi_pred[i,j]/exp_phi_sum_vec[i])
+                    # if j in set containing y_true
+                    if (rp_tensor[qqq,xyz,j]==1):
+                        #Y[i,j]+= value when j in T * weight
+                        Y[i,j]+=(-curr_wt * (exp_phi_pred[i,j]*(exp_phi_sum_vec[i]-set_sum)/
+                                            (set_sum*exp_phi_sum_vec[i])))
+                        Y[i,j+m]+=(curr_wt * (jt-jk+jk*jk-jt*jt))
+                    else:
+                        #Y[i,j]+= value when j not in T * weight
+                        Y[i,j]+=curr_wt * exp_phi_pred[i,j]/exp_phi_sum_vec[i]
+                        Y[i,j+m]+=(-curr_wt * (-jk+jk*jk))
     return np.asarray(Y)
 
 
