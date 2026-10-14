@@ -13,6 +13,7 @@ from libc.math cimport log as clog
 from libc.math cimport isnan
 from structure_dt import StructureDecisionTree
 import structure_dt as stdt
+from pdf_group import team_size
 cimport numpy as np
 np.import_array()
 cimport cython
@@ -368,8 +369,9 @@ def numerical_bin_sums(list feature_vecs, list split_vecs, double[:, ::1] g_h_ma
     cdef double[:, ::1] Xv = X
     cdef double[::1] Sv = S, Gv = G, Hv = H
     cdef long[::1] ov = offs, sv = soffs
+    cdef int nth = team_size(nf * n * num_classes)
     with nogil:
-        for j in prange(nf, schedule='dynamic'):
+        for j in prange(nf, schedule='dynamic', num_threads=nth):
             for i in range(n):
                 b = _upper_bound_nan(Sv[sv[j]:sv[j + 1]], sv[j + 1] - sv[j], Xv[j, i])
                 for c in range(num_classes):

@@ -5,7 +5,7 @@ from structure_gb_multi import StructureBoostMulti, get_one_hot_mat, c_crps_disc
 from structure_gb_multi import c_str_entropy_link_der_12_vec_sp, c_entropy_link_der_12_vec_sp
 from structure_dt_multi import StructureDecisionTreeMulti
 from pdf_discrete import PdfDiscrete, get_part, chain_partition, get_pdf_from_data
-from pdf_group import PdfGroup, log_loss_pdf, crps_mean
+from pdf_group import PdfGroup, log_loss_pdf, crps_mean, team_size
 from structure_gb import get_basic_config, default_config_dict
 import numpy as np
 import pandas as pd
@@ -795,8 +795,9 @@ def update_densities_to_logprobs(np.ndarray[double, ndim=2] densitymat,
     cdef double[::1] fbw = np.ascontiguousarray(fine_bin_widths)
     cdef long[::1] di = dens_idx
     cdef long[::1] li = delta_idx
+    cdef int nth = team_size(num_rows * num_fine_bins)
     with nogil:
-        for row_ptr in prange(num_rows, schedule='static'):
+        for row_ptr in prange(num_rows, schedule='static', num_threads=nth):
             for fine_ptr in range(num_fine_bins):
                 fine_prob = fbw[fine_ptr]*dm[row_ptr, di[fine_ptr]]
                 if fine_prob<eps:
@@ -830,8 +831,9 @@ def tensor_result_sum_fine(np.ndarray[double, ndim=3] coarse_pred,
     cdef double[:, :, ::1] cp = np.ascontiguousarray(coarse_pred)
     cdef np.int32_t[:, ::1] cv = cidx
     cdef double[:, ::1] o = outmat
+    cdef int nth = team_size(num_rows * num_fi * nt)
     with nogil:
-        for row_ptr in prange(num_rows, schedule='static'):
+        for row_ptr in prange(num_rows, schedule='static', num_threads=nth):
             for fi_ptr in range(num_fi):
                 acc = 0
                 for i in range(nt):

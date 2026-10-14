@@ -13,6 +13,13 @@ STB_THREADS = int(os.environ.get("STB_THREADS") or os.cpu_count() or 1)
 _POOL = None
 
 
+def team_size(work, grain=100000):
+    """OpenMP threads for a parallel loop of about `work` inner operations: one per `grain`, at most STB_THREADS.
+    Small loops (deep tree nodes, small data) stay on few threads; a full 32-thread team on them costs more than the
+    loop itself."""
+    return int(max(1, min(STB_THREADS, work // grain)))
+
+
 def row_blocks(fn, nrows, min_rows=2000):
     """[fn(lo, hi) for each block of rows], in order, run in threads when there are enough rows."""
     global _POOL
@@ -268,8 +275,9 @@ def explode_densities(np.ndarray[double, ndim=2] densitymat,
     cdef double[:, ::1] o = fine_densitymat
     cdef double[:, ::1] dm = np.ascontiguousarray(densitymat)
     cdef long[::1] di = dens_idx
+    cdef int nth = team_size(num_rows * num_fine_bins)
     with nogil:
-        for row_ptr in prange(num_rows, schedule='static'):
+        for row_ptr in prange(num_rows, schedule='static', num_threads=nth):
             for fine_ptr in range(num_fine_bins):
                 o[row_ptr, fine_ptr] = dm[row_ptr, di[fine_ptr]]
     return fine_densitymat

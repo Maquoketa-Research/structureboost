@@ -2003,7 +2003,7 @@ struct __pyx_MemviewEnum_obj;
 struct __pyx_memoryview_obj;
 struct __pyx_memoryviewslice_obj;
 
-/* "pdf_group.pyx":16
+/* "pdf_group.pyx":23
  * 
  * 
  * def row_blocks(fn, nrows, min_rows=2000):             # <<<<<<<<<<<<<<
@@ -2017,7 +2017,7 @@ struct __pyx_obj_9pdf_group___pyx_scope_struct__row_blocks {
 };
 
 
-/* "pdf_group.pyx":28
+/* "pdf_group.pyx":35
  * 
  * 
  * def row_map(fn, mat, ncols=None):             # <<<<<<<<<<<<<<
@@ -2032,7 +2032,7 @@ struct __pyx_obj_9pdf_group___pyx_scope_struct_1_row_map {
 };
 
 
-/* "pdf_group.pyx":37
+/* "pdf_group.pyx":44
  * 
  * 
  * def _rows_sum_close(mat, ptol):             # <<<<<<<<<<<<<<
@@ -2046,7 +2046,7 @@ struct __pyx_obj_9pdf_group___pyx_scope_struct_2__rows_sum_close {
 };
 
 
-/* "pdf_group.pyx":84
+/* "pdf_group.pyx":91
  *         True.  Can be turned off for computational efficiency.
  * """
  *     def __init__(self, binvec, probmat=None, densitymat=None,             # <<<<<<<<<<<<<<
@@ -2059,7 +2059,7 @@ struct __pyx_obj_9pdf_group___pyx_scope_struct_3___init__ {
 };
 
 
-/* "pdf_group.pyx":208
+/* "pdf_group.pyx":215
  *         return(np.array([pdf.pred_region(coverage) for pdf in self.pdf_list], dtype=object))
  * 
  *     def bins_to_probs(self, new_binpt_vec, eps=1e-16):             # <<<<<<<<<<<<<<
@@ -3046,6 +3046,12 @@ static CYTHON_INLINE long __Pyx_div_long(long, long, int b_is_constant);
 /* PyImportError_Check.proto */
 #define __Pyx_PyExc_ImportError_Check(obj)  __Pyx_TypeCheck(obj, PyExc_ImportError)
 
+/* PyObjectCompare.proto */
+static CYTHON_INLINE int __Pyx_PyObject_CompareBoolLt_object_object(PyObject *op1, PyObject *op2, int pyop);
+
+/* PyObjectCompare.proto */
+static CYTHON_INLINE int __Pyx_PyObject_CompareBoolGt_object_int(PyObject *op1, PyObject *op2, int pyop);
+
 /* RaiseClosureNameError.proto */
 static void __Pyx_RaiseClosureNameError(const char *varname);
 
@@ -3056,9 +3062,6 @@ static CYTHON_INLINE PyObject* __Pyx_PyLong_AddObjC(PyObject *op1, PyObject *op2
 #define __Pyx_PyLong_AddObjC(op1, op2, intval, inplace, zerodivision_check)\
     (inplace ? PyNumber_InPlaceAdd(op1, op2) : PyNumber_Add(op1, op2))
 #endif
-
-/* PyObjectCompare.proto */
-static CYTHON_INLINE int __Pyx_PyObject_CompareBoolLt_object_object(PyObject *op1, PyObject *op2, int pyop);
 
 /* PyObjectCompare.proto */
 static CYTHON_INLINE int __Pyx_PyObject_CompareBoolLe_object_int(PyObject *op1, PyObject *op2, int pyop);
@@ -3767,6 +3770,9 @@ static CYTHON_INLINE PyObject* __Pyx_PyLong_From_long(long value);
 /* CIntFromPy.proto */
 static CYTHON_INLINE long __Pyx_PyLong_As_long(PyObject *);
 
+/* CIntFromPy.proto */
+static CYTHON_INLINE int __Pyx_PyLong_As_int(PyObject *);
+
 /* PyObjectCallMethod1.proto (used by UpdateUnpickledDict) */
 static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethod1(PyObject* obj, PyObject* method_name, PyObject* arg);
 
@@ -3778,9 +3784,6 @@ static void __Pyx_RaiseUnpickleChecksumError(long checksum, long checksum1, long
 
 /* CheckUnpickleChecksum.proto */
 static CYTHON_INLINE int __Pyx_CheckUnpickleChecksum(long checksum, long checksum1, long checksum2, long checksum3, const char *members);
-
-/* CIntFromPy.proto */
-static CYTHON_INLINE int __Pyx_PyLong_As_int(PyObject *);
 
 /* CIntToPy.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyLong_From_int(int value);
@@ -4054,12 +4057,13 @@ static void __pyx_memoryviewslice___pyx_pf_15View_dot_MemoryView_16_memoryviewsl
 static PyObject *__pyx_pf___pyx_memoryviewslice___reduce_cython__(CYTHON_UNUSED struct __pyx_memoryviewslice_obj *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf___pyx_memoryviewslice_2__setstate_cython__(CYTHON_UNUSED struct __pyx_memoryviewslice_obj *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
 static PyObject *__pyx_pf_15View_dot_MemoryView___pyx_unpickle_Enum(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_9pdf_group_team_size(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_work, PyObject *__pyx_v_grain); /* proto */
 static PyObject *__pyx_lambda_funcdef_lambda(PyObject *__pyx_self, PyObject *__pyx_v_i); /* proto */
-static PyObject *__pyx_pf_9pdf_group_row_blocks(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_fn, PyObject *__pyx_v_nrows, PyObject *__pyx_v_min_rows); /* proto */
+static PyObject *__pyx_pf_9pdf_group_2row_blocks(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_fn, PyObject *__pyx_v_nrows, PyObject *__pyx_v_min_rows); /* proto */
 static PyObject *__pyx_pf_9pdf_group_7row_map_blk(PyObject *__pyx_self, PyObject *__pyx_v_lo, PyObject *__pyx_v_hi); /* proto */
-static PyObject *__pyx_pf_9pdf_group_2row_map(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_fn, PyObject *__pyx_v_mat, PyObject *__pyx_v_ncols); /* proto */
+static PyObject *__pyx_pf_9pdf_group_4row_map(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_fn, PyObject *__pyx_v_mat, PyObject *__pyx_v_ncols); /* proto */
 static PyObject *__pyx_lambda_funcdef_lambda1(PyObject *__pyx_self, PyObject *__pyx_v_lo, PyObject *__pyx_v_hi); /* proto */
-static PyObject *__pyx_pf_9pdf_group_4_rows_sum_close(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mat, PyObject *__pyx_v_ptol); /* proto */
+static PyObject *__pyx_pf_9pdf_group_6_rows_sum_close(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mat, PyObject *__pyx_v_ptol); /* proto */
 static PyObject *__pyx_lambda_funcdef_lambda2(PyObject *__pyx_self, PyObject *__pyx_v_m); /* proto */
 static PyObject *__pyx_lambda_funcdef_lambda3(PyObject *__pyx_self, PyObject *__pyx_v_m); /* proto */
 static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_binvec, PyObject *__pyx_v_probmat, PyObject *__pyx_v_densitymat, PyObject *__pyx_v_ptol, PyObject *__pyx_v_check_sum); /* proto */
@@ -4079,12 +4083,12 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_26pred_region_sizes(CYTHON_UNUSED
 static PyObject *__pyx_pf_9pdf_group_8PdfGroup_28pred_regions(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_coverage); /* proto */
 static PyObject *__pyx_pf_9pdf_group_8PdfGroup_13bins_to_probs_blk(PyObject *__pyx_self, PyObject *__pyx_v_m); /* proto */
 static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_new_binpt_vec, PyObject *__pyx_v_eps); /* proto */
-static PyObject *__pyx_pf_9pdf_group_6test_in_pred_regions(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_test_vals, PyObject *__pyx_v_regions); /* proto */
-static PyObject *__pyx_pf_9pdf_group_8log_loss_pdf(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_y_true, PyObject *__pyx_v_pdf_set); /* proto */
-static PyObject *__pyx_pf_9pdf_group_10crps_mean(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_y_true, PyObject *__pyx_v_pdf_set); /* proto */
-static PyObject *__pyx_pf_9pdf_group_12size_of_pred_region(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_pr); /* proto */
-static PyObject *__pyx_pf_9pdf_group_14test_between_quantiles_pdf(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_test_vals, PyObject *__pyx_v_pdf_set, PyObject *__pyx_v_q_left, PyObject *__pyx_v_q_right); /* proto */
-static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_densitymat, PyArrayObject *__pyx_v_density_binpts, PyArrayObject *__pyx_v_fine_binpts); /* proto */
+static PyObject *__pyx_pf_9pdf_group_8test_in_pred_regions(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_test_vals, PyObject *__pyx_v_regions); /* proto */
+static PyObject *__pyx_pf_9pdf_group_10log_loss_pdf(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_y_true, PyObject *__pyx_v_pdf_set); /* proto */
+static PyObject *__pyx_pf_9pdf_group_12crps_mean(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_y_true, PyObject *__pyx_v_pdf_set); /* proto */
+static PyObject *__pyx_pf_9pdf_group_14size_of_pred_region(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_pr); /* proto */
+static PyObject *__pyx_pf_9pdf_group_16test_between_quantiles_pdf(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_test_vals, PyObject *__pyx_v_pdf_set, PyObject *__pyx_v_q_left, PyObject *__pyx_v_q_right); /* proto */
+static PyObject *__pyx_pf_9pdf_group_18explode_densities(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_densitymat, PyArrayObject *__pyx_v_density_binpts, PyArrayObject *__pyx_v_fine_binpts); /* proto */
 static PyObject *__pyx_tp_new__initialisation_9pdf_group___pyx_scope_struct__row_blocks(PyObject *o, 
 #if CYTHON_VECTORCALL_TPNEW
     PyObject *const *args, Py_ssize_t nargs, PyObject *kwnames
@@ -4359,10 +4363,10 @@ namespace {
     __Pyx_CachedCFunction __pyx_umethod_PyDict_Type_pop;
     __Pyx_CachedCFunction __pyx_umethod_PyDict_Type_values;
     PyObject *__pyx_slice[3];
-    PyObject *__pyx_tuple[15];
-    PyObject *__pyx_codeobj_tab[31];
-    PyObject *__pyx_string_tab[296];
-    PyObject *__pyx_number_tab[9];
+    PyObject *__pyx_tuple[16];
+    PyObject *__pyx_codeobj_tab[32];
+    PyObject *__pyx_string_tab[301];
+    PyObject *__pyx_number_tab[10];
 /* #### Code section: module_state_contents ### */
 /* PyFrozenDict.module_state_decls */
 #if CYTHON_COMPILING_IN_LIMITED_API
@@ -4598,140 +4602,145 @@ static __pyx_mstatetype * const __pyx_mstate_global = &__pyx_mstate_global_stati
 #define __pyx_n_u_format __pyx_string_tab[159]
 #define __pyx_n_u_fortran __pyx_string_tab[160]
 #define __pyx_n_u_get __pyx_string_tab[161]
-#define __pyx_n_u_hi __pyx_string_tab[162]
-#define __pyx_n_u_hstack __pyx_string_tab[163]
-#define __pyx_n_u_i __pyx_string_tab[164]
-#define __pyx_n_u_id __pyx_string_tab[165]
-#define __pyx_n_u_index __pyx_string_tab[166]
-#define __pyx_n_u_indices __pyx_string_tab[167]
-#define __pyx_n_u_int64 __pyx_string_tab[168]
-#define __pyx_n_u_interval __pyx_string_tab[169]
-#define __pyx_n_u_isin __pyx_string_tab[170]
-#define __pyx_n_u_items __pyx_string_tab[171]
-#define __pyx_n_u_itemsize __pyx_string_tab[172]
-#define __pyx_n_u_k __pyx_string_tab[173]
-#define __pyx_n_u_linspace __pyx_string_tab[174]
-#define __pyx_n_u_lo __pyx_string_tab[175]
-#define __pyx_n_u_log __pyx_string_tab[176]
-#define __pyx_n_u_log_loss __pyx_string_tab[177]
-#define __pyx_n_u_log_loss_pdf __pyx_string_tab[178]
-#define __pyx_n_u_m __pyx_string_tab[179]
-#define __pyx_n_u_make_pdf_list __pyx_string_tab[180]
-#define __pyx_n_u_map __pyx_string_tab[181]
-#define __pyx_n_u_mat __pyx_string_tab[182]
-#define __pyx_n_u_maximum __pyx_string_tab[183]
-#define __pyx_n_u_mean __pyx_string_tab[184]
-#define __pyx_n_u_median __pyx_string_tab[185]
-#define __pyx_n_u_memview __pyx_string_tab[186]
-#define __pyx_n_u_min_rows __pyx_string_tab[187]
-#define __pyx_n_u_mode __pyx_string_tab[188]
-#define __pyx_n_u_name __pyx_string_tab[189]
-#define __pyx_n_u_ncols __pyx_string_tab[190]
-#define __pyx_n_u_ndim __pyx_string_tab[191]
-#define __pyx_n_u_new_binpt_vec __pyx_string_tab[192]
-#define __pyx_n_u_new_probs __pyx_string_tab[193]
-#define __pyx_n_u_no_new_binpts __pyx_string_tab[194]
-#define __pyx_n_u_np __pyx_string_tab[195]
-#define __pyx_n_u_nrows __pyx_string_tab[196]
-#define __pyx_n_u_num_bins __pyx_string_tab[197]
-#define __pyx_n_u_num_fine_bins __pyx_string_tab[198]
-#define __pyx_n_u_num_rows __pyx_string_tab[199]
-#define __pyx_n_u_numpy __pyx_string_tab[200]
-#define __pyx_n_u_o __pyx_string_tab[201]
-#define __pyx_n_u_obj __pyx_string_tab[202]
-#define __pyx_n_u_object __pyx_string_tab[203]
-#define __pyx_n_u_os __pyx_string_tab[204]
-#define __pyx_n_u_out __pyx_string_tab[205]
-#define __pyx_n_u_pack __pyx_string_tab[206]
-#define __pyx_n_u_pdf __pyx_string_tab[207]
-#define __pyx_n_u_pdf_discrete __pyx_string_tab[208]
-#define __pyx_n_u_pdf_group __pyx_string_tab[209]
-#define __pyx_n_u_pdf_list __pyx_string_tab[210]
-#define __pyx_n_u_pdf_set __pyx_string_tab[211]
-#define __pyx_n_u_pop __pyx_string_tab[212]
-#define __pyx_n_u_pr __pyx_string_tab[213]
-#define __pyx_n_u_pred_region __pyx_string_tab[214]
-#define __pyx_n_u_pred_region_sizes __pyx_string_tab[215]
-#define __pyx_n_u_pred_regions __pyx_string_tab[216]
-#define __pyx_n_u_prepend __pyx_string_tab[217]
-#define __pyx_n_u_probmat __pyx_string_tab[218]
-#define __pyx_n_u_prs __pyx_string_tab[219]
-#define __pyx_n_u_ptol __pyx_string_tab[220]
-#define __pyx_n_u_q_left __pyx_string_tab[221]
-#define __pyx_n_u_q_right __pyx_string_tab[222]
-#define __pyx_n_u_quantile __pyx_string_tab[223]
-#define __pyx_n_u_quantile_widths __pyx_string_tab[224]
-#define __pyx_n_u_quantiles __pyx_string_tab[225]
-#define __pyx_n_u_regions __pyx_string_tab[226]
-#define __pyx_n_u_register __pyx_string_tab[227]
-#define __pyx_n_u_reshape __pyx_string_tab[228]
-#define __pyx_n_u_row_blocks __pyx_string_tab[229]
-#define __pyx_n_u_row_blocks_locals_lambda __pyx_string_tab[230]
-#define __pyx_n_u_row_map __pyx_string_tab[231]
-#define __pyx_n_u_row_map_locals_blk __pyx_string_tab[232]
-#define __pyx_n_u_row_ptr __pyx_string_tab[233]
-#define __pyx_n_u_self __pyx_string_tab[234]
-#define __pyx_n_u_setdefault __pyx_string_tab[235]
-#define __pyx_n_u_shape __pyx_string_tab[236]
-#define __pyx_n_u_size __pyx_string_tab[237]
-#define __pyx_n_u_size_of_pred_region __pyx_string_tab[238]
-#define __pyx_n_u_src __pyx_string_tab[239]
-#define __pyx_n_u_start __pyx_string_tab[240]
-#define __pyx_n_u_step __pyx_string_tab[241]
-#define __pyx_n_u_stop __pyx_string_tab[242]
-#define __pyx_n_u_struct __pyx_string_tab[243]
-#define __pyx_n_u_sum __pyx_string_tab[244]
-#define __pyx_n_u_support_max __pyx_string_tab[245]
-#define __pyx_n_u_support_min __pyx_string_tab[246]
-#define __pyx_n_u_test_between_quantiles __pyx_string_tab[247]
-#define __pyx_n_u_test_between_quantiles_pdf __pyx_string_tab[248]
-#define __pyx_n_u_test_in_pred_regions __pyx_string_tab[249]
-#define __pyx_n_u_test_vals __pyx_string_tab[250]
-#define __pyx_n_u_tolist __pyx_string_tab[251]
-#define __pyx_n_u_union1d __pyx_string_tab[252]
-#define __pyx_n_u_unpack __pyx_string_tab[253]
-#define __pyx_n_u_update __pyx_string_tab[254]
-#define __pyx_n_u_val __pyx_string_tab[255]
-#define __pyx_n_u_vals __pyx_string_tab[256]
-#define __pyx_n_u_values __pyx_string_tab[257]
-#define __pyx_n_u_warn __pyx_string_tab[258]
-#define __pyx_n_u_warnings __pyx_string_tab[259]
-#define __pyx_n_u_x __pyx_string_tab[260]
-#define __pyx_n_u_y_test __pyx_string_tab[261]
-#define __pyx_n_u_y_true __pyx_string_tab[262]
-#define __pyx_n_u_zeros __pyx_string_tab[263]
-#define __pyx_n_b_O __pyx_string_tab[264]
-#define __pyx_kp_b_iso88591_2T_1ARq_T_a __pyx_string_tab[265]
-#define __pyx_kp_b_iso88591_2V1ARt1Cy_2XQd_y_2XUVVW_WAQ_E_a __pyx_string_tab[266]
-#define __pyx_kp_b_iso88591_3az_qqttzz __pyx_string_tab[267]
-#define __pyx_kp_b_iso88591_7_1A __pyx_string_tab[268]
-#define __pyx_kp_b_iso88591_7_AQ __pyx_string_tab[269]
-#define __pyx_kp_b_iso88591_7_XQ __pyx_string_tab[270]
-#define __pyx_kp_b_iso88591_6_c_aq_2V1O6_1_E_Q_axq_3nAXQa_a __pyx_string_tab[271]
-#define __pyx_kp_b_iso88591_A_1CvRq_1Cq __pyx_string_tab[272]
-#define __pyx_kp_b_iso88591_A_4z_A_a_d_q_r_q_AT_V1 __pyx_string_tab[273]
-#define __pyx_kp_b_iso88591_A_4z_A_a_r_q_L_4wd_fTU __pyx_string_tab[274]
-#define __pyx_kp_b_iso88591_A_4z_A_a_t9AXQd_1A __pyx_string_tab[275]
-#define __pyx_kp_b_iso88591_A_4z_A_a_1Kt __pyx_string_tab[276]
-#define __pyx_kp_b_iso88591_A_4z_A_at9D_4y __pyx_string_tab[277]
-#define __pyx_kp_b_iso88591_A_HF_1_BgQb_r_6_A_E __pyx_string_tab[278]
-#define __pyx_kp_b_iso88591_A_4z_A_a_r_q_E_D_t1 __pyx_string_tab[279]
-#define __pyx_kp_b_iso88591_A_4z_A_a_r_q_G3d_Q __pyx_string_tab[280]
-#define __pyx_kp_b_iso88591_A_4z_A_a_r_q_IQe4wd __pyx_string_tab[281]
-#define __pyx_kp_b_iso88591_A_4z_A_a_r_q_JavT_A __pyx_string_tab[282]
-#define __pyx_kp_b_iso88591_A_4z_A_a_4y_Yb_IQa __pyx_string_tab[283]
-#define __pyx_kp_b_iso88591_Rwaq_G_S_Q_q_d_c_a_9ARt1KuBhb __pyx_string_tab[284]
-#define __pyx_kp_b_iso88591_BauAT_ar_1 __pyx_string_tab[285]
-#define __pyx_kp_b_iso88591_Qb_D_4q_1CuTYY_cciij __pyx_string_tab[286]
-#define __pyx_kp_b_iso88591_Rr __pyx_string_tab[287]
-#define __pyx_kp_b_iso88591_j_A __pyx_string_tab[288]
-#define __pyx_kp_b_iso88591_Q_F_CvQd_V1F_Q_auCvQa_1 __pyx_string_tab[289]
-#define __pyx_kp_b_iso88591_1M_s_r_A_q_3a_vS_1_Biq_7_Bb_q_4 __pyx_string_tab[290]
-#define __pyx_kp_b_iso88591_A_L_AT_havZq_U_q_HF_1 __pyx_string_tab[291]
-#define __pyx_kp_b_iso88591_q_4q_uA_RvQa_4_2S_E_4z_A_a_r_q __pyx_string_tab[292]
-#define __pyx_kp_b_iso88591_Q_1_Jb_aq_L_1G1A_87_1_wfARr_Q_Q __pyx_string_tab[293]
-#define __pyx_kp_b_iso88591_4q_uA_RvQa_4_2S_E_4z_A_a_BfA_S __pyx_string_tab[294]
-#define __pyx_kp_b_iso88591_1_ar_a_d_4q_r_iq_1D_T_E_t1_t_Q __pyx_string_tab[295]
+#define __pyx_n_u_grain __pyx_string_tab[162]
+#define __pyx_n_u_hi __pyx_string_tab[163]
+#define __pyx_n_u_hstack __pyx_string_tab[164]
+#define __pyx_n_u_i __pyx_string_tab[165]
+#define __pyx_n_u_id __pyx_string_tab[166]
+#define __pyx_n_u_index __pyx_string_tab[167]
+#define __pyx_n_u_indices __pyx_string_tab[168]
+#define __pyx_n_u_int64 __pyx_string_tab[169]
+#define __pyx_n_u_interval __pyx_string_tab[170]
+#define __pyx_n_u_isin __pyx_string_tab[171]
+#define __pyx_n_u_items __pyx_string_tab[172]
+#define __pyx_n_u_itemsize __pyx_string_tab[173]
+#define __pyx_n_u_k __pyx_string_tab[174]
+#define __pyx_n_u_linspace __pyx_string_tab[175]
+#define __pyx_n_u_lo __pyx_string_tab[176]
+#define __pyx_n_u_log __pyx_string_tab[177]
+#define __pyx_n_u_log_loss __pyx_string_tab[178]
+#define __pyx_n_u_log_loss_pdf __pyx_string_tab[179]
+#define __pyx_n_u_m __pyx_string_tab[180]
+#define __pyx_n_u_make_pdf_list __pyx_string_tab[181]
+#define __pyx_n_u_map __pyx_string_tab[182]
+#define __pyx_n_u_mat __pyx_string_tab[183]
+#define __pyx_n_u_maximum __pyx_string_tab[184]
+#define __pyx_n_u_mean __pyx_string_tab[185]
+#define __pyx_n_u_median __pyx_string_tab[186]
+#define __pyx_n_u_memview __pyx_string_tab[187]
+#define __pyx_n_u_min_rows __pyx_string_tab[188]
+#define __pyx_n_u_mode __pyx_string_tab[189]
+#define __pyx_n_u_name __pyx_string_tab[190]
+#define __pyx_n_u_ncols __pyx_string_tab[191]
+#define __pyx_n_u_ndim __pyx_string_tab[192]
+#define __pyx_n_u_new_binpt_vec __pyx_string_tab[193]
+#define __pyx_n_u_new_probs __pyx_string_tab[194]
+#define __pyx_n_u_no_new_binpts __pyx_string_tab[195]
+#define __pyx_n_u_np __pyx_string_tab[196]
+#define __pyx_n_u_nrows __pyx_string_tab[197]
+#define __pyx_n_u_nth __pyx_string_tab[198]
+#define __pyx_n_u_num_bins __pyx_string_tab[199]
+#define __pyx_n_u_num_fine_bins __pyx_string_tab[200]
+#define __pyx_n_u_num_rows __pyx_string_tab[201]
+#define __pyx_n_u_numpy __pyx_string_tab[202]
+#define __pyx_n_u_o __pyx_string_tab[203]
+#define __pyx_n_u_obj __pyx_string_tab[204]
+#define __pyx_n_u_object __pyx_string_tab[205]
+#define __pyx_n_u_os __pyx_string_tab[206]
+#define __pyx_n_u_out __pyx_string_tab[207]
+#define __pyx_n_u_pack __pyx_string_tab[208]
+#define __pyx_n_u_pdf __pyx_string_tab[209]
+#define __pyx_n_u_pdf_discrete __pyx_string_tab[210]
+#define __pyx_n_u_pdf_group __pyx_string_tab[211]
+#define __pyx_n_u_pdf_list __pyx_string_tab[212]
+#define __pyx_n_u_pdf_set __pyx_string_tab[213]
+#define __pyx_n_u_pop __pyx_string_tab[214]
+#define __pyx_n_u_pr __pyx_string_tab[215]
+#define __pyx_n_u_pred_region __pyx_string_tab[216]
+#define __pyx_n_u_pred_region_sizes __pyx_string_tab[217]
+#define __pyx_n_u_pred_regions __pyx_string_tab[218]
+#define __pyx_n_u_prepend __pyx_string_tab[219]
+#define __pyx_n_u_probmat __pyx_string_tab[220]
+#define __pyx_n_u_prs __pyx_string_tab[221]
+#define __pyx_n_u_ptol __pyx_string_tab[222]
+#define __pyx_n_u_q_left __pyx_string_tab[223]
+#define __pyx_n_u_q_right __pyx_string_tab[224]
+#define __pyx_n_u_quantile __pyx_string_tab[225]
+#define __pyx_n_u_quantile_widths __pyx_string_tab[226]
+#define __pyx_n_u_quantiles __pyx_string_tab[227]
+#define __pyx_n_u_regions __pyx_string_tab[228]
+#define __pyx_n_u_register __pyx_string_tab[229]
+#define __pyx_n_u_reshape __pyx_string_tab[230]
+#define __pyx_n_u_row_blocks __pyx_string_tab[231]
+#define __pyx_n_u_row_blocks_locals_lambda __pyx_string_tab[232]
+#define __pyx_n_u_row_map __pyx_string_tab[233]
+#define __pyx_n_u_row_map_locals_blk __pyx_string_tab[234]
+#define __pyx_n_u_row_ptr __pyx_string_tab[235]
+#define __pyx_n_u_self __pyx_string_tab[236]
+#define __pyx_n_u_setdefault __pyx_string_tab[237]
+#define __pyx_n_u_shape __pyx_string_tab[238]
+#define __pyx_n_u_size __pyx_string_tab[239]
+#define __pyx_n_u_size_of_pred_region __pyx_string_tab[240]
+#define __pyx_n_u_src __pyx_string_tab[241]
+#define __pyx_n_u_start __pyx_string_tab[242]
+#define __pyx_n_u_step __pyx_string_tab[243]
+#define __pyx_n_u_stop __pyx_string_tab[244]
+#define __pyx_n_u_struct __pyx_string_tab[245]
+#define __pyx_n_u_sum __pyx_string_tab[246]
+#define __pyx_n_u_support_max __pyx_string_tab[247]
+#define __pyx_n_u_support_min __pyx_string_tab[248]
+#define __pyx_n_u_team_size __pyx_string_tab[249]
+#define __pyx_n_u_test_between_quantiles __pyx_string_tab[250]
+#define __pyx_n_u_test_between_quantiles_pdf __pyx_string_tab[251]
+#define __pyx_n_u_test_in_pred_regions __pyx_string_tab[252]
+#define __pyx_n_u_test_vals __pyx_string_tab[253]
+#define __pyx_n_u_tolist __pyx_string_tab[254]
+#define __pyx_n_u_union1d __pyx_string_tab[255]
+#define __pyx_n_u_unpack __pyx_string_tab[256]
+#define __pyx_n_u_update __pyx_string_tab[257]
+#define __pyx_n_u_val __pyx_string_tab[258]
+#define __pyx_n_u_vals __pyx_string_tab[259]
+#define __pyx_n_u_values __pyx_string_tab[260]
+#define __pyx_n_u_warn __pyx_string_tab[261]
+#define __pyx_n_u_warnings __pyx_string_tab[262]
+#define __pyx_n_u_work __pyx_string_tab[263]
+#define __pyx_n_u_x __pyx_string_tab[264]
+#define __pyx_n_u_y_test __pyx_string_tab[265]
+#define __pyx_n_u_y_true __pyx_string_tab[266]
+#define __pyx_n_u_zeros __pyx_string_tab[267]
+#define __pyx_n_b_O __pyx_string_tab[268]
+#define __pyx_kp_b_iso88591_2T_1ARq_T_a __pyx_string_tab[269]
+#define __pyx_kp_b_iso88591_2V1ARt1Cy_2XQd_y_2XUVVW_WAQ_E_a __pyx_string_tab[270]
+#define __pyx_kp_b_iso88591_3az_qqttzz __pyx_string_tab[271]
+#define __pyx_kp_b_iso88591_7_1A __pyx_string_tab[272]
+#define __pyx_kp_b_iso88591_7_AQ __pyx_string_tab[273]
+#define __pyx_kp_b_iso88591_7_XQ __pyx_string_tab[274]
+#define __pyx_kp_b_iso88591_6_c_aq_2V1O6_1_E_Q_axq_3nAXQa_a __pyx_string_tab[275]
+#define __pyx_kp_b_iso88591_A_1CvRq_1Cq __pyx_string_tab[276]
+#define __pyx_kp_b_iso88591_A_4z_A_a_d_q_r_q_AT_V1 __pyx_string_tab[277]
+#define __pyx_kp_b_iso88591_A_4z_A_a_r_q_L_4wd_fTU __pyx_string_tab[278]
+#define __pyx_kp_b_iso88591_A_4z_A_a_t9AXQd_1A __pyx_string_tab[279]
+#define __pyx_kp_b_iso88591_A_4z_A_a_1Kt __pyx_string_tab[280]
+#define __pyx_kp_b_iso88591_A_4z_A_at9D_4y __pyx_string_tab[281]
+#define __pyx_kp_b_iso88591_A_HF_1_BgQb_r_6_A_E __pyx_string_tab[282]
+#define __pyx_kp_b_iso88591_A_4z_A_a_r_q_E_D_t1 __pyx_string_tab[283]
+#define __pyx_kp_b_iso88591_A_4z_A_a_r_q_G3d_Q __pyx_string_tab[284]
+#define __pyx_kp_b_iso88591_A_4z_A_a_r_q_IQe4wd __pyx_string_tab[285]
+#define __pyx_kp_b_iso88591_A_4z_A_a_r_q_JavT_A __pyx_string_tab[286]
+#define __pyx_kp_b_iso88591_A_4z_A_a_4y_Yb_IQa __pyx_string_tab[287]
+#define __pyx_kp_b_iso88591_Rwaq_G_S_Q_q_d_c_a_9ARt1KuBhb __pyx_string_tab[288]
+#define __pyx_kp_b_iso88591_BauAT_ar_1 __pyx_string_tab[289]
+#define __pyx_kp_b_iso88591_Qb_D_4q_1CuTYY_cciij __pyx_string_tab[290]
+#define __pyx_kp_b_iso88591_Rr __pyx_string_tab[291]
+#define __pyx_kp_b_iso88591_j_A __pyx_string_tab[292]
+#define __pyx_kp_b_iso88591_A_3e7_uCq __pyx_string_tab[293]
+#define __pyx_kp_b_iso88591_Q_F_CvQd_V1F_Q_auCvQa_1 __pyx_string_tab[294]
+#define __pyx_kp_b_iso88591_1M_s_r_A_q_3a_vS_1_Biq_7_Bb_q_4 __pyx_string_tab[295]
+#define __pyx_kp_b_iso88591_A_L_AT_havZq_U_q_HF_1 __pyx_string_tab[296]
+#define __pyx_kp_b_iso88591_q_4q_uA_RvQa_4_2S_E_4z_A_a_r_q __pyx_string_tab[297]
+#define __pyx_kp_b_iso88591_Q_1_Jb_aq_L_1G1A_87_1_wfARr_Q_Q __pyx_string_tab[298]
+#define __pyx_kp_b_iso88591_4q_uA_RvQa_4_2S_E_4z_A_a_BfA_S __pyx_string_tab[299]
+#define __pyx_kp_b_iso88591_1_ar_a_d_4q_r_iq_1D_T_E_t1_t_Q __pyx_string_tab[300]
 #define __pyx_float_1_0 __pyx_number_tab[0]
 #define __pyx_float_1eneg_6 __pyx_number_tab[1]
 #define __pyx_float_1eneg_16 __pyx_number_tab[2]
@@ -4740,7 +4749,8 @@ static __pyx_mstatetype * const __pyx_mstate_global = &__pyx_mstate_global_stati
 #define __pyx_int_1 __pyx_number_tab[5]
 #define __pyx_int_2 __pyx_number_tab[6]
 #define __pyx_int_2000 __pyx_number_tab[7]
-#define __pyx_int_136983863 __pyx_number_tab[8]
+#define __pyx_int_100000 __pyx_number_tab[8]
+#define __pyx_int_136983863 __pyx_number_tab[9]
 /* #### Code section: module_state_clear ### */
 #if CYTHON_USE_MODULE_STATE
 static CYTHON_SMALL_CODE int __pyx_m_clear(PyObject *m) {
@@ -4793,10 +4803,10 @@ static CYTHON_SMALL_CODE int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_umethod_PyDict_Type_pop.method);
   Py_CLEAR(clear_module_state->__pyx_umethod_PyDict_Type_values.method);
   for (int i=0; i<3; ++i) { Py_CLEAR(clear_module_state->__pyx_slice[i]); }
-  for (int i=0; i<15; ++i) { Py_CLEAR(clear_module_state->__pyx_tuple[i]); }
-  for (int i=0; i<31; ++i) { Py_CLEAR(clear_module_state->__pyx_codeobj_tab[i]); }
-  for (int i=0; i<296; ++i) { Py_CLEAR(clear_module_state->__pyx_string_tab[i]); }
-  for (int i=0; i<9; ++i) { Py_CLEAR(clear_module_state->__pyx_number_tab[i]); }
+  for (int i=0; i<16; ++i) { Py_CLEAR(clear_module_state->__pyx_tuple[i]); }
+  for (int i=0; i<32; ++i) { Py_CLEAR(clear_module_state->__pyx_codeobj_tab[i]); }
+  for (int i=0; i<301; ++i) { Py_CLEAR(clear_module_state->__pyx_string_tab[i]); }
+  for (int i=0; i<10; ++i) { Py_CLEAR(clear_module_state->__pyx_number_tab[i]); }
 /* #### Code section: module_state_clear_contents ### */
 /* CommonTypesMetaclass.module_state_clear */
 Py_CLEAR(clear_module_state->__pyx_CommonTypesMetaclassType);
@@ -4857,10 +4867,10 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
   Py_VISIT(traverse_module_state->__pyx_umethod_PyDict_Type_pop.method);
   Py_VISIT(traverse_module_state->__pyx_umethod_PyDict_Type_values.method);
   for (int i=0; i<3; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_slice[i]); }
-  for (int i=0; i<15; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_tuple[i]); }
-  for (int i=0; i<31; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_codeobj_tab[i]); }
-  for (int i=0; i<296; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_string_tab[i]); }
-  for (int i=0; i<9; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_number_tab[i]); }
+  for (int i=0; i<16; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_tuple[i]); }
+  for (int i=0; i<32; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_codeobj_tab[i]); }
+  for (int i=0; i<301; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_string_tab[i]); }
+  for (int i=0; i<10; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_number_tab[i]); }
 /* #### Code section: module_state_traverse_contents ### */
 /* CommonTypesMetaclass.module_state_traverse */
 Py_VISIT(traverse_module_state->__pyx_CommonTypesMetaclassType);
@@ -21529,22 +21539,221 @@ static CYTHON_INLINE NPY_DATETIMEUNIT __pyx_f_5numpy_get_datetime64_unit(PyObjec
 /* "pdf_group.pyx":16
  * 
  * 
- * def row_blocks(fn, nrows, min_rows=2000):             # <<<<<<<<<<<<<<
- *     """[fn(lo, hi) for each block of rows], in order, run in threads when there are enough rows."""
- *     global _POOL
+ * def team_size(work, grain=100000):             # <<<<<<<<<<<<<<
+ *     """OpenMP threads for a parallel loop of about `work` inner operations: one per `grain`, at most STB_THREADS.
+ *     Small loops (deep tree nodes, small data) stay on few threads; a full 32-thread team on them costs more than the
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9pdf_group_1row_blocks(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9pdf_group_1team_size(PyObject *__pyx_self, 
 #if CYTHON_VECTORCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_9pdf_group_row_blocks, "[fn(lo, hi) for each block of rows], in order, run in threads when there are enough rows.");
-static PyMethodDef __pyx_mdef_9pdf_group_1row_blocks = {"row_blocks", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9pdf_group_1row_blocks, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9pdf_group_row_blocks};
-static PyObject *__pyx_pw_9pdf_group_1row_blocks(PyObject *__pyx_self, 
+PyDoc_STRVAR(__pyx_doc_9pdf_group_team_size, "OpenMP threads for a parallel loop of about `work` inner operations: one per `grain`, at most STB_THREADS.\n    Small loops (deep tree nodes, small data) stay on few threads; a full 32-thread team on them costs more than the\n    loop itself.");
+static PyMethodDef __pyx_mdef_9pdf_group_1team_size = {"team_size", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9pdf_group_1team_size, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9pdf_group_team_size};
+static PyObject *__pyx_pw_9pdf_group_1team_size(PyObject *__pyx_self, 
+#if CYTHON_VECTORCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+) {
+  PyObject *__pyx_v_work = 0;
+  PyObject *__pyx_v_grain = 0;
+  #if !CYTHON_VECTORCALL
+  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
+  #endif
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject* values[2] = {0,0};
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("team_size (wrapper)", 0);
+  #if !CYTHON_VECTORCALL
+  #if CYTHON_ASSUME_SAFE_SIZE
+  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
+  #else
+  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return NULL;
+  #endif
+  #endif
+  __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
+  {
+    PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_work,&__pyx_mstate_global->__pyx_n_u_grain,0};
+    const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 16, __pyx_L3_error)
+    if (__pyx_kwds_len > 0) {
+      switch (__pyx_nargs) {
+        case  2:
+        values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 16, __pyx_L3_error)
+        CYTHON_FALLTHROUGH;
+        case  1:
+        values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 16, __pyx_L3_error)
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      const Py_ssize_t kwd_pos_args = __pyx_nargs;
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "team_size", 0) < (0)) __PYX_ERR(0, 16, __pyx_L3_error)
+      if (!values[1]) values[1] = __Pyx_NewRef(((PyObject *)((PyObject*)__pyx_mstate_global->__pyx_int_100000)));
+      for (Py_ssize_t i = __pyx_nargs; i < 1; i++) {
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("team_size", 0, 1, 2, i); __PYX_ERR(0, 16, __pyx_L3_error) }
+      }
+    } else {
+      switch (__pyx_nargs) {
+        case  2:
+        values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 16, __pyx_L3_error)
+        CYTHON_FALLTHROUGH;
+        case  1:
+        values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 16, __pyx_L3_error)
+        break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      if (!values[1]) values[1] = __Pyx_NewRef(((PyObject *)((PyObject*)__pyx_mstate_global->__pyx_int_100000)));
+    }
+    __pyx_v_work = values[0];
+    __pyx_v_grain = values[1];
+  }
+  goto __pyx_L6_skip;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("team_size", 0, 1, 2, __pyx_nargs); __PYX_ERR(0, 16, __pyx_L3_error)
+  __pyx_L6_skip:;
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+    Py_XDECREF(values[__pyx_temp]);
+  }
+  __Pyx_AddTraceback("pdf_group.team_size", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_9pdf_group_team_size(__pyx_self, __pyx_v_work, __pyx_v_grain);
+
+  /* function exit code */
+  for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+    Py_XDECREF(values[__pyx_temp]);
+  }
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_9pdf_group_team_size(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_work, PyObject *__pyx_v_grain) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  int __pyx_t_4;
+  long __pyx_t_5;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("team_size", 0);
+
+  /* "pdf_group.pyx":20
+ *     Small loops (deep tree nodes, small data) stay on few threads; a full 32-thread team on them costs more than the
+ *     loop itself."""
+ *     return int(max(1, min(STB_THREADS, work // grain)))             # <<<<<<<<<<<<<<
+ * 
+ * 
+*/
+  __pyx_t_1 = PyNumber_FloorDivide(__pyx_v_work, __pyx_v_grain); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_STB_THREADS); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_4 = __Pyx_PyObject_CompareBoolLt_object_object(__pyx_t_1, __pyx_t_2, Py_LT); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 20, __pyx_L1_error)
+  if (__pyx_t_4) {
+    __Pyx_INCREF(__pyx_t_1);
+    __pyx_t_3 = __pyx_t_1;
+  } else {
+    __Pyx_INCREF(__pyx_t_2);
+    __pyx_t_3 = __pyx_t_2;
+  }
+
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_INCREF(__pyx_t_3);
+  __pyx_t_1 = __pyx_t_3;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+
+  __pyx_t_5 = 1;
+  __pyx_t_2 = __Pyx_PyLong_From_long(__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_4 = __Pyx_PyObject_CompareBoolGt_object_int(__pyx_t_1, __pyx_t_2, Py_GT); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 20, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (__pyx_t_4) {
+    __Pyx_INCREF(__pyx_t_1);
+    __pyx_t_3 = __pyx_t_1;
+  } else {
+    __pyx_t_2 = __Pyx_PyLong_From_long(__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 20, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_3 = __pyx_t_2;
+    __pyx_t_2 = 0;
+  }
+
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = __Pyx_PyNumber_Int(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  {
+    PyObject *__pyx_temp;
+    {
+      __pyx_temp = __pyx_r;
+      __pyx_r = __pyx_t_1;
+    }
+    __Pyx_XDECREF(__pyx_temp);
+  }
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "pdf_group.pyx":16
+ * 
+ * 
+ * def team_size(work, grain=100000):             # <<<<<<<<<<<<<<
+ *     """OpenMP threads for a parallel loop of about `work` inner operations: one per `grain`, at most STB_THREADS.
+ *     Small loops (deep tree nodes, small data) stay on few threads; a full 32-thread team on them costs more than the
+*/
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_AddTraceback("pdf_group.team_size", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pdf_group.pyx":23
+ * 
+ * 
+ * def row_blocks(fn, nrows, min_rows=2000):             # <<<<<<<<<<<<<<
+ *     """[fn(lo, hi) for each block of rows], in order, run in threads when there are enough rows."""
+ *     global _POOL
+*/
+
+/* Python wrapper */
+static PyObject *__pyx_pw_9pdf_group_3row_blocks(PyObject *__pyx_self, 
+#if CYTHON_VECTORCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+); /*proto*/
+PyDoc_STRVAR(__pyx_doc_9pdf_group_2row_blocks, "[fn(lo, hi) for each block of rows], in order, run in threads when there are enough rows.");
+static PyMethodDef __pyx_mdef_9pdf_group_3row_blocks = {"row_blocks", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9pdf_group_3row_blocks, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9pdf_group_2row_blocks};
+static PyObject *__pyx_pw_9pdf_group_3row_blocks(PyObject *__pyx_self, 
 #if CYTHON_VECTORCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -21576,41 +21785,41 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_fn,&__pyx_mstate_global->__pyx_n_u_nrows,&__pyx_mstate_global->__pyx_n_u_min_rows,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 16, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 23, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 16, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 23, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 16, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 23, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 16, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 23, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "row_blocks", 0) < (0)) __PYX_ERR(0, 16, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "row_blocks", 0) < (0)) __PYX_ERR(0, 23, __pyx_L3_error)
       if (!values[2]) values[2] = __Pyx_NewRef(((PyObject *)((PyObject*)__pyx_mstate_global->__pyx_int_2000)));
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("row_blocks", 0, 2, 3, i); __PYX_ERR(0, 16, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("row_blocks", 0, 2, 3, i); __PYX_ERR(0, 23, __pyx_L3_error) }
       }
     } else {
       switch (__pyx_nargs) {
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 16, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 23, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 16, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 23, __pyx_L3_error)
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 16, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 23, __pyx_L3_error)
         break;
         default: goto __pyx_L5_argtuple_error;
       }
@@ -21622,7 +21831,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("row_blocks", 0, 2, 3, __pyx_nargs); __PYX_ERR(0, 16, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("row_blocks", 0, 2, 3, __pyx_nargs); __PYX_ERR(0, 23, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -21633,7 +21842,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_9pdf_group_row_blocks(__pyx_self, __pyx_v_fn, __pyx_v_nrows, __pyx_v_min_rows);
+  __pyx_r = __pyx_pf_9pdf_group_2row_blocks(__pyx_self, __pyx_v_fn, __pyx_v_nrows, __pyx_v_min_rows);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -21643,7 +21852,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":25
+/* "pdf_group.pyx":32
  *         _POOL = ThreadPoolExecutor(STB_THREADS)
  *     edges = np.linspace(0, nrows, k + 1).astype(np.int64)
  *     return list(_POOL.map(lambda i: fn(edges[i], edges[i + 1]), range(k)))             # <<<<<<<<<<<<<<
@@ -21690,32 +21899,32 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_i,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 25, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 32, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 25, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 32, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "lambda", 0) < (0)) __PYX_ERR(0, 25, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "lambda", 0) < (0)) __PYX_ERR(0, 32, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 1; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("lambda", 1, 1, 1, i); __PYX_ERR(0, 25, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("lambda", 1, 1, 1, i); __PYX_ERR(0, 32, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 25, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 32, __pyx_L3_error)
     }
     __pyx_v_i = values[0];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("lambda", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 25, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("lambda", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 32, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -21755,16 +21964,16 @@ static PyObject *__pyx_lambda_funcdef_lambda(PyObject *__pyx_self, PyObject *__p
   __pyx_outer_scope = (struct __pyx_obj_9pdf_group___pyx_scope_struct__row_blocks *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
   __pyx_t_2 = NULL;
-  if (unlikely(!__pyx_cur_scope->__pyx_v_fn)) { __Pyx_RaiseClosureNameError("fn"); __PYX_ERR(0, 25, __pyx_L1_error) }
+  if (unlikely(!__pyx_cur_scope->__pyx_v_fn)) { __Pyx_RaiseClosureNameError("fn"); __PYX_ERR(0, 32, __pyx_L1_error) }
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_fn);
   __pyx_t_3 = __pyx_cur_scope->__pyx_v_fn; 
-  if (unlikely(!__pyx_cur_scope->__pyx_v_edges)) { __Pyx_RaiseClosureNameError("edges"); __PYX_ERR(0, 25, __pyx_L1_error) }
-  __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_cur_scope->__pyx_v_edges, __pyx_v_i); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 25, __pyx_L1_error)
+  if (unlikely(!__pyx_cur_scope->__pyx_v_edges)) { __Pyx_RaiseClosureNameError("edges"); __PYX_ERR(0, 32, __pyx_L1_error) }
+  __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_cur_scope->__pyx_v_edges, __pyx_v_i); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (unlikely(!__pyx_cur_scope->__pyx_v_edges)) { __Pyx_RaiseClosureNameError("edges"); __PYX_ERR(0, 25, __pyx_L1_error) }
-  __pyx_t_5 = __Pyx_PyLong_AddObjC(__pyx_v_i, __pyx_mstate_global->__pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 25, __pyx_L1_error)
+  if (unlikely(!__pyx_cur_scope->__pyx_v_edges)) { __Pyx_RaiseClosureNameError("edges"); __PYX_ERR(0, 32, __pyx_L1_error) }
+  __pyx_t_5 = __Pyx_PyLong_AddObjC(__pyx_v_i, __pyx_mstate_global->__pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_cur_scope->__pyx_v_edges, __pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_cur_scope->__pyx_v_edges, __pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_7 = 1;
@@ -21786,7 +21995,7 @@ static PyObject *__pyx_lambda_funcdef_lambda(PyObject *__pyx_self, PyObject *__p
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 25, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 32, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   {
@@ -21816,7 +22025,7 @@ static PyObject *__pyx_lambda_funcdef_lambda(PyObject *__pyx_self, PyObject *__p
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":16
+/* "pdf_group.pyx":23
  * 
  * 
  * def row_blocks(fn, nrows, min_rows=2000):             # <<<<<<<<<<<<<<
@@ -21824,7 +22033,7 @@ static PyObject *__pyx_lambda_funcdef_lambda(PyObject *__pyx_self, PyObject *__p
  *     global _POOL
 */
 
-static PyObject *__pyx_pf_9pdf_group_row_blocks(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_fn, PyObject *__pyx_v_nrows, PyObject *__pyx_v_min_rows) {
+static PyObject *__pyx_pf_9pdf_group_2row_blocks(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_fn, PyObject *__pyx_v_nrows, PyObject *__pyx_v_min_rows) {
   struct __pyx_obj_9pdf_group___pyx_scope_struct__row_blocks *__pyx_cur_scope;
   PyObject *__pyx_v_k = NULL;
   PyObject *__pyx_r = NULL;
@@ -21845,7 +22054,7 @@ static PyObject *__pyx_pf_9pdf_group_row_blocks(CYTHON_UNUSED PyObject *__pyx_se
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_9pdf_group___pyx_scope_struct__row_blocks *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 16, __pyx_L1_error)
+    __PYX_ERR(0, 23, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -21853,18 +22062,18 @@ static PyObject *__pyx_pf_9pdf_group_row_blocks(CYTHON_UNUSED PyObject *__pyx_se
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_fn);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_fn);
 
-  /* "pdf_group.pyx":19
+  /* "pdf_group.pyx":26
  *     """[fn(lo, hi) for each block of rows], in order, run in threads when there are enough rows."""
  *     global _POOL
  *     k = min(STB_THREADS, nrows // min_rows)             # <<<<<<<<<<<<<<
  *     if k <= 1:
  *         return [fn(0, nrows)]
 */
-  __pyx_t_1 = PyNumber_FloorDivide(__pyx_v_nrows, __pyx_v_min_rows); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 19, __pyx_L1_error)
+  __pyx_t_1 = PyNumber_FloorDivide(__pyx_v_nrows, __pyx_v_min_rows); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_STB_THREADS); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 19, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_STB_THREADS); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_PyObject_CompareBoolLt_object_object(__pyx_t_1, __pyx_t_2, Py_LT); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 19, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_CompareBoolLt_object_object(__pyx_t_1, __pyx_t_2, Py_LT); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 26, __pyx_L1_error)
   if (__pyx_t_4) {
     __Pyx_INCREF(__pyx_t_1);
     __pyx_t_3 = __pyx_t_1;
@@ -21881,18 +22090,18 @@ static PyObject *__pyx_pf_9pdf_group_row_blocks(CYTHON_UNUSED PyObject *__pyx_se
   __pyx_v_k = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "pdf_group.pyx":20
+  /* "pdf_group.pyx":27
  *     global _POOL
  *     k = min(STB_THREADS, nrows // min_rows)
  *     if k <= 1:             # <<<<<<<<<<<<<<
  *         return [fn(0, nrows)]
  *     if _POOL is None:
 */
-  __pyx_t_4 = __Pyx_PyObject_CompareBoolLe_object_int(__pyx_v_k, __pyx_mstate_global->__pyx_int_1, Py_LE); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 20, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_CompareBoolLe_object_int(__pyx_v_k, __pyx_mstate_global->__pyx_int_1, Py_LE); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 27, __pyx_L1_error)
   if (__pyx_t_4) {
 
 
-    /* "pdf_group.pyx":21
+    /* "pdf_group.pyx":28
  *     k = min(STB_THREADS, nrows // min_rows)
  *     if k <= 1:
  *         return [fn(0, nrows)]             # <<<<<<<<<<<<<<
@@ -21919,13 +22128,13 @@ static PyObject *__pyx_pf_9pdf_group_row_blocks(CYTHON_UNUSED PyObject *__pyx_se
       __pyx_t_1 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_2, __pyx_callargs+__pyx_t_5, (3-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 21, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 28, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     }
-    __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 21, __pyx_L1_error)
+    __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 28, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_GIVEREF(__pyx_t_1);
-    if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 21, __pyx_L1_error);
+    if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 28, __pyx_L1_error);
     __pyx_t_1 = 0;
     {
       PyObject *__pyx_temp;
@@ -21938,7 +22147,7 @@ static PyObject *__pyx_pf_9pdf_group_row_blocks(CYTHON_UNUSED PyObject *__pyx_se
     __pyx_t_2 = 0;
     goto __pyx_L0;
 
-    /* "pdf_group.pyx":20
+    /* "pdf_group.pyx":27
  *     global _POOL
  *     k = min(STB_THREADS, nrows // min_rows)
  *     if k <= 1:             # <<<<<<<<<<<<<<
@@ -21947,21 +22156,21 @@ static PyObject *__pyx_pf_9pdf_group_row_blocks(CYTHON_UNUSED PyObject *__pyx_se
 */
   }
 
-  /* "pdf_group.pyx":22
+  /* "pdf_group.pyx":29
  *     if k <= 1:
  *         return [fn(0, nrows)]
  *     if _POOL is None:             # <<<<<<<<<<<<<<
  *         _POOL = ThreadPoolExecutor(STB_THREADS)
  *     edges = np.linspace(0, nrows, k + 1).astype(np.int64)
 */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_POOL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 22, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_POOL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 29, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = (__pyx_t_2 == Py_None);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_4) {
 
 
-    /* "pdf_group.pyx":23
+    /* "pdf_group.pyx":30
  *         return [fn(0, nrows)]
  *     if _POOL is None:
  *         _POOL = ThreadPoolExecutor(STB_THREADS)             # <<<<<<<<<<<<<<
@@ -21969,9 +22178,9 @@ static PyObject *__pyx_pf_9pdf_group_row_blocks(CYTHON_UNUSED PyObject *__pyx_se
  *     return list(_POOL.map(lambda i: fn(edges[i], edges[i + 1]), range(k)))
 */
     __pyx_t_1 = NULL;
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_ThreadPoolExecutor); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 23, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_ThreadPoolExecutor); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 30, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_STB_THREADS); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 23, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_STB_THREADS); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 30, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __pyx_t_5 = 1;
     #if CYTHON_UNPACK_METHODS
@@ -21991,13 +22200,13 @@ static PyObject *__pyx_pf_9pdf_group_row_blocks(CYTHON_UNUSED PyObject *__pyx_se
       __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 23, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 30, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
     }
-    if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_POOL, __pyx_t_2) < (0)) __PYX_ERR(0, 23, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_POOL, __pyx_t_2) < (0)) __PYX_ERR(0, 30, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "pdf_group.pyx":22
+    /* "pdf_group.pyx":29
  *     if k <= 1:
  *         return [fn(0, nrows)]
  *     if _POOL is None:             # <<<<<<<<<<<<<<
@@ -22006,7 +22215,7 @@ static PyObject *__pyx_pf_9pdf_group_row_blocks(CYTHON_UNUSED PyObject *__pyx_se
 */
   }
 
-  /* "pdf_group.pyx":24
+  /* "pdf_group.pyx":31
  *     if _POOL is None:
  *         _POOL = ThreadPoolExecutor(STB_THREADS)
  *     edges = np.linspace(0, nrows, k + 1).astype(np.int64)             # <<<<<<<<<<<<<<
@@ -22014,12 +22223,12 @@ static PyObject *__pyx_pf_9pdf_group_row_blocks(CYTHON_UNUSED PyObject *__pyx_se
  * 
 */
   __pyx_t_1 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 24, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_linspace); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 24, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_linspace); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_7 = __Pyx_PyLong_AddObjC(__pyx_v_k, __pyx_mstate_global->__pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 24, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyLong_AddObjC(__pyx_v_k, __pyx_mstate_global->__pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __pyx_t_5 = 1;
   #if CYTHON_UNPACK_METHODS
@@ -22039,14 +22248,14 @@ static PyObject *__pyx_pf_9pdf_group_row_blocks(CYTHON_UNUSED PyObject *__pyx_se
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 24, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 31, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
   }
   __pyx_t_3 = __pyx_t_6;
   __Pyx_INCREF(__pyx_t_3);
-  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 24, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_int64); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 24, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_int64); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   __pyx_t_5 = 0;
@@ -22056,14 +22265,14 @@ static PyObject *__pyx_pf_9pdf_group_row_blocks(CYTHON_UNUSED PyObject *__pyx_se
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 24, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 31, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
   }
   __Pyx_GIVEREF(__pyx_t_2);
   __pyx_cur_scope->__pyx_v_edges = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "pdf_group.pyx":25
+  /* "pdf_group.pyx":32
  *         _POOL = ThreadPoolExecutor(STB_THREADS)
  *     edges = np.linspace(0, nrows, k + 1).astype(np.int64)
  *     return list(_POOL.map(lambda i: fn(edges[i], edges[i + 1]), range(k)))             # <<<<<<<<<<<<<<
@@ -22071,12 +22280,12 @@ static PyObject *__pyx_pf_9pdf_group_row_blocks(CYTHON_UNUSED PyObject *__pyx_se
  * 
 */
   __pyx_t_6 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_POOL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_POOL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_map); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_map); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_7 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_10row_blocks___pyx_lambda_funcdef_lambda, 0, __pyx_mstate_global->__pyx_n_u_row_blocks_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_10row_blocks___pyx_lambda_funcdef_lambda, 0, __pyx_mstate_global->__pyx_n_u_row_blocks_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __pyx_t_1 = NULL;
   __pyx_t_5 = 1;
@@ -22084,7 +22293,7 @@ static PyObject *__pyx_pf_9pdf_group_row_blocks(CYTHON_UNUSED PyObject *__pyx_se
     PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_v_k};
     __pyx_t_8 = __Pyx_PyObject_FastCall((PyObject*)(&PyRange_Type), __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 25, __pyx_L1_error)
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 32, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
   }
   __pyx_t_5 = 1;
@@ -22106,10 +22315,10 @@ static PyObject *__pyx_pf_9pdf_group_row_blocks(CYTHON_UNUSED PyObject *__pyx_se
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 25, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 32, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
   }
-  __pyx_t_3 = __Pyx_PySequence_ListKeepNew(__pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PySequence_ListKeepNew(__pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   {
@@ -22123,7 +22332,7 @@ static PyObject *__pyx_pf_9pdf_group_row_blocks(CYTHON_UNUSED PyObject *__pyx_se
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "pdf_group.pyx":16
+  /* "pdf_group.pyx":23
  * 
  * 
  * def row_blocks(fn, nrows, min_rows=2000):             # <<<<<<<<<<<<<<
@@ -22149,7 +22358,7 @@ static PyObject *__pyx_pf_9pdf_group_row_blocks(CYTHON_UNUSED PyObject *__pyx_se
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":28
+/* "pdf_group.pyx":35
  * 
  * 
  * def row_map(fn, mat, ncols=None):             # <<<<<<<<<<<<<<
@@ -22158,16 +22367,16 @@ static PyObject *__pyx_pf_9pdf_group_row_blocks(CYTHON_UNUSED PyObject *__pyx_se
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9pdf_group_3row_map(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9pdf_group_5row_map(PyObject *__pyx_self, 
 #if CYTHON_VECTORCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_9pdf_group_2row_map, "out[lo:hi] = fn(mat[lo:hi]) over row blocks, into a new array (the same per-row results as fn(mat)).");
-static PyMethodDef __pyx_mdef_9pdf_group_3row_map = {"row_map", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9pdf_group_3row_map, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9pdf_group_2row_map};
-static PyObject *__pyx_pw_9pdf_group_3row_map(PyObject *__pyx_self, 
+PyDoc_STRVAR(__pyx_doc_9pdf_group_4row_map, "out[lo:hi] = fn(mat[lo:hi]) over row blocks, into a new array (the same per-row results as fn(mat)).");
+static PyMethodDef __pyx_mdef_9pdf_group_5row_map = {"row_map", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9pdf_group_5row_map, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9pdf_group_4row_map};
+static PyObject *__pyx_pw_9pdf_group_5row_map(PyObject *__pyx_self, 
 #if CYTHON_VECTORCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -22199,41 +22408,41 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_fn,&__pyx_mstate_global->__pyx_n_u_mat,&__pyx_mstate_global->__pyx_n_u_ncols,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 28, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 35, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 28, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 35, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 28, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 35, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 28, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 35, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "row_map", 0) < (0)) __PYX_ERR(0, 28, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "row_map", 0) < (0)) __PYX_ERR(0, 35, __pyx_L3_error)
       if (!values[2]) values[2] = __Pyx_NewRef(((PyObject *)Py_None));
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("row_map", 0, 2, 3, i); __PYX_ERR(0, 28, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("row_map", 0, 2, 3, i); __PYX_ERR(0, 35, __pyx_L3_error) }
       }
     } else {
       switch (__pyx_nargs) {
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 28, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 35, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 28, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 35, __pyx_L3_error)
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 28, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 35, __pyx_L3_error)
         break;
         default: goto __pyx_L5_argtuple_error;
       }
@@ -22245,7 +22454,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("row_map", 0, 2, 3, __pyx_nargs); __PYX_ERR(0, 28, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("row_map", 0, 2, 3, __pyx_nargs); __PYX_ERR(0, 35, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -22256,7 +22465,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_9pdf_group_2row_map(__pyx_self, __pyx_v_fn, __pyx_v_mat, __pyx_v_ncols);
+  __pyx_r = __pyx_pf_9pdf_group_4row_map(__pyx_self, __pyx_v_fn, __pyx_v_mat, __pyx_v_ncols);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -22266,7 +22475,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":31
+/* "pdf_group.pyx":38
  *     """out[lo:hi] = fn(mat[lo:hi]) over row blocks, into a new array (the same per-row results as fn(mat))."""
  *     out = np.empty((mat.shape[0], mat.shape[1] if ncols is None else ncols))
  *     def blk(lo, hi):             # <<<<<<<<<<<<<<
@@ -22314,39 +22523,39 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_lo,&__pyx_mstate_global->__pyx_n_u_hi,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 31, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 38, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 31, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 38, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 31, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 38, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "blk", 0) < (0)) __PYX_ERR(0, 31, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "blk", 0) < (0)) __PYX_ERR(0, 38, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("blk", 1, 2, 2, i); __PYX_ERR(0, 31, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("blk", 1, 2, 2, i); __PYX_ERR(0, 38, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 31, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 38, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 31, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 38, __pyx_L3_error)
     }
     __pyx_v_lo = values[0];
     __pyx_v_hi = values[1];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("blk", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 31, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("blk", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 38, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -22384,7 +22593,7 @@ static PyObject *__pyx_pf_9pdf_group_7row_map_blk(PyObject *__pyx_self, PyObject
   __pyx_outer_scope = (struct __pyx_obj_9pdf_group___pyx_scope_struct_1_row_map *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
 
-  /* "pdf_group.pyx":32
+  /* "pdf_group.pyx":39
  *     out = np.empty((mat.shape[0], mat.shape[1] if ncols is None else ncols))
  *     def blk(lo, hi):
  *         out[lo:hi] = fn(mat[lo:hi])             # <<<<<<<<<<<<<<
@@ -22392,11 +22601,11 @@ static PyObject *__pyx_pf_9pdf_group_7row_map_blk(PyObject *__pyx_self, PyObject
  *     return out
 */
   __pyx_t_2 = NULL;
-  if (unlikely(!__pyx_cur_scope->__pyx_v_fn)) { __Pyx_RaiseClosureNameError("fn"); __PYX_ERR(0, 32, __pyx_L1_error) }
+  if (unlikely(!__pyx_cur_scope->__pyx_v_fn)) { __Pyx_RaiseClosureNameError("fn"); __PYX_ERR(0, 39, __pyx_L1_error) }
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_fn);
   __pyx_t_3 = __pyx_cur_scope->__pyx_v_fn; 
-  if (unlikely(!__pyx_cur_scope->__pyx_v_mat)) { __Pyx_RaiseClosureNameError("mat"); __PYX_ERR(0, 32, __pyx_L1_error) }
-  __pyx_t_4 = __Pyx_PyObject_GetSlice(__pyx_cur_scope->__pyx_v_mat, 0, 0, &__pyx_v_lo, &__pyx_v_hi, NULL, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 32, __pyx_L1_error)
+  if (unlikely(!__pyx_cur_scope->__pyx_v_mat)) { __Pyx_RaiseClosureNameError("mat"); __PYX_ERR(0, 39, __pyx_L1_error) }
+  __pyx_t_4 = __Pyx_PyObject_GetSlice(__pyx_cur_scope->__pyx_v_mat, 0, 0, &__pyx_v_lo, &__pyx_v_hi, NULL, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 39, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = 1;
   #if CYTHON_UNPACK_METHODS
@@ -22416,14 +22625,14 @@ static PyObject *__pyx_pf_9pdf_group_7row_map_blk(PyObject *__pyx_self, PyObject
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 32, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 39, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
-  if (unlikely(!__pyx_cur_scope->__pyx_v_out)) { __Pyx_RaiseClosureNameError("out"); __PYX_ERR(0, 32, __pyx_L1_error) }
-  if (__Pyx_PyObject_SetSlice(__pyx_cur_scope->__pyx_v_out, __pyx_t_1, 0, 0, &__pyx_v_lo, &__pyx_v_hi, NULL, 0, 0, 1) < (0)) __PYX_ERR(0, 32, __pyx_L1_error)
+  if (unlikely(!__pyx_cur_scope->__pyx_v_out)) { __Pyx_RaiseClosureNameError("out"); __PYX_ERR(0, 39, __pyx_L1_error) }
+  if (__Pyx_PyObject_SetSlice(__pyx_cur_scope->__pyx_v_out, __pyx_t_1, 0, 0, &__pyx_v_lo, &__pyx_v_hi, NULL, 0, 0, 1) < (0)) __PYX_ERR(0, 39, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "pdf_group.pyx":31
+  /* "pdf_group.pyx":38
  *     """out[lo:hi] = fn(mat[lo:hi]) over row blocks, into a new array (the same per-row results as fn(mat))."""
  *     out = np.empty((mat.shape[0], mat.shape[1] if ncols is None else ncols))
  *     def blk(lo, hi):             # <<<<<<<<<<<<<<
@@ -22447,7 +22656,7 @@ static PyObject *__pyx_pf_9pdf_group_7row_map_blk(PyObject *__pyx_self, PyObject
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":28
+/* "pdf_group.pyx":35
  * 
  * 
  * def row_map(fn, mat, ncols=None):             # <<<<<<<<<<<<<<
@@ -22455,7 +22664,7 @@ static PyObject *__pyx_pf_9pdf_group_7row_map_blk(PyObject *__pyx_self, PyObject
  *     out = np.empty((mat.shape[0], mat.shape[1] if ncols is None else ncols))
 */
 
-static PyObject *__pyx_pf_9pdf_group_2row_map(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_fn, PyObject *__pyx_v_mat, PyObject *__pyx_v_ncols) {
+static PyObject *__pyx_pf_9pdf_group_4row_map(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_fn, PyObject *__pyx_v_mat, PyObject *__pyx_v_ncols) {
   struct __pyx_obj_9pdf_group___pyx_scope_struct_1_row_map *__pyx_cur_scope;
   PyObject *__pyx_v_blk = 0;
   PyObject *__pyx_r = NULL;
@@ -22477,7 +22686,7 @@ static PyObject *__pyx_pf_9pdf_group_2row_map(CYTHON_UNUSED PyObject *__pyx_self
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_9pdf_group___pyx_scope_struct_1_row_map *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 28, __pyx_L1_error)
+    __PYX_ERR(0, 35, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -22488,7 +22697,7 @@ static PyObject *__pyx_pf_9pdf_group_2row_map(CYTHON_UNUSED PyObject *__pyx_self
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_mat);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_mat);
 
-  /* "pdf_group.pyx":30
+  /* "pdf_group.pyx":37
  * def row_map(fn, mat, ncols=None):
  *     """out[lo:hi] = fn(mat[lo:hi]) over row blocks, into a new array (the same per-row results as fn(mat))."""
  *     out = np.empty((mat.shape[0], mat.shape[1] if ncols is None else ncols))             # <<<<<<<<<<<<<<
@@ -22496,21 +22705,21 @@ static PyObject *__pyx_pf_9pdf_group_2row_map(CYTHON_UNUSED PyObject *__pyx_self
  *         out[lo:hi] = fn(mat[lo:hi])
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_empty); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_empty); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_mat, __pyx_mstate_global->__pyx_n_u_shape); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_mat, __pyx_mstate_global->__pyx_n_u_shape); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_6 = (__pyx_v_ncols == Py_None);
   if (__pyx_t_6) {
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_mat, __pyx_mstate_global->__pyx_n_u_shape); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 30, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_mat, __pyx_mstate_global->__pyx_n_u_shape); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 37, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_8 = __Pyx_GetItemInt(__pyx_t_7, 1, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 30, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_GetItemInt(__pyx_t_7, 1, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 37, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_t_3 = __pyx_t_8;
@@ -22520,12 +22729,12 @@ static PyObject *__pyx_pf_9pdf_group_2row_map(CYTHON_UNUSED PyObject *__pyx_self
     __pyx_t_3 = __pyx_v_ncols;
   }
 
-  __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_GIVEREF(__pyx_t_5);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_5) != (0)) __PYX_ERR(0, 30, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_5) != (0)) __PYX_ERR(0, 37, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_3);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_t_3) != (0)) __PYX_ERR(0, 30, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_t_3) != (0)) __PYX_ERR(0, 37, __pyx_L1_error);
   __pyx_t_5 = 0;
   __pyx_t_3 = 0;
   __pyx_t_9 = 1;
@@ -22546,26 +22755,26 @@ static PyObject *__pyx_pf_9pdf_group_2row_map(CYTHON_UNUSED PyObject *__pyx_self
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 30, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_cur_scope->__pyx_v_out = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "pdf_group.pyx":31
+  /* "pdf_group.pyx":38
  *     """out[lo:hi] = fn(mat[lo:hi]) over row blocks, into a new array (the same per-row results as fn(mat))."""
  *     out = np.empty((mat.shape[0], mat.shape[1] if ncols is None else ncols))
  *     def blk(lo, hi):             # <<<<<<<<<<<<<<
  *         out[lo:hi] = fn(mat[lo:hi])
  *     row_blocks(blk, mat.shape[0])
 */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_7row_map_1blk, 0, __pyx_mstate_global->__pyx_n_u_row_map_locals_blk, ((PyObject*)__pyx_cur_scope), __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[1])); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_7row_map_1blk, 0, __pyx_mstate_global->__pyx_n_u_row_map_locals_blk, ((PyObject*)__pyx_cur_scope), __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[1])); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_blk = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "pdf_group.pyx":33
+  /* "pdf_group.pyx":40
  *     def blk(lo, hi):
  *         out[lo:hi] = fn(mat[lo:hi])
  *     row_blocks(blk, mat.shape[0])             # <<<<<<<<<<<<<<
@@ -22573,11 +22782,11 @@ static PyObject *__pyx_pf_9pdf_group_2row_map(CYTHON_UNUSED PyObject *__pyx_self
  * 
 */
   __pyx_t_4 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_row_blocks); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 33, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_row_blocks); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 40, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_mat, __pyx_mstate_global->__pyx_n_u_shape); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 33, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_mat, __pyx_mstate_global->__pyx_n_u_shape); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 40, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_2, 0, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 33, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_2, 0, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 40, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_9 = 1;
@@ -22598,12 +22807,12 @@ static PyObject *__pyx_pf_9pdf_group_2row_map(CYTHON_UNUSED PyObject *__pyx_self
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 40, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "pdf_group.pyx":34
+  /* "pdf_group.pyx":41
  *         out[lo:hi] = fn(mat[lo:hi])
  *     row_blocks(blk, mat.shape[0])
  *     return out             # <<<<<<<<<<<<<<
@@ -22621,7 +22830,7 @@ static PyObject *__pyx_pf_9pdf_group_2row_map(CYTHON_UNUSED PyObject *__pyx_self
   }
   goto __pyx_L0;
 
-  /* "pdf_group.pyx":28
+  /* "pdf_group.pyx":35
  * 
  * 
  * def row_map(fn, mat, ncols=None):             # <<<<<<<<<<<<<<
@@ -22648,7 +22857,7 @@ static PyObject *__pyx_pf_9pdf_group_2row_map(CYTHON_UNUSED PyObject *__pyx_self
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":37
+/* "pdf_group.pyx":44
  * 
  * 
  * def _rows_sum_close(mat, ptol):             # <<<<<<<<<<<<<<
@@ -22657,15 +22866,15 @@ static PyObject *__pyx_pf_9pdf_group_2row_map(CYTHON_UNUSED PyObject *__pyx_self
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9pdf_group_5_rows_sum_close(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9pdf_group_7_rows_sum_close(PyObject *__pyx_self, 
 #if CYTHON_VECTORCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_9pdf_group_5_rows_sum_close = {"_rows_sum_close", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9pdf_group_5_rows_sum_close, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_9pdf_group_5_rows_sum_close(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_9pdf_group_7_rows_sum_close = {"_rows_sum_close", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9pdf_group_7_rows_sum_close, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_9pdf_group_7_rows_sum_close(PyObject *__pyx_self, 
 #if CYTHON_VECTORCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -22696,39 +22905,39 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_mat,&__pyx_mstate_global->__pyx_n_u_ptol,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 37, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 44, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 37, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 44, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 37, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 44, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_rows_sum_close", 0) < (0)) __PYX_ERR(0, 37, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_rows_sum_close", 0) < (0)) __PYX_ERR(0, 44, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_rows_sum_close", 1, 2, 2, i); __PYX_ERR(0, 37, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_rows_sum_close", 1, 2, 2, i); __PYX_ERR(0, 44, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 37, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 44, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 37, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 44, __pyx_L3_error)
     }
     __pyx_v_mat = values[0];
     __pyx_v_ptol = values[1];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_rows_sum_close", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 37, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_rows_sum_close", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 44, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -22739,7 +22948,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_9pdf_group_4_rows_sum_close(__pyx_self, __pyx_v_mat, __pyx_v_ptol);
+  __pyx_r = __pyx_pf_9pdf_group_6_rows_sum_close(__pyx_self, __pyx_v_mat, __pyx_v_ptol);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -22749,7 +22958,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":38
+/* "pdf_group.pyx":45
  * 
  * def _rows_sum_close(mat, ptol):
  *     return all(row_blocks(lambda lo, hi: bool(np.allclose(np.abs(np.sum(mat[lo:hi], axis=1)), 1.0, ptol, ptol)), mat.shape[0]))             # <<<<<<<<<<<<<<
@@ -22797,39 +23006,39 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_lo,&__pyx_mstate_global->__pyx_n_u_hi,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 38, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 45, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 38, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 45, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 38, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 45, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "lambda1", 0) < (0)) __PYX_ERR(0, 38, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "lambda1", 0) < (0)) __PYX_ERR(0, 45, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("lambda1", 1, 2, 2, i); __PYX_ERR(0, 38, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("lambda1", 1, 2, 2, i); __PYX_ERR(0, 45, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 38, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 45, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 38, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 45, __pyx_L3_error)
     }
     __pyx_v_lo = values[0];
     __pyx_v_hi = values[1];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("lambda1", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 38, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("lambda1", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 45, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -22875,25 +23084,25 @@ static PyObject *__pyx_lambda_funcdef_lambda1(PyObject *__pyx_self, PyObject *__
   __pyx_outer_scope = (struct __pyx_obj_9pdf_group___pyx_scope_struct_2__rows_sum_close *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_allclose); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_allclose); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_5 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_abs); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_abs); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_t_8 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
-  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_sum); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_sum); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-  if (unlikely(!__pyx_cur_scope->__pyx_v_mat)) { __Pyx_RaiseClosureNameError("mat"); __PYX_ERR(0, 38, __pyx_L1_error) }
-  __pyx_t_9 = __Pyx_PyObject_GetSlice(__pyx_cur_scope->__pyx_v_mat, 0, 0, &__pyx_v_lo, &__pyx_v_hi, NULL, 0, 0, 1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 38, __pyx_L1_error)
+  if (unlikely(!__pyx_cur_scope->__pyx_v_mat)) { __Pyx_RaiseClosureNameError("mat"); __PYX_ERR(0, 45, __pyx_L1_error) }
+  __pyx_t_9 = __Pyx_PyObject_GetSlice(__pyx_cur_scope->__pyx_v_mat, 0, 0, &__pyx_v_lo, &__pyx_v_hi, NULL, 0, 0, 1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
   __pyx_t_11 = 1;
   #if CYTHON_UNPACK_METHODS
@@ -22911,13 +23120,13 @@ static PyObject *__pyx_lambda_funcdef_lambda1(PyObject *__pyx_self, PyObject *__
     PyObject *__pyx_callargs[3] = {__pyx_t_8, __pyx_t_9, __pyx_mstate_global->__pyx_int_1};
     #if CYTHON_VECTORCALL
     __pyx_t_12 = __pyx_mstate_global->__pyx_tuple[2];
-    if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 38, __pyx_L1_error)
+    if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 45, __pyx_L1_error)
     __Pyx_INCREF(__pyx_t_12);
     #else
     {
       PyObject *__pyx_temp[1] = {__pyx_mstate_global->__pyx_n_u_axis};
       __pyx_t_12 = __Pyx_MakeKwargDict(__pyx_temp, __pyx_callargs+2, 1);
-      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 38, __pyx_L1_error)
+      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 45, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
     }
     #endif
@@ -22926,7 +23135,7 @@ static PyObject *__pyx_lambda_funcdef_lambda1(PyObject *__pyx_self, PyObject *__
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 38, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 45, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
   }
   __pyx_t_11 = 1;
@@ -22947,11 +23156,11 @@ static PyObject *__pyx_lambda_funcdef_lambda1(PyObject *__pyx_self, PyObject *__
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 38, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 45, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
   }
-  if (unlikely(!__pyx_cur_scope->__pyx_v_ptol)) { __Pyx_RaiseClosureNameError("ptol"); __PYX_ERR(0, 38, __pyx_L1_error) }
-  if (unlikely(!__pyx_cur_scope->__pyx_v_ptol)) { __Pyx_RaiseClosureNameError("ptol"); __PYX_ERR(0, 38, __pyx_L1_error) }
+  if (unlikely(!__pyx_cur_scope->__pyx_v_ptol)) { __Pyx_RaiseClosureNameError("ptol"); __PYX_ERR(0, 45, __pyx_L1_error) }
+  if (unlikely(!__pyx_cur_scope->__pyx_v_ptol)) { __Pyx_RaiseClosureNameError("ptol"); __PYX_ERR(0, 45, __pyx_L1_error) }
   __pyx_t_11 = 1;
   #if CYTHON_UNPACK_METHODS
   if (unlikely(PyMethod_Check(__pyx_t_4))) {
@@ -22970,12 +23179,12 @@ static PyObject *__pyx_lambda_funcdef_lambda1(PyObject *__pyx_self, PyObject *__
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
-  __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyBool_FromLong((!(!__pyx_t_13))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong((!(!__pyx_t_13))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
 
   {
@@ -23010,7 +23219,7 @@ static PyObject *__pyx_lambda_funcdef_lambda1(PyObject *__pyx_self, PyObject *__
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":37
+/* "pdf_group.pyx":44
  * 
  * 
  * def _rows_sum_close(mat, ptol):             # <<<<<<<<<<<<<<
@@ -23018,7 +23227,7 @@ static PyObject *__pyx_lambda_funcdef_lambda1(PyObject *__pyx_self, PyObject *__
  * 
 */
 
-static PyObject *__pyx_pf_9pdf_group_4_rows_sum_close(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mat, PyObject *__pyx_v_ptol) {
+static PyObject *__pyx_pf_9pdf_group_6_rows_sum_close(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mat, PyObject *__pyx_v_ptol) {
   struct __pyx_obj_9pdf_group___pyx_scope_struct_2__rows_sum_close *__pyx_cur_scope;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -23039,7 +23248,7 @@ static PyObject *__pyx_pf_9pdf_group_4_rows_sum_close(CYTHON_UNUSED PyObject *__
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_9pdf_group___pyx_scope_struct_2__rows_sum_close *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 37, __pyx_L1_error)
+    __PYX_ERR(0, 44, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -23050,7 +23259,7 @@ static PyObject *__pyx_pf_9pdf_group_4_rows_sum_close(CYTHON_UNUSED PyObject *__
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_ptol);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_ptol);
 
-  /* "pdf_group.pyx":38
+  /* "pdf_group.pyx":45
  * 
  * def _rows_sum_close(mat, ptol):
  *     return all(row_blocks(lambda lo, hi: bool(np.allclose(np.abs(np.sum(mat[lo:hi], axis=1)), 1.0, ptol, ptol)), mat.shape[0]))             # <<<<<<<<<<<<<<
@@ -23059,13 +23268,13 @@ static PyObject *__pyx_pf_9pdf_group_4_rows_sum_close(CYTHON_UNUSED PyObject *__
 */
   __pyx_t_2 = NULL;
   __pyx_t_4 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_row_blocks); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_row_blocks); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_15_rows_sum_close___pyx_lambda_funcdef_lambda1, 0, __pyx_mstate_global->__pyx_n_u_rows_sum_close_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[2])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_15_rows_sum_close___pyx_lambda_funcdef_lambda1, 0, __pyx_mstate_global->__pyx_n_u_rows_sum_close_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[2])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_mat, __pyx_mstate_global->__pyx_n_u_shape); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_mat, __pyx_mstate_global->__pyx_n_u_shape); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_8 = __Pyx_GetItemInt(__pyx_t_7, 0, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_GetItemInt(__pyx_t_7, 0, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __pyx_t_9 = 1;
@@ -23087,7 +23296,7 @@ static PyObject *__pyx_pf_9pdf_group_4_rows_sum_close(CYTHON_UNUSED PyObject *__
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 38, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 45, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
   }
   __pyx_t_9 = 1;
@@ -23096,7 +23305,7 @@ static PyObject *__pyx_pf_9pdf_group_4_rows_sum_close(CYTHON_UNUSED PyObject *__
     __pyx_t_1 = __Pyx_PyObject_FastCall((PyObject*)__pyx_builtin_all, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (__pyx_t_9*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   {
@@ -23110,7 +23319,7 @@ static PyObject *__pyx_pf_9pdf_group_4_rows_sum_close(CYTHON_UNUSED PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pdf_group.pyx":37
+  /* "pdf_group.pyx":44
  * 
  * 
  * def _rows_sum_close(mat, ptol):             # <<<<<<<<<<<<<<
@@ -23137,7 +23346,7 @@ static PyObject *__pyx_pf_9pdf_group_4_rows_sum_close(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":84
+/* "pdf_group.pyx":91
  *         True.  Can be turned off for computational efficiency.
  * """
  *     def __init__(self, binvec, probmat=None, densitymat=None,             # <<<<<<<<<<<<<<
@@ -23189,43 +23398,43 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_binvec,&__pyx_mstate_global->__pyx_n_u_probmat,&__pyx_mstate_global->__pyx_n_u_densitymat,&__pyx_mstate_global->__pyx_n_u_ptol,&__pyx_mstate_global->__pyx_n_u_check_sum,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 84, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 91, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  6:
         values[5] = __Pyx_ArgRef_FASTCALL(__pyx_args, 5);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[5])) __PYX_ERR(0, 84, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[5])) __PYX_ERR(0, 91, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 84, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 91, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 84, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 91, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 84, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 91, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 84, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 91, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 84, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 91, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__init__", 0) < (0)) __PYX_ERR(0, 84, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__init__", 0) < (0)) __PYX_ERR(0, 91, __pyx_L3_error)
       if (!values[2]) values[2] = __Pyx_NewRef(((PyObject *)Py_None));
       if (!values[3]) values[3] = __Pyx_NewRef(((PyObject *)Py_None));
       if (!values[4]) values[4] = __Pyx_NewRef(((PyObject *)((PyObject*)__pyx_mstate_global->__pyx_float_1eneg_6)));
 
-      /* "pdf_group.pyx":85
+      /* "pdf_group.pyx":92
  * """
  *     def __init__(self, binvec, probmat=None, densitymat=None,
  *                 ptol=1e-6, check_sum=True):             # <<<<<<<<<<<<<<
@@ -23234,36 +23443,36 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 */
       if (!values[5]) values[5] = __Pyx_NewRef(((PyObject *)((PyObject*)Py_True)));
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__init__", 0, 2, 6, i); __PYX_ERR(0, 84, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__init__", 0, 2, 6, i); __PYX_ERR(0, 91, __pyx_L3_error) }
       }
     } else {
       switch (__pyx_nargs) {
         case  6:
         values[5] = __Pyx_ArgRef_FASTCALL(__pyx_args, 5);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[5])) __PYX_ERR(0, 84, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[5])) __PYX_ERR(0, 91, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 84, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 91, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 84, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 91, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 84, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 91, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 84, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 91, __pyx_L3_error)
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 84, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 91, __pyx_L3_error)
         break;
         default: goto __pyx_L5_argtuple_error;
       }
 
-      /* "pdf_group.pyx":84
+      /* "pdf_group.pyx":91
  *         True.  Can be turned off for computational efficiency.
  * """
  *     def __init__(self, binvec, probmat=None, densitymat=None,             # <<<<<<<<<<<<<<
@@ -23284,7 +23493,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 0, 2, 6, __pyx_nargs); __PYX_ERR(0, 84, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 0, 2, 6, __pyx_nargs); __PYX_ERR(0, 91, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -23305,7 +23514,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":97
+/* "pdf_group.pyx":104
  *             self.bin_widths = self.binvec[1:] - self.binvec[:-1]
  *             bw = self.bin_widths
  *             self.densitymat = row_map(lambda m: m / bw, self.probmat)             # <<<<<<<<<<<<<<
@@ -23352,32 +23561,32 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_m,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 97, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 104, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 97, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 104, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "lambda2", 0) < (0)) __PYX_ERR(0, 97, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "lambda2", 0) < (0)) __PYX_ERR(0, 104, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 1; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("lambda2", 1, 1, 1, i); __PYX_ERR(0, 97, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("lambda2", 1, 1, 1, i); __PYX_ERR(0, 104, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 97, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 104, __pyx_L3_error)
     }
     __pyx_v_m = values[0];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("lambda2", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 97, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("lambda2", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 104, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -23410,8 +23619,8 @@ static PyObject *__pyx_lambda_funcdef_lambda2(PyObject *__pyx_self, PyObject *__
   __Pyx_RefNannySetupContext("lambda2", 0);
   __pyx_outer_scope = (struct __pyx_obj_9pdf_group___pyx_scope_struct_3___init__ *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
-  if (unlikely(!__pyx_cur_scope->__pyx_v_bw)) { __Pyx_RaiseClosureNameError("bw"); __PYX_ERR(0, 97, __pyx_L1_error) }
-  __pyx_t_1 = __Pyx_PyNumber_Divide(__pyx_v_m, __pyx_cur_scope->__pyx_v_bw); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 97, __pyx_L1_error)
+  if (unlikely(!__pyx_cur_scope->__pyx_v_bw)) { __Pyx_RaiseClosureNameError("bw"); __PYX_ERR(0, 104, __pyx_L1_error) }
+  __pyx_t_1 = __Pyx_PyNumber_Divide(__pyx_v_m, __pyx_cur_scope->__pyx_v_bw); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 104, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   {
     PyObject *__pyx_temp;
@@ -23435,7 +23644,7 @@ static PyObject *__pyx_lambda_funcdef_lambda2(PyObject *__pyx_self, PyObject *__
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":106
+/* "pdf_group.pyx":113
  *             self.bin_widths = self.binvec[1:] - self.binvec[:-1]
  *             bw = self.bin_widths
  *             self.probmat = row_map(lambda m: m * bw, self.densitymat)             # <<<<<<<<<<<<<<
@@ -23482,32 +23691,32 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_m,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 106, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 113, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 106, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 113, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "lambda3", 0) < (0)) __PYX_ERR(0, 106, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "lambda3", 0) < (0)) __PYX_ERR(0, 113, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 1; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("lambda3", 1, 1, 1, i); __PYX_ERR(0, 106, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("lambda3", 1, 1, 1, i); __PYX_ERR(0, 113, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 106, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 113, __pyx_L3_error)
     }
     __pyx_v_m = values[0];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("lambda3", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 106, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("lambda3", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 113, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -23540,8 +23749,8 @@ static PyObject *__pyx_lambda_funcdef_lambda3(PyObject *__pyx_self, PyObject *__
   __Pyx_RefNannySetupContext("lambda3", 0);
   __pyx_outer_scope = (struct __pyx_obj_9pdf_group___pyx_scope_struct_3___init__ *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
-  if (unlikely(!__pyx_cur_scope->__pyx_v_bw)) { __Pyx_RaiseClosureNameError("bw"); __PYX_ERR(0, 106, __pyx_L1_error) }
-  __pyx_t_1 = __Pyx_PyNumber_Multiply_object_object(__pyx_v_m, __pyx_cur_scope->__pyx_v_bw); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 106, __pyx_L1_error)
+  if (unlikely(!__pyx_cur_scope->__pyx_v_bw)) { __Pyx_RaiseClosureNameError("bw"); __PYX_ERR(0, 113, __pyx_L1_error) }
+  __pyx_t_1 = __Pyx_PyNumber_Multiply_object_object(__pyx_v_m, __pyx_cur_scope->__pyx_v_bw); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 113, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   {
     PyObject *__pyx_temp;
@@ -23565,7 +23774,7 @@ static PyObject *__pyx_lambda_funcdef_lambda3(PyObject *__pyx_self, PyObject *__
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":84
+/* "pdf_group.pyx":91
  *         True.  Can be turned off for computational efficiency.
  * """
  *     def __init__(self, binvec, probmat=None, densitymat=None,             # <<<<<<<<<<<<<<
@@ -23594,12 +23803,12 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_9pdf_group___pyx_scope_struct_3___init__ *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 84, __pyx_L1_error)
+    __PYX_ERR(0, 91, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
 
-  /* "pdf_group.pyx":86
+  /* "pdf_group.pyx":93
  *     def __init__(self, binvec, probmat=None, densitymat=None,
  *                 ptol=1e-6, check_sum=True):
  *         self.binvec = np.array(binvec)             # <<<<<<<<<<<<<<
@@ -23607,9 +23816,9 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
  *         if probmat is not None:
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 93, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_array); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_array); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 93, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_5 = 1;
@@ -23629,27 +23838,27 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
     __pyx_t_1 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_4, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 86, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 93, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec, __pyx_t_1) < (0)) __PYX_ERR(0, 86, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec, __pyx_t_1) < (0)) __PYX_ERR(0, 93, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "pdf_group.pyx":87
+  /* "pdf_group.pyx":94
  *                 ptol=1e-6, check_sum=True):
  *         self.binvec = np.array(binvec)
  *         self.num_bins = len(binvec)-1             # <<<<<<<<<<<<<<
  *         if probmat is not None:
  *             self.probmat = probmat
 */
-  __pyx_t_6 = PyObject_Length(__pyx_v_binvec); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 87, __pyx_L1_error)
-  __pyx_t_1 = PyLong_FromSsize_t((__pyx_t_6 - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 87, __pyx_L1_error)
+  __pyx_t_6 = PyObject_Length(__pyx_v_binvec); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 94, __pyx_L1_error)
+  __pyx_t_1 = PyLong_FromSsize_t((__pyx_t_6 - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
 
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_num_bins, __pyx_t_1) < (0)) __PYX_ERR(0, 87, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_num_bins, __pyx_t_1) < (0)) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "pdf_group.pyx":88
+  /* "pdf_group.pyx":95
  *         self.binvec = np.array(binvec)
  *         self.num_bins = len(binvec)-1
  *         if probmat is not None:             # <<<<<<<<<<<<<<
@@ -23660,36 +23869,36 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
   if (__pyx_t_7) {
 
 
-    /* "pdf_group.pyx":89
+    /* "pdf_group.pyx":96
  *         self.num_bins = len(binvec)-1
  *         if probmat is not None:
  *             self.probmat = probmat             # <<<<<<<<<<<<<<
  *             if probmat.shape[1]!=self.num_bins:
  *                 warnings.warn('Number of probabilities does not match number of bins.')
 */
-    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_probmat, __pyx_v_probmat) < (0)) __PYX_ERR(0, 89, __pyx_L1_error)
+    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_probmat, __pyx_v_probmat) < (0)) __PYX_ERR(0, 96, __pyx_L1_error)
 
-    /* "pdf_group.pyx":90
+    /* "pdf_group.pyx":97
  *         if probmat is not None:
  *             self.probmat = probmat
  *             if probmat.shape[1]!=self.num_bins:             # <<<<<<<<<<<<<<
  *                 warnings.warn('Number of probabilities does not match number of bins.')
  *             if check_sum:
 */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_probmat, __pyx_mstate_global->__pyx_n_u_shape); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 90, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_probmat, __pyx_mstate_global->__pyx_n_u_shape); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 97, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_1, 1, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 90, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_1, 1, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 97, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_num_bins); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 90, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_num_bins); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 97, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_7 = __Pyx_PyObject_CompareBoolNe_object_object(__pyx_t_4, __pyx_t_1, Py_NE); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 90, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_CompareBoolNe_object_object(__pyx_t_4, __pyx_t_1, Py_NE); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 97, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (__pyx_t_7) {
 
 
-      /* "pdf_group.pyx":91
+      /* "pdf_group.pyx":98
  *             self.probmat = probmat
  *             if probmat.shape[1]!=self.num_bins:
  *                 warnings.warn('Number of probabilities does not match number of bins.')             # <<<<<<<<<<<<<<
@@ -23697,9 +23906,9 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
  *                 if not _rows_sum_close(self.probmat, ptol):
 */
       __pyx_t_4 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_warnings); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 91, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_warnings); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 98, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_warn); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 91, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_warn); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 98, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_t_5 = 1;
@@ -23719,12 +23928,12 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
         __pyx_t_1 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_3, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 91, __pyx_L1_error)
+        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 98, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "pdf_group.pyx":90
+      /* "pdf_group.pyx":97
  *         if probmat is not None:
  *             self.probmat = probmat
  *             if probmat.shape[1]!=self.num_bins:             # <<<<<<<<<<<<<<
@@ -23733,18 +23942,18 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
 */
     }
 
-    /* "pdf_group.pyx":92
+    /* "pdf_group.pyx":99
  *             if probmat.shape[1]!=self.num_bins:
  *                 warnings.warn('Number of probabilities does not match number of bins.')
  *             if check_sum:             # <<<<<<<<<<<<<<
  *                 if not _rows_sum_close(self.probmat, ptol):
  *                     warnings.warn('The Probabilities do not sum to 1.')
 */
-    __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_v_check_sum); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 92, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_v_check_sum); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 99, __pyx_L1_error)
     if (__pyx_t_7) {
 
 
-      /* "pdf_group.pyx":93
+      /* "pdf_group.pyx":100
  *                 warnings.warn('Number of probabilities does not match number of bins.')
  *             if check_sum:
  *                 if not _rows_sum_close(self.probmat, ptol):             # <<<<<<<<<<<<<<
@@ -23752,9 +23961,9 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
  *             self.bin_widths = self.binvec[1:] - self.binvec[:-1]
 */
       __pyx_t_3 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_rows_sum_close); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 93, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_rows_sum_close); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 100, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_probmat); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 93, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_probmat); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 100, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __pyx_t_5 = 1;
       #if CYTHON_UNPACK_METHODS
@@ -23774,10 +23983,10 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 93, __pyx_L1_error)
+        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 100, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
       }
-      __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 93, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 100, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_t_8 = (!__pyx_t_7);
 
@@ -23785,7 +23994,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
       if (__pyx_t_8) {
 
 
-        /* "pdf_group.pyx":94
+        /* "pdf_group.pyx":101
  *             if check_sum:
  *                 if not _rows_sum_close(self.probmat, ptol):
  *                     warnings.warn('The Probabilities do not sum to 1.')             # <<<<<<<<<<<<<<
@@ -23793,9 +24002,9 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
  *             bw = self.bin_widths
 */
         __pyx_t_4 = NULL;
-        __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_warnings); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 94, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_warnings); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 101, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_warn); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 94, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_warn); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 101, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __pyx_t_5 = 1;
@@ -23815,12 +24024,12 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
           __pyx_t_1 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_3, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 94, __pyx_L1_error)
+          if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 101, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
         }
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-        /* "pdf_group.pyx":93
+        /* "pdf_group.pyx":100
  *                 warnings.warn('Number of probabilities does not match number of bins.')
  *             if check_sum:
  *                 if not _rows_sum_close(self.probmat, ptol):             # <<<<<<<<<<<<<<
@@ -23829,7 +24038,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
 */
       }
 
-      /* "pdf_group.pyx":92
+      /* "pdf_group.pyx":99
  *             if probmat.shape[1]!=self.num_bins:
  *                 warnings.warn('Number of probabilities does not match number of bins.')
  *             if check_sum:             # <<<<<<<<<<<<<<
@@ -23838,44 +24047,44 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
 */
     }
 
-    /* "pdf_group.pyx":95
+    /* "pdf_group.pyx":102
  *                 if not _rows_sum_close(self.probmat, ptol):
  *                     warnings.warn('The Probabilities do not sum to 1.')
  *             self.bin_widths = self.binvec[1:] - self.binvec[:-1]             # <<<<<<<<<<<<<<
  *             bw = self.bin_widths
  *             self.densitymat = row_map(lambda m: m / bw, self.probmat)
 */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 95, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 102, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyObject_GetSlice(__pyx_t_1, 1, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[1], 1, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 95, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetSlice(__pyx_t_1, 1, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[1], 1, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 102, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 95, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 102, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_4 = __Pyx_PyObject_GetSlice(__pyx_t_1, 0, -1L, NULL, NULL, &__pyx_mstate_global->__pyx_slice[2], 0, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 95, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetSlice(__pyx_t_1, 0, -1L, NULL, NULL, &__pyx_mstate_global->__pyx_slice[2], 0, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 102, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyNumber_Subtract_object_object(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 95, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyNumber_Subtract_object_object(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 102, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_bin_widths, __pyx_t_1) < (0)) __PYX_ERR(0, 95, __pyx_L1_error)
+    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_bin_widths, __pyx_t_1) < (0)) __PYX_ERR(0, 102, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "pdf_group.pyx":96
+    /* "pdf_group.pyx":103
  *                     warnings.warn('The Probabilities do not sum to 1.')
  *             self.bin_widths = self.binvec[1:] - self.binvec[:-1]
  *             bw = self.bin_widths             # <<<<<<<<<<<<<<
  *             self.densitymat = row_map(lambda m: m / bw, self.probmat)
  *             if densitymat is not None:
 */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_bin_widths); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 96, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_bin_widths); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 103, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_GIVEREF(__pyx_t_1);
     __pyx_cur_scope->__pyx_v_bw = __pyx_t_1;
     __pyx_t_1 = 0;
 
-    /* "pdf_group.pyx":97
+    /* "pdf_group.pyx":104
  *             self.bin_widths = self.binvec[1:] - self.binvec[:-1]
  *             bw = self.bin_widths
  *             self.densitymat = row_map(lambda m: m / bw, self.probmat)             # <<<<<<<<<<<<<<
@@ -23883,11 +24092,11 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
  *                 warnings.warn('Both probs and densities given, ignoring densities.')
 */
     __pyx_t_4 = NULL;
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_row_map); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 97, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_row_map); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 104, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_8__init_____pyx_lambda_funcdef_lambda2, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup___init___locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[3])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 97, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_8__init_____pyx_lambda_funcdef_lambda2, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup___init___locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[3])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 104, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_probmat); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 97, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_probmat); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 104, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __pyx_t_5 = 1;
     #if CYTHON_UNPACK_METHODS
@@ -23908,13 +24117,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 97, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 104, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     }
-    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_densitymat, __pyx_t_1) < (0)) __PYX_ERR(0, 97, __pyx_L1_error)
+    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_densitymat, __pyx_t_1) < (0)) __PYX_ERR(0, 104, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "pdf_group.pyx":98
+    /* "pdf_group.pyx":105
  *             bw = self.bin_widths
  *             self.densitymat = row_map(lambda m: m / bw, self.probmat)
  *             if densitymat is not None:             # <<<<<<<<<<<<<<
@@ -23925,7 +24134,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
     if (__pyx_t_8) {
 
 
-      /* "pdf_group.pyx":99
+      /* "pdf_group.pyx":106
  *             self.densitymat = row_map(lambda m: m / bw, self.probmat)
  *             if densitymat is not None:
  *                 warnings.warn('Both probs and densities given, ignoring densities.')             # <<<<<<<<<<<<<<
@@ -23933,9 +24142,9 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
  *             if densitymat.shape[1]!=self.num_bins:
 */
       __pyx_t_3 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_warnings); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 99, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_warnings); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 106, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_warn); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 99, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_warn); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 106, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __pyx_t_5 = 1;
@@ -23955,12 +24164,12 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
         __pyx_t_1 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_2, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 99, __pyx_L1_error)
+        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 106, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "pdf_group.pyx":98
+      /* "pdf_group.pyx":105
  *             bw = self.bin_widths
  *             self.densitymat = row_map(lambda m: m / bw, self.probmat)
  *             if densitymat is not None:             # <<<<<<<<<<<<<<
@@ -23969,7 +24178,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
 */
     }
 
-    /* "pdf_group.pyx":88
+    /* "pdf_group.pyx":95
  *         self.binvec = np.array(binvec)
  *         self.num_bins = len(binvec)-1
  *         if probmat is not None:             # <<<<<<<<<<<<<<
@@ -23979,7 +24188,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
     goto __pyx_L3;
   }
 
-  /* "pdf_group.pyx":100
+  /* "pdf_group.pyx":107
  *             if densitymat is not None:
  *                 warnings.warn('Both probs and densities given, ignoring densities.')
  *         elif densitymat is not None:             # <<<<<<<<<<<<<<
@@ -23990,27 +24199,27 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
   if (__pyx_t_8) {
 
 
-    /* "pdf_group.pyx":101
+    /* "pdf_group.pyx":108
  *                 warnings.warn('Both probs and densities given, ignoring densities.')
  *         elif densitymat is not None:
  *             if densitymat.shape[1]!=self.num_bins:             # <<<<<<<<<<<<<<
  *                 warnings.warn('Number of columns of densitymat does not match number of bins.')
  *             self.densitymat = densitymat
 */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_densitymat, __pyx_mstate_global->__pyx_n_u_shape); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 101, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_densitymat, __pyx_mstate_global->__pyx_n_u_shape); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 108, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 1, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 101, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 1, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 108, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_num_bins); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 101, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_num_bins); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 108, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_8 = __Pyx_PyObject_CompareBoolNe_object_object(__pyx_t_2, __pyx_t_1, Py_NE); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 101, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_CompareBoolNe_object_object(__pyx_t_2, __pyx_t_1, Py_NE); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 108, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (__pyx_t_8) {
 
 
-      /* "pdf_group.pyx":102
+      /* "pdf_group.pyx":109
  *         elif densitymat is not None:
  *             if densitymat.shape[1]!=self.num_bins:
  *                 warnings.warn('Number of columns of densitymat does not match number of bins.')             # <<<<<<<<<<<<<<
@@ -24018,9 +24227,9 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
  *             self.bin_widths = self.binvec[1:] - self.binvec[:-1]
 */
       __pyx_t_2 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_warnings); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 102, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_warnings); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 109, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_warn); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 102, __pyx_L1_error)
+      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_warn); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 109, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __pyx_t_5 = 1;
@@ -24040,12 +24249,12 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
         __pyx_t_1 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_9, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 102, __pyx_L1_error)
+        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 109, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "pdf_group.pyx":101
+      /* "pdf_group.pyx":108
  *                 warnings.warn('Both probs and densities given, ignoring densities.')
  *         elif densitymat is not None:
  *             if densitymat.shape[1]!=self.num_bins:             # <<<<<<<<<<<<<<
@@ -24054,53 +24263,53 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
 */
     }
 
-    /* "pdf_group.pyx":103
+    /* "pdf_group.pyx":110
  *             if densitymat.shape[1]!=self.num_bins:
  *                 warnings.warn('Number of columns of densitymat does not match number of bins.')
  *             self.densitymat = densitymat             # <<<<<<<<<<<<<<
  *             self.bin_widths = self.binvec[1:] - self.binvec[:-1]
  *             bw = self.bin_widths
 */
-    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_densitymat, __pyx_v_densitymat) < (0)) __PYX_ERR(0, 103, __pyx_L1_error)
+    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_densitymat, __pyx_v_densitymat) < (0)) __PYX_ERR(0, 110, __pyx_L1_error)
 
-    /* "pdf_group.pyx":104
+    /* "pdf_group.pyx":111
  *                 warnings.warn('Number of columns of densitymat does not match number of bins.')
  *             self.densitymat = densitymat
  *             self.bin_widths = self.binvec[1:] - self.binvec[:-1]             # <<<<<<<<<<<<<<
  *             bw = self.bin_widths
  *             self.probmat = row_map(lambda m: m * bw, self.densitymat)
 */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 104, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 111, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_9 = __Pyx_PyObject_GetSlice(__pyx_t_1, 1, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[1], 1, 0, 1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 104, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetSlice(__pyx_t_1, 1, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[1], 1, 0, 1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 111, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 104, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 111, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_PyObject_GetSlice(__pyx_t_1, 0, -1L, NULL, NULL, &__pyx_mstate_global->__pyx_slice[2], 0, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 104, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetSlice(__pyx_t_1, 0, -1L, NULL, NULL, &__pyx_mstate_global->__pyx_slice[2], 0, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 111, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyNumber_Subtract_object_object(__pyx_t_9, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 104, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyNumber_Subtract_object_object(__pyx_t_9, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 111, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_bin_widths, __pyx_t_1) < (0)) __PYX_ERR(0, 104, __pyx_L1_error)
+    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_bin_widths, __pyx_t_1) < (0)) __PYX_ERR(0, 111, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "pdf_group.pyx":105
+    /* "pdf_group.pyx":112
  *             self.densitymat = densitymat
  *             self.bin_widths = self.binvec[1:] - self.binvec[:-1]
  *             bw = self.bin_widths             # <<<<<<<<<<<<<<
  *             self.probmat = row_map(lambda m: m * bw, self.densitymat)
  *             if check_sum:
 */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_bin_widths); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 105, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_bin_widths); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 112, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_GIVEREF(__pyx_t_1);
     __pyx_cur_scope->__pyx_v_bw = __pyx_t_1;
     __pyx_t_1 = 0;
 
-    /* "pdf_group.pyx":106
+    /* "pdf_group.pyx":113
  *             self.bin_widths = self.binvec[1:] - self.binvec[:-1]
  *             bw = self.bin_widths
  *             self.probmat = row_map(lambda m: m * bw, self.densitymat)             # <<<<<<<<<<<<<<
@@ -24108,11 +24317,11 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
  *                 if not _rows_sum_close(self.probmat, ptol):
 */
     __pyx_t_2 = NULL;
-    __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_row_map); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 106, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_row_map); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 113, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_8__init___1__pyx_lambda_funcdef_lambda3, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup___init___locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[4])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 106, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_8__init___1__pyx_lambda_funcdef_lambda3, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup___init___locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[4])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 113, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_densitymat); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 106, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_densitymat); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 113, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_5 = 1;
     #if CYTHON_UNPACK_METHODS
@@ -24133,24 +24342,24 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 106, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 113, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     }
-    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_probmat, __pyx_t_1) < (0)) __PYX_ERR(0, 106, __pyx_L1_error)
+    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_probmat, __pyx_t_1) < (0)) __PYX_ERR(0, 113, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "pdf_group.pyx":107
+    /* "pdf_group.pyx":114
  *             bw = self.bin_widths
  *             self.probmat = row_map(lambda m: m * bw, self.densitymat)
  *             if check_sum:             # <<<<<<<<<<<<<<
  *                 if not _rows_sum_close(self.probmat, ptol):
  *                     warnings.warn('The Probabilities do not sum to 1.')
 */
-    __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_v_check_sum); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 107, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_v_check_sum); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 114, __pyx_L1_error)
     if (__pyx_t_8) {
 
 
-      /* "pdf_group.pyx":108
+      /* "pdf_group.pyx":115
  *             self.probmat = row_map(lambda m: m * bw, self.densitymat)
  *             if check_sum:
  *                 if not _rows_sum_close(self.probmat, ptol):             # <<<<<<<<<<<<<<
@@ -24158,9 +24367,9 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
  *         self.bin_midpts = (self.binvec[:-1]+self.binvec[1:])/2
 */
       __pyx_t_9 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_rows_sum_close); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 108, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_rows_sum_close); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 115, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_probmat); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 108, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_probmat); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_5 = 1;
       #if CYTHON_UNPACK_METHODS
@@ -24180,10 +24389,10 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
         __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 108, __pyx_L1_error)
+        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 115, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
       }
-      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 108, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 115, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_t_7 = (!__pyx_t_8);
 
@@ -24191,7 +24400,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
       if (__pyx_t_7) {
 
 
-        /* "pdf_group.pyx":109
+        /* "pdf_group.pyx":116
  *             if check_sum:
  *                 if not _rows_sum_close(self.probmat, ptol):
  *                     warnings.warn('The Probabilities do not sum to 1.')             # <<<<<<<<<<<<<<
@@ -24199,9 +24408,9 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
  *         self.support_min, self.support_max = self.binvec[0], self.binvec[-1]
 */
         __pyx_t_4 = NULL;
-        __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_warnings); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 109, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_warnings); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 116, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_warn); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 109, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_warn); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 116, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __pyx_t_5 = 1;
@@ -24221,12 +24430,12 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
           __pyx_t_1 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_9, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-          if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 109, __pyx_L1_error)
+          if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 116, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
         }
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-        /* "pdf_group.pyx":108
+        /* "pdf_group.pyx":115
  *             self.probmat = row_map(lambda m: m * bw, self.densitymat)
  *             if check_sum:
  *                 if not _rows_sum_close(self.probmat, ptol):             # <<<<<<<<<<<<<<
@@ -24235,7 +24444,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
 */
       }
 
-      /* "pdf_group.pyx":107
+      /* "pdf_group.pyx":114
  *             bw = self.bin_widths
  *             self.probmat = row_map(lambda m: m * bw, self.densitymat)
  *             if check_sum:             # <<<<<<<<<<<<<<
@@ -24244,7 +24453,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
 */
     }
 
-    /* "pdf_group.pyx":100
+    /* "pdf_group.pyx":107
  *             if densitymat is not None:
  *                 warnings.warn('Both probs and densities given, ignoring densities.')
  *         elif densitymat is not None:             # <<<<<<<<<<<<<<
@@ -24254,74 +24463,74 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
   }
   __pyx_L3:;
 
-  /* "pdf_group.pyx":110
+  /* "pdf_group.pyx":117
  *                 if not _rows_sum_close(self.probmat, ptol):
  *                     warnings.warn('The Probabilities do not sum to 1.')
  *         self.bin_midpts = (self.binvec[:-1]+self.binvec[1:])/2             # <<<<<<<<<<<<<<
  *         self.support_min, self.support_max = self.binvec[0], self.binvec[-1]
  *         self.pdf_list = None
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 110, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_9 = __Pyx_PyObject_GetSlice(__pyx_t_1, 0, -1L, NULL, NULL, &__pyx_mstate_global->__pyx_slice[2], 0, 1, 1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 110, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyObject_GetSlice(__pyx_t_1, 0, -1L, NULL, NULL, &__pyx_mstate_global->__pyx_slice[2], 0, 1, 1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 117, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 110, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_PyObject_GetSlice(__pyx_t_1, 1, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[1], 1, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 110, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetSlice(__pyx_t_1, 1, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[1], 1, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 117, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyNumber_Add_object_object(__pyx_t_9, __pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 110, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyNumber_Add_object_object(__pyx_t_9, __pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyLong_TrueDivideObjC(__pyx_t_1, __pyx_mstate_global->__pyx_int_2, 2, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 110, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyLong_TrueDivideObjC(__pyx_t_1, __pyx_mstate_global->__pyx_int_2, 2, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 117, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_bin_midpts, __pyx_t_4) < (0)) __PYX_ERR(0, 110, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_bin_midpts, __pyx_t_4) < (0)) __PYX_ERR(0, 117, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "pdf_group.pyx":111
+  /* "pdf_group.pyx":118
  *                     warnings.warn('The Probabilities do not sum to 1.')
  *         self.bin_midpts = (self.binvec[:-1]+self.binvec[1:])/2
  *         self.support_min, self.support_max = self.binvec[0], self.binvec[-1]             # <<<<<<<<<<<<<<
  *         self.pdf_list = None
  *         self.cum_prob_mat = None
 */
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 111, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 118, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_4, 0, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 111, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_4, 0, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 118, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 111, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 118, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_9 = __Pyx_GetItemInt(__pyx_t_4, -1L, long, 1, __Pyx_PyLong_From_long, 1, 1, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 111, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_GetItemInt(__pyx_t_4, -1L, long, 1, __Pyx_PyLong_From_long, 1, 1, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 118, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_support_min, __pyx_t_1) < (0)) __PYX_ERR(0, 111, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_support_min, __pyx_t_1) < (0)) __PYX_ERR(0, 118, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_support_max, __pyx_t_9) < (0)) __PYX_ERR(0, 111, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_support_max, __pyx_t_9) < (0)) __PYX_ERR(0, 118, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-  /* "pdf_group.pyx":112
+  /* "pdf_group.pyx":119
  *         self.bin_midpts = (self.binvec[:-1]+self.binvec[1:])/2
  *         self.support_min, self.support_max = self.binvec[0], self.binvec[-1]
  *         self.pdf_list = None             # <<<<<<<<<<<<<<
  *         self.cum_prob_mat = None
  * 
 */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list, Py_None) < (0)) __PYX_ERR(0, 112, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list, Py_None) < (0)) __PYX_ERR(0, 119, __pyx_L1_error)
 
-  /* "pdf_group.pyx":113
+  /* "pdf_group.pyx":120
  *         self.support_min, self.support_max = self.binvec[0], self.binvec[-1]
  *         self.pdf_list = None
  *         self.cum_prob_mat = None             # <<<<<<<<<<<<<<
  * 
  *     def calculate_cum_prob_mat(self):
 */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_cum_prob_mat, Py_None) < (0)) __PYX_ERR(0, 113, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_cum_prob_mat, Py_None) < (0)) __PYX_ERR(0, 120, __pyx_L1_error)
 
-  /* "pdf_group.pyx":84
+  /* "pdf_group.pyx":91
  *         True.  Can be turned off for computational efficiency.
  * """
  *     def __init__(self, binvec, probmat=None, densitymat=None,             # <<<<<<<<<<<<<<
@@ -24347,7 +24556,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup___init__(CYTHON_UNUSED PyObject *
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":115
+/* "pdf_group.pyx":122
  *         self.cum_prob_mat = None
  * 
  *     def calculate_cum_prob_mat(self):             # <<<<<<<<<<<<<<
@@ -24394,32 +24603,32 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 115, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 122, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 115, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 122, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "calculate_cum_prob_mat", 0) < (0)) __PYX_ERR(0, 115, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "calculate_cum_prob_mat", 0) < (0)) __PYX_ERR(0, 122, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 1; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("calculate_cum_prob_mat", 1, 1, 1, i); __PYX_ERR(0, 115, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("calculate_cum_prob_mat", 1, 1, 1, i); __PYX_ERR(0, 122, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 115, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 122, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("calculate_cum_prob_mat", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 115, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("calculate_cum_prob_mat", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 122, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -24460,25 +24669,25 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_2calculate_cum_prob_mat(CYTHON_UN
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("calculate_cum_prob_mat", 0);
 
-  /* "pdf_group.pyx":116
+  /* "pdf_group.pyx":123
  * 
  *     def calculate_cum_prob_mat(self):
  *         nrows = self.probmat.shape[0]             # <<<<<<<<<<<<<<
  *         self.cum_prob_mat = np.cumsum(np.hstack((np.zeros(nrows).reshape(-1,1),
  *                                     self.probmat)), axis=1)
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_probmat); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 116, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_probmat); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_shape); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 116, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_shape); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 0, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 116, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 0, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_nrows = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "pdf_group.pyx":117
+  /* "pdf_group.pyx":124
  *     def calculate_cum_prob_mat(self):
  *         nrows = self.probmat.shape[0]
  *         self.cum_prob_mat = np.cumsum(np.hstack((np.zeros(nrows).reshape(-1,1),             # <<<<<<<<<<<<<<
@@ -24486,21 +24695,21 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_2calculate_cum_prob_mat(CYTHON_UN
  * 
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_cumsum); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 117, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_cumsum); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_5 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 117, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_hstack); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 117, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_hstack); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_t_8 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 117, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
-  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_zeros); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 117, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_zeros); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
   __pyx_t_11 = 1;
@@ -24520,39 +24729,39 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_2calculate_cum_prob_mat(CYTHON_UN
     __pyx_t_6 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_10, __pyx_callargs+__pyx_t_11, (2-__pyx_t_11) | (__pyx_t_11*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 117, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 124, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
   }
-  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_reshape); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 117, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_reshape); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_mstate_global->__pyx_tuple[3], NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 117, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_mstate_global->__pyx_tuple[3], NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-  /* "pdf_group.pyx":118
+  /* "pdf_group.pyx":125
  *         nrows = self.probmat.shape[0]
  *         self.cum_prob_mat = np.cumsum(np.hstack((np.zeros(nrows).reshape(-1,1),
  *                                     self.probmat)), axis=1)             # <<<<<<<<<<<<<<
  * 
  *     def make_pdf_list(self, check=False):
 */
-  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_probmat); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_probmat); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 125, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
 
-  /* "pdf_group.pyx":117
+  /* "pdf_group.pyx":124
  *     def calculate_cum_prob_mat(self):
  *         nrows = self.probmat.shape[0]
  *         self.cum_prob_mat = np.cumsum(np.hstack((np.zeros(nrows).reshape(-1,1),             # <<<<<<<<<<<<<<
  *                                     self.probmat)), axis=1)
  * 
 */
-  __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 117, __pyx_L1_error)
+  __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_GIVEREF(__pyx_t_6);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6) != (0)) __PYX_ERR(0, 117, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6) != (0)) __PYX_ERR(0, 124, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_10);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_t_10) != (0)) __PYX_ERR(0, 117, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_t_10) != (0)) __PYX_ERR(0, 124, __pyx_L1_error);
   __pyx_t_6 = 0;
   __pyx_t_10 = 0;
   __pyx_t_11 = 1;
@@ -24573,7 +24782,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_2calculate_cum_prob_mat(CYTHON_UN
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 124, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
   }
   __pyx_t_11 = 1;
@@ -24592,13 +24801,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_2calculate_cum_prob_mat(CYTHON_UN
     PyObject *__pyx_callargs[3] = {__pyx_t_2, __pyx_t_3, __pyx_mstate_global->__pyx_int_1};
     #if CYTHON_VECTORCALL
     __pyx_t_7 = __pyx_mstate_global->__pyx_tuple[2];
-    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 117, __pyx_L1_error)
+    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 124, __pyx_L1_error)
     __Pyx_INCREF(__pyx_t_7);
     #else
     {
       PyObject *__pyx_temp[1] = {__pyx_mstate_global->__pyx_n_u_axis};
       __pyx_t_7 = __Pyx_MakeKwargDict(__pyx_temp, __pyx_callargs+2, 1);
-      if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 117, __pyx_L1_error)
+      if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 124, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
     }
     #endif
@@ -24607,13 +24816,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_2calculate_cum_prob_mat(CYTHON_UN
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 124, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_cum_prob_mat, __pyx_t_1) < (0)) __PYX_ERR(0, 117, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_cum_prob_mat, __pyx_t_1) < (0)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "pdf_group.pyx":115
+  /* "pdf_group.pyx":122
  *         self.cum_prob_mat = None
  * 
  *     def calculate_cum_prob_mat(self):             # <<<<<<<<<<<<<<
@@ -24644,7 +24853,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_2calculate_cum_prob_mat(CYTHON_UN
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":120
+/* "pdf_group.pyx":127
  *                                     self.probmat)), axis=1)
  * 
  *     def make_pdf_list(self, check=False):             # <<<<<<<<<<<<<<
@@ -24692,35 +24901,35 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_check,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 120, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 127, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 120, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 127, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 120, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 127, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "make_pdf_list", 0) < (0)) __PYX_ERR(0, 120, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "make_pdf_list", 0) < (0)) __PYX_ERR(0, 127, __pyx_L3_error)
       if (!values[1]) values[1] = __Pyx_NewRef(((PyObject *)((PyObject*)Py_False)));
       for (Py_ssize_t i = __pyx_nargs; i < 1; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("make_pdf_list", 0, 1, 2, i); __PYX_ERR(0, 120, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("make_pdf_list", 0, 1, 2, i); __PYX_ERR(0, 127, __pyx_L3_error) }
       }
     } else {
       switch (__pyx_nargs) {
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 120, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 127, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 120, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 127, __pyx_L3_error)
         break;
         default: goto __pyx_L5_argtuple_error;
       }
@@ -24731,7 +24940,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("make_pdf_list", 0, 1, 2, __pyx_nargs); __PYX_ERR(0, 120, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("make_pdf_list", 0, 1, 2, __pyx_nargs); __PYX_ERR(0, 127, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -24772,7 +24981,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_4make_pdf_list(CYTHON_UNUSED PyOb
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("make_pdf_list", 0);
 
-  /* "pdf_group.pyx":121
+  /* "pdf_group.pyx":128
  * 
  *     def make_pdf_list(self, check=False):
  *         self.pdf_list = [PdfDiscrete(self.binvec, self.probmat[i,:], check_sum=False)             # <<<<<<<<<<<<<<
@@ -24780,10 +24989,10 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_4make_pdf_list(CYTHON_UNUSED PyOb
  * 
 */
   { /* enter inner scope */
-    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 121, __pyx_L5_error)
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 128, __pyx_L5_error)
     __Pyx_GOTREF(__pyx_t_1);
 
-    /* "pdf_group.pyx":122
+    /* "pdf_group.pyx":129
  *     def make_pdf_list(self, check=False):
  *         self.pdf_list = [PdfDiscrete(self.binvec, self.probmat[i,:], check_sum=False)
  *                          for i in range(self.probmat.shape[0])]             # <<<<<<<<<<<<<<
@@ -24791,12 +25000,12 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_4make_pdf_list(CYTHON_UNUSED PyOb
  *     def __getitem__(self, arg):
 */
     __pyx_t_3 = NULL;
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_probmat); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 122, __pyx_L5_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_probmat); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 129, __pyx_L5_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_shape); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 122, __pyx_L5_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_shape); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 129, __pyx_L5_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_5, 0, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 122, __pyx_L5_error)
+    __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_5, 0, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 129, __pyx_L5_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_6 = 1;
@@ -24805,12 +25014,12 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_4make_pdf_list(CYTHON_UNUSED PyOb
       __pyx_t_2 = __Pyx_PyObject_FastCall((PyObject*)(&PyRange_Type), __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 122, __pyx_L5_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 129, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_2);
     }
-    __pyx_t_4 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 122, __pyx_L5_error)
+    __pyx_t_4 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 129, __pyx_L5_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_4); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 122, __pyx_L5_error)
+    __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_4); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 129, __pyx_L5_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     for (;;) {
       {
@@ -24818,7 +25027,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_4make_pdf_list(CYTHON_UNUSED PyOb
         if (unlikely(!__pyx_t_2)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
-            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 122, __pyx_L5_error)
+            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 129, __pyx_L5_error)
             PyErr_Clear();
           }
           break;
@@ -24828,7 +25037,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_4make_pdf_list(CYTHON_UNUSED PyOb
       __Pyx_XDECREF_SET(__pyx_7genexpr__pyx_v_i, __pyx_t_2);
       __pyx_t_2 = 0;
 
-      /* "pdf_group.pyx":121
+      /* "pdf_group.pyx":128
  * 
  *     def make_pdf_list(self, check=False):
  *         self.pdf_list = [PdfDiscrete(self.binvec, self.probmat[i,:], check_sum=False)             # <<<<<<<<<<<<<<
@@ -24836,21 +25045,21 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_4make_pdf_list(CYTHON_UNUSED PyOb
  * 
 */
       __pyx_t_3 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_PdfDiscrete); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 121, __pyx_L5_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_PdfDiscrete); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 128, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 121, __pyx_L5_error)
+      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 128, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_probmat); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 121, __pyx_L5_error)
+      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_probmat); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 128, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_9);
-      __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 121, __pyx_L5_error)
+      __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 128, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_INCREF(__pyx_7genexpr__pyx_v_i);
       __Pyx_GIVEREF(__pyx_7genexpr__pyx_v_i);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_7genexpr__pyx_v_i) != (0)) __PYX_ERR(0, 121, __pyx_L5_error);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_7genexpr__pyx_v_i) != (0)) __PYX_ERR(0, 128, __pyx_L5_error);
       __Pyx_INCREF(__pyx_mstate_global->__pyx_slice[0]);
       __Pyx_GIVEREF(__pyx_mstate_global->__pyx_slice[0]);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_mstate_global->__pyx_slice[0]) != (0)) __PYX_ERR(0, 121, __pyx_L5_error);
-      __pyx_t_11 = __Pyx_PyObject_GetItem(__pyx_t_9, __pyx_t_10); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 121, __pyx_L5_error)
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_mstate_global->__pyx_slice[0]) != (0)) __PYX_ERR(0, 128, __pyx_L5_error);
+      __pyx_t_11 = __Pyx_PyObject_GetItem(__pyx_t_9, __pyx_t_10); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 128, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_11);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -24870,13 +25079,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_4make_pdf_list(CYTHON_UNUSED PyOb
         PyObject *__pyx_callargs[4] = {__pyx_t_3, __pyx_t_8, __pyx_t_11, Py_False};
         #if CYTHON_VECTORCALL
         __pyx_t_10 = __pyx_mstate_global->__pyx_tuple[4];
-        if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 121, __pyx_L5_error)
+        if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 128, __pyx_L5_error)
         __Pyx_INCREF(__pyx_t_10);
         #else
         {
           PyObject *__pyx_temp[1] = {__pyx_mstate_global->__pyx_n_u_check_sum};
           __pyx_t_10 = __Pyx_MakeKwargDict(__pyx_temp, __pyx_callargs+3, 1);
-          if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 121, __pyx_L5_error)
+          if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 128, __pyx_L5_error)
           __Pyx_GOTREF(__pyx_t_10);
         }
         #endif
@@ -24886,14 +25095,14 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_4make_pdf_list(CYTHON_UNUSED PyOb
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 121, __pyx_L5_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 128, __pyx_L5_error)
         __Pyx_GOTREF(__pyx_t_2);
       }
       __Pyx_GIVEREF(__pyx_t_2);
-      if (unlikely(__Pyx_ListComp_AppendAndDecref(__pyx_t_1, __pyx_t_2))) __PYX_ERR(0, 121, __pyx_L5_error)
+      if (unlikely(__Pyx_ListComp_AppendAndDecref(__pyx_t_1, __pyx_t_2))) __PYX_ERR(0, 128, __pyx_L5_error)
       __pyx_t_2 = 0;
 
-      /* "pdf_group.pyx":122
+      /* "pdf_group.pyx":129
  *     def make_pdf_list(self, check=False):
  *         self.pdf_list = [PdfDiscrete(self.binvec, self.probmat[i,:], check_sum=False)
  *                          for i in range(self.probmat.shape[0])]             # <<<<<<<<<<<<<<
@@ -24910,17 +25119,17 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_4make_pdf_list(CYTHON_UNUSED PyOb
     __pyx_L9_exit_scope:;
   } /* exit inner scope */
 
-  /* "pdf_group.pyx":121
+  /* "pdf_group.pyx":128
  * 
  *     def make_pdf_list(self, check=False):
  *         self.pdf_list = [PdfDiscrete(self.binvec, self.probmat[i,:], check_sum=False)             # <<<<<<<<<<<<<<
  *                          for i in range(self.probmat.shape[0])]
  * 
 */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list, __pyx_t_1) < (0)) __PYX_ERR(0, 121, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list, __pyx_t_1) < (0)) __PYX_ERR(0, 128, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "pdf_group.pyx":120
+  /* "pdf_group.pyx":127
  *                                     self.probmat)), axis=1)
  * 
  *     def make_pdf_list(self, check=False):             # <<<<<<<<<<<<<<
@@ -24950,7 +25159,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_4make_pdf_list(CYTHON_UNUSED PyOb
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":124
+/* "pdf_group.pyx":131
  *                          for i in range(self.probmat.shape[0])]
  * 
  *     def __getitem__(self, arg):             # <<<<<<<<<<<<<<
@@ -24998,39 +25207,39 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_arg,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 124, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 131, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 124, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 131, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 124, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 131, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__getitem__", 0) < (0)) __PYX_ERR(0, 124, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__getitem__", 0) < (0)) __PYX_ERR(0, 131, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__getitem__", 1, 2, 2, i); __PYX_ERR(0, 124, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__getitem__", 1, 2, 2, i); __PYX_ERR(0, 131, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 124, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 131, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 124, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 131, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_arg = values[1];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__getitem__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 124, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__getitem__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 131, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -25068,21 +25277,21 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_6__getitem__(CYTHON_UNUSED PyObje
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__getitem__", 0);
 
-  /* "pdf_group.pyx":125
+  /* "pdf_group.pyx":132
  * 
  *     def __getitem__(self, arg):
  *         if self.pdf_list is None:             # <<<<<<<<<<<<<<
  *             return(PdfDiscrete(self.binvec, self.probmat[arg,:]))
  *         else:
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 125, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 132, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = (__pyx_t_1 == Py_None);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
 
-    /* "pdf_group.pyx":126
+    /* "pdf_group.pyx":133
  *     def __getitem__(self, arg):
  *         if self.pdf_list is None:
  *             return(PdfDiscrete(self.binvec, self.probmat[arg,:]))             # <<<<<<<<<<<<<<
@@ -25090,21 +25299,21 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_6__getitem__(CYTHON_UNUSED PyObje
  *             return(self.pdf_list[arg])
 */
     __pyx_t_3 = NULL;
-    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_PdfDiscrete); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 126, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_PdfDiscrete); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 133, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 126, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 133, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_probmat); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 126, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_probmat); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 133, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 126, __pyx_L1_error)
+    __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 133, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_INCREF(__pyx_v_arg);
     __Pyx_GIVEREF(__pyx_v_arg);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_v_arg) != (0)) __PYX_ERR(0, 126, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_v_arg) != (0)) __PYX_ERR(0, 133, __pyx_L1_error);
     __Pyx_INCREF(__pyx_mstate_global->__pyx_slice[0]);
     __Pyx_GIVEREF(__pyx_mstate_global->__pyx_slice[0]);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_mstate_global->__pyx_slice[0]) != (0)) __PYX_ERR(0, 126, __pyx_L1_error);
-    __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_t_6, __pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 126, __pyx_L1_error)
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_mstate_global->__pyx_slice[0]) != (0)) __PYX_ERR(0, 133, __pyx_L1_error);
+    __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_t_6, __pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 133, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
@@ -25127,7 +25336,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_6__getitem__(CYTHON_UNUSED PyObje
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 126, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 133, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     }
     {
@@ -25141,7 +25350,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_6__getitem__(CYTHON_UNUSED PyObje
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "pdf_group.pyx":125
+    /* "pdf_group.pyx":132
  * 
  *     def __getitem__(self, arg):
  *         if self.pdf_list is None:             # <<<<<<<<<<<<<<
@@ -25150,7 +25359,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_6__getitem__(CYTHON_UNUSED PyObje
 */
   }
 
-  /* "pdf_group.pyx":128
+  /* "pdf_group.pyx":135
  *             return(PdfDiscrete(self.binvec, self.probmat[arg,:]))
  *         else:
  *             return(self.pdf_list[arg])             # <<<<<<<<<<<<<<
@@ -25158,9 +25367,9 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_6__getitem__(CYTHON_UNUSED PyObje
  *     def log_loss(self, y_test, eps=1e-16):
 */
   /*else*/ {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 128, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 135, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_v_arg); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 128, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_v_arg); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 135, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     {
@@ -25175,7 +25384,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_6__getitem__(CYTHON_UNUSED PyObje
     goto __pyx_L0;
   }
 
-  /* "pdf_group.pyx":124
+  /* "pdf_group.pyx":131
  *                          for i in range(self.probmat.shape[0])]
  * 
  *     def __getitem__(self, arg):             # <<<<<<<<<<<<<<
@@ -25200,7 +25409,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_6__getitem__(CYTHON_UNUSED PyObje
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":130
+/* "pdf_group.pyx":137
  *             return(self.pdf_list[arg])
  * 
  *     def log_loss(self, y_test, eps=1e-16):             # <<<<<<<<<<<<<<
@@ -25250,41 +25459,41 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_y_test,&__pyx_mstate_global->__pyx_n_u_eps,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 130, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 137, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 130, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 137, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 130, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 137, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 130, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 137, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "log_loss", 0) < (0)) __PYX_ERR(0, 130, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "log_loss", 0) < (0)) __PYX_ERR(0, 137, __pyx_L3_error)
       if (!values[2]) values[2] = __Pyx_NewRef(((PyObject *)((PyObject*)__pyx_mstate_global->__pyx_float_1eneg_16)));
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("log_loss", 0, 2, 3, i); __PYX_ERR(0, 130, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("log_loss", 0, 2, 3, i); __PYX_ERR(0, 137, __pyx_L3_error) }
       }
     } else {
       switch (__pyx_nargs) {
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 130, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 137, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 130, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 137, __pyx_L3_error)
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 130, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 137, __pyx_L3_error)
         break;
         default: goto __pyx_L5_argtuple_error;
       }
@@ -25296,7 +25505,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("log_loss", 0, 2, 3, __pyx_nargs); __PYX_ERR(0, 130, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("log_loss", 0, 2, 3, __pyx_nargs); __PYX_ERR(0, 137, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -25343,18 +25552,18 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_8log_loss(CYTHON_UNUSED PyObject 
   __Pyx_RefNannySetupContext("log_loss", 0);
   __Pyx_INCREF(__pyx_v_y_test);
 
-  /* "pdf_group.pyx":132
+  /* "pdf_group.pyx":139
  *     def log_loss(self, y_test, eps=1e-16):
  *         """Computes the log-loss (Negative log likelihood) based on prob density."""
  *         if type(y_test)!= np.ndarray:             # <<<<<<<<<<<<<<
  *             y_test = np.array(y_test)
  *         if self.densitymat.shape[0]!=len(y_test):
 */
-  __pyx_t_1 = __Pyx_PyObject_RichCompareBool(((PyObject *)Py_TYPE(__pyx_v_y_test)), ((PyObject *)__pyx_mstate_global->__pyx_ptype_5numpy_ndarray), Py_NE); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 132, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_RichCompareBool(((PyObject *)Py_TYPE(__pyx_v_y_test)), ((PyObject *)__pyx_mstate_global->__pyx_ptype_5numpy_ndarray), Py_NE); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 139, __pyx_L1_error)
   if (__pyx_t_1) {
 
 
-    /* "pdf_group.pyx":133
+    /* "pdf_group.pyx":140
  *         """Computes the log-loss (Negative log likelihood) based on prob density."""
  *         if type(y_test)!= np.ndarray:
  *             y_test = np.array(y_test)             # <<<<<<<<<<<<<<
@@ -25362,9 +25571,9 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_8log_loss(CYTHON_UNUSED PyObject 
  *             warnings.warn("Length of y_test != number of pdfs")
 */
     __pyx_t_3 = NULL;
-    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 133, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 140, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_array); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 133, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_array); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 140, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_t_6 = 1;
@@ -25384,13 +25593,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_8log_loss(CYTHON_UNUSED PyObject 
       __pyx_t_2 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_5, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 133, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 140, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
     }
     __Pyx_DECREF_SET(__pyx_v_y_test, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "pdf_group.pyx":132
+    /* "pdf_group.pyx":139
  *     def log_loss(self, y_test, eps=1e-16):
  *         """Computes the log-loss (Negative log likelihood) based on prob density."""
  *         if type(y_test)!= np.ndarray:             # <<<<<<<<<<<<<<
@@ -25399,32 +25608,32 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_8log_loss(CYTHON_UNUSED PyObject 
 */
   }
 
-  /* "pdf_group.pyx":134
+  /* "pdf_group.pyx":141
  *         if type(y_test)!= np.ndarray:
  *             y_test = np.array(y_test)
  *         if self.densitymat.shape[0]!=len(y_test):             # <<<<<<<<<<<<<<
  *             warnings.warn("Length of y_test != number of pdfs")
  *         if self.pdf_list is None:
 */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_densitymat); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_densitymat); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 141, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_shape); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 134, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_shape); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 141, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_5, 0, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_5, 0, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 141, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_7 = PyObject_Length(__pyx_v_y_test); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 134, __pyx_L1_error)
-  __pyx_t_5 = PyLong_FromSsize_t(__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 134, __pyx_L1_error)
+  __pyx_t_7 = PyObject_Length(__pyx_v_y_test); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 141, __pyx_L1_error)
+  __pyx_t_5 = PyLong_FromSsize_t(__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 141, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
 
-  __pyx_t_1 = __Pyx_PyObject_CompareBoolNe_object_int(__pyx_t_2, __pyx_t_5, Py_NE); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 134, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CompareBoolNe_object_int(__pyx_t_2, __pyx_t_5, Py_NE); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 141, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   if (__pyx_t_1) {
 
 
-    /* "pdf_group.pyx":135
+    /* "pdf_group.pyx":142
  *             y_test = np.array(y_test)
  *         if self.densitymat.shape[0]!=len(y_test):
  *             warnings.warn("Length of y_test != number of pdfs")             # <<<<<<<<<<<<<<
@@ -25432,9 +25641,9 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_8log_loss(CYTHON_UNUSED PyObject 
  *             self.make_pdf_list()
 */
     __pyx_t_2 = NULL;
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_warnings); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 135, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_warnings); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 142, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_warn); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 135, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_warn); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 142, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_6 = 1;
@@ -25454,12 +25663,12 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_8log_loss(CYTHON_UNUSED PyObject 
       __pyx_t_5 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_4, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 135, __pyx_L1_error)
+      if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 142, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "pdf_group.pyx":134
+    /* "pdf_group.pyx":141
  *         if type(y_test)!= np.ndarray:
  *             y_test = np.array(y_test)
  *         if self.densitymat.shape[0]!=len(y_test):             # <<<<<<<<<<<<<<
@@ -25468,21 +25677,21 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_8log_loss(CYTHON_UNUSED PyObject 
 */
   }
 
-  /* "pdf_group.pyx":136
+  /* "pdf_group.pyx":143
  *         if self.densitymat.shape[0]!=len(y_test):
  *             warnings.warn("Length of y_test != number of pdfs")
  *         if self.pdf_list is None:             # <<<<<<<<<<<<<<
  *             self.make_pdf_list()
  *         density_vals = np.array(
 */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 136, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 143, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_1 = (__pyx_t_5 == Py_None);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   if (__pyx_t_1) {
 
 
-    /* "pdf_group.pyx":137
+    /* "pdf_group.pyx":144
  *             warnings.warn("Length of y_test != number of pdfs")
  *         if self.pdf_list is None:
  *             self.make_pdf_list()             # <<<<<<<<<<<<<<
@@ -25496,12 +25705,12 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_8log_loss(CYTHON_UNUSED PyObject 
       PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
       __pyx_t_5 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_make_pdf_list, __pyx_callargs+__pyx_t_6, (1-__pyx_t_6) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 137, __pyx_L1_error)
+      if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 144, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "pdf_group.pyx":136
+    /* "pdf_group.pyx":143
  *         if self.densitymat.shape[0]!=len(y_test):
  *             warnings.warn("Length of y_test != number of pdfs")
  *         if self.pdf_list is None:             # <<<<<<<<<<<<<<
@@ -25510,7 +25719,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_8log_loss(CYTHON_UNUSED PyObject 
 */
   }
 
-  /* "pdf_group.pyx":138
+  /* "pdf_group.pyx":145
  *         if self.pdf_list is None:
  *             self.make_pdf_list()
  *         density_vals = np.array(             # <<<<<<<<<<<<<<
@@ -25518,34 +25727,34 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_8log_loss(CYTHON_UNUSED PyObject 
  *         density_vals = np.maximum(density_vals, eps)
 */
   __pyx_t_4 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 138, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 145, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 138, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 145, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   { /* enter inner scope */
 
-    /* "pdf_group.pyx":139
+    /* "pdf_group.pyx":146
  *             self.make_pdf_list()
  *         density_vals = np.array(
  *             [pdf.density([y_test[i]]) for i,pdf in enumerate(self.pdf_list)])             # <<<<<<<<<<<<<<
  *         density_vals = np.maximum(density_vals, eps)
  *         return(-np.mean(np.log(density_vals)))
 */
-    __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 139, __pyx_L8_error)
+    __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 146, __pyx_L8_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_INCREF(__pyx_mstate_global->__pyx_int_0);
     __pyx_t_8 = __pyx_mstate_global->__pyx_int_0;
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 139, __pyx_L8_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 146, __pyx_L8_error)
     __Pyx_GOTREF(__pyx_t_9);
     if (likely(PyList_CheckExact(__pyx_t_9)) || PyTuple_CheckExact(__pyx_t_9)) {
       __pyx_t_10 = __pyx_t_9; __Pyx_INCREF(__pyx_t_10);
       __pyx_t_7 = 0;
       __pyx_t_11 = NULL;
     } else {
-      __pyx_t_7 = -1; __pyx_t_10 = PyObject_GetIter(__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 139, __pyx_L8_error)
+      __pyx_t_7 = -1; __pyx_t_10 = PyObject_GetIter(__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 146, __pyx_L8_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_11 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_10); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 139, __pyx_L8_error)
+      __pyx_t_11 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_10); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 146, __pyx_L8_error)
     }
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     for (;;) {
@@ -25554,7 +25763,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_8log_loss(CYTHON_UNUSED PyObject 
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_10);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 139, __pyx_L8_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 146, __pyx_L8_error)
             #endif
             if (__pyx_t_7 >= __pyx_temp) break;
           }
@@ -25564,7 +25773,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_8log_loss(CYTHON_UNUSED PyObject 
           {
             Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_10);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 139, __pyx_L8_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 146, __pyx_L8_error)
             #endif
             if (__pyx_t_7 >= __pyx_temp) break;
           }
@@ -25575,13 +25784,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_8log_loss(CYTHON_UNUSED PyObject 
           #endif
           ++__pyx_t_7;
         }
-        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 139, __pyx_L8_error)
+        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 146, __pyx_L8_error)
       } else {
         __pyx_t_9 = __pyx_t_11(__pyx_t_10);
         if (unlikely(!__pyx_t_9)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
-            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 139, __pyx_L8_error)
+            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 146, __pyx_L8_error)
             PyErr_Clear();
           }
           break;
@@ -25592,19 +25801,19 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_8log_loss(CYTHON_UNUSED PyObject 
       __pyx_t_9 = 0;
       __Pyx_INCREF(__pyx_t_8);
       __Pyx_XDECREF_SET(__pyx_8genexpr1__pyx_v_i, __pyx_t_8);
-      __pyx_t_9 = __Pyx_PyLong_AddObjC(__pyx_t_8, __pyx_mstate_global->__pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 139, __pyx_L8_error)
+      __pyx_t_9 = __Pyx_PyLong_AddObjC(__pyx_t_8, __pyx_mstate_global->__pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 146, __pyx_L8_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF(__pyx_t_8);
       __pyx_t_8 = __pyx_t_9;
       __pyx_t_9 = 0;
       __pyx_t_12 = __pyx_8genexpr1__pyx_v_pdf;
       __Pyx_INCREF(__pyx_t_12);
-      __pyx_t_13 = __Pyx_PyObject_GetItem(__pyx_v_y_test, __pyx_8genexpr1__pyx_v_i); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 139, __pyx_L8_error)
+      __pyx_t_13 = __Pyx_PyObject_GetItem(__pyx_v_y_test, __pyx_8genexpr1__pyx_v_i); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 146, __pyx_L8_error)
       __Pyx_GOTREF(__pyx_t_13);
-      __pyx_t_14 = PyList_New(1); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 139, __pyx_L8_error)
+      __pyx_t_14 = PyList_New(1); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 146, __pyx_L8_error)
       __Pyx_GOTREF(__pyx_t_14);
       __Pyx_GIVEREF(__pyx_t_13);
-      if (__Pyx_PyList_SET_ITEM(__pyx_t_14, 0, __pyx_t_13) != (0)) __PYX_ERR(0, 139, __pyx_L8_error);
+      if (__Pyx_PyList_SET_ITEM(__pyx_t_14, 0, __pyx_t_13) != (0)) __PYX_ERR(0, 146, __pyx_L8_error);
       __pyx_t_13 = 0;
       __pyx_t_6 = 0;
       {
@@ -25612,11 +25821,11 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_8log_loss(CYTHON_UNUSED PyObject 
         __pyx_t_9 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_density, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
         __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 139, __pyx_L8_error)
+        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 146, __pyx_L8_error)
         __Pyx_GOTREF(__pyx_t_9);
       }
       __Pyx_GIVEREF(__pyx_t_9);
-      if (unlikely(__Pyx_ListComp_AppendAndDecref(__pyx_t_2, __pyx_t_9))) __PYX_ERR(0, 139, __pyx_L8_error)
+      if (unlikely(__Pyx_ListComp_AppendAndDecref(__pyx_t_2, __pyx_t_9))) __PYX_ERR(0, 146, __pyx_L8_error)
       __pyx_t_9 = 0;
     }
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -25648,13 +25857,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_8log_loss(CYTHON_UNUSED PyObject 
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 138, __pyx_L1_error)
+    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 145, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
   }
   __pyx_v_density_vals = __pyx_t_5;
   __pyx_t_5 = 0;
 
-  /* "pdf_group.pyx":140
+  /* "pdf_group.pyx":147
  *         density_vals = np.array(
  *             [pdf.density([y_test[i]]) for i,pdf in enumerate(self.pdf_list)])
  *         density_vals = np.maximum(density_vals, eps)             # <<<<<<<<<<<<<<
@@ -25662,9 +25871,9 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_8log_loss(CYTHON_UNUSED PyObject 
  * 
 */
   __pyx_t_3 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 140, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 147, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_maximum); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 140, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_maximum); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 147, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_6 = 1;
@@ -25684,13 +25893,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_8log_loss(CYTHON_UNUSED PyObject 
     __pyx_t_5 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_4, __pyx_callargs+__pyx_t_6, (3-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 140, __pyx_L1_error)
+    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 147, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
   }
   __Pyx_DECREF_SET(__pyx_v_density_vals, __pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "pdf_group.pyx":141
+  /* "pdf_group.pyx":148
  *             [pdf.density([y_test[i]]) for i,pdf in enumerate(self.pdf_list)])
  *         density_vals = np.maximum(density_vals, eps)
  *         return(-np.mean(np.log(density_vals)))             # <<<<<<<<<<<<<<
@@ -25698,15 +25907,15 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_8log_loss(CYTHON_UNUSED PyObject 
  *     def crps_mean(self, y_test, eps=1e-16):
 */
   __pyx_t_4 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 141, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_mean); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 141, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_mean); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_8 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 141, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
-  __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_log); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 141, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_log); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
   __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
   __pyx_t_6 = 1;
@@ -25726,7 +25935,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_8log_loss(CYTHON_UNUSED PyObject 
     __pyx_t_3 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_9, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 141, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 148, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
   }
   __pyx_t_6 = 1;
@@ -25747,10 +25956,10 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_8log_loss(CYTHON_UNUSED PyObject 
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 141, __pyx_L1_error)
+    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 148, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
   }
-  __pyx_t_2 = PyNumber_Negative(__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 141, __pyx_L1_error)
+  __pyx_t_2 = PyNumber_Negative(__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   {
@@ -25764,7 +25973,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_8log_loss(CYTHON_UNUSED PyObject 
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "pdf_group.pyx":130
+  /* "pdf_group.pyx":137
  *             return(self.pdf_list[arg])
  * 
  *     def log_loss(self, y_test, eps=1e-16):             # <<<<<<<<<<<<<<
@@ -25796,7 +26005,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_8log_loss(CYTHON_UNUSED PyObject 
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":143
+/* "pdf_group.pyx":150
  *         return(-np.mean(np.log(density_vals)))
  * 
  *     def crps_mean(self, y_test, eps=1e-16):             # <<<<<<<<<<<<<<
@@ -25846,41 +26055,41 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_y_test,&__pyx_mstate_global->__pyx_n_u_eps,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 143, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 150, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 143, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 150, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 143, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 150, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 143, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 150, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "crps_mean", 0) < (0)) __PYX_ERR(0, 143, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "crps_mean", 0) < (0)) __PYX_ERR(0, 150, __pyx_L3_error)
       if (!values[2]) values[2] = __Pyx_NewRef(((PyObject *)((PyObject*)__pyx_mstate_global->__pyx_float_1eneg_16)));
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("crps_mean", 0, 2, 3, i); __PYX_ERR(0, 143, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("crps_mean", 0, 2, 3, i); __PYX_ERR(0, 150, __pyx_L3_error) }
       }
     } else {
       switch (__pyx_nargs) {
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 143, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 150, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 143, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 150, __pyx_L3_error)
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 143, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 150, __pyx_L3_error)
         break;
         default: goto __pyx_L5_argtuple_error;
       }
@@ -25892,7 +26101,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("crps_mean", 0, 2, 3, __pyx_nargs); __PYX_ERR(0, 143, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("crps_mean", 0, 2, 3, __pyx_nargs); __PYX_ERR(0, 150, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -25938,18 +26147,18 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_10crps_mean(CYTHON_UNUSED PyObjec
   __Pyx_RefNannySetupContext("crps_mean", 0);
   __Pyx_INCREF(__pyx_v_y_test);
 
-  /* "pdf_group.pyx":145
+  /* "pdf_group.pyx":152
  *     def crps_mean(self, y_test, eps=1e-16):
  *         """Computes the log-loss (Negative log likelihood) based on prob density."""
  *         if type(y_test)!= np.ndarray:             # <<<<<<<<<<<<<<
  *             y_test = np.array(y_test)
  *         if self.densitymat.shape[0]!=len(y_test):
 */
-  __pyx_t_1 = __Pyx_PyObject_RichCompareBool(((PyObject *)Py_TYPE(__pyx_v_y_test)), ((PyObject *)__pyx_mstate_global->__pyx_ptype_5numpy_ndarray), Py_NE); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 145, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_RichCompareBool(((PyObject *)Py_TYPE(__pyx_v_y_test)), ((PyObject *)__pyx_mstate_global->__pyx_ptype_5numpy_ndarray), Py_NE); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 152, __pyx_L1_error)
   if (__pyx_t_1) {
 
 
-    /* "pdf_group.pyx":146
+    /* "pdf_group.pyx":153
  *         """Computes the log-loss (Negative log likelihood) based on prob density."""
  *         if type(y_test)!= np.ndarray:
  *             y_test = np.array(y_test)             # <<<<<<<<<<<<<<
@@ -25957,9 +26166,9 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_10crps_mean(CYTHON_UNUSED PyObjec
  *             warnings.warn("Length of y_test != number of pdfs")
 */
     __pyx_t_3 = NULL;
-    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 146, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 153, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_array); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 146, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_array); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 153, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_t_6 = 1;
@@ -25979,13 +26188,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_10crps_mean(CYTHON_UNUSED PyObjec
       __pyx_t_2 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_5, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 146, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 153, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
     }
     __Pyx_DECREF_SET(__pyx_v_y_test, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "pdf_group.pyx":145
+    /* "pdf_group.pyx":152
  *     def crps_mean(self, y_test, eps=1e-16):
  *         """Computes the log-loss (Negative log likelihood) based on prob density."""
  *         if type(y_test)!= np.ndarray:             # <<<<<<<<<<<<<<
@@ -25994,32 +26203,32 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_10crps_mean(CYTHON_UNUSED PyObjec
 */
   }
 
-  /* "pdf_group.pyx":147
+  /* "pdf_group.pyx":154
  *         if type(y_test)!= np.ndarray:
  *             y_test = np.array(y_test)
  *         if self.densitymat.shape[0]!=len(y_test):             # <<<<<<<<<<<<<<
  *             warnings.warn("Length of y_test != number of pdfs")
  *         if self.pdf_list is None:
 */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_densitymat); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 147, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_densitymat); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 154, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_shape); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 147, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_shape); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 154, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_5, 0, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 147, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_5, 0, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 154, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_7 = PyObject_Length(__pyx_v_y_test); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 147, __pyx_L1_error)
-  __pyx_t_5 = PyLong_FromSsize_t(__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 147, __pyx_L1_error)
+  __pyx_t_7 = PyObject_Length(__pyx_v_y_test); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 154, __pyx_L1_error)
+  __pyx_t_5 = PyLong_FromSsize_t(__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 154, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
 
-  __pyx_t_1 = __Pyx_PyObject_CompareBoolNe_object_int(__pyx_t_2, __pyx_t_5, Py_NE); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 147, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CompareBoolNe_object_int(__pyx_t_2, __pyx_t_5, Py_NE); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 154, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   if (__pyx_t_1) {
 
 
-    /* "pdf_group.pyx":148
+    /* "pdf_group.pyx":155
  *             y_test = np.array(y_test)
  *         if self.densitymat.shape[0]!=len(y_test):
  *             warnings.warn("Length of y_test != number of pdfs")             # <<<<<<<<<<<<<<
@@ -26027,9 +26236,9 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_10crps_mean(CYTHON_UNUSED PyObjec
  *             self.make_pdf_list()
 */
     __pyx_t_2 = NULL;
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_warnings); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 148, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_warnings); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 155, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_warn); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 148, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_warn); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 155, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_6 = 1;
@@ -26049,12 +26258,12 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_10crps_mean(CYTHON_UNUSED PyObjec
       __pyx_t_5 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_4, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 148, __pyx_L1_error)
+      if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 155, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "pdf_group.pyx":147
+    /* "pdf_group.pyx":154
  *         if type(y_test)!= np.ndarray:
  *             y_test = np.array(y_test)
  *         if self.densitymat.shape[0]!=len(y_test):             # <<<<<<<<<<<<<<
@@ -26063,21 +26272,21 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_10crps_mean(CYTHON_UNUSED PyObjec
 */
   }
 
-  /* "pdf_group.pyx":149
+  /* "pdf_group.pyx":156
  *         if self.densitymat.shape[0]!=len(y_test):
  *             warnings.warn("Length of y_test != number of pdfs")
  *         if self.pdf_list is None:             # <<<<<<<<<<<<<<
  *             self.make_pdf_list()
  *         crps_vals = np.array(
 */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 149, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 156, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_1 = (__pyx_t_5 == Py_None);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   if (__pyx_t_1) {
 
 
-    /* "pdf_group.pyx":150
+    /* "pdf_group.pyx":157
  *             warnings.warn("Length of y_test != number of pdfs")
  *         if self.pdf_list is None:
  *             self.make_pdf_list()             # <<<<<<<<<<<<<<
@@ -26091,12 +26300,12 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_10crps_mean(CYTHON_UNUSED PyObjec
       PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
       __pyx_t_5 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_make_pdf_list, __pyx_callargs+__pyx_t_6, (1-__pyx_t_6) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 150, __pyx_L1_error)
+      if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 157, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "pdf_group.pyx":149
+    /* "pdf_group.pyx":156
  *         if self.densitymat.shape[0]!=len(y_test):
  *             warnings.warn("Length of y_test != number of pdfs")
  *         if self.pdf_list is None:             # <<<<<<<<<<<<<<
@@ -26105,7 +26314,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_10crps_mean(CYTHON_UNUSED PyObjec
 */
   }
 
-  /* "pdf_group.pyx":151
+  /* "pdf_group.pyx":158
  *         if self.pdf_list is None:
  *             self.make_pdf_list()
  *         crps_vals = np.array(             # <<<<<<<<<<<<<<
@@ -26113,34 +26322,34 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_10crps_mean(CYTHON_UNUSED PyObjec
  *         return(np.mean(crps_vals))
 */
   __pyx_t_4 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 151, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 151, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   { /* enter inner scope */
 
-    /* "pdf_group.pyx":152
+    /* "pdf_group.pyx":159
  *             self.make_pdf_list()
  *         crps_vals = np.array(
  *             [pdf.crps_single_pt(y_test[i]) for i,pdf in enumerate(self.pdf_list)])             # <<<<<<<<<<<<<<
  *         return(np.mean(crps_vals))
  * 
 */
-    __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 152, __pyx_L8_error)
+    __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 159, __pyx_L8_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_INCREF(__pyx_mstate_global->__pyx_int_0);
     __pyx_t_8 = __pyx_mstate_global->__pyx_int_0;
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 152, __pyx_L8_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 159, __pyx_L8_error)
     __Pyx_GOTREF(__pyx_t_9);
     if (likely(PyList_CheckExact(__pyx_t_9)) || PyTuple_CheckExact(__pyx_t_9)) {
       __pyx_t_10 = __pyx_t_9; __Pyx_INCREF(__pyx_t_10);
       __pyx_t_7 = 0;
       __pyx_t_11 = NULL;
     } else {
-      __pyx_t_7 = -1; __pyx_t_10 = PyObject_GetIter(__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 152, __pyx_L8_error)
+      __pyx_t_7 = -1; __pyx_t_10 = PyObject_GetIter(__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 159, __pyx_L8_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_11 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_10); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 152, __pyx_L8_error)
+      __pyx_t_11 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_10); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 159, __pyx_L8_error)
     }
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     for (;;) {
@@ -26149,7 +26358,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_10crps_mean(CYTHON_UNUSED PyObjec
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_10);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 152, __pyx_L8_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 159, __pyx_L8_error)
             #endif
             if (__pyx_t_7 >= __pyx_temp) break;
           }
@@ -26159,7 +26368,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_10crps_mean(CYTHON_UNUSED PyObjec
           {
             Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_10);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 152, __pyx_L8_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 159, __pyx_L8_error)
             #endif
             if (__pyx_t_7 >= __pyx_temp) break;
           }
@@ -26170,13 +26379,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_10crps_mean(CYTHON_UNUSED PyObjec
           #endif
           ++__pyx_t_7;
         }
-        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 152, __pyx_L8_error)
+        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 159, __pyx_L8_error)
       } else {
         __pyx_t_9 = __pyx_t_11(__pyx_t_10);
         if (unlikely(!__pyx_t_9)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
-            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 152, __pyx_L8_error)
+            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 159, __pyx_L8_error)
             PyErr_Clear();
           }
           break;
@@ -26187,14 +26396,14 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_10crps_mean(CYTHON_UNUSED PyObjec
       __pyx_t_9 = 0;
       __Pyx_INCREF(__pyx_t_8);
       __Pyx_XDECREF_SET(__pyx_8genexpr2__pyx_v_i, __pyx_t_8);
-      __pyx_t_9 = __Pyx_PyLong_AddObjC(__pyx_t_8, __pyx_mstate_global->__pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 152, __pyx_L8_error)
+      __pyx_t_9 = __Pyx_PyLong_AddObjC(__pyx_t_8, __pyx_mstate_global->__pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 159, __pyx_L8_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF(__pyx_t_8);
       __pyx_t_8 = __pyx_t_9;
       __pyx_t_9 = 0;
       __pyx_t_12 = __pyx_8genexpr2__pyx_v_pdf;
       __Pyx_INCREF(__pyx_t_12);
-      __pyx_t_13 = __Pyx_PyObject_GetItem(__pyx_v_y_test, __pyx_8genexpr2__pyx_v_i); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 152, __pyx_L8_error)
+      __pyx_t_13 = __Pyx_PyObject_GetItem(__pyx_v_y_test, __pyx_8genexpr2__pyx_v_i); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 159, __pyx_L8_error)
       __Pyx_GOTREF(__pyx_t_13);
       __pyx_t_6 = 0;
       {
@@ -26202,11 +26411,11 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_10crps_mean(CYTHON_UNUSED PyObjec
         __pyx_t_9 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_crps_single_pt, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 152, __pyx_L8_error)
+        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 159, __pyx_L8_error)
         __Pyx_GOTREF(__pyx_t_9);
       }
       __Pyx_GIVEREF(__pyx_t_9);
-      if (unlikely(__Pyx_ListComp_AppendAndDecref(__pyx_t_2, __pyx_t_9))) __PYX_ERR(0, 152, __pyx_L8_error)
+      if (unlikely(__Pyx_ListComp_AppendAndDecref(__pyx_t_2, __pyx_t_9))) __PYX_ERR(0, 159, __pyx_L8_error)
       __pyx_t_9 = 0;
     }
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -26238,13 +26447,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_10crps_mean(CYTHON_UNUSED PyObjec
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 151, __pyx_L1_error)
+    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 158, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
   }
   __pyx_v_crps_vals = __pyx_t_5;
   __pyx_t_5 = 0;
 
-  /* "pdf_group.pyx":153
+  /* "pdf_group.pyx":160
  *         crps_vals = np.array(
  *             [pdf.crps_single_pt(y_test[i]) for i,pdf in enumerate(self.pdf_list)])
  *         return(np.mean(crps_vals))             # <<<<<<<<<<<<<<
@@ -26252,9 +26461,9 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_10crps_mean(CYTHON_UNUSED PyObjec
  *     def mean(self):
 */
   __pyx_t_3 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 153, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 160, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_mean); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 153, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_mean); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 160, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_6 = 1;
@@ -26274,7 +26483,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_10crps_mean(CYTHON_UNUSED PyObjec
     __pyx_t_5 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_4, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 153, __pyx_L1_error)
+    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 160, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
   }
   {
@@ -26288,7 +26497,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_10crps_mean(CYTHON_UNUSED PyObjec
   __pyx_t_5 = 0;
   goto __pyx_L0;
 
-  /* "pdf_group.pyx":143
+  /* "pdf_group.pyx":150
  *         return(-np.mean(np.log(density_vals)))
  * 
  *     def crps_mean(self, y_test, eps=1e-16):             # <<<<<<<<<<<<<<
@@ -26319,7 +26528,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_10crps_mean(CYTHON_UNUSED PyObjec
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":155
+/* "pdf_group.pyx":162
  *         return(np.mean(crps_vals))
  * 
  *     def mean(self):             # <<<<<<<<<<<<<<
@@ -26367,32 +26576,32 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 155, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 162, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 155, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 162, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "mean", 0) < (0)) __PYX_ERR(0, 155, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "mean", 0) < (0)) __PYX_ERR(0, 162, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 1; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("mean", 1, 1, 1, i); __PYX_ERR(0, 155, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("mean", 1, 1, 1, i); __PYX_ERR(0, 162, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 155, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 162, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("mean", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 155, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("mean", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 162, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -26433,21 +26642,21 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_12mean(CYTHON_UNUSED PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("mean", 0);
 
-  /* "pdf_group.pyx":157
+  /* "pdf_group.pyx":164
  *     def mean(self):
  *         "Returns an array of means of the associated pdfs"
  *         if self.pdf_list is None:             # <<<<<<<<<<<<<<
  *             self.make_pdf_list()
  *         return(np.array([pdf.mean() for pdf in self.pdf_list]))
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 157, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 164, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = (__pyx_t_1 == Py_None);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
 
-    /* "pdf_group.pyx":158
+    /* "pdf_group.pyx":165
  *         "Returns an array of means of the associated pdfs"
  *         if self.pdf_list is None:
  *             self.make_pdf_list()             # <<<<<<<<<<<<<<
@@ -26461,12 +26670,12 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_12mean(CYTHON_UNUSED PyObject *__
       PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
       __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_make_pdf_list, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 158, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 165, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "pdf_group.pyx":157
+    /* "pdf_group.pyx":164
  *     def mean(self):
  *         "Returns an array of means of the associated pdfs"
  *         if self.pdf_list is None:             # <<<<<<<<<<<<<<
@@ -26475,7 +26684,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_12mean(CYTHON_UNUSED PyObject *__
 */
   }
 
-  /* "pdf_group.pyx":159
+  /* "pdf_group.pyx":166
  *         if self.pdf_list is None:
  *             self.make_pdf_list()
  *         return(np.array([pdf.mean() for pdf in self.pdf_list]))             # <<<<<<<<<<<<<<
@@ -26483,24 +26692,24 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_12mean(CYTHON_UNUSED PyObject *__
  *     def median(self):
 */
   __pyx_t_3 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 159, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 166, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_array); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 159, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_array); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 166, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   { /* enter inner scope */
-    __pyx_t_5 = PyList_New(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 159, __pyx_L6_error)
+    __pyx_t_5 = PyList_New(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 166, __pyx_L6_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 159, __pyx_L6_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 166, __pyx_L6_error)
     __Pyx_GOTREF(__pyx_t_7);
     if (likely(PyList_CheckExact(__pyx_t_7)) || PyTuple_CheckExact(__pyx_t_7)) {
       __pyx_t_8 = __pyx_t_7; __Pyx_INCREF(__pyx_t_8);
       __pyx_t_9 = 0;
       __pyx_t_10 = NULL;
     } else {
-      __pyx_t_9 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 159, __pyx_L6_error)
+      __pyx_t_9 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 166, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_10 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_8); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 159, __pyx_L6_error)
+      __pyx_t_10 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_8); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 166, __pyx_L6_error)
     }
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     for (;;) {
@@ -26509,7 +26718,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_12mean(CYTHON_UNUSED PyObject *__
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_8);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 159, __pyx_L6_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 166, __pyx_L6_error)
             #endif
             if (__pyx_t_9 >= __pyx_temp) break;
           }
@@ -26519,7 +26728,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_12mean(CYTHON_UNUSED PyObject *__
           {
             Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_8);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 159, __pyx_L6_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 166, __pyx_L6_error)
             #endif
             if (__pyx_t_9 >= __pyx_temp) break;
           }
@@ -26530,13 +26739,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_12mean(CYTHON_UNUSED PyObject *__
           #endif
           ++__pyx_t_9;
         }
-        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 159, __pyx_L6_error)
+        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 166, __pyx_L6_error)
       } else {
         __pyx_t_7 = __pyx_t_10(__pyx_t_8);
         if (unlikely(!__pyx_t_7)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
-            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 159, __pyx_L6_error)
+            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 166, __pyx_L6_error)
             PyErr_Clear();
           }
           break;
@@ -26552,11 +26761,11 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_12mean(CYTHON_UNUSED PyObject *__
         PyObject *__pyx_callargs[2] = {__pyx_t_11, NULL};
         __pyx_t_7 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_mean, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
-        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 159, __pyx_L6_error)
+        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 166, __pyx_L6_error)
         __Pyx_GOTREF(__pyx_t_7);
       }
       __Pyx_GIVEREF(__pyx_t_7);
-      if (unlikely(__Pyx_ListComp_AppendAndDecref(__pyx_t_5, __pyx_t_7))) __PYX_ERR(0, 159, __pyx_L6_error)
+      if (unlikely(__Pyx_ListComp_AppendAndDecref(__pyx_t_5, __pyx_t_7))) __PYX_ERR(0, 166, __pyx_L6_error)
       __pyx_t_7 = 0;
     }
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -26585,7 +26794,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_12mean(CYTHON_UNUSED PyObject *__
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 159, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 166, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   {
@@ -26599,7 +26808,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_12mean(CYTHON_UNUSED PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pdf_group.pyx":155
+  /* "pdf_group.pyx":162
  *         return(np.mean(crps_vals))
  * 
  *     def mean(self):             # <<<<<<<<<<<<<<
@@ -26625,7 +26834,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_12mean(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":161
+/* "pdf_group.pyx":168
  *         return(np.array([pdf.mean() for pdf in self.pdf_list]))
  * 
  *     def median(self):             # <<<<<<<<<<<<<<
@@ -26673,32 +26882,32 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 161, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 168, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 161, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 168, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "median", 0) < (0)) __PYX_ERR(0, 161, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "median", 0) < (0)) __PYX_ERR(0, 168, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 1; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("median", 1, 1, 1, i); __PYX_ERR(0, 161, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("median", 1, 1, 1, i); __PYX_ERR(0, 168, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 161, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 168, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("median", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 161, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("median", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 168, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -26739,21 +26948,21 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_14median(CYTHON_UNUSED PyObject *
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("median", 0);
 
-  /* "pdf_group.pyx":163
+  /* "pdf_group.pyx":170
  *     def median(self):
  *         "Returns an array of medians of the associated pdfs"
  *         if self.pdf_list is None:             # <<<<<<<<<<<<<<
  *             self.make_pdf_list()
  *         return(np.array([pdf.median() for pdf in self.pdf_list]))
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 163, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 170, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = (__pyx_t_1 == Py_None);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
 
-    /* "pdf_group.pyx":164
+    /* "pdf_group.pyx":171
  *         "Returns an array of medians of the associated pdfs"
  *         if self.pdf_list is None:
  *             self.make_pdf_list()             # <<<<<<<<<<<<<<
@@ -26767,12 +26976,12 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_14median(CYTHON_UNUSED PyObject *
       PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
       __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_make_pdf_list, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 164, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 171, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "pdf_group.pyx":163
+    /* "pdf_group.pyx":170
  *     def median(self):
  *         "Returns an array of medians of the associated pdfs"
  *         if self.pdf_list is None:             # <<<<<<<<<<<<<<
@@ -26781,7 +26990,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_14median(CYTHON_UNUSED PyObject *
 */
   }
 
-  /* "pdf_group.pyx":165
+  /* "pdf_group.pyx":172
  *         if self.pdf_list is None:
  *             self.make_pdf_list()
  *         return(np.array([pdf.median() for pdf in self.pdf_list]))             # <<<<<<<<<<<<<<
@@ -26789,24 +26998,24 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_14median(CYTHON_UNUSED PyObject *
  *     def quantile(self, val):
 */
   __pyx_t_3 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 165, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 172, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_array); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 165, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_array); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 172, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   { /* enter inner scope */
-    __pyx_t_5 = PyList_New(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 165, __pyx_L6_error)
+    __pyx_t_5 = PyList_New(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 172, __pyx_L6_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 165, __pyx_L6_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 172, __pyx_L6_error)
     __Pyx_GOTREF(__pyx_t_7);
     if (likely(PyList_CheckExact(__pyx_t_7)) || PyTuple_CheckExact(__pyx_t_7)) {
       __pyx_t_8 = __pyx_t_7; __Pyx_INCREF(__pyx_t_8);
       __pyx_t_9 = 0;
       __pyx_t_10 = NULL;
     } else {
-      __pyx_t_9 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 165, __pyx_L6_error)
+      __pyx_t_9 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 172, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_10 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_8); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 165, __pyx_L6_error)
+      __pyx_t_10 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_8); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 172, __pyx_L6_error)
     }
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     for (;;) {
@@ -26815,7 +27024,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_14median(CYTHON_UNUSED PyObject *
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_8);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 165, __pyx_L6_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 172, __pyx_L6_error)
             #endif
             if (__pyx_t_9 >= __pyx_temp) break;
           }
@@ -26825,7 +27034,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_14median(CYTHON_UNUSED PyObject *
           {
             Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_8);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 165, __pyx_L6_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 172, __pyx_L6_error)
             #endif
             if (__pyx_t_9 >= __pyx_temp) break;
           }
@@ -26836,13 +27045,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_14median(CYTHON_UNUSED PyObject *
           #endif
           ++__pyx_t_9;
         }
-        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 165, __pyx_L6_error)
+        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 172, __pyx_L6_error)
       } else {
         __pyx_t_7 = __pyx_t_10(__pyx_t_8);
         if (unlikely(!__pyx_t_7)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
-            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 165, __pyx_L6_error)
+            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 172, __pyx_L6_error)
             PyErr_Clear();
           }
           break;
@@ -26858,11 +27067,11 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_14median(CYTHON_UNUSED PyObject *
         PyObject *__pyx_callargs[2] = {__pyx_t_11, NULL};
         __pyx_t_7 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_median, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
-        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 165, __pyx_L6_error)
+        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 172, __pyx_L6_error)
         __Pyx_GOTREF(__pyx_t_7);
       }
       __Pyx_GIVEREF(__pyx_t_7);
-      if (unlikely(__Pyx_ListComp_AppendAndDecref(__pyx_t_5, __pyx_t_7))) __PYX_ERR(0, 165, __pyx_L6_error)
+      if (unlikely(__Pyx_ListComp_AppendAndDecref(__pyx_t_5, __pyx_t_7))) __PYX_ERR(0, 172, __pyx_L6_error)
       __pyx_t_7 = 0;
     }
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -26891,7 +27100,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_14median(CYTHON_UNUSED PyObject *
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 165, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 172, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   {
@@ -26905,7 +27114,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_14median(CYTHON_UNUSED PyObject *
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pdf_group.pyx":161
+  /* "pdf_group.pyx":168
  *         return(np.array([pdf.mean() for pdf in self.pdf_list]))
  * 
  *     def median(self):             # <<<<<<<<<<<<<<
@@ -26931,7 +27140,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_14median(CYTHON_UNUSED PyObject *
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":167
+/* "pdf_group.pyx":174
  *         return(np.array([pdf.median() for pdf in self.pdf_list]))
  * 
  *     def quantile(self, val):             # <<<<<<<<<<<<<<
@@ -26980,39 +27189,39 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_val,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 167, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 174, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 167, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 174, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 167, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 174, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "quantile", 0) < (0)) __PYX_ERR(0, 167, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "quantile", 0) < (0)) __PYX_ERR(0, 174, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("quantile", 1, 2, 2, i); __PYX_ERR(0, 167, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("quantile", 1, 2, 2, i); __PYX_ERR(0, 174, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 167, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 174, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 167, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 174, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_val = values[1];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("quantile", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 167, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("quantile", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 174, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -27053,21 +27262,21 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_16quantile(CYTHON_UNUSED PyObject
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("quantile", 0);
 
-  /* "pdf_group.pyx":169
+  /* "pdf_group.pyx":176
  *     def quantile(self, val):
  *         "Returns the `val`th quantile of the associated pdfs"
  *         if self.pdf_list is None:             # <<<<<<<<<<<<<<
  *             self.make_pdf_list()
  *         return(np.array([pdf.quantile(val) for pdf in self.pdf_list]))
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 169, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 176, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = (__pyx_t_1 == Py_None);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
 
-    /* "pdf_group.pyx":170
+    /* "pdf_group.pyx":177
  *         "Returns the `val`th quantile of the associated pdfs"
  *         if self.pdf_list is None:
  *             self.make_pdf_list()             # <<<<<<<<<<<<<<
@@ -27081,12 +27290,12 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_16quantile(CYTHON_UNUSED PyObject
       PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
       __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_make_pdf_list, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 170, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 177, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "pdf_group.pyx":169
+    /* "pdf_group.pyx":176
  *     def quantile(self, val):
  *         "Returns the `val`th quantile of the associated pdfs"
  *         if self.pdf_list is None:             # <<<<<<<<<<<<<<
@@ -27095,7 +27304,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_16quantile(CYTHON_UNUSED PyObject
 */
   }
 
-  /* "pdf_group.pyx":171
+  /* "pdf_group.pyx":178
  *         if self.pdf_list is None:
  *             self.make_pdf_list()
  *         return(np.array([pdf.quantile(val) for pdf in self.pdf_list]))             # <<<<<<<<<<<<<<
@@ -27103,24 +27312,24 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_16quantile(CYTHON_UNUSED PyObject
  *     def quantiles(self, vals):
 */
   __pyx_t_3 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 171, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 178, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_array); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 171, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_array); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 178, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   { /* enter inner scope */
-    __pyx_t_5 = PyList_New(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 171, __pyx_L6_error)
+    __pyx_t_5 = PyList_New(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 178, __pyx_L6_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 171, __pyx_L6_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 178, __pyx_L6_error)
     __Pyx_GOTREF(__pyx_t_7);
     if (likely(PyList_CheckExact(__pyx_t_7)) || PyTuple_CheckExact(__pyx_t_7)) {
       __pyx_t_8 = __pyx_t_7; __Pyx_INCREF(__pyx_t_8);
       __pyx_t_9 = 0;
       __pyx_t_10 = NULL;
     } else {
-      __pyx_t_9 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 171, __pyx_L6_error)
+      __pyx_t_9 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 178, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_10 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_8); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 171, __pyx_L6_error)
+      __pyx_t_10 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_8); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 178, __pyx_L6_error)
     }
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     for (;;) {
@@ -27129,7 +27338,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_16quantile(CYTHON_UNUSED PyObject
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_8);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 171, __pyx_L6_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 178, __pyx_L6_error)
             #endif
             if (__pyx_t_9 >= __pyx_temp) break;
           }
@@ -27139,7 +27348,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_16quantile(CYTHON_UNUSED PyObject
           {
             Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_8);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 171, __pyx_L6_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 178, __pyx_L6_error)
             #endif
             if (__pyx_t_9 >= __pyx_temp) break;
           }
@@ -27150,13 +27359,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_16quantile(CYTHON_UNUSED PyObject
           #endif
           ++__pyx_t_9;
         }
-        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 171, __pyx_L6_error)
+        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 178, __pyx_L6_error)
       } else {
         __pyx_t_7 = __pyx_t_10(__pyx_t_8);
         if (unlikely(!__pyx_t_7)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
-            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 171, __pyx_L6_error)
+            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 178, __pyx_L6_error)
             PyErr_Clear();
           }
           break;
@@ -27172,11 +27381,11 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_16quantile(CYTHON_UNUSED PyObject
         PyObject *__pyx_callargs[2] = {__pyx_t_11, __pyx_v_val};
         __pyx_t_7 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_quantile, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
-        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 171, __pyx_L6_error)
+        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 178, __pyx_L6_error)
         __Pyx_GOTREF(__pyx_t_7);
       }
       __Pyx_GIVEREF(__pyx_t_7);
-      if (unlikely(__Pyx_ListComp_AppendAndDecref(__pyx_t_5, __pyx_t_7))) __PYX_ERR(0, 171, __pyx_L6_error)
+      if (unlikely(__Pyx_ListComp_AppendAndDecref(__pyx_t_5, __pyx_t_7))) __PYX_ERR(0, 178, __pyx_L6_error)
       __pyx_t_7 = 0;
     }
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -27205,7 +27414,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_16quantile(CYTHON_UNUSED PyObject
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 171, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 178, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   {
@@ -27219,7 +27428,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_16quantile(CYTHON_UNUSED PyObject
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pdf_group.pyx":167
+  /* "pdf_group.pyx":174
  *         return(np.array([pdf.median() for pdf in self.pdf_list]))
  * 
  *     def quantile(self, val):             # <<<<<<<<<<<<<<
@@ -27245,7 +27454,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_16quantile(CYTHON_UNUSED PyObject
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":173
+/* "pdf_group.pyx":180
  *         return(np.array([pdf.quantile(val) for pdf in self.pdf_list]))
  * 
  *     def quantiles(self, vals):             # <<<<<<<<<<<<<<
@@ -27294,39 +27503,39 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_vals,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 173, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 180, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 173, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 180, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 173, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 180, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "quantiles", 0) < (0)) __PYX_ERR(0, 173, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "quantiles", 0) < (0)) __PYX_ERR(0, 180, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("quantiles", 1, 2, 2, i); __PYX_ERR(0, 173, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("quantiles", 1, 2, 2, i); __PYX_ERR(0, 180, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 173, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 180, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 173, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 180, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_vals = values[1];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("quantiles", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 173, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("quantiles", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 180, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -27367,21 +27576,21 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_18quantiles(CYTHON_UNUSED PyObjec
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("quantiles", 0);
 
-  /* "pdf_group.pyx":175
+  /* "pdf_group.pyx":182
  *     def quantiles(self, vals):
  *         "Returns a matrix with the specified quantiles of the associated pdfs"
  *         if self.pdf_list is None:             # <<<<<<<<<<<<<<
  *             self.make_pdf_list()
  *         return(np.array([pdf.quantiles(vals) for pdf in self.pdf_list]))
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 175, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 182, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = (__pyx_t_1 == Py_None);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
 
-    /* "pdf_group.pyx":176
+    /* "pdf_group.pyx":183
  *         "Returns a matrix with the specified quantiles of the associated pdfs"
  *         if self.pdf_list is None:
  *             self.make_pdf_list()             # <<<<<<<<<<<<<<
@@ -27395,12 +27604,12 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_18quantiles(CYTHON_UNUSED PyObjec
       PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
       __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_make_pdf_list, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 176, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 183, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "pdf_group.pyx":175
+    /* "pdf_group.pyx":182
  *     def quantiles(self, vals):
  *         "Returns a matrix with the specified quantiles of the associated pdfs"
  *         if self.pdf_list is None:             # <<<<<<<<<<<<<<
@@ -27409,7 +27618,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_18quantiles(CYTHON_UNUSED PyObjec
 */
   }
 
-  /* "pdf_group.pyx":177
+  /* "pdf_group.pyx":184
  *         if self.pdf_list is None:
  *             self.make_pdf_list()
  *         return(np.array([pdf.quantiles(vals) for pdf in self.pdf_list]))             # <<<<<<<<<<<<<<
@@ -27417,24 +27626,24 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_18quantiles(CYTHON_UNUSED PyObjec
  *     def test_between_quantiles(self, test_vals, q_left, q_right):
 */
   __pyx_t_3 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 177, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 184, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_array); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 177, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_array); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 184, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   { /* enter inner scope */
-    __pyx_t_5 = PyList_New(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 177, __pyx_L6_error)
+    __pyx_t_5 = PyList_New(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 184, __pyx_L6_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 177, __pyx_L6_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 184, __pyx_L6_error)
     __Pyx_GOTREF(__pyx_t_7);
     if (likely(PyList_CheckExact(__pyx_t_7)) || PyTuple_CheckExact(__pyx_t_7)) {
       __pyx_t_8 = __pyx_t_7; __Pyx_INCREF(__pyx_t_8);
       __pyx_t_9 = 0;
       __pyx_t_10 = NULL;
     } else {
-      __pyx_t_9 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 177, __pyx_L6_error)
+      __pyx_t_9 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 184, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_10 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_8); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 177, __pyx_L6_error)
+      __pyx_t_10 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_8); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 184, __pyx_L6_error)
     }
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     for (;;) {
@@ -27443,7 +27652,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_18quantiles(CYTHON_UNUSED PyObjec
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_8);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 177, __pyx_L6_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 184, __pyx_L6_error)
             #endif
             if (__pyx_t_9 >= __pyx_temp) break;
           }
@@ -27453,7 +27662,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_18quantiles(CYTHON_UNUSED PyObjec
           {
             Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_8);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 177, __pyx_L6_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 184, __pyx_L6_error)
             #endif
             if (__pyx_t_9 >= __pyx_temp) break;
           }
@@ -27464,13 +27673,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_18quantiles(CYTHON_UNUSED PyObjec
           #endif
           ++__pyx_t_9;
         }
-        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 177, __pyx_L6_error)
+        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 184, __pyx_L6_error)
       } else {
         __pyx_t_7 = __pyx_t_10(__pyx_t_8);
         if (unlikely(!__pyx_t_7)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
-            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 177, __pyx_L6_error)
+            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 184, __pyx_L6_error)
             PyErr_Clear();
           }
           break;
@@ -27486,11 +27695,11 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_18quantiles(CYTHON_UNUSED PyObjec
         PyObject *__pyx_callargs[2] = {__pyx_t_11, __pyx_v_vals};
         __pyx_t_7 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_quantiles, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
-        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 177, __pyx_L6_error)
+        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 184, __pyx_L6_error)
         __Pyx_GOTREF(__pyx_t_7);
       }
       __Pyx_GIVEREF(__pyx_t_7);
-      if (unlikely(__Pyx_ListComp_AppendAndDecref(__pyx_t_5, __pyx_t_7))) __PYX_ERR(0, 177, __pyx_L6_error)
+      if (unlikely(__Pyx_ListComp_AppendAndDecref(__pyx_t_5, __pyx_t_7))) __PYX_ERR(0, 184, __pyx_L6_error)
       __pyx_t_7 = 0;
     }
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -27519,7 +27728,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_18quantiles(CYTHON_UNUSED PyObjec
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 177, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 184, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   {
@@ -27533,7 +27742,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_18quantiles(CYTHON_UNUSED PyObjec
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pdf_group.pyx":173
+  /* "pdf_group.pyx":180
  *         return(np.array([pdf.quantile(val) for pdf in self.pdf_list]))
  * 
  *     def quantiles(self, vals):             # <<<<<<<<<<<<<<
@@ -27559,7 +27768,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_18quantiles(CYTHON_UNUSED PyObjec
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":179
+/* "pdf_group.pyx":186
  *         return(np.array([pdf.quantiles(vals) for pdf in self.pdf_list]))
  * 
  *     def test_between_quantiles(self, test_vals, q_left, q_right):             # <<<<<<<<<<<<<<
@@ -27610,44 +27819,44 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_test_vals,&__pyx_mstate_global->__pyx_n_u_q_left,&__pyx_mstate_global->__pyx_n_u_q_right,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 179, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 186, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 179, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 186, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 179, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 186, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 179, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 186, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 179, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 186, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "test_between_quantiles", 0) < (0)) __PYX_ERR(0, 179, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "test_between_quantiles", 0) < (0)) __PYX_ERR(0, 186, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 4; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("test_between_quantiles", 1, 4, 4, i); __PYX_ERR(0, 179, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("test_between_quantiles", 1, 4, 4, i); __PYX_ERR(0, 186, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 4)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 179, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 186, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 179, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 186, __pyx_L3_error)
       values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 179, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 186, __pyx_L3_error)
       values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 179, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 186, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_test_vals = values[1];
@@ -27656,7 +27865,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("test_between_quantiles", 1, 4, 4, __pyx_nargs); __PYX_ERR(0, 179, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("test_between_quantiles", 1, 4, 4, __pyx_nargs); __PYX_ERR(0, 186, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -27690,21 +27899,21 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_20test_between_quantiles(CYTHON_U
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("test_between_quantiles", 0);
 
-  /* "pdf_group.pyx":181
+  /* "pdf_group.pyx":188
  *     def test_between_quantiles(self, test_vals, q_left, q_right):
  *         "Returns boolean array indicating inclusion of test values between quantiles"
  *         if self.pdf_list is None:             # <<<<<<<<<<<<<<
  *             self.make_pdf_list()
  *         return((test_vals>=self.quantile(q_left)) & (test_vals<=self.quantile(q_right)))
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 181, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 188, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = (__pyx_t_1 == Py_None);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
 
-    /* "pdf_group.pyx":182
+    /* "pdf_group.pyx":189
  *         "Returns boolean array indicating inclusion of test values between quantiles"
  *         if self.pdf_list is None:
  *             self.make_pdf_list()             # <<<<<<<<<<<<<<
@@ -27718,12 +27927,12 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_20test_between_quantiles(CYTHON_U
       PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
       __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_make_pdf_list, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 182, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 189, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "pdf_group.pyx":181
+    /* "pdf_group.pyx":188
  *     def test_between_quantiles(self, test_vals, q_left, q_right):
  *         "Returns boolean array indicating inclusion of test values between quantiles"
  *         if self.pdf_list is None:             # <<<<<<<<<<<<<<
@@ -27732,7 +27941,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_20test_between_quantiles(CYTHON_U
 */
   }
 
-  /* "pdf_group.pyx":183
+  /* "pdf_group.pyx":190
  *         if self.pdf_list is None:
  *             self.make_pdf_list()
  *         return((test_vals>=self.quantile(q_left)) & (test_vals<=self.quantile(q_right)))             # <<<<<<<<<<<<<<
@@ -27746,10 +27955,10 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_20test_between_quantiles(CYTHON_U
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_q_left};
     __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_quantile, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 183, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 190, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
-  __pyx_t_3 = __Pyx_PyObject_CompareGe_object_object(__pyx_v_test_vals, __pyx_t_1, Py_GE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 183, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_CompareGe_object_object(__pyx_v_test_vals, __pyx_t_1, Py_GE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 190, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_5 = __pyx_v_self;
   __Pyx_INCREF(__pyx_t_5);
@@ -27758,12 +27967,12 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_20test_between_quantiles(CYTHON_U
     PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_v_q_right};
     __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_quantile, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 183, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 190, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
-  __pyx_t_5 = __Pyx_PyObject_CompareLe_object_object(__pyx_v_test_vals, __pyx_t_1, Py_LE); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 183, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_CompareLe_object_object(__pyx_v_test_vals, __pyx_t_1, Py_LE); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 190, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyNumber_And_object_object(__pyx_t_3, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 183, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyNumber_And_object_object(__pyx_t_3, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 190, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -27778,7 +27987,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_20test_between_quantiles(CYTHON_U
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pdf_group.pyx":179
+  /* "pdf_group.pyx":186
  *         return(np.array([pdf.quantiles(vals) for pdf in self.pdf_list]))
  * 
  *     def test_between_quantiles(self, test_vals, q_left, q_right):             # <<<<<<<<<<<<<<
@@ -27799,7 +28008,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_20test_between_quantiles(CYTHON_U
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":185
+/* "pdf_group.pyx":192
  *         return((test_vals>=self.quantile(q_left)) & (test_vals<=self.quantile(q_right)))
  * 
  *     def test_in_pred_regions(self, test_vals, alpha):             # <<<<<<<<<<<<<<
@@ -27848,38 +28057,38 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_test_vals,&__pyx_mstate_global->__pyx_n_u_alpha,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 185, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 192, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 185, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 192, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 185, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 192, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 185, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 192, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "test_in_pred_regions", 0) < (0)) __PYX_ERR(0, 185, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "test_in_pred_regions", 0) < (0)) __PYX_ERR(0, 192, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 3; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("test_in_pred_regions", 1, 3, 3, i); __PYX_ERR(0, 185, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("test_in_pred_regions", 1, 3, 3, i); __PYX_ERR(0, 192, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 3)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 185, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 192, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 185, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 192, __pyx_L3_error)
       values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 185, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 192, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_test_vals = values[1];
@@ -27887,7 +28096,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("test_in_pred_regions", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 185, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("test_in_pred_regions", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 192, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -27923,21 +28132,21 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_22test_in_pred_regions(CYTHON_UNU
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("test_in_pred_regions", 0);
 
-  /* "pdf_group.pyx":186
+  /* "pdf_group.pyx":193
  * 
  *     def test_in_pred_regions(self, test_vals, alpha):
  *         if self.pdf_list is None:             # <<<<<<<<<<<<<<
  *             self.make_pdf_list()
  *         return(test_in_pred_regions(test_vals, self.pred_regions(alpha)))
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 186, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 193, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = (__pyx_t_1 == Py_None);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
 
-    /* "pdf_group.pyx":187
+    /* "pdf_group.pyx":194
  *     def test_in_pred_regions(self, test_vals, alpha):
  *         if self.pdf_list is None:
  *             self.make_pdf_list()             # <<<<<<<<<<<<<<
@@ -27951,12 +28160,12 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_22test_in_pred_regions(CYTHON_UNU
       PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
       __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_make_pdf_list, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 187, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 194, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "pdf_group.pyx":186
+    /* "pdf_group.pyx":193
  * 
  *     def test_in_pred_regions(self, test_vals, alpha):
  *         if self.pdf_list is None:             # <<<<<<<<<<<<<<
@@ -27965,7 +28174,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_22test_in_pred_regions(CYTHON_UNU
 */
   }
 
-  /* "pdf_group.pyx":188
+  /* "pdf_group.pyx":195
  *         if self.pdf_list is None:
  *             self.make_pdf_list()
  *         return(test_in_pred_regions(test_vals, self.pred_regions(alpha)))             # <<<<<<<<<<<<<<
@@ -27973,7 +28182,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_22test_in_pred_regions(CYTHON_UNU
  *     def quantile_widths(self, q_left, q_right):
 */
   __pyx_t_3 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_test_in_pred_regions); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 188, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_test_in_pred_regions); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_7 = __pyx_v_self;
   __Pyx_INCREF(__pyx_t_7);
@@ -27982,7 +28191,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_22test_in_pred_regions(CYTHON_UNU
     PyObject *__pyx_callargs[2] = {__pyx_t_7, __pyx_v_alpha};
     __pyx_t_6 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_pred_regions, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 188, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 195, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
   }
   __pyx_t_4 = 1;
@@ -28003,7 +28212,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_22test_in_pred_regions(CYTHON_UNU
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 188, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 195, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   {
@@ -28017,7 +28226,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_22test_in_pred_regions(CYTHON_UNU
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pdf_group.pyx":185
+  /* "pdf_group.pyx":192
  *         return((test_vals>=self.quantile(q_left)) & (test_vals<=self.quantile(q_right)))
  * 
  *     def test_in_pred_regions(self, test_vals, alpha):             # <<<<<<<<<<<<<<
@@ -28040,7 +28249,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_22test_in_pred_regions(CYTHON_UNU
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":190
+/* "pdf_group.pyx":197
  *         return(test_in_pred_regions(test_vals, self.pred_regions(alpha)))
  * 
  *     def quantile_widths(self, q_left, q_right):             # <<<<<<<<<<<<<<
@@ -28089,38 +28298,38 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_q_left,&__pyx_mstate_global->__pyx_n_u_q_right,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 190, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 197, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 190, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 197, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 190, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 197, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 190, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 197, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "quantile_widths", 0) < (0)) __PYX_ERR(0, 190, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "quantile_widths", 0) < (0)) __PYX_ERR(0, 197, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 3; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("quantile_widths", 1, 3, 3, i); __PYX_ERR(0, 190, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("quantile_widths", 1, 3, 3, i); __PYX_ERR(0, 197, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 3)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 190, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 197, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 190, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 197, __pyx_L3_error)
       values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 190, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 197, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_q_left = values[1];
@@ -28128,7 +28337,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("quantile_widths", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 190, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("quantile_widths", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 197, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -28162,21 +28371,21 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_24quantile_widths(CYTHON_UNUSED P
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("quantile_widths", 0);
 
-  /* "pdf_group.pyx":191
+  /* "pdf_group.pyx":198
  * 
  *     def quantile_widths(self, q_left, q_right):
  *         if self.pdf_list is None:             # <<<<<<<<<<<<<<
  *             self.make_pdf_list()
  *         return(self.quantile(q_right)-self.quantile(q_left))
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 191, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 198, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = (__pyx_t_1 == Py_None);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
 
-    /* "pdf_group.pyx":192
+    /* "pdf_group.pyx":199
  *     def quantile_widths(self, q_left, q_right):
  *         if self.pdf_list is None:
  *             self.make_pdf_list()             # <<<<<<<<<<<<<<
@@ -28190,12 +28399,12 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_24quantile_widths(CYTHON_UNUSED P
       PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
       __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_make_pdf_list, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 192, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 199, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "pdf_group.pyx":191
+    /* "pdf_group.pyx":198
  * 
  *     def quantile_widths(self, q_left, q_right):
  *         if self.pdf_list is None:             # <<<<<<<<<<<<<<
@@ -28204,7 +28413,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_24quantile_widths(CYTHON_UNUSED P
 */
   }
 
-  /* "pdf_group.pyx":193
+  /* "pdf_group.pyx":200
  *         if self.pdf_list is None:
  *             self.make_pdf_list()
  *         return(self.quantile(q_right)-self.quantile(q_left))             # <<<<<<<<<<<<<<
@@ -28218,7 +28427,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_24quantile_widths(CYTHON_UNUSED P
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_q_right};
     __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_quantile, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 193, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 200, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_t_5 = __pyx_v_self;
@@ -28228,10 +28437,10 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_24quantile_widths(CYTHON_UNUSED P
     PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_v_q_left};
     __pyx_t_3 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_quantile, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 193, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 200, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
   }
-  __pyx_t_5 = __Pyx_PyNumber_Subtract_object_object(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 193, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyNumber_Subtract_object_object(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 200, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -28246,7 +28455,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_24quantile_widths(CYTHON_UNUSED P
   __pyx_t_5 = 0;
   goto __pyx_L0;
 
-  /* "pdf_group.pyx":190
+  /* "pdf_group.pyx":197
  *         return(test_in_pred_regions(test_vals, self.pred_regions(alpha)))
  * 
  *     def quantile_widths(self, q_left, q_right):             # <<<<<<<<<<<<<<
@@ -28267,7 +28476,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_24quantile_widths(CYTHON_UNUSED P
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":196
+/* "pdf_group.pyx":203
  * 
  * 
  *     def pred_region_sizes(self, coverage):             # <<<<<<<<<<<<<<
@@ -28315,39 +28524,39 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_coverage,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 196, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 203, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 196, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 203, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 196, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 203, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "pred_region_sizes", 0) < (0)) __PYX_ERR(0, 196, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "pred_region_sizes", 0) < (0)) __PYX_ERR(0, 203, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("pred_region_sizes", 1, 2, 2, i); __PYX_ERR(0, 196, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("pred_region_sizes", 1, 2, 2, i); __PYX_ERR(0, 203, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 196, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 203, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 196, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 203, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_coverage = values[1];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("pred_region_sizes", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 196, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("pred_region_sizes", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 203, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -28390,21 +28599,21 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_26pred_region_sizes(CYTHON_UNUSED
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("pred_region_sizes", 0);
 
-  /* "pdf_group.pyx":197
+  /* "pdf_group.pyx":204
  * 
  *     def pred_region_sizes(self, coverage):
  *         if self.pdf_list is None:             # <<<<<<<<<<<<<<
  *             self.make_pdf_list()
  *         prs = self.pred_regions(coverage)
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 197, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 204, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = (__pyx_t_1 == Py_None);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
 
-    /* "pdf_group.pyx":198
+    /* "pdf_group.pyx":205
  *     def pred_region_sizes(self, coverage):
  *         if self.pdf_list is None:
  *             self.make_pdf_list()             # <<<<<<<<<<<<<<
@@ -28418,12 +28627,12 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_26pred_region_sizes(CYTHON_UNUSED
       PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
       __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_make_pdf_list, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 198, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 205, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "pdf_group.pyx":197
+    /* "pdf_group.pyx":204
  * 
  *     def pred_region_sizes(self, coverage):
  *         if self.pdf_list is None:             # <<<<<<<<<<<<<<
@@ -28432,7 +28641,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_26pred_region_sizes(CYTHON_UNUSED
 */
   }
 
-  /* "pdf_group.pyx":199
+  /* "pdf_group.pyx":206
  *         if self.pdf_list is None:
  *             self.make_pdf_list()
  *         prs = self.pred_regions(coverage)             # <<<<<<<<<<<<<<
@@ -28446,13 +28655,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_26pred_region_sizes(CYTHON_UNUSED
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_coverage};
     __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_pred_regions, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 199, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 206, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_v_prs = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "pdf_group.pyx":200
+  /* "pdf_group.pyx":207
  *             self.make_pdf_list()
  *         prs = self.pred_regions(coverage)
  *         return(np.array([size_of_pred_region(pr) for pr in prs]))             # <<<<<<<<<<<<<<
@@ -28460,22 +28669,22 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_26pred_region_sizes(CYTHON_UNUSED
  * 
 */
   __pyx_t_3 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 200, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 207, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_array); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 200, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_array); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 207, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   { /* enter inner scope */
-    __pyx_t_5 = PyList_New(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 200, __pyx_L6_error)
+    __pyx_t_5 = PyList_New(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 207, __pyx_L6_error)
     __Pyx_GOTREF(__pyx_t_5);
     if (likely(PyList_CheckExact(__pyx_v_prs)) || PyTuple_CheckExact(__pyx_v_prs)) {
       __pyx_t_7 = __pyx_v_prs; __Pyx_INCREF(__pyx_t_7);
       __pyx_t_8 = 0;
       __pyx_t_9 = NULL;
     } else {
-      __pyx_t_8 = -1; __pyx_t_7 = PyObject_GetIter(__pyx_v_prs); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 200, __pyx_L6_error)
+      __pyx_t_8 = -1; __pyx_t_7 = PyObject_GetIter(__pyx_v_prs); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 207, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_9 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_7); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 200, __pyx_L6_error)
+      __pyx_t_9 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_7); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 207, __pyx_L6_error)
     }
     for (;;) {
       if (likely(!__pyx_t_9)) {
@@ -28483,7 +28692,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_26pred_region_sizes(CYTHON_UNUSED
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_7);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 200, __pyx_L6_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 207, __pyx_L6_error)
             #endif
             if (__pyx_t_8 >= __pyx_temp) break;
           }
@@ -28493,7 +28702,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_26pred_region_sizes(CYTHON_UNUSED
           {
             Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_7);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 200, __pyx_L6_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 207, __pyx_L6_error)
             #endif
             if (__pyx_t_8 >= __pyx_temp) break;
           }
@@ -28504,13 +28713,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_26pred_region_sizes(CYTHON_UNUSED
           #endif
           ++__pyx_t_8;
         }
-        if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 200, __pyx_L6_error)
+        if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 207, __pyx_L6_error)
       } else {
         __pyx_t_10 = __pyx_t_9(__pyx_t_7);
         if (unlikely(!__pyx_t_10)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
-            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 200, __pyx_L6_error)
+            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 207, __pyx_L6_error)
             PyErr_Clear();
           }
           break;
@@ -28520,7 +28729,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_26pred_region_sizes(CYTHON_UNUSED
       __Pyx_XDECREF_SET(__pyx_8genexpr7__pyx_v_pr, __pyx_t_10);
       __pyx_t_10 = 0;
       __pyx_t_11 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_mstate_global->__pyx_n_u_size_of_pred_region); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 200, __pyx_L6_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_mstate_global->__pyx_n_u_size_of_pred_region); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 207, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_12);
       __pyx_t_4 = 1;
       #if CYTHON_UNPACK_METHODS
@@ -28539,11 +28748,11 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_26pred_region_sizes(CYTHON_UNUSED
         __pyx_t_10 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_12, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-        if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 200, __pyx_L6_error)
+        if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 207, __pyx_L6_error)
         __Pyx_GOTREF(__pyx_t_10);
       }
       __Pyx_GIVEREF(__pyx_t_10);
-      if (unlikely(__Pyx_ListComp_AppendAndDecref(__pyx_t_5, __pyx_t_10))) __PYX_ERR(0, 200, __pyx_L6_error)
+      if (unlikely(__Pyx_ListComp_AppendAndDecref(__pyx_t_5, __pyx_t_10))) __PYX_ERR(0, 207, __pyx_L6_error)
       __pyx_t_10 = 0;
     }
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
@@ -28572,7 +28781,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_26pred_region_sizes(CYTHON_UNUSED
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 200, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 207, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   {
@@ -28586,7 +28795,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_26pred_region_sizes(CYTHON_UNUSED
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pdf_group.pyx":196
+  /* "pdf_group.pyx":203
  * 
  * 
  *     def pred_region_sizes(self, coverage):             # <<<<<<<<<<<<<<
@@ -28614,7 +28823,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_26pred_region_sizes(CYTHON_UNUSED
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":203
+/* "pdf_group.pyx":210
  * 
  * 
  *     def pred_regions(self, coverage):             # <<<<<<<<<<<<<<
@@ -28662,39 +28871,39 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_coverage,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 203, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 210, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 203, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 210, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 203, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 210, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "pred_regions", 0) < (0)) __PYX_ERR(0, 203, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "pred_regions", 0) < (0)) __PYX_ERR(0, 210, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("pred_regions", 1, 2, 2, i); __PYX_ERR(0, 203, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("pred_regions", 1, 2, 2, i); __PYX_ERR(0, 210, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 203, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 210, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 203, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 210, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_coverage = values[1];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("pred_regions", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 203, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("pred_regions", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 210, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -28735,21 +28944,21 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_28pred_regions(CYTHON_UNUSED PyOb
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("pred_regions", 0);
 
-  /* "pdf_group.pyx":204
+  /* "pdf_group.pyx":211
  * 
  *     def pred_regions(self, coverage):
  *         if self.pdf_list is None:             # <<<<<<<<<<<<<<
  *             self.make_pdf_list()
  *         return(np.array([pdf.pred_region(coverage) for pdf in self.pdf_list], dtype=object))
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 204, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 211, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = (__pyx_t_1 == Py_None);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
 
-    /* "pdf_group.pyx":205
+    /* "pdf_group.pyx":212
  *     def pred_regions(self, coverage):
  *         if self.pdf_list is None:
  *             self.make_pdf_list()             # <<<<<<<<<<<<<<
@@ -28763,12 +28972,12 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_28pred_regions(CYTHON_UNUSED PyOb
       PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
       __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_make_pdf_list, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 205, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 212, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "pdf_group.pyx":204
+    /* "pdf_group.pyx":211
  * 
  *     def pred_regions(self, coverage):
  *         if self.pdf_list is None:             # <<<<<<<<<<<<<<
@@ -28777,7 +28986,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_28pred_regions(CYTHON_UNUSED PyOb
 */
   }
 
-  /* "pdf_group.pyx":206
+  /* "pdf_group.pyx":213
  *         if self.pdf_list is None:
  *             self.make_pdf_list()
  *         return(np.array([pdf.pred_region(coverage) for pdf in self.pdf_list], dtype=object))             # <<<<<<<<<<<<<<
@@ -28785,24 +28994,24 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_28pred_regions(CYTHON_UNUSED PyOb
  *     def bins_to_probs(self, new_binpt_vec, eps=1e-16):
 */
   __pyx_t_3 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 206, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 213, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_array); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 206, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_array); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 213, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   { /* enter inner scope */
-    __pyx_t_5 = PyList_New(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 206, __pyx_L6_error)
+    __pyx_t_5 = PyList_New(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 213, __pyx_L6_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 206, __pyx_L6_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pdf_list); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 213, __pyx_L6_error)
     __Pyx_GOTREF(__pyx_t_7);
     if (likely(PyList_CheckExact(__pyx_t_7)) || PyTuple_CheckExact(__pyx_t_7)) {
       __pyx_t_8 = __pyx_t_7; __Pyx_INCREF(__pyx_t_8);
       __pyx_t_9 = 0;
       __pyx_t_10 = NULL;
     } else {
-      __pyx_t_9 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 206, __pyx_L6_error)
+      __pyx_t_9 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 213, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_10 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_8); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 206, __pyx_L6_error)
+      __pyx_t_10 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_8); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 213, __pyx_L6_error)
     }
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     for (;;) {
@@ -28811,7 +29020,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_28pred_regions(CYTHON_UNUSED PyOb
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_8);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 206, __pyx_L6_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 213, __pyx_L6_error)
             #endif
             if (__pyx_t_9 >= __pyx_temp) break;
           }
@@ -28821,7 +29030,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_28pred_regions(CYTHON_UNUSED PyOb
           {
             Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_8);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 206, __pyx_L6_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 213, __pyx_L6_error)
             #endif
             if (__pyx_t_9 >= __pyx_temp) break;
           }
@@ -28832,13 +29041,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_28pred_regions(CYTHON_UNUSED PyOb
           #endif
           ++__pyx_t_9;
         }
-        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 206, __pyx_L6_error)
+        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 213, __pyx_L6_error)
       } else {
         __pyx_t_7 = __pyx_t_10(__pyx_t_8);
         if (unlikely(!__pyx_t_7)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
-            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 206, __pyx_L6_error)
+            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 213, __pyx_L6_error)
             PyErr_Clear();
           }
           break;
@@ -28854,11 +29063,11 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_28pred_regions(CYTHON_UNUSED PyOb
         PyObject *__pyx_callargs[2] = {__pyx_t_11, __pyx_v_coverage};
         __pyx_t_7 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_pred_region, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
-        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 206, __pyx_L6_error)
+        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 213, __pyx_L6_error)
         __Pyx_GOTREF(__pyx_t_7);
       }
       __Pyx_GIVEREF(__pyx_t_7);
-      if (unlikely(__Pyx_ListComp_AppendAndDecref(__pyx_t_5, __pyx_t_7))) __PYX_ERR(0, 206, __pyx_L6_error)
+      if (unlikely(__Pyx_ListComp_AppendAndDecref(__pyx_t_5, __pyx_t_7))) __PYX_ERR(0, 213, __pyx_L6_error)
       __pyx_t_7 = 0;
     }
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -28885,13 +29094,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_28pred_regions(CYTHON_UNUSED PyOb
     PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_t_5, __pyx_builtin_object};
     #if CYTHON_VECTORCALL
     __pyx_t_8 = __pyx_mstate_global->__pyx_tuple[5];
-    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 206, __pyx_L1_error)
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 213, __pyx_L1_error)
     __Pyx_INCREF(__pyx_t_8);
     #else
     {
       PyObject *__pyx_temp[1] = {__pyx_mstate_global->__pyx_n_u_dtype};
       __pyx_t_8 = __Pyx_MakeKwargDict(__pyx_temp, __pyx_callargs+2, 1);
-      if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 206, __pyx_L1_error)
+      if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 213, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
     }
     #endif
@@ -28900,7 +29109,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_28pred_regions(CYTHON_UNUSED PyOb
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 206, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 213, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   {
@@ -28914,7 +29123,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_28pred_regions(CYTHON_UNUSED PyOb
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pdf_group.pyx":203
+  /* "pdf_group.pyx":210
  * 
  * 
  *     def pred_regions(self, coverage):             # <<<<<<<<<<<<<<
@@ -28940,7 +29149,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_28pred_regions(CYTHON_UNUSED PyOb
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":208
+/* "pdf_group.pyx":215
  *         return(np.array([pdf.pred_region(coverage) for pdf in self.pdf_list], dtype=object))
  * 
  *     def bins_to_probs(self, new_binpt_vec, eps=1e-16):             # <<<<<<<<<<<<<<
@@ -28990,41 +29199,41 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_new_binpt_vec,&__pyx_mstate_global->__pyx_n_u_eps,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 208, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 215, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 208, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 215, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 208, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 215, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 208, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 215, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "bins_to_probs", 0) < (0)) __PYX_ERR(0, 208, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "bins_to_probs", 0) < (0)) __PYX_ERR(0, 215, __pyx_L3_error)
       if (!values[2]) values[2] = __Pyx_NewRef(((PyObject *)((PyObject*)__pyx_mstate_global->__pyx_float_1eneg_16)));
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("bins_to_probs", 0, 2, 3, i); __PYX_ERR(0, 208, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("bins_to_probs", 0, 2, 3, i); __PYX_ERR(0, 215, __pyx_L3_error) }
       }
     } else {
       switch (__pyx_nargs) {
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 208, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 215, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 208, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 215, __pyx_L3_error)
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 208, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 215, __pyx_L3_error)
         break;
         default: goto __pyx_L5_argtuple_error;
       }
@@ -29036,7 +29245,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("bins_to_probs", 0, 2, 3, __pyx_nargs); __PYX_ERR(0, 208, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("bins_to_probs", 0, 2, 3, __pyx_nargs); __PYX_ERR(0, 215, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -29057,7 +29266,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":222
+/* "pdf_group.pyx":229
  *         cols = indices[1:]
  * 
  *         def blk(m):             # <<<<<<<<<<<<<<
@@ -29104,32 +29313,32 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_m,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 222, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 229, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 222, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 229, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "blk", 0) < (0)) __PYX_ERR(0, 222, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "blk", 0) < (0)) __PYX_ERR(0, 229, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 1; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("blk", 1, 1, 1, i); __PYX_ERR(0, 222, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("blk", 1, 1, 1, i); __PYX_ERR(0, 229, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 222, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 229, __pyx_L3_error)
     }
     __pyx_v_m = values[0];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("blk", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 222, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("blk", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 229, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -29171,7 +29380,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_13bins_to_probs_blk(PyObject *__p
   __pyx_outer_scope = (struct __pyx_obj_9pdf_group___pyx_scope_struct_4_bins_to_probs *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
 
-  /* "pdf_group.pyx":223
+  /* "pdf_group.pyx":230
  * 
  *         def blk(m):
  *             bigmat = np.cumsum(m*fbw if fbw is not None else m, axis=1)             # <<<<<<<<<<<<<<
@@ -29179,16 +29388,16 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_13bins_to_probs_blk(PyObject *__p
  *             new_probs = np.maximum(new_probs, eps)
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 223, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 230, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_cumsum); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 223, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_cumsum); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 230, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_cur_scope->__pyx_v_fbw)) { __Pyx_RaiseClosureNameError("fbw"); __PYX_ERR(0, 223, __pyx_L1_error) }
+  if (unlikely(!__pyx_cur_scope->__pyx_v_fbw)) { __Pyx_RaiseClosureNameError("fbw"); __PYX_ERR(0, 230, __pyx_L1_error) }
   __pyx_t_5 = (__pyx_cur_scope->__pyx_v_fbw != Py_None);
   if (__pyx_t_5) {
-    if (unlikely(!__pyx_cur_scope->__pyx_v_fbw)) { __Pyx_RaiseClosureNameError("fbw"); __PYX_ERR(0, 223, __pyx_L1_error) }
-    __pyx_t_6 = __Pyx_PyNumber_Multiply_object_object(__pyx_v_m, __pyx_cur_scope->__pyx_v_fbw); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 223, __pyx_L1_error)
+    if (unlikely(!__pyx_cur_scope->__pyx_v_fbw)) { __Pyx_RaiseClosureNameError("fbw"); __PYX_ERR(0, 230, __pyx_L1_error) }
+    __pyx_t_6 = __Pyx_PyNumber_Multiply_object_object(__pyx_v_m, __pyx_cur_scope->__pyx_v_fbw); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 230, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __pyx_t_3 = __pyx_t_6;
     __pyx_t_6 = 0;
@@ -29213,13 +29422,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_13bins_to_probs_blk(PyObject *__p
     PyObject *__pyx_callargs[3] = {__pyx_t_2, __pyx_t_3, __pyx_mstate_global->__pyx_int_1};
     #if CYTHON_VECTORCALL
     __pyx_t_6 = __pyx_mstate_global->__pyx_tuple[2];
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 223, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 230, __pyx_L1_error)
     __Pyx_INCREF(__pyx_t_6);
     #else
     {
       PyObject *__pyx_temp[1] = {__pyx_mstate_global->__pyx_n_u_axis};
       __pyx_t_6 = __Pyx_MakeKwargDict(__pyx_temp, __pyx_callargs+2, 1);
-      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 223, __pyx_L1_error)
+      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 230, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
     }
     #endif
@@ -29228,13 +29437,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_13bins_to_probs_blk(PyObject *__p
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 223, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 230, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_v_bigmat = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "pdf_group.pyx":224
+  /* "pdf_group.pyx":231
  *         def blk(m):
  *             bigmat = np.cumsum(m*fbw if fbw is not None else m, axis=1)
  *             new_probs = np.diff(bigmat[:, cols], axis=1, prepend=0)             # <<<<<<<<<<<<<<
@@ -29242,21 +29451,21 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_13bins_to_probs_blk(PyObject *__p
  *             return new_probs/np.sum(new_probs, axis=1).reshape(-1,1)
 */
   __pyx_t_4 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 224, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 231, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_diff); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 224, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_diff); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 231, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_cur_scope->__pyx_v_cols)) { __Pyx_RaiseClosureNameError("cols"); __PYX_ERR(0, 224, __pyx_L1_error) }
-  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 224, __pyx_L1_error)
+  if (unlikely(!__pyx_cur_scope->__pyx_v_cols)) { __Pyx_RaiseClosureNameError("cols"); __PYX_ERR(0, 231, __pyx_L1_error) }
+  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 231, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_INCREF(__pyx_mstate_global->__pyx_slice[0]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_slice[0]);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_mstate_global->__pyx_slice[0]) != (0)) __PYX_ERR(0, 224, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_mstate_global->__pyx_slice[0]) != (0)) __PYX_ERR(0, 231, __pyx_L1_error);
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_cols);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_cols);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_cur_scope->__pyx_v_cols) != (0)) __PYX_ERR(0, 224, __pyx_L1_error);
-  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_bigmat, __pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 224, __pyx_L1_error)
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_cur_scope->__pyx_v_cols) != (0)) __PYX_ERR(0, 231, __pyx_L1_error);
+  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_bigmat, __pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 231, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_t_7 = 1;
@@ -29275,13 +29484,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_13bins_to_probs_blk(PyObject *__p
     PyObject *__pyx_callargs[4] = {__pyx_t_4, __pyx_t_2, __pyx_mstate_global->__pyx_int_1, __pyx_mstate_global->__pyx_int_0};
     #if CYTHON_VECTORCALL
     __pyx_t_6 = __pyx_mstate_global->__pyx_tuple[6];
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 224, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 231, __pyx_L1_error)
     __Pyx_INCREF(__pyx_t_6);
     #else
     {
       PyObject *__pyx_temp[2] = {__pyx_mstate_global->__pyx_n_u_axis, __pyx_mstate_global->__pyx_n_u_prepend};
       __pyx_t_6 = __Pyx_MakeKwargDict(__pyx_temp, __pyx_callargs+2, 2);
-      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 224, __pyx_L1_error)
+      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 231, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
     }
     #endif
@@ -29290,13 +29499,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_13bins_to_probs_blk(PyObject *__p
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 224, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 231, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_v_new_probs = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "pdf_group.pyx":225
+  /* "pdf_group.pyx":232
  *             bigmat = np.cumsum(m*fbw if fbw is not None else m, axis=1)
  *             new_probs = np.diff(bigmat[:, cols], axis=1, prepend=0)
  *             new_probs = np.maximum(new_probs, eps)             # <<<<<<<<<<<<<<
@@ -29304,12 +29513,12 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_13bins_to_probs_blk(PyObject *__p
  *         return(row_map(blk, src, ncols=len(cols)))
 */
   __pyx_t_3 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 225, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 232, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_maximum); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 225, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_maximum); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 232, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_cur_scope->__pyx_v_eps)) { __Pyx_RaiseClosureNameError("eps"); __PYX_ERR(0, 225, __pyx_L1_error) }
+  if (unlikely(!__pyx_cur_scope->__pyx_v_eps)) { __Pyx_RaiseClosureNameError("eps"); __PYX_ERR(0, 232, __pyx_L1_error) }
   __pyx_t_7 = 1;
   #if CYTHON_UNPACK_METHODS
   if (unlikely(PyMethod_Check(__pyx_t_2))) {
@@ -29327,13 +29536,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_13bins_to_probs_blk(PyObject *__p
     __pyx_t_1 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_2, __pyx_callargs+__pyx_t_7, (3-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 225, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 232, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF_SET(__pyx_v_new_probs, __pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "pdf_group.pyx":226
+  /* "pdf_group.pyx":233
  *             new_probs = np.diff(bigmat[:, cols], axis=1, prepend=0)
  *             new_probs = np.maximum(new_probs, eps)
  *             return new_probs/np.sum(new_probs, axis=1).reshape(-1,1)             # <<<<<<<<<<<<<<
@@ -29341,9 +29550,9 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_13bins_to_probs_blk(PyObject *__p
  * 
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 226, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 233, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_sum); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 226, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_sum); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 233, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_7 = 1;
@@ -29362,13 +29571,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_13bins_to_probs_blk(PyObject *__p
     PyObject *__pyx_callargs[3] = {__pyx_t_2, __pyx_v_new_probs, __pyx_mstate_global->__pyx_int_1};
     #if CYTHON_VECTORCALL
     __pyx_t_3 = __pyx_mstate_global->__pyx_tuple[2];
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 226, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 233, __pyx_L1_error)
     __Pyx_INCREF(__pyx_t_3);
     #else
     {
       PyObject *__pyx_temp[1] = {__pyx_mstate_global->__pyx_n_u_axis};
       __pyx_t_3 = __Pyx_MakeKwargDict(__pyx_temp, __pyx_callargs+2, 1);
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 226, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 233, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
     }
     #endif
@@ -29376,16 +29585,16 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_13bins_to_probs_blk(PyObject *__p
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 226, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 233, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_reshape); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 226, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_reshape); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 233, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_mstate_global->__pyx_tuple[3], NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 226, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_mstate_global->__pyx_tuple[3], NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 233, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_PyNumber_Divide(__pyx_v_new_probs, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 226, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyNumber_Divide(__pyx_v_new_probs, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 233, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   {
@@ -29399,7 +29608,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_13bins_to_probs_blk(PyObject *__p
   __pyx_t_6 = 0;
   goto __pyx_L0;
 
-  /* "pdf_group.pyx":222
+  /* "pdf_group.pyx":229
  *         cols = indices[1:]
  * 
  *         def blk(m):             # <<<<<<<<<<<<<<
@@ -29424,7 +29633,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_13bins_to_probs_blk(PyObject *__p
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":208
+/* "pdf_group.pyx":215
  *         return(np.array([pdf.pred_region(coverage) for pdf in self.pdf_list], dtype=object))
  * 
  *     def bins_to_probs(self, new_binpt_vec, eps=1e-16):             # <<<<<<<<<<<<<<
@@ -29464,7 +29673,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyO
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_9pdf_group___pyx_scope_struct_4_bins_to_probs *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 208, __pyx_L1_error)
+    __PYX_ERR(0, 215, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -29472,7 +29681,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyO
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_eps);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_eps);
 
-  /* "pdf_group.pyx":211
+  /* "pdf_group.pyx":218
  *         """Assumes new_binpt_vec contains same first and last point. Row blocks run in threads; each row gets the
  *         same values as when the whole matrix is processed at once."""
  *         no_new_binpts = np.all(np.isin(new_binpt_vec, self.binvec))             # <<<<<<<<<<<<<<
@@ -29480,18 +29689,18 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyO
  *             finebins = np.union1d(self.binvec, new_binpt_vec)
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 211, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 218, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_all); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 211, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_all); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 218, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_5 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 211, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 218, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_isin); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 211, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_isin); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 218, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 211, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 218, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_8 = 1;
   #if CYTHON_UNPACK_METHODS
@@ -29511,7 +29720,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyO
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 211, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 218, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
   }
   __pyx_t_8 = 1;
@@ -29532,27 +29741,27 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyO
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 211, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 218, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_v_no_new_binpts = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "pdf_group.pyx":212
+  /* "pdf_group.pyx":219
  *         same values as when the whole matrix is processed at once."""
  *         no_new_binpts = np.all(np.isin(new_binpt_vec, self.binvec))
  *         if not no_new_binpts:             # <<<<<<<<<<<<<<
  *             finebins = np.union1d(self.binvec, new_binpt_vec)
  *             src = explode_densities(self.densitymat, self.binvec, finebins)   # already parallel over rows
 */
-  __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_v_no_new_binpts); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 212, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_v_no_new_binpts); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 219, __pyx_L1_error)
   __pyx_t_10 = (!__pyx_t_9);
 
 
   if (__pyx_t_10) {
 
 
-    /* "pdf_group.pyx":213
+    /* "pdf_group.pyx":220
  *         no_new_binpts = np.all(np.isin(new_binpt_vec, self.binvec))
  *         if not no_new_binpts:
  *             finebins = np.union1d(self.binvec, new_binpt_vec)             # <<<<<<<<<<<<<<
@@ -29560,12 +29769,12 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyO
  *             fbw = np.diff(finebins)
 */
     __pyx_t_4 = NULL;
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 213, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 220, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_union1d); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 213, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_union1d); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 220, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 213, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 220, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_8 = 1;
     #if CYTHON_UNPACK_METHODS
@@ -29585,13 +29794,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyO
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 213, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 220, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     }
     __pyx_v_finebins = __pyx_t_1;
     __pyx_t_1 = 0;
 
-    /* "pdf_group.pyx":214
+    /* "pdf_group.pyx":221
  *         if not no_new_binpts:
  *             finebins = np.union1d(self.binvec, new_binpt_vec)
  *             src = explode_densities(self.densitymat, self.binvec, finebins)   # already parallel over rows             # <<<<<<<<<<<<<<
@@ -29599,11 +29808,11 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyO
  *         else:
 */
     __pyx_t_2 = NULL;
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_explode_densities); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 214, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_explode_densities); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 221, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_densitymat); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 214, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_densitymat); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 221, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 214, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 221, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __pyx_t_8 = 1;
     #if CYTHON_UNPACK_METHODS
@@ -29624,13 +29833,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyO
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 214, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 221, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     }
     __pyx_v_src = __pyx_t_1;
     __pyx_t_1 = 0;
 
-    /* "pdf_group.pyx":215
+    /* "pdf_group.pyx":222
  *             finebins = np.union1d(self.binvec, new_binpt_vec)
  *             src = explode_densities(self.densitymat, self.binvec, finebins)   # already parallel over rows
  *             fbw = np.diff(finebins)             # <<<<<<<<<<<<<<
@@ -29638,9 +29847,9 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyO
  *             finebins = self.binvec
 */
     __pyx_t_3 = NULL;
-    __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 215, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 222, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_diff); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 215, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_diff); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 222, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_t_8 = 1;
@@ -29660,14 +29869,14 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyO
       __pyx_t_1 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_4, __pyx_callargs+__pyx_t_8, (2-__pyx_t_8) | (__pyx_t_8*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 215, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 222, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     }
     __Pyx_GIVEREF(__pyx_t_1);
     __pyx_cur_scope->__pyx_v_fbw = __pyx_t_1;
     __pyx_t_1 = 0;
 
-    /* "pdf_group.pyx":212
+    /* "pdf_group.pyx":219
  *         same values as when the whole matrix is processed at once."""
  *         no_new_binpts = np.all(np.isin(new_binpt_vec, self.binvec))
  *         if not no_new_binpts:             # <<<<<<<<<<<<<<
@@ -29677,7 +29886,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyO
     goto __pyx_L3;
   }
 
-  /* "pdf_group.pyx":217
+  /* "pdf_group.pyx":224
  *             fbw = np.diff(finebins)
  *         else:
  *             finebins = self.binvec             # <<<<<<<<<<<<<<
@@ -29685,19 +29894,19 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyO
  *         indices = (np.argwhere(np.isin(finebins, new_binpt_vec)).reshape(-1)-1).tolist()
 */
   /*else*/ {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 217, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_binvec); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 224, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_v_finebins = __pyx_t_1;
     __pyx_t_1 = 0;
 
-    /* "pdf_group.pyx":218
+    /* "pdf_group.pyx":225
  *         else:
  *             finebins = self.binvec
  *             src, fbw = self.probmat, None             # <<<<<<<<<<<<<<
  *         indices = (np.argwhere(np.isin(finebins, new_binpt_vec)).reshape(-1)-1).tolist()
  *         cols = indices[1:]
 */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_probmat); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 218, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_probmat); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 225, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_4 = Py_None;
     __Pyx_INCREF(__pyx_t_4);
@@ -29709,7 +29918,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyO
   }
   __pyx_L3:;
 
-  /* "pdf_group.pyx":219
+  /* "pdf_group.pyx":226
  *             finebins = self.binvec
  *             src, fbw = self.probmat, None
  *         indices = (np.argwhere(np.isin(finebins, new_binpt_vec)).reshape(-1)-1).tolist()             # <<<<<<<<<<<<<<
@@ -29717,15 +29926,15 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyO
  * 
 */
   __pyx_t_6 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 219, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 226, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_argwhere); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 219, __pyx_L1_error)
+  __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_argwhere); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 226, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_12 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 219, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 226, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_13);
-  __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_mstate_global->__pyx_n_u_isin); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 219, __pyx_L1_error)
+  __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_mstate_global->__pyx_n_u_isin); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 226, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_14);
   __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
   __pyx_t_8 = 1;
@@ -29745,7 +29954,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyO
     __pyx_t_5 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_14, __pyx_callargs+__pyx_t_8, (3-__pyx_t_8) | (__pyx_t_8*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
     __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 219, __pyx_L1_error)
+    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 226, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
   }
   __pyx_t_8 = 1;
@@ -29766,7 +29975,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyO
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 219, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 226, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
   }
   __pyx_t_7 = __pyx_t_2;
@@ -29777,10 +29986,10 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyO
     __pyx_t_3 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_reshape, __pyx_callargs+__pyx_t_8, (2-__pyx_t_8) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 219, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 226, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
   }
-  __pyx_t_2 = __Pyx_PyLong_SubtractObjC(__pyx_t_3, __pyx_mstate_global->__pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 219, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyLong_SubtractObjC(__pyx_t_3, __pyx_mstate_global->__pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 226, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_1 = __pyx_t_2;
@@ -29791,38 +30000,38 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyO
     __pyx_t_4 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_tolist, __pyx_callargs+__pyx_t_8, (1-__pyx_t_8) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 219, __pyx_L1_error)
+    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 226, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
   }
   __pyx_v_indices = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "pdf_group.pyx":220
+  /* "pdf_group.pyx":227
  *             src, fbw = self.probmat, None
  *         indices = (np.argwhere(np.isin(finebins, new_binpt_vec)).reshape(-1)-1).tolist()
  *         cols = indices[1:]             # <<<<<<<<<<<<<<
  * 
  *         def blk(m):
 */
-  __pyx_t_4 = __Pyx_PyObject_GetSlice(__pyx_v_indices, 1, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[1], 1, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 220, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetSlice(__pyx_v_indices, 1, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[1], 1, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 227, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_4);
   __pyx_cur_scope->__pyx_v_cols = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "pdf_group.pyx":222
+  /* "pdf_group.pyx":229
  *         cols = indices[1:]
  * 
  *         def blk(m):             # <<<<<<<<<<<<<<
  *             bigmat = np.cumsum(m*fbw if fbw is not None else m, axis=1)
  *             new_probs = np.diff(bigmat[:, cols], axis=1, prepend=0)
 */
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_13bins_to_probs_1blk, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_bins_to_probs_locals_bl, ((PyObject*)__pyx_cur_scope), __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[5])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 222, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_13bins_to_probs_1blk, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_bins_to_probs_locals_bl, ((PyObject*)__pyx_cur_scope), __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[5])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 229, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_v_blk = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "pdf_group.pyx":227
+  /* "pdf_group.pyx":234
  *             new_probs = np.maximum(new_probs, eps)
  *             return new_probs/np.sum(new_probs, axis=1).reshape(-1,1)
  *         return(row_map(blk, src, ncols=len(cols)))             # <<<<<<<<<<<<<<
@@ -29830,13 +30039,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyO
  * 
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_row_map); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 227, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_row_map); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 234, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_3 = __pyx_cur_scope->__pyx_v_cols;
   __Pyx_INCREF(__pyx_t_3);
-  __pyx_t_15 = PyObject_Length(__pyx_t_3); if (unlikely(__pyx_t_15 == ((Py_ssize_t)-1))) __PYX_ERR(0, 227, __pyx_L1_error)
+  __pyx_t_15 = PyObject_Length(__pyx_t_3); if (unlikely(__pyx_t_15 == ((Py_ssize_t)-1))) __PYX_ERR(0, 234, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = PyLong_FromSsize_t(__pyx_t_15); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 227, __pyx_L1_error)
+  __pyx_t_3 = PyLong_FromSsize_t(__pyx_t_15); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 234, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
   __pyx_t_8 = 1;
@@ -29855,13 +30064,13 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyO
     PyObject *__pyx_callargs[4] = {__pyx_t_2, __pyx_v_blk, __pyx_v_src, __pyx_t_3};
     #if CYTHON_VECTORCALL
     __pyx_t_7 = __pyx_mstate_global->__pyx_tuple[7];
-    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 227, __pyx_L1_error)
+    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 234, __pyx_L1_error)
     __Pyx_INCREF(__pyx_t_7);
     #else
     {
       PyObject *__pyx_temp[1] = {__pyx_mstate_global->__pyx_n_u_ncols};
       __pyx_t_7 = __Pyx_MakeKwargDict(__pyx_temp, __pyx_callargs+3, 1);
-      if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 227, __pyx_L1_error)
+      if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 234, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
     }
     #endif
@@ -29870,7 +30079,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyO
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 227, __pyx_L1_error)
+    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 234, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
   }
   {
@@ -29884,7 +30093,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyO
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "pdf_group.pyx":208
+  /* "pdf_group.pyx":215
  *         return(np.array([pdf.pred_region(coverage) for pdf in self.pdf_list], dtype=object))
  * 
  *     def bins_to_probs(self, new_binpt_vec, eps=1e-16):             # <<<<<<<<<<<<<<
@@ -29919,7 +30128,7 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyO
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":230
+/* "pdf_group.pyx":237
  * 
  * 
  * def test_in_pred_regions(test_vals, regions):             # <<<<<<<<<<<<<<
@@ -29928,15 +30137,15 @@ static PyObject *__pyx_pf_9pdf_group_8PdfGroup_30bins_to_probs(CYTHON_UNUSED PyO
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9pdf_group_7test_in_pred_regions(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9pdf_group_9test_in_pred_regions(PyObject *__pyx_self, 
 #if CYTHON_VECTORCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_9pdf_group_7test_in_pred_regions = {"test_in_pred_regions", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9pdf_group_7test_in_pred_regions, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_9pdf_group_7test_in_pred_regions(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_9pdf_group_9test_in_pred_regions = {"test_in_pred_regions", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9pdf_group_9test_in_pred_regions, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_9pdf_group_9test_in_pred_regions(PyObject *__pyx_self, 
 #if CYTHON_VECTORCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -29967,39 +30176,39 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_test_vals,&__pyx_mstate_global->__pyx_n_u_regions,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 230, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 237, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 230, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 237, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 230, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 237, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "test_in_pred_regions", 0) < (0)) __PYX_ERR(0, 230, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "test_in_pred_regions", 0) < (0)) __PYX_ERR(0, 237, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("test_in_pred_regions", 1, 2, 2, i); __PYX_ERR(0, 230, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("test_in_pred_regions", 1, 2, 2, i); __PYX_ERR(0, 237, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 230, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 237, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 230, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 237, __pyx_L3_error)
     }
     __pyx_v_test_vals = values[0];
     __pyx_v_regions = values[1];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("test_in_pred_regions", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 230, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("test_in_pred_regions", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 237, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -30010,7 +30219,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_9pdf_group_6test_in_pred_regions(__pyx_self, __pyx_v_test_vals, __pyx_v_regions);
+  __pyx_r = __pyx_pf_9pdf_group_8test_in_pred_regions(__pyx_self, __pyx_v_test_vals, __pyx_v_regions);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -30020,7 +30229,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_9pdf_group_6test_in_pred_regions(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_test_vals, PyObject *__pyx_v_regions) {
+static PyObject *__pyx_pf_9pdf_group_8test_in_pred_regions(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_test_vals, PyObject *__pyx_v_regions) {
   Py_ssize_t __pyx_8genexpr9__pyx_v_i;
   PyObject *__pyx_9genexpr10__pyx_v_interval = NULL;
   PyObject *__pyx_r = NULL;
@@ -30050,7 +30259,7 @@ static PyObject *__pyx_pf_9pdf_group_6test_in_pred_regions(CYTHON_UNUSED PyObjec
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("test_in_pred_regions", 0);
 
-  /* "pdf_group.pyx":231
+  /* "pdf_group.pyx":238
  * 
  * def test_in_pred_regions(test_vals, regions):
  *     return(np.array([np.any([((test_vals[i]>=interval[0]) and (test_vals[i]<=interval[1]))             # <<<<<<<<<<<<<<
@@ -30058,29 +30267,29 @@ static PyObject *__pyx_pf_9pdf_group_6test_in_pred_regions(CYTHON_UNUSED PyObjec
  *                         for i in range(len(test_vals))]))
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 231, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 238, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_array); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 231, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_array); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 238, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   { /* enter inner scope */
-    __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 231, __pyx_L1_error)
+    __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 238, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
 
-    /* "pdf_group.pyx":233
+    /* "pdf_group.pyx":240
  *     return(np.array([np.any([((test_vals[i]>=interval[0]) and (test_vals[i]<=interval[1]))
  *                      for interval in regions[i]])
  *                         for i in range(len(test_vals))]))             # <<<<<<<<<<<<<<
  * 
  * 
 */
-    __pyx_t_5 = PyObject_Length(__pyx_v_test_vals); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(0, 233, __pyx_L1_error)
+    __pyx_t_5 = PyObject_Length(__pyx_v_test_vals); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(0, 240, __pyx_L1_error)
     __pyx_t_6 = __pyx_t_5;
 
     for (__pyx_t_7 = 0; __pyx_t_7 < __pyx_t_6; __pyx_t_7+=1) {
       __pyx_8genexpr9__pyx_v_i = __pyx_t_7;
 
-      /* "pdf_group.pyx":231
+      /* "pdf_group.pyx":238
  * 
  * def test_in_pred_regions(test_vals, regions):
  *     return(np.array([np.any([((test_vals[i]>=interval[0]) and (test_vals[i]<=interval[1]))             # <<<<<<<<<<<<<<
@@ -30088,32 +30297,32 @@ static PyObject *__pyx_pf_9pdf_group_6test_in_pred_regions(CYTHON_UNUSED PyObjec
  *                         for i in range(len(test_vals))]))
 */
       __pyx_t_9 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 231, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 238, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_any); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 231, __pyx_L1_error)
+      __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_any); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 238, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_11);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       { /* enter inner scope */
-        __pyx_t_10 = PyList_New(0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 231, __pyx_L7_error)
+        __pyx_t_10 = PyList_New(0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 238, __pyx_L7_error)
         __Pyx_GOTREF(__pyx_t_10);
 
-        /* "pdf_group.pyx":232
+        /* "pdf_group.pyx":239
  * def test_in_pred_regions(test_vals, regions):
  *     return(np.array([np.any([((test_vals[i]>=interval[0]) and (test_vals[i]<=interval[1]))
  *                      for interval in regions[i]])             # <<<<<<<<<<<<<<
  *                         for i in range(len(test_vals))]))
  * 
 */
-        __pyx_t_12 = __Pyx_GetItemInt(__pyx_v_regions, __pyx_8genexpr9__pyx_v_i, Py_ssize_t, 1, PyLong_FromSsize_t, 1, 1, 1, __Pyx_ReferenceSharing_FunctionArgument); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 232, __pyx_L7_error)
+        __pyx_t_12 = __Pyx_GetItemInt(__pyx_v_regions, __pyx_8genexpr9__pyx_v_i, Py_ssize_t, 1, PyLong_FromSsize_t, 1, 1, 1, __Pyx_ReferenceSharing_FunctionArgument); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 239, __pyx_L7_error)
         __Pyx_GOTREF(__pyx_t_12);
         if (likely(PyList_CheckExact(__pyx_t_12)) || PyTuple_CheckExact(__pyx_t_12)) {
           __pyx_t_13 = __pyx_t_12; __Pyx_INCREF(__pyx_t_13);
           __pyx_t_14 = 0;
           __pyx_t_15 = NULL;
         } else {
-          __pyx_t_14 = -1; __pyx_t_13 = PyObject_GetIter(__pyx_t_12); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 232, __pyx_L7_error)
+          __pyx_t_14 = -1; __pyx_t_13 = PyObject_GetIter(__pyx_t_12); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 239, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_13);
-          __pyx_t_15 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_13); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 232, __pyx_L7_error)
+          __pyx_t_15 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_13); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 239, __pyx_L7_error)
         }
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
         for (;;) {
@@ -30122,7 +30331,7 @@ static PyObject *__pyx_pf_9pdf_group_6test_in_pred_regions(CYTHON_UNUSED PyObjec
               {
                 Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_13);
                 #if !CYTHON_ASSUME_SAFE_SIZE
-                if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 232, __pyx_L7_error)
+                if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 239, __pyx_L7_error)
                 #endif
                 if (__pyx_t_14 >= __pyx_temp) break;
               }
@@ -30132,7 +30341,7 @@ static PyObject *__pyx_pf_9pdf_group_6test_in_pred_regions(CYTHON_UNUSED PyObjec
               {
                 Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_13);
                 #if !CYTHON_ASSUME_SAFE_SIZE
-                if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 232, __pyx_L7_error)
+                if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 239, __pyx_L7_error)
                 #endif
                 if (__pyx_t_14 >= __pyx_temp) break;
               }
@@ -30143,13 +30352,13 @@ static PyObject *__pyx_pf_9pdf_group_6test_in_pred_regions(CYTHON_UNUSED PyObjec
               #endif
               ++__pyx_t_14;
             }
-            if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 232, __pyx_L7_error)
+            if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 239, __pyx_L7_error)
           } else {
             __pyx_t_12 = __pyx_t_15(__pyx_t_13);
             if (unlikely(!__pyx_t_12)) {
               PyObject* exc_type = PyErr_Occurred();
               if (exc_type) {
-                if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 232, __pyx_L7_error)
+                if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 239, __pyx_L7_error)
                 PyErr_Clear();
               }
               break;
@@ -30159,21 +30368,21 @@ static PyObject *__pyx_pf_9pdf_group_6test_in_pred_regions(CYTHON_UNUSED PyObjec
           __Pyx_XDECREF_SET(__pyx_9genexpr10__pyx_v_interval, __pyx_t_12);
           __pyx_t_12 = 0;
 
-          /* "pdf_group.pyx":231
+          /* "pdf_group.pyx":238
  * 
  * def test_in_pred_regions(test_vals, regions):
  *     return(np.array([np.any([((test_vals[i]>=interval[0]) and (test_vals[i]<=interval[1]))             # <<<<<<<<<<<<<<
  *                      for interval in regions[i]])
  *                         for i in range(len(test_vals))]))
 */
-          __pyx_t_16 = __Pyx_GetItemInt(__pyx_v_test_vals, __pyx_8genexpr9__pyx_v_i, Py_ssize_t, 1, PyLong_FromSsize_t, 1, 1, 1, __Pyx_ReferenceSharing_FunctionArgument); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 231, __pyx_L7_error)
+          __pyx_t_16 = __Pyx_GetItemInt(__pyx_v_test_vals, __pyx_8genexpr9__pyx_v_i, Py_ssize_t, 1, PyLong_FromSsize_t, 1, 1, 1, __Pyx_ReferenceSharing_FunctionArgument); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 238, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_16);
-          __pyx_t_17 = __Pyx_GetItemInt(__pyx_9genexpr10__pyx_v_interval, 0, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_SharedReference); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 231, __pyx_L7_error)
+          __pyx_t_17 = __Pyx_GetItemInt(__pyx_9genexpr10__pyx_v_interval, 0, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_SharedReference); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 238, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_17);
-          __pyx_t_18 = __Pyx_PyObject_CompareGe_object_object(__pyx_t_16, __pyx_t_17, Py_GE); __Pyx_XGOTREF(__pyx_t_18); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 231, __pyx_L7_error)
+          __pyx_t_18 = __Pyx_PyObject_CompareGe_object_object(__pyx_t_16, __pyx_t_17, Py_GE); __Pyx_XGOTREF(__pyx_t_18); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 238, __pyx_L7_error)
           __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
           __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-          __pyx_t_19 = __Pyx_PyObject_IsTrue(__pyx_t_18); if (unlikely((__pyx_t_19 < 0))) __PYX_ERR(0, 231, __pyx_L7_error)
+          __pyx_t_19 = __Pyx_PyObject_IsTrue(__pyx_t_18); if (unlikely((__pyx_t_19 < 0))) __PYX_ERR(0, 238, __pyx_L7_error)
           if (__pyx_t_19) {
             __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
           } else {
@@ -30182,11 +30391,11 @@ static PyObject *__pyx_pf_9pdf_group_6test_in_pred_regions(CYTHON_UNUSED PyObjec
             __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
             goto __pyx_L10_bool_binop_done;
           }
-          __pyx_t_18 = __Pyx_GetItemInt(__pyx_v_test_vals, __pyx_8genexpr9__pyx_v_i, Py_ssize_t, 1, PyLong_FromSsize_t, 1, 1, 1, __Pyx_ReferenceSharing_FunctionArgument); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 231, __pyx_L7_error)
+          __pyx_t_18 = __Pyx_GetItemInt(__pyx_v_test_vals, __pyx_8genexpr9__pyx_v_i, Py_ssize_t, 1, PyLong_FromSsize_t, 1, 1, 1, __Pyx_ReferenceSharing_FunctionArgument); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 238, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_18);
-          __pyx_t_17 = __Pyx_GetItemInt(__pyx_9genexpr10__pyx_v_interval, 1, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_SharedReference); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 231, __pyx_L7_error)
+          __pyx_t_17 = __Pyx_GetItemInt(__pyx_9genexpr10__pyx_v_interval, 1, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_SharedReference); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 238, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_17);
-          __pyx_t_16 = __Pyx_PyObject_CompareLe_object_object(__pyx_t_18, __pyx_t_17, Py_LE); __Pyx_XGOTREF(__pyx_t_16); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 231, __pyx_L7_error)
+          __pyx_t_16 = __Pyx_PyObject_CompareLe_object_object(__pyx_t_18, __pyx_t_17, Py_LE); __Pyx_XGOTREF(__pyx_t_16); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 238, __pyx_L7_error)
           __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
           __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
           __Pyx_INCREF(__pyx_t_16);
@@ -30194,10 +30403,10 @@ static PyObject *__pyx_pf_9pdf_group_6test_in_pred_regions(CYTHON_UNUSED PyObjec
           __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
           __pyx_L10_bool_binop_done:;
           __Pyx_GIVEREF(__pyx_t_12);
-          if (unlikely(__Pyx_ListComp_AppendAndDecref(__pyx_t_10, __pyx_t_12))) __PYX_ERR(0, 231, __pyx_L7_error)
+          if (unlikely(__Pyx_ListComp_AppendAndDecref(__pyx_t_10, __pyx_t_12))) __PYX_ERR(0, 238, __pyx_L7_error)
           __pyx_t_12 = 0;
 
-          /* "pdf_group.pyx":232
+          /* "pdf_group.pyx":239
  * def test_in_pred_regions(test_vals, regions):
  *     return(np.array([np.any([((test_vals[i]>=interval[0]) and (test_vals[i]<=interval[1]))
  *                      for interval in regions[i]])             # <<<<<<<<<<<<<<
@@ -30231,11 +30440,11 @@ static PyObject *__pyx_pf_9pdf_group_6test_in_pred_regions(CYTHON_UNUSED PyObjec
         __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 231, __pyx_L1_error)
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 238, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
       }
       __Pyx_GIVEREF(__pyx_t_8);
-      if (unlikely(__Pyx_ListComp_AppendAndDecref(__pyx_t_3, __pyx_t_8))) __PYX_ERR(0, 231, __pyx_L1_error)
+      if (unlikely(__Pyx_ListComp_AppendAndDecref(__pyx_t_3, __pyx_t_8))) __PYX_ERR(0, 238, __pyx_L1_error)
       __pyx_t_8 = 0;
     }
 
@@ -30259,7 +30468,7 @@ static PyObject *__pyx_pf_9pdf_group_6test_in_pred_regions(CYTHON_UNUSED PyObjec
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 231, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 238, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   {
@@ -30273,7 +30482,7 @@ static PyObject *__pyx_pf_9pdf_group_6test_in_pred_regions(CYTHON_UNUSED PyObjec
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pdf_group.pyx":230
+  /* "pdf_group.pyx":237
  * 
  * 
  * def test_in_pred_regions(test_vals, regions):             # <<<<<<<<<<<<<<
@@ -30306,7 +30515,7 @@ static PyObject *__pyx_pf_9pdf_group_6test_in_pred_regions(CYTHON_UNUSED PyObjec
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":236
+/* "pdf_group.pyx":243
  * 
  * 
  * def log_loss_pdf(y_true, pdf_set):             # <<<<<<<<<<<<<<
@@ -30315,16 +30524,16 @@ static PyObject *__pyx_pf_9pdf_group_6test_in_pred_regions(CYTHON_UNUSED PyObjec
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9pdf_group_9log_loss_pdf(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9pdf_group_11log_loss_pdf(PyObject *__pyx_self, 
 #if CYTHON_VECTORCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_9pdf_group_8log_loss_pdf, "This computes the log loss for a truth set and a DensitySet object");
-static PyMethodDef __pyx_mdef_9pdf_group_9log_loss_pdf = {"log_loss_pdf", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9pdf_group_9log_loss_pdf, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9pdf_group_8log_loss_pdf};
-static PyObject *__pyx_pw_9pdf_group_9log_loss_pdf(PyObject *__pyx_self, 
+PyDoc_STRVAR(__pyx_doc_9pdf_group_10log_loss_pdf, "This computes the log loss for a truth set and a DensitySet object");
+static PyMethodDef __pyx_mdef_9pdf_group_11log_loss_pdf = {"log_loss_pdf", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9pdf_group_11log_loss_pdf, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9pdf_group_10log_loss_pdf};
+static PyObject *__pyx_pw_9pdf_group_11log_loss_pdf(PyObject *__pyx_self, 
 #if CYTHON_VECTORCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -30355,39 +30564,39 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_y_true,&__pyx_mstate_global->__pyx_n_u_pdf_set,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 236, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 243, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 236, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 243, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 236, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 243, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "log_loss_pdf", 0) < (0)) __PYX_ERR(0, 236, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "log_loss_pdf", 0) < (0)) __PYX_ERR(0, 243, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("log_loss_pdf", 1, 2, 2, i); __PYX_ERR(0, 236, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("log_loss_pdf", 1, 2, 2, i); __PYX_ERR(0, 243, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 236, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 243, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 236, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 243, __pyx_L3_error)
     }
     __pyx_v_y_true = values[0];
     __pyx_v_pdf_set = values[1];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("log_loss_pdf", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 236, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("log_loss_pdf", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 243, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -30398,7 +30607,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_9pdf_group_8log_loss_pdf(__pyx_self, __pyx_v_y_true, __pyx_v_pdf_set);
+  __pyx_r = __pyx_pf_9pdf_group_10log_loss_pdf(__pyx_self, __pyx_v_y_true, __pyx_v_pdf_set);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -30408,7 +30617,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_9pdf_group_8log_loss_pdf(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_y_true, PyObject *__pyx_v_pdf_set) {
+static PyObject *__pyx_pf_9pdf_group_10log_loss_pdf(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_y_true, PyObject *__pyx_v_pdf_set) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -30419,7 +30628,7 @@ static PyObject *__pyx_pf_9pdf_group_8log_loss_pdf(CYTHON_UNUSED PyObject *__pyx
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("log_loss_pdf", 0);
 
-  /* "pdf_group.pyx":238
+  /* "pdf_group.pyx":245
  * def log_loss_pdf(y_true, pdf_set):
  *     """This computes the log loss for a truth set and a DensitySet object"""
  *     return pdf_set.log_loss(y_true)             # <<<<<<<<<<<<<<
@@ -30433,7 +30642,7 @@ static PyObject *__pyx_pf_9pdf_group_8log_loss_pdf(CYTHON_UNUSED PyObject *__pyx
     PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_v_y_true};
     __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_log_loss, __pyx_callargs+__pyx_t_3, (2-__pyx_t_3) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 238, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 245, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   {
@@ -30447,7 +30656,7 @@ static PyObject *__pyx_pf_9pdf_group_8log_loss_pdf(CYTHON_UNUSED PyObject *__pyx
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pdf_group.pyx":236
+  /* "pdf_group.pyx":243
  * 
  * 
  * def log_loss_pdf(y_true, pdf_set):             # <<<<<<<<<<<<<<
@@ -30467,7 +30676,7 @@ static PyObject *__pyx_pf_9pdf_group_8log_loss_pdf(CYTHON_UNUSED PyObject *__pyx
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":240
+/* "pdf_group.pyx":247
  *     return pdf_set.log_loss(y_true)
  * 
  * def crps_mean(y_true, pdf_set):             # <<<<<<<<<<<<<<
@@ -30476,16 +30685,16 @@ static PyObject *__pyx_pf_9pdf_group_8log_loss_pdf(CYTHON_UNUSED PyObject *__pyx
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9pdf_group_11crps_mean(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9pdf_group_13crps_mean(PyObject *__pyx_self, 
 #if CYTHON_VECTORCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_9pdf_group_10crps_mean, "This computes the log loss for a truth set and a DensitySet object");
-static PyMethodDef __pyx_mdef_9pdf_group_11crps_mean = {"crps_mean", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9pdf_group_11crps_mean, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9pdf_group_10crps_mean};
-static PyObject *__pyx_pw_9pdf_group_11crps_mean(PyObject *__pyx_self, 
+PyDoc_STRVAR(__pyx_doc_9pdf_group_12crps_mean, "This computes the log loss for a truth set and a DensitySet object");
+static PyMethodDef __pyx_mdef_9pdf_group_13crps_mean = {"crps_mean", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9pdf_group_13crps_mean, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9pdf_group_12crps_mean};
+static PyObject *__pyx_pw_9pdf_group_13crps_mean(PyObject *__pyx_self, 
 #if CYTHON_VECTORCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -30516,39 +30725,39 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_y_true,&__pyx_mstate_global->__pyx_n_u_pdf_set,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 240, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 247, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 240, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 247, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 240, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 247, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "crps_mean", 0) < (0)) __PYX_ERR(0, 240, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "crps_mean", 0) < (0)) __PYX_ERR(0, 247, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("crps_mean", 1, 2, 2, i); __PYX_ERR(0, 240, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("crps_mean", 1, 2, 2, i); __PYX_ERR(0, 247, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 240, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 247, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 240, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 247, __pyx_L3_error)
     }
     __pyx_v_y_true = values[0];
     __pyx_v_pdf_set = values[1];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("crps_mean", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 240, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("crps_mean", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 247, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -30559,7 +30768,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_9pdf_group_10crps_mean(__pyx_self, __pyx_v_y_true, __pyx_v_pdf_set);
+  __pyx_r = __pyx_pf_9pdf_group_12crps_mean(__pyx_self, __pyx_v_y_true, __pyx_v_pdf_set);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -30569,7 +30778,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_9pdf_group_10crps_mean(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_y_true, PyObject *__pyx_v_pdf_set) {
+static PyObject *__pyx_pf_9pdf_group_12crps_mean(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_y_true, PyObject *__pyx_v_pdf_set) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -30580,7 +30789,7 @@ static PyObject *__pyx_pf_9pdf_group_10crps_mean(CYTHON_UNUSED PyObject *__pyx_s
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("crps_mean", 0);
 
-  /* "pdf_group.pyx":242
+  /* "pdf_group.pyx":249
  * def crps_mean(y_true, pdf_set):
  *     """This computes the log loss for a truth set and a DensitySet object"""
  *     return pdf_set.crps_mean(y_true)             # <<<<<<<<<<<<<<
@@ -30594,7 +30803,7 @@ static PyObject *__pyx_pf_9pdf_group_10crps_mean(CYTHON_UNUSED PyObject *__pyx_s
     PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_v_y_true};
     __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_crps_mean, __pyx_callargs+__pyx_t_3, (2-__pyx_t_3) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 242, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 249, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   {
@@ -30608,7 +30817,7 @@ static PyObject *__pyx_pf_9pdf_group_10crps_mean(CYTHON_UNUSED PyObject *__pyx_s
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pdf_group.pyx":240
+  /* "pdf_group.pyx":247
  *     return pdf_set.log_loss(y_true)
  * 
  * def crps_mean(y_true, pdf_set):             # <<<<<<<<<<<<<<
@@ -30628,7 +30837,7 @@ static PyObject *__pyx_pf_9pdf_group_10crps_mean(CYTHON_UNUSED PyObject *__pyx_s
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":244
+/* "pdf_group.pyx":251
  *     return pdf_set.crps_mean(y_true)
  * 
  * def size_of_pred_region(pr):             # <<<<<<<<<<<<<<
@@ -30637,15 +30846,15 @@ static PyObject *__pyx_pf_9pdf_group_10crps_mean(CYTHON_UNUSED PyObject *__pyx_s
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9pdf_group_13size_of_pred_region(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9pdf_group_15size_of_pred_region(PyObject *__pyx_self, 
 #if CYTHON_VECTORCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_9pdf_group_13size_of_pred_region = {"size_of_pred_region", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9pdf_group_13size_of_pred_region, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_9pdf_group_13size_of_pred_region(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_9pdf_group_15size_of_pred_region = {"size_of_pred_region", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9pdf_group_15size_of_pred_region, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_9pdf_group_15size_of_pred_region(PyObject *__pyx_self, 
 #if CYTHON_VECTORCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -30675,32 +30884,32 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_pr,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 244, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 251, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 244, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 251, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "size_of_pred_region", 0) < (0)) __PYX_ERR(0, 244, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "size_of_pred_region", 0) < (0)) __PYX_ERR(0, 251, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 1; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("size_of_pred_region", 1, 1, 1, i); __PYX_ERR(0, 244, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("size_of_pred_region", 1, 1, 1, i); __PYX_ERR(0, 251, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 244, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 251, __pyx_L3_error)
     }
     __pyx_v_pr = values[0];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("size_of_pred_region", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 244, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("size_of_pred_region", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 251, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -30711,7 +30920,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_9pdf_group_12size_of_pred_region(__pyx_self, __pyx_v_pr);
+  __pyx_r = __pyx_pf_9pdf_group_14size_of_pred_region(__pyx_self, __pyx_v_pr);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -30721,7 +30930,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_9pdf_group_12size_of_pred_region(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_pr) {
+static PyObject *__pyx_pf_9pdf_group_14size_of_pred_region(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_pr) {
   PyObject *__pyx_9genexpr11__pyx_v_x = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -30741,7 +30950,7 @@ static PyObject *__pyx_pf_9pdf_group_12size_of_pred_region(CYTHON_UNUSED PyObjec
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("size_of_pred_region", 0);
 
-  /* "pdf_group.pyx":245
+  /* "pdf_group.pyx":252
  * 
  * def size_of_pred_region(pr):
  *     return(np.sum([x[1]-x[0] for x in pr]))             # <<<<<<<<<<<<<<
@@ -30749,22 +30958,22 @@ static PyObject *__pyx_pf_9pdf_group_12size_of_pred_region(CYTHON_UNUSED PyObjec
  * 
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 245, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 252, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_sum); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 245, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_sum); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 252, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   { /* enter inner scope */
-    __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 245, __pyx_L5_error)
+    __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 252, __pyx_L5_error)
     __Pyx_GOTREF(__pyx_t_3);
     if (likely(PyList_CheckExact(__pyx_v_pr)) || PyTuple_CheckExact(__pyx_v_pr)) {
       __pyx_t_5 = __pyx_v_pr; __Pyx_INCREF(__pyx_t_5);
       __pyx_t_6 = 0;
       __pyx_t_7 = NULL;
     } else {
-      __pyx_t_6 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_v_pr); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 245, __pyx_L5_error)
+      __pyx_t_6 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_v_pr); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 252, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_5); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 245, __pyx_L5_error)
+      __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_5); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 252, __pyx_L5_error)
     }
     for (;;) {
       if (likely(!__pyx_t_7)) {
@@ -30772,7 +30981,7 @@ static PyObject *__pyx_pf_9pdf_group_12size_of_pred_region(CYTHON_UNUSED PyObjec
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_5);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 245, __pyx_L5_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 252, __pyx_L5_error)
             #endif
             if (__pyx_t_6 >= __pyx_temp) break;
           }
@@ -30782,7 +30991,7 @@ static PyObject *__pyx_pf_9pdf_group_12size_of_pred_region(CYTHON_UNUSED PyObjec
           {
             Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_5);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 245, __pyx_L5_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 252, __pyx_L5_error)
             #endif
             if (__pyx_t_6 >= __pyx_temp) break;
           }
@@ -30793,13 +31002,13 @@ static PyObject *__pyx_pf_9pdf_group_12size_of_pred_region(CYTHON_UNUSED PyObjec
           #endif
           ++__pyx_t_6;
         }
-        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 245, __pyx_L5_error)
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 252, __pyx_L5_error)
       } else {
         __pyx_t_8 = __pyx_t_7(__pyx_t_5);
         if (unlikely(!__pyx_t_8)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
-            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 245, __pyx_L5_error)
+            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 252, __pyx_L5_error)
             PyErr_Clear();
           }
           break;
@@ -30808,16 +31017,16 @@ static PyObject *__pyx_pf_9pdf_group_12size_of_pred_region(CYTHON_UNUSED PyObjec
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_XDECREF_SET(__pyx_9genexpr11__pyx_v_x, __pyx_t_8);
       __pyx_t_8 = 0;
-      __pyx_t_8 = __Pyx_GetItemInt(__pyx_9genexpr11__pyx_v_x, 1, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_SharedReference); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 245, __pyx_L5_error)
+      __pyx_t_8 = __Pyx_GetItemInt(__pyx_9genexpr11__pyx_v_x, 1, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_SharedReference); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 252, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_9 = __Pyx_GetItemInt(__pyx_9genexpr11__pyx_v_x, 0, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_SharedReference); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 245, __pyx_L5_error)
+      __pyx_t_9 = __Pyx_GetItemInt(__pyx_9genexpr11__pyx_v_x, 0, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, __Pyx_ReferenceSharing_SharedReference); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 252, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_9);
-      __pyx_t_10 = __Pyx_PyNumber_Subtract_object_object(__pyx_t_8, __pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 245, __pyx_L5_error)
+      __pyx_t_10 = __Pyx_PyNumber_Subtract_object_object(__pyx_t_8, __pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 252, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __Pyx_GIVEREF(__pyx_t_10);
-      if (unlikely(__Pyx_ListComp_AppendAndDecref(__pyx_t_3, __pyx_t_10))) __PYX_ERR(0, 245, __pyx_L5_error)
+      if (unlikely(__Pyx_ListComp_AppendAndDecref(__pyx_t_3, __pyx_t_10))) __PYX_ERR(0, 252, __pyx_L5_error)
       __pyx_t_10 = 0;
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -30846,7 +31055,7 @@ static PyObject *__pyx_pf_9pdf_group_12size_of_pred_region(CYTHON_UNUSED PyObjec
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 245, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 252, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   {
@@ -30860,7 +31069,7 @@ static PyObject *__pyx_pf_9pdf_group_12size_of_pred_region(CYTHON_UNUSED PyObjec
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pdf_group.pyx":244
+  /* "pdf_group.pyx":251
  *     return pdf_set.crps_mean(y_true)
  * 
  * def size_of_pred_region(pr):             # <<<<<<<<<<<<<<
@@ -30887,7 +31096,7 @@ static PyObject *__pyx_pf_9pdf_group_12size_of_pred_region(CYTHON_UNUSED PyObjec
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":248
+/* "pdf_group.pyx":255
  * 
  * 
  * def test_between_quantiles_pdf(test_vals, pdf_set, q_left, q_right):             # <<<<<<<<<<<<<<
@@ -30896,16 +31105,16 @@ static PyObject *__pyx_pf_9pdf_group_12size_of_pred_region(CYTHON_UNUSED PyObjec
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9pdf_group_15test_between_quantiles_pdf(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9pdf_group_17test_between_quantiles_pdf(PyObject *__pyx_self, 
 #if CYTHON_VECTORCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_9pdf_group_14test_between_quantiles_pdf, "Tests inclusion of the test_vals in the interval defined by the given quantiles");
-static PyMethodDef __pyx_mdef_9pdf_group_15test_between_quantiles_pdf = {"test_between_quantiles_pdf", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9pdf_group_15test_between_quantiles_pdf, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9pdf_group_14test_between_quantiles_pdf};
-static PyObject *__pyx_pw_9pdf_group_15test_between_quantiles_pdf(PyObject *__pyx_self, 
+PyDoc_STRVAR(__pyx_doc_9pdf_group_16test_between_quantiles_pdf, "Tests inclusion of the test_vals in the interval defined by the given quantiles");
+static PyMethodDef __pyx_mdef_9pdf_group_17test_between_quantiles_pdf = {"test_between_quantiles_pdf", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9pdf_group_17test_between_quantiles_pdf, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9pdf_group_16test_between_quantiles_pdf};
+static PyObject *__pyx_pw_9pdf_group_17test_between_quantiles_pdf(PyObject *__pyx_self, 
 #if CYTHON_VECTORCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -30938,44 +31147,44 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_test_vals,&__pyx_mstate_global->__pyx_n_u_pdf_set,&__pyx_mstate_global->__pyx_n_u_q_left,&__pyx_mstate_global->__pyx_n_u_q_right,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 248, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 255, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 248, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 255, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 248, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 255, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 248, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 255, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 248, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 255, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "test_between_quantiles_pdf", 0) < (0)) __PYX_ERR(0, 248, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "test_between_quantiles_pdf", 0) < (0)) __PYX_ERR(0, 255, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 4; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("test_between_quantiles_pdf", 1, 4, 4, i); __PYX_ERR(0, 248, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("test_between_quantiles_pdf", 1, 4, 4, i); __PYX_ERR(0, 255, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 4)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 248, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 255, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 248, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 255, __pyx_L3_error)
       values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 248, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 255, __pyx_L3_error)
       values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 248, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 255, __pyx_L3_error)
     }
     __pyx_v_test_vals = values[0];
     __pyx_v_pdf_set = values[1];
@@ -30984,7 +31193,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("test_between_quantiles_pdf", 1, 4, 4, __pyx_nargs); __PYX_ERR(0, 248, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("test_between_quantiles_pdf", 1, 4, 4, __pyx_nargs); __PYX_ERR(0, 255, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -30995,7 +31204,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_9pdf_group_14test_between_quantiles_pdf(__pyx_self, __pyx_v_test_vals, __pyx_v_pdf_set, __pyx_v_q_left, __pyx_v_q_right);
+  __pyx_r = __pyx_pf_9pdf_group_16test_between_quantiles_pdf(__pyx_self, __pyx_v_test_vals, __pyx_v_pdf_set, __pyx_v_q_left, __pyx_v_q_right);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -31005,7 +31214,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_9pdf_group_14test_between_quantiles_pdf(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_test_vals, PyObject *__pyx_v_pdf_set, PyObject *__pyx_v_q_left, PyObject *__pyx_v_q_right) {
+static PyObject *__pyx_pf_9pdf_group_16test_between_quantiles_pdf(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_test_vals, PyObject *__pyx_v_pdf_set, PyObject *__pyx_v_q_left, PyObject *__pyx_v_q_right) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -31016,7 +31225,7 @@ static PyObject *__pyx_pf_9pdf_group_14test_between_quantiles_pdf(CYTHON_UNUSED 
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("test_between_quantiles_pdf", 0);
 
-  /* "pdf_group.pyx":250
+  /* "pdf_group.pyx":257
  * def test_between_quantiles_pdf(test_vals, pdf_set, q_left, q_right):
  *     """Tests inclusion of the test_vals in the interval defined by the given quantiles"""
  *     return(pdf_set.test_between_quantiles(test_vals, q_left, q_right))             # <<<<<<<<<<<<<<
@@ -31030,7 +31239,7 @@ static PyObject *__pyx_pf_9pdf_group_14test_between_quantiles_pdf(CYTHON_UNUSED 
     PyObject *__pyx_callargs[4] = {__pyx_t_2, __pyx_v_test_vals, __pyx_v_q_left, __pyx_v_q_right};
     __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_test_between_quantiles, __pyx_callargs+__pyx_t_3, (4-__pyx_t_3) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 250, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 257, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   {
@@ -31044,7 +31253,7 @@ static PyObject *__pyx_pf_9pdf_group_14test_between_quantiles_pdf(CYTHON_UNUSED 
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pdf_group.pyx":248
+  /* "pdf_group.pyx":255
  * 
  * 
  * def test_between_quantiles_pdf(test_vals, pdf_set, q_left, q_right):             # <<<<<<<<<<<<<<
@@ -31064,7 +31273,7 @@ static PyObject *__pyx_pf_9pdf_group_14test_between_quantiles_pdf(CYTHON_UNUSED 
   return __pyx_r;
 }
 
-/* "pdf_group.pyx":252
+/* "pdf_group.pyx":259
  *     return(pdf_set.test_between_quantiles(test_vals, q_left, q_right))
  * 
  * @cython.boundscheck(False)  # Deactivate bounds checking             # <<<<<<<<<<<<<<
@@ -31073,16 +31282,16 @@ static PyObject *__pyx_pf_9pdf_group_14test_between_quantiles_pdf(CYTHON_UNUSED 
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9pdf_group_17explode_densities(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9pdf_group_19explode_densities(PyObject *__pyx_self, 
 #if CYTHON_VECTORCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_9pdf_group_16explode_densities, "Each row\047s densities on the fine bins: the coarse column of each fine bin is found once, then rows are copied\n    in parallel along their contiguous rows (same values as the original column-major loop).");
-static PyMethodDef __pyx_mdef_9pdf_group_17explode_densities = {"explode_densities", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9pdf_group_17explode_densities, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9pdf_group_16explode_densities};
-static PyObject *__pyx_pw_9pdf_group_17explode_densities(PyObject *__pyx_self, 
+PyDoc_STRVAR(__pyx_doc_9pdf_group_18explode_densities, "Each row\047s densities on the fine bins: the coarse column of each fine bin is found once, then rows are copied\n    in parallel along their contiguous rows (same values as the original column-major loop).");
+static PyMethodDef __pyx_mdef_9pdf_group_19explode_densities = {"explode_densities", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9pdf_group_19explode_densities, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9pdf_group_18explode_densities};
+static PyObject *__pyx_pw_9pdf_group_19explode_densities(PyObject *__pyx_self, 
 #if CYTHON_VECTORCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -31114,38 +31323,38 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_densitymat,&__pyx_mstate_global->__pyx_n_u_density_binpts,&__pyx_mstate_global->__pyx_n_u_fine_binpts,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 252, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 259, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 252, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 259, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 252, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 259, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 252, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 259, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "explode_densities", 0) < (0)) __PYX_ERR(0, 252, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "explode_densities", 0) < (0)) __PYX_ERR(0, 259, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 3; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("explode_densities", 1, 3, 3, i); __PYX_ERR(0, 252, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("explode_densities", 1, 3, 3, i); __PYX_ERR(0, 259, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 3)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 252, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 259, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 252, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 259, __pyx_L3_error)
       values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 252, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 259, __pyx_L3_error)
     }
     __pyx_v_densitymat = ((PyArrayObject *)values[0]);
     __pyx_v_density_binpts = ((PyArrayObject *)values[1]);
@@ -31153,7 +31362,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("explode_densities", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 252, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("explode_densities", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 259, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -31164,10 +31373,10 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_densitymat), __pyx_mstate_global->__pyx_ptype_5numpy_ndarray, 1, "densitymat", 0))) __PYX_ERR(0, 254, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_density_binpts), __pyx_mstate_global->__pyx_ptype_5numpy_ndarray, 1, "density_binpts", 0))) __PYX_ERR(0, 255, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_fine_binpts), __pyx_mstate_global->__pyx_ptype_5numpy_ndarray, 1, "fine_binpts", 0))) __PYX_ERR(0, 256, __pyx_L1_error)
-  __pyx_r = __pyx_pf_9pdf_group_16explode_densities(__pyx_self, __pyx_v_densitymat, __pyx_v_density_binpts, __pyx_v_fine_binpts);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_densitymat), __pyx_mstate_global->__pyx_ptype_5numpy_ndarray, 1, "densitymat", 0))) __PYX_ERR(0, 261, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_density_binpts), __pyx_mstate_global->__pyx_ptype_5numpy_ndarray, 1, "density_binpts", 0))) __PYX_ERR(0, 262, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_fine_binpts), __pyx_mstate_global->__pyx_ptype_5numpy_ndarray, 1, "fine_binpts", 0))) __PYX_ERR(0, 263, __pyx_L1_error)
+  __pyx_r = __pyx_pf_9pdf_group_18explode_densities(__pyx_self, __pyx_v_densitymat, __pyx_v_density_binpts, __pyx_v_fine_binpts);
 
   /* function exit code */
   goto __pyx_L0;
@@ -31186,7 +31395,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_densitymat, PyArrayObject *__pyx_v_density_binpts, PyArrayObject *__pyx_v_fine_binpts) {
+static PyObject *__pyx_pf_9pdf_group_18explode_densities(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_densitymat, PyArrayObject *__pyx_v_density_binpts, PyArrayObject *__pyx_v_fine_binpts) {
   long __pyx_v_num_rows;
   long __pyx_v_num_fine_bins;
   long __pyx_v_dens_ptr;
@@ -31197,6 +31406,7 @@ static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject 
   __Pyx_memviewslice __pyx_v_o = { 0, 0, { 0 }, { 0 }, { 0 } };
   __Pyx_memviewslice __pyx_v_dm = { 0, 0, { 0 }, { 0 }, { 0 } };
   __Pyx_memviewslice __pyx_v_di = { 0, 0, { 0 }, { 0 }, { 0 } };
+  CYTHON_UNUSED int __pyx_v_nth;
   __Pyx_LocalBuf_ND __pyx_pybuffernd_dens_idx;
   __Pyx_Buffer __pyx_pybuffer_dens_idx;
   __Pyx_LocalBuf_ND __pyx_pybuffernd_density_binpts;
@@ -31225,12 +31435,13 @@ static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject 
   int __pyx_t_14;
   __Pyx_memviewslice __pyx_t_15 = { 0, 0, { 0 }, { 0 }, { 0 } };
   __Pyx_memviewslice __pyx_t_16 = { 0, 0, { 0 }, { 0 }, { 0 } };
-  long __pyx_t_17;
+  int __pyx_t_17;
   long __pyx_t_18;
   long __pyx_t_19;
-  Py_ssize_t __pyx_t_20;
+  long __pyx_t_20;
   Py_ssize_t __pyx_t_21;
   Py_ssize_t __pyx_t_22;
+  Py_ssize_t __pyx_t_23;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -31257,21 +31468,21 @@ static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject 
   __pyx_pybuffernd_fine_binpts.rcbuffer = &__pyx_pybuffer_fine_binpts;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_densitymat.rcbuffer->pybuffer, (PyObject*)__pyx_v_densitymat, &__Pyx_TypeInfo_double, PyBUF_FORMAT| PyBUF_STRIDES, 2, 0, __pyx_stack) == -1)) __PYX_ERR(0, 252, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_densitymat.rcbuffer->pybuffer, (PyObject*)__pyx_v_densitymat, &__Pyx_TypeInfo_double, PyBUF_FORMAT| PyBUF_STRIDES, 2, 0, __pyx_stack) == -1)) __PYX_ERR(0, 259, __pyx_L1_error)
   }
   __pyx_pybuffernd_densitymat.diminfo[0].strides = __pyx_pybuffernd_densitymat.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_densitymat.diminfo[0].shape = __pyx_pybuffernd_densitymat.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_densitymat.diminfo[1].strides = __pyx_pybuffernd_densitymat.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_densitymat.diminfo[1].shape = __pyx_pybuffernd_densitymat.rcbuffer->pybuffer.shape[1];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_density_binpts.rcbuffer->pybuffer, (PyObject*)__pyx_v_density_binpts, &__Pyx_TypeInfo_double, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 252, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_density_binpts.rcbuffer->pybuffer, (PyObject*)__pyx_v_density_binpts, &__Pyx_TypeInfo_double, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 259, __pyx_L1_error)
   }
   __pyx_pybuffernd_density_binpts.diminfo[0].strides = __pyx_pybuffernd_density_binpts.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_density_binpts.diminfo[0].shape = __pyx_pybuffernd_density_binpts.rcbuffer->pybuffer.shape[0];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_fine_binpts.rcbuffer->pybuffer, (PyObject*)__pyx_v_fine_binpts, &__Pyx_TypeInfo_double, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 252, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_fine_binpts.rcbuffer->pybuffer, (PyObject*)__pyx_v_fine_binpts, &__Pyx_TypeInfo_double, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 259, __pyx_L1_error)
   }
   __pyx_pybuffernd_fine_binpts.diminfo[0].strides = __pyx_pybuffernd_fine_binpts.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_fine_binpts.diminfo[0].shape = __pyx_pybuffernd_fine_binpts.rcbuffer->pybuffer.shape[0];
 
-  /* "pdf_group.pyx":259
+  /* "pdf_group.pyx":266
  *     """Each row's densities on the fine bins: the coarse column of each fine bin is found once, then rows are copied
  *     in parallel along their contiguous rows (same values as the original column-major loop)."""
  *     cdef long num_rows = densitymat.shape[0]             # <<<<<<<<<<<<<<
@@ -31280,18 +31491,18 @@ static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject 
 */
   __pyx_v_num_rows = (__pyx_f_5numpy_7ndarray_5shape___get__(((PyArrayObject *)__pyx_v_densitymat))[0]);
 
-  /* "pdf_group.pyx":260
+  /* "pdf_group.pyx":267
  *     in parallel along their contiguous rows (same values as the original column-major loop)."""
  *     cdef long num_rows = densitymat.shape[0]
  *     cdef long num_fine_bins = len(fine_binpts)-1             # <<<<<<<<<<<<<<
  *     cdef long dens_ptr = 0, row_ptr, fine_ptr
  *     cdef np.ndarray[np.int64_t] dens_idx = np.empty(num_fine_bins, dtype=np.int64)
 */
-  __pyx_t_1 = PyObject_Length(((PyObject *)__pyx_v_fine_binpts)); if (unlikely(__pyx_t_1 == ((Py_ssize_t)-1))) __PYX_ERR(0, 260, __pyx_L1_error)
+  __pyx_t_1 = PyObject_Length(((PyObject *)__pyx_v_fine_binpts)); if (unlikely(__pyx_t_1 == ((Py_ssize_t)-1))) __PYX_ERR(0, 267, __pyx_L1_error)
   __pyx_v_num_fine_bins = (__pyx_t_1 - 1);
 
 
-  /* "pdf_group.pyx":261
+  /* "pdf_group.pyx":268
  *     cdef long num_rows = densitymat.shape[0]
  *     cdef long num_fine_bins = len(fine_binpts)-1
  *     cdef long dens_ptr = 0, row_ptr, fine_ptr             # <<<<<<<<<<<<<<
@@ -31300,7 +31511,7 @@ static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject 
 */
   __pyx_v_dens_ptr = 0;
 
-  /* "pdf_group.pyx":262
+  /* "pdf_group.pyx":269
  *     cdef long num_fine_bins = len(fine_binpts)-1
  *     cdef long dens_ptr = 0, row_ptr, fine_ptr
  *     cdef np.ndarray[np.int64_t] dens_idx = np.empty(num_fine_bins, dtype=np.int64)             # <<<<<<<<<<<<<<
@@ -31308,16 +31519,16 @@ static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject 
  *         dens_idx[fine_ptr] = dens_ptr
 */
   __pyx_t_3 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 262, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 269, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_empty); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 262, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_empty); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 269, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyLong_From_long(__pyx_v_num_fine_bins); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 262, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyLong_From_long(__pyx_v_num_fine_bins); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 269, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 262, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 269, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_int64); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 262, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_int64); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 269, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_t_8 = 1;
@@ -31336,13 +31547,13 @@ static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject 
     PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_t_4, __pyx_t_7};
     #if CYTHON_VECTORCALL
     __pyx_t_6 = __pyx_mstate_global->__pyx_tuple[5];
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 262, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 269, __pyx_L1_error)
     __Pyx_INCREF(__pyx_t_6);
     #else
     {
       PyObject *__pyx_temp[1] = {__pyx_mstate_global->__pyx_n_u_dtype};
       __pyx_t_6 = __Pyx_MakeKwargDict(__pyx_temp, __pyx_callargs+2, 1);
-      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 262, __pyx_L1_error)
+      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 269, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
     }
     #endif
@@ -31352,22 +31563,22 @@ static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject 
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 262, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 269, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
   }
-  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_mstate_global->__pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 262, __pyx_L1_error)
+  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_mstate_global->__pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 269, __pyx_L1_error)
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
     if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_dens_idx.rcbuffer->pybuffer, (PyObject*)((PyArrayObject *)__pyx_t_2), &__Pyx_TypeInfo_nn___pyx_t_5numpy_int64_t, PyBUF_FORMAT| PyBUF_STRIDES| PyBUF_WRITABLE, 1, 0, __pyx_stack) == -1)) {
       __pyx_v_dens_idx = ((PyArrayObject *)Py_None); __Pyx_INCREF(Py_None); __pyx_pybuffernd_dens_idx.rcbuffer->pybuffer.buf = NULL;
-      __PYX_ERR(0, 262, __pyx_L1_error)
+      __PYX_ERR(0, 269, __pyx_L1_error)
     } else {__pyx_pybuffernd_dens_idx.diminfo[0].strides = __pyx_pybuffernd_dens_idx.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_dens_idx.diminfo[0].shape = __pyx_pybuffernd_dens_idx.rcbuffer->pybuffer.shape[0];
     }
   }
   __pyx_v_dens_idx = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "pdf_group.pyx":263
+  /* "pdf_group.pyx":270
  *     cdef long dens_ptr = 0, row_ptr, fine_ptr
  *     cdef np.ndarray[np.int64_t] dens_idx = np.empty(num_fine_bins, dtype=np.int64)
  *     for fine_ptr in range(num_fine_bins):             # <<<<<<<<<<<<<<
@@ -31381,7 +31592,7 @@ static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject 
   for (__pyx_t_11 = 0; __pyx_t_11 < __pyx_t_10; __pyx_t_11+=1) {
     __pyx_v_fine_ptr = __pyx_t_11;
 
-    /* "pdf_group.pyx":264
+    /* "pdf_group.pyx":271
  *     cdef np.ndarray[np.int64_t] dens_idx = np.empty(num_fine_bins, dtype=np.int64)
  *     for fine_ptr in range(num_fine_bins):
  *         dens_idx[fine_ptr] = dens_ptr             # <<<<<<<<<<<<<<
@@ -31391,7 +31602,7 @@ static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject 
     __pyx_t_12 = __pyx_v_fine_ptr;
     *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int64_t *, __pyx_pybuffernd_dens_idx.rcbuffer->pybuffer.buf, __pyx_t_12, __pyx_pybuffernd_dens_idx.diminfo[0].strides) = __pyx_v_dens_ptr;
 
-    /* "pdf_group.pyx":265
+    /* "pdf_group.pyx":272
  *     for fine_ptr in range(num_fine_bins):
  *         dens_idx[fine_ptr] = dens_ptr
  *         if fine_binpts[fine_ptr+1] >= density_binpts[dens_ptr+1]:             # <<<<<<<<<<<<<<
@@ -31405,7 +31616,7 @@ static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject 
     if (__pyx_t_14) {
 
 
-      /* "pdf_group.pyx":266
+      /* "pdf_group.pyx":273
  *         dens_idx[fine_ptr] = dens_ptr
  *         if fine_binpts[fine_ptr+1] >= density_binpts[dens_ptr+1]:
  *             dens_ptr+=1             # <<<<<<<<<<<<<<
@@ -31414,7 +31625,7 @@ static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject 
 */
       __pyx_v_dens_ptr = (__pyx_v_dens_ptr + 1);
 
-      /* "pdf_group.pyx":265
+      /* "pdf_group.pyx":272
  *     for fine_ptr in range(num_fine_bins):
  *         dens_idx[fine_ptr] = dens_ptr
  *         if fine_binpts[fine_ptr+1] >= density_binpts[dens_ptr+1]:             # <<<<<<<<<<<<<<
@@ -31425,7 +31636,7 @@ static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject 
   }
 
 
-  /* "pdf_group.pyx":267
+  /* "pdf_group.pyx":274
  *         if fine_binpts[fine_ptr+1] >= density_binpts[dens_ptr+1]:
  *             dens_ptr+=1
  *     cdef np.ndarray[double, ndim=2] fine_densitymat=np.zeros((num_rows, num_fine_bins))             # <<<<<<<<<<<<<<
@@ -31433,21 +31644,21 @@ static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject 
  *     cdef double[:, ::1] dm = np.ascontiguousarray(densitymat)
 */
   __pyx_t_5 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 267, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 274, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_zeros); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 267, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_zeros); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 274, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_PyLong_From_long(__pyx_v_num_rows); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 267, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyLong_From_long(__pyx_v_num_rows); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 274, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_4 = __Pyx_PyLong_From_long(__pyx_v_num_fine_bins); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 267, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyLong_From_long(__pyx_v_num_fine_bins); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 274, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 267, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 274, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_6);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_6) != (0)) __PYX_ERR(0, 267, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_6) != (0)) __PYX_ERR(0, 274, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_4);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_4) != (0)) __PYX_ERR(0, 267, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_4) != (0)) __PYX_ERR(0, 274, __pyx_L1_error);
   __pyx_t_6 = 0;
   __pyx_t_4 = 0;
   __pyx_t_8 = 1;
@@ -31468,44 +31679,44 @@ static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject 
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 267, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 274, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
   }
-  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_mstate_global->__pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 267, __pyx_L1_error)
+  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_mstate_global->__pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 274, __pyx_L1_error)
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
     if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_fine_densitymat.rcbuffer->pybuffer, (PyObject*)((PyArrayObject *)__pyx_t_2), &__Pyx_TypeInfo_double, PyBUF_FORMAT| PyBUF_STRIDES, 2, 0, __pyx_stack) == -1)) {
       __pyx_v_fine_densitymat = ((PyArrayObject *)Py_None); __Pyx_INCREF(Py_None); __pyx_pybuffernd_fine_densitymat.rcbuffer->pybuffer.buf = NULL;
-      __PYX_ERR(0, 267, __pyx_L1_error)
+      __PYX_ERR(0, 274, __pyx_L1_error)
     } else {__pyx_pybuffernd_fine_densitymat.diminfo[0].strides = __pyx_pybuffernd_fine_densitymat.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_fine_densitymat.diminfo[0].shape = __pyx_pybuffernd_fine_densitymat.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_fine_densitymat.diminfo[1].strides = __pyx_pybuffernd_fine_densitymat.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_fine_densitymat.diminfo[1].shape = __pyx_pybuffernd_fine_densitymat.rcbuffer->pybuffer.shape[1];
     }
   }
   __pyx_v_fine_densitymat = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "pdf_group.pyx":268
+  /* "pdf_group.pyx":275
  *             dens_ptr+=1
  *     cdef np.ndarray[double, ndim=2] fine_densitymat=np.zeros((num_rows, num_fine_bins))
  *     cdef double[:, ::1] o = fine_densitymat             # <<<<<<<<<<<<<<
  *     cdef double[:, ::1] dm = np.ascontiguousarray(densitymat)
  *     cdef long[::1] di = dens_idx
 */
-  __pyx_t_15 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_double(((PyObject *)__pyx_v_fine_densitymat), PyBUF_WRITABLE); if (unlikely(!__pyx_t_15.memview)) __PYX_ERR(0, 268, __pyx_L1_error)
+  __pyx_t_15 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_double(((PyObject *)__pyx_v_fine_densitymat), PyBUF_WRITABLE); if (unlikely(!__pyx_t_15.memview)) __PYX_ERR(0, 275, __pyx_L1_error)
   __pyx_v_o = __pyx_t_15;
   __pyx_t_15.memview = NULL;
   __pyx_t_15.data = NULL;
 
-  /* "pdf_group.pyx":269
+  /* "pdf_group.pyx":276
  *     cdef np.ndarray[double, ndim=2] fine_densitymat=np.zeros((num_rows, num_fine_bins))
  *     cdef double[:, ::1] o = fine_densitymat
  *     cdef double[:, ::1] dm = np.ascontiguousarray(densitymat)             # <<<<<<<<<<<<<<
  *     cdef long[::1] di = dens_idx
- *     with nogil:
+ *     cdef int nth = team_size(num_rows * num_fine_bins)
 */
   __pyx_t_7 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 269, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 276, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_ascontiguousarray); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 269, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_ascontiguousarray); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 276, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_8 = 1;
@@ -31525,32 +31736,69 @@ static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject 
     __pyx_t_2 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_5, __pyx_callargs+__pyx_t_8, (2-__pyx_t_8) | (__pyx_t_8*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 269, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 276, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
   }
-  __pyx_t_15 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_double(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_15.memview)) __PYX_ERR(0, 269, __pyx_L1_error)
+  __pyx_t_15 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_double(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_15.memview)) __PYX_ERR(0, 276, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_dm = __pyx_t_15;
   __pyx_t_15.memview = NULL;
   __pyx_t_15.data = NULL;
 
-  /* "pdf_group.pyx":270
+  /* "pdf_group.pyx":277
  *     cdef double[:, ::1] o = fine_densitymat
  *     cdef double[:, ::1] dm = np.ascontiguousarray(densitymat)
  *     cdef long[::1] di = dens_idx             # <<<<<<<<<<<<<<
+ *     cdef int nth = team_size(num_rows * num_fine_bins)
  *     with nogil:
- *         for row_ptr in prange(num_rows, schedule='static'):
 */
-  __pyx_t_16 = __Pyx_PyObject_to_MemoryviewSlice_dc_long(((PyObject *)__pyx_v_dens_idx), PyBUF_WRITABLE); if (unlikely(!__pyx_t_16.memview)) __PYX_ERR(0, 270, __pyx_L1_error)
+  __pyx_t_16 = __Pyx_PyObject_to_MemoryviewSlice_dc_long(((PyObject *)__pyx_v_dens_idx), PyBUF_WRITABLE); if (unlikely(!__pyx_t_16.memview)) __PYX_ERR(0, 277, __pyx_L1_error)
   __pyx_v_di = __pyx_t_16;
   __pyx_t_16.memview = NULL;
   __pyx_t_16.data = NULL;
 
-  /* "pdf_group.pyx":271
+  /* "pdf_group.pyx":278
  *     cdef double[:, ::1] dm = np.ascontiguousarray(densitymat)
  *     cdef long[::1] di = dens_idx
+ *     cdef int nth = team_size(num_rows * num_fine_bins)             # <<<<<<<<<<<<<<
+ *     with nogil:
+ *         for row_ptr in prange(num_rows, schedule='static', num_threads=nth):
+*/
+  __pyx_t_5 = NULL;
+  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_team_size); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 278, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __pyx_t_3 = __Pyx_PyLong_From_long((__pyx_v_num_rows * __pyx_v_num_fine_bins)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 278, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_8 = 1;
+  #if CYTHON_UNPACK_METHODS
+  if (unlikely(PyMethod_Check(__pyx_t_7))) {
+    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_7);
+    assert(__pyx_t_5);
+    PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_7);
+    __Pyx_INCREF(__pyx_t_5);
+    __Pyx_INCREF(__pyx__function);
+    __Pyx_DECREF_SET(__pyx_t_7, __pyx__function);
+    __pyx_t_8 = 0;
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_t_3};
+    __pyx_t_2 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_7, __pyx_callargs+__pyx_t_8, (2-__pyx_t_8) | (__pyx_t_8*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 278, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+  }
+  __pyx_t_17 = __Pyx_PyLong_As_int(__pyx_t_2); if (unlikely((__pyx_t_17 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 278, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_v_nth = __pyx_t_17;
+
+  /* "pdf_group.pyx":279
+ *     cdef long[::1] di = dens_idx
+ *     cdef int nth = team_size(num_rows * num_fine_bins)
  *     with nogil:             # <<<<<<<<<<<<<<
- *         for row_ptr in prange(num_rows, schedule='static'):
+ *         for row_ptr in prange(num_rows, schedule='static', num_threads=nth):
  *             for fine_ptr in range(num_fine_bins):
 */
   {
@@ -31559,10 +31807,10 @@ static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject 
       __Pyx_FastGIL_Remember();
       /*try:*/ {
 
-        /* "pdf_group.pyx":272
- *     cdef long[::1] di = dens_idx
+        /* "pdf_group.pyx":280
+ *     cdef int nth = team_size(num_rows * num_fine_bins)
  *     with nogil:
- *         for row_ptr in prange(num_rows, schedule='static'):             # <<<<<<<<<<<<<<
+ *         for row_ptr in prange(num_rows, schedule='static', num_threads=nth):             # <<<<<<<<<<<<<<
  *             for fine_ptr in range(num_fine_bins):
  *                 o[row_ptr, fine_ptr] = dm[row_ptr, di[fine_ptr]]
 */
@@ -31579,7 +31827,7 @@ static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject 
             if (__pyx_t_11 > 0)
             {
                 #ifdef _OPENMP
-                #pragma omp parallel private(__pyx_t_12, __pyx_t_13, __pyx_t_17, __pyx_t_18, __pyx_t_19, __pyx_t_20, __pyx_t_21, __pyx_t_22)
+                #pragma omp parallel num_threads(__pyx_v_nth != 0 ? __pyx_v_nth : omp_get_max_threads()) private(__pyx_t_12, __pyx_t_13, __pyx_t_18, __pyx_t_19, __pyx_t_20, __pyx_t_21, __pyx_t_22, __pyx_t_23)
                 #endif /* _OPENMP */
                 {
                     #ifdef _OPENMP
@@ -31589,22 +31837,22 @@ static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject 
                         {
                             __pyx_v_row_ptr = (long)(0 + 1 * __pyx_t_10);
 
-                            /* "pdf_group.pyx":273
+                            /* "pdf_group.pyx":281
  *     with nogil:
- *         for row_ptr in prange(num_rows, schedule='static'):
+ *         for row_ptr in prange(num_rows, schedule='static', num_threads=nth):
  *             for fine_ptr in range(num_fine_bins):             # <<<<<<<<<<<<<<
  *                 o[row_ptr, fine_ptr] = dm[row_ptr, di[fine_ptr]]
  *     return fine_densitymat
 */
 
-                            __pyx_t_17 = __pyx_v_num_fine_bins;
-                            __pyx_t_18 = __pyx_t_17;
+                            __pyx_t_18 = __pyx_v_num_fine_bins;
+                            __pyx_t_19 = __pyx_t_18;
 
-                            for (__pyx_t_19 = 0; __pyx_t_19 < __pyx_t_18; __pyx_t_19+=1) {
-                              __pyx_v_fine_ptr = __pyx_t_19;
+                            for (__pyx_t_20 = 0; __pyx_t_20 < __pyx_t_19; __pyx_t_20+=1) {
+                              __pyx_v_fine_ptr = __pyx_t_20;
 
-                              /* "pdf_group.pyx":274
- *         for row_ptr in prange(num_rows, schedule='static'):
+                              /* "pdf_group.pyx":282
+ *         for row_ptr in prange(num_rows, schedule='static', num_threads=nth):
  *             for fine_ptr in range(num_fine_bins):
  *                 o[row_ptr, fine_ptr] = dm[row_ptr, di[fine_ptr]]             # <<<<<<<<<<<<<<
  *     return fine_densitymat
@@ -31612,10 +31860,10 @@ static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject 
 */
                               __pyx_t_13 = __pyx_v_fine_ptr;
                               __pyx_t_12 = __pyx_v_row_ptr;
-                              __pyx_t_20 = (*((long *) ( /* dim=0 */ ((char *) (((long *) __pyx_v_di.data) + __pyx_t_13)) )));
-                              __pyx_t_21 = __pyx_v_row_ptr;
-                              __pyx_t_22 = __pyx_v_fine_ptr;
-                              *((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_o.data + __pyx_t_21 * __pyx_v_o.strides[0]) )) + __pyx_t_22)) )) = (*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_dm.data + __pyx_t_12 * __pyx_v_dm.strides[0]) )) + __pyx_t_20)) )));
+                              __pyx_t_21 = (*((long *) ( /* dim=0 */ ((char *) (((long *) __pyx_v_di.data) + __pyx_t_13)) )));
+                              __pyx_t_22 = __pyx_v_row_ptr;
+                              __pyx_t_23 = __pyx_v_fine_ptr;
+                              *((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_o.data + __pyx_t_22 * __pyx_v_o.strides[0]) )) + __pyx_t_23)) )) = (*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_dm.data + __pyx_t_12 * __pyx_v_dm.strides[0]) )) + __pyx_t_21)) )));
                             }
 
                         }
@@ -31632,11 +31880,11 @@ static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject 
 
       }
 
-      /* "pdf_group.pyx":271
- *     cdef double[:, ::1] dm = np.ascontiguousarray(densitymat)
+      /* "pdf_group.pyx":279
  *     cdef long[::1] di = dens_idx
+ *     cdef int nth = team_size(num_rows * num_fine_bins)
  *     with nogil:             # <<<<<<<<<<<<<<
- *         for row_ptr in prange(num_rows, schedule='static'):
+ *         for row_ptr in prange(num_rows, schedule='static', num_threads=nth):
  *             for fine_ptr in range(num_fine_bins):
 */
       /*finally:*/ {
@@ -31649,7 +31897,7 @@ static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject 
       }
   }
 
-  /* "pdf_group.pyx":275
+  /* "pdf_group.pyx":283
  *             for fine_ptr in range(num_fine_bins):
  *                 o[row_ptr, fine_ptr] = dm[row_ptr, di[fine_ptr]]
  *     return fine_densitymat             # <<<<<<<<<<<<<<
@@ -31666,7 +31914,7 @@ static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject 
   }
   goto __pyx_L0;
 
-  /* "pdf_group.pyx":252
+  /* "pdf_group.pyx":259
  *     return(pdf_set.test_between_quantiles(test_vals, q_left, q_right))
  * 
  * @cython.boundscheck(False)  # Deactivate bounds checking             # <<<<<<<<<<<<<<
@@ -31714,6 +31962,7 @@ static PyObject *__pyx_pf_9pdf_group_16explode_densities(CYTHON_UNUSED PyObject 
   __PYX_XCLEAR_MEMVIEW(&__pyx_v_o, 1);
   __PYX_XCLEAR_MEMVIEW(&__pyx_v_dm, 1);
   __PYX_XCLEAR_MEMVIEW(&__pyx_v_di, 1);
+
 
 
 
@@ -34024,14 +34273,14 @@ static int __Pyx_modinit_Exttype___pyx_obj_9pdf_group___pyx_scope_struct__row_bl
   __Pyx_RefNannySetupContext("__Pyx_modinit_Exttype___pyx_obj_9pdf_group___pyx_scope_struct__row_blocks", 0);
   /*--- Exttype __pyx_obj_9pdf_group___pyx_scope_struct__row_blocks ---*/
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct__row_blocks = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_9pdf_group___pyx_scope_struct__row_blocks_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct__row_blocks)) __PYX_ERR(0, 16, __pyx_L1_error)
+  __pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct__row_blocks = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_9pdf_group___pyx_scope_struct__row_blocks_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct__row_blocks)) __PYX_ERR(0, 23, __pyx_L1_error)
   #else
   __pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct__row_blocks = &__pyx_type_9pdf_group___pyx_scope_struct__row_blocks;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct__row_blocks) < (0)) __PYX_ERR(0, 16, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct__row_blocks) < (0)) __PYX_ERR(0, 23, __pyx_L1_error)
   #endif
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount((PyObject*)__pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct__row_blocks);
@@ -34057,14 +34306,14 @@ static int __Pyx_modinit_Exttype___pyx_obj_9pdf_group___pyx_scope_struct_1_row_m
   __Pyx_RefNannySetupContext("__Pyx_modinit_Exttype___pyx_obj_9pdf_group___pyx_scope_struct_1_row_map", 0);
   /*--- Exttype __pyx_obj_9pdf_group___pyx_scope_struct_1_row_map ---*/
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_1_row_map = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_9pdf_group___pyx_scope_struct_1_row_map_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_1_row_map)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_1_row_map = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_9pdf_group___pyx_scope_struct_1_row_map_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_1_row_map)) __PYX_ERR(0, 35, __pyx_L1_error)
   #else
   __pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_1_row_map = &__pyx_type_9pdf_group___pyx_scope_struct_1_row_map;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_1_row_map) < (0)) __PYX_ERR(0, 28, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_1_row_map) < (0)) __PYX_ERR(0, 35, __pyx_L1_error)
   #endif
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount((PyObject*)__pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_1_row_map);
@@ -34090,14 +34339,14 @@ static int __Pyx_modinit_Exttype___pyx_obj_9pdf_group___pyx_scope_struct_2__rows
   __Pyx_RefNannySetupContext("__Pyx_modinit_Exttype___pyx_obj_9pdf_group___pyx_scope_struct_2__rows_sum_close", 0);
   /*--- Exttype __pyx_obj_9pdf_group___pyx_scope_struct_2__rows_sum_close ---*/
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_2__rows_sum_close = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_9pdf_group___pyx_scope_struct_2__rows_sum_close_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_2__rows_sum_close)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_2__rows_sum_close = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_9pdf_group___pyx_scope_struct_2__rows_sum_close_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_2__rows_sum_close)) __PYX_ERR(0, 44, __pyx_L1_error)
   #else
   __pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_2__rows_sum_close = &__pyx_type_9pdf_group___pyx_scope_struct_2__rows_sum_close;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_2__rows_sum_close) < (0)) __PYX_ERR(0, 37, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_2__rows_sum_close) < (0)) __PYX_ERR(0, 44, __pyx_L1_error)
   #endif
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount((PyObject*)__pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_2__rows_sum_close);
@@ -34123,14 +34372,14 @@ static int __Pyx_modinit_Exttype___pyx_obj_9pdf_group___pyx_scope_struct_3___ini
   __Pyx_RefNannySetupContext("__Pyx_modinit_Exttype___pyx_obj_9pdf_group___pyx_scope_struct_3___init__", 0);
   /*--- Exttype __pyx_obj_9pdf_group___pyx_scope_struct_3___init__ ---*/
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_3___init__ = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_9pdf_group___pyx_scope_struct_3___init___spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_3___init__)) __PYX_ERR(0, 84, __pyx_L1_error)
+  __pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_3___init__ = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_9pdf_group___pyx_scope_struct_3___init___spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_3___init__)) __PYX_ERR(0, 91, __pyx_L1_error)
   #else
   __pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_3___init__ = &__pyx_type_9pdf_group___pyx_scope_struct_3___init__;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_3___init__) < (0)) __PYX_ERR(0, 84, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_3___init__) < (0)) __PYX_ERR(0, 91, __pyx_L1_error)
   #endif
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount((PyObject*)__pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_3___init__);
@@ -34156,14 +34405,14 @@ static int __Pyx_modinit_Exttype___pyx_obj_9pdf_group___pyx_scope_struct_4_bins_
   __Pyx_RefNannySetupContext("__Pyx_modinit_Exttype___pyx_obj_9pdf_group___pyx_scope_struct_4_bins_to_probs", 0);
   /*--- Exttype __pyx_obj_9pdf_group___pyx_scope_struct_4_bins_to_probs ---*/
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_4_bins_to_probs = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_9pdf_group___pyx_scope_struct_4_bins_to_probs_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_4_bins_to_probs)) __PYX_ERR(0, 208, __pyx_L1_error)
+  __pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_4_bins_to_probs = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_9pdf_group___pyx_scope_struct_4_bins_to_probs_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_4_bins_to_probs)) __PYX_ERR(0, 215, __pyx_L1_error)
   #else
   __pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_4_bins_to_probs = &__pyx_type_9pdf_group___pyx_scope_struct_4_bins_to_probs;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_4_bins_to_probs) < (0)) __PYX_ERR(0, 208, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_4_bins_to_probs) < (0)) __PYX_ERR(0, 215, __pyx_L1_error)
   #endif
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount((PyObject*)__pyx_mstate->__pyx_ptype_9pdf_group___pyx_scope_struct_4_bins_to_probs);
@@ -35499,428 +35748,444 @@ __Pyx_RefNannySetupContext("PyInit_pdf_group", 0);
   /* "pdf_group.pyx":16
  * 
  * 
- * def row_blocks(fn, nrows, min_rows=2000):             # <<<<<<<<<<<<<<
- *     """[fn(lo, hi) for each block of rows], in order, run in threads when there are enough rows."""
- *     global _POOL
+ * def team_size(work, grain=100000):             # <<<<<<<<<<<<<<
+ *     """OpenMP threads for a parallel loop of about `work` inner operations: one per `grain`, at most STB_THREADS.
+ *     Small loops (deep tree nodes, small data) stay on few threads; a full 32-thread team on them costs more than the
 */
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_1row_blocks, 0, __pyx_mstate_global->__pyx_n_u_row_blocks, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[6])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 16, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_1team_size, 0, __pyx_mstate_global->__pyx_n_u_team_size, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[6])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_5);
   #endif
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_5, __pyx_mstate_global->__pyx_tuple[8]);
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_row_blocks, __pyx_t_5) < (0)) __PYX_ERR(0, 16, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_team_size, __pyx_t_5) < (0)) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "pdf_group.pyx":28
+  /* "pdf_group.pyx":23
+ * 
+ * 
+ * def row_blocks(fn, nrows, min_rows=2000):             # <<<<<<<<<<<<<<
+ *     """[fn(lo, hi) for each block of rows], in order, run in threads when there are enough rows."""
+ *     global _POOL
+*/
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_3row_blocks, 0, __pyx_mstate_global->__pyx_n_u_row_blocks, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[7])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
+  PyUnstable_Object_EnableDeferredRefcount(__pyx_t_5);
+  #endif
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_5, __pyx_mstate_global->__pyx_tuple[9]);
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_row_blocks, __pyx_t_5) < (0)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+
+  /* "pdf_group.pyx":35
  * 
  * 
  * def row_map(fn, mat, ncols=None):             # <<<<<<<<<<<<<<
  *     """out[lo:hi] = fn(mat[lo:hi]) over row blocks, into a new array (the same per-row results as fn(mat))."""
  *     out = np.empty((mat.shape[0], mat.shape[1] if ncols is None else ncols))
 */
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_3row_map, 0, __pyx_mstate_global->__pyx_n_u_row_map, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[7])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_5row_map, 0, __pyx_mstate_global->__pyx_n_u_row_map, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[8])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_5);
   #endif
-  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_5, __pyx_mstate_global->__pyx_tuple[9]);
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_row_map, __pyx_t_5) < (0)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_5, __pyx_mstate_global->__pyx_tuple[10]);
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_row_map, __pyx_t_5) < (0)) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "pdf_group.pyx":37
+  /* "pdf_group.pyx":44
  * 
  * 
  * def _rows_sum_close(mat, ptol):             # <<<<<<<<<<<<<<
  *     return all(row_blocks(lambda lo, hi: bool(np.allclose(np.abs(np.sum(mat[lo:hi], axis=1)), 1.0, ptol, ptol)), mat.shape[0]))
  * 
 */
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_5_rows_sum_close, 0, __pyx_mstate_global->__pyx_n_u_rows_sum_close, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[8])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_7_rows_sum_close, 0, __pyx_mstate_global->__pyx_n_u_rows_sum_close, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[9])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 44, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_5);
   #endif
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_rows_sum_close, __pyx_t_5) < (0)) __PYX_ERR(0, 37, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_rows_sum_close, __pyx_t_5) < (0)) __PYX_ERR(0, 44, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "pdf_group.pyx":41
+  /* "pdf_group.pyx":48
  * 
  * cimport numpy as np
  * np.import_array()             # <<<<<<<<<<<<<<
  * cimport cython
  * from cython.parallel cimport prange
 */
-  __pyx_t_13 = __pyx_f_5numpy_import_array(); if (unlikely(__pyx_t_13 == ((int)-1))) __PYX_ERR(0, 41, __pyx_L1_error)
+  __pyx_t_13 = __pyx_f_5numpy_import_array(); if (unlikely(__pyx_t_13 == ((int)-1))) __PYX_ERR(0, 48, __pyx_L1_error)
 
 
-  /* "pdf_group.pyx":45
+  /* "pdf_group.pyx":52
  * from cython.parallel cimport prange
  * 
  * class PdfGroup(object):             # <<<<<<<<<<<<<<
  *     """Represents a group of PdfDiscrete objects with the same bin points.
  * 
 */
-  __pyx_t_5 = __Pyx_PEP560_update_bases(__pyx_mstate_global->__pyx_tuple[11]); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PEP560_update_bases(__pyx_mstate_global->__pyx_tuple[12]); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_4 = __Pyx_CalculateMetaclass(NULL, __pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CalculateMetaclass(NULL, __pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_11 = __Pyx_Py3MetaclassPrepare(__pyx_t_4, __pyx_t_5, __pyx_mstate_global->__pyx_n_u_PdfGroup, __pyx_mstate_global->__pyx_n_u_PdfGroup, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_kp_u_Represents_a_group_of_PdfDiscret); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_11 = __Pyx_Py3MetaclassPrepare(__pyx_t_4, __pyx_t_5, __pyx_mstate_global->__pyx_n_u_PdfGroup, __pyx_mstate_global->__pyx_n_u_PdfGroup, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_kp_u_Represents_a_group_of_PdfDiscret); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
-  if (__pyx_t_5 != __pyx_mstate_global->__pyx_tuple[11]) {
-    if (unlikely((PyDict_SetItemString(__pyx_t_11, "__orig_bases__", __pyx_mstate_global->__pyx_tuple[11]) < 0))) __PYX_ERR(0, 45, __pyx_L1_error)
+  if (__pyx_t_5 != __pyx_mstate_global->__pyx_tuple[12]) {
+    if (unlikely((PyDict_SetItemString(__pyx_t_11, "__orig_bases__", __pyx_mstate_global->__pyx_tuple[12]) < 0))) __PYX_ERR(0, 52, __pyx_L1_error)
   }
 
-  /* "pdf_group.pyx":84
+  /* "pdf_group.pyx":91
  *         True.  Can be turned off for computational efficiency.
  * """
  *     def __init__(self, binvec, probmat=None, densitymat=None,             # <<<<<<<<<<<<<<
  *                 ptol=1e-6, check_sum=True):
  *         self.binvec = np.array(binvec)
 */
-  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_1__init__, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup___init, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[9])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 84, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_1__init__, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup___init, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[10])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 91, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_12);
   #endif
-  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_12, __pyx_mstate_global->__pyx_tuple[12]);
-  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_init, __pyx_t_12) < (0)) __PYX_ERR(0, 84, __pyx_L1_error)
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_12, __pyx_mstate_global->__pyx_tuple[13]);
+  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_init, __pyx_t_12) < (0)) __PYX_ERR(0, 91, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-  /* "pdf_group.pyx":115
+  /* "pdf_group.pyx":122
  *         self.cum_prob_mat = None
  * 
  *     def calculate_cum_prob_mat(self):             # <<<<<<<<<<<<<<
  *         nrows = self.probmat.shape[0]
  *         self.cum_prob_mat = np.cumsum(np.hstack((np.zeros(nrows).reshape(-1,1),
 */
-  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_3calculate_cum_prob_mat, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_calculate_cum_prob_mat, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[10])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 115, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_3calculate_cum_prob_mat, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_calculate_cum_prob_mat, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[11])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 122, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_12);
   #endif
-  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_calculate_cum_prob_mat, __pyx_t_12) < (0)) __PYX_ERR(0, 115, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_calculate_cum_prob_mat, __pyx_t_12) < (0)) __PYX_ERR(0, 122, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-  /* "pdf_group.pyx":120
+  /* "pdf_group.pyx":127
  *                                     self.probmat)), axis=1)
  * 
  *     def make_pdf_list(self, check=False):             # <<<<<<<<<<<<<<
  *         self.pdf_list = [PdfDiscrete(self.binvec, self.probmat[i,:], check_sum=False)
  *                          for i in range(self.probmat.shape[0])]
 */
-  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_5make_pdf_list, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_make_pdf_list, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[11])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 120, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_5make_pdf_list, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_make_pdf_list, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[12])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 127, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_12);
   #endif
-  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_12, __pyx_mstate_global->__pyx_tuple[13]);
-  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_make_pdf_list, __pyx_t_12) < (0)) __PYX_ERR(0, 120, __pyx_L1_error)
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_12, __pyx_mstate_global->__pyx_tuple[14]);
+  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_make_pdf_list, __pyx_t_12) < (0)) __PYX_ERR(0, 127, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-  /* "pdf_group.pyx":124
+  /* "pdf_group.pyx":131
  *                          for i in range(self.probmat.shape[0])]
  * 
  *     def __getitem__(self, arg):             # <<<<<<<<<<<<<<
  *         if self.pdf_list is None:
  *             return(PdfDiscrete(self.binvec, self.probmat[arg,:]))
 */
-  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_7__getitem__, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup___getitem, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[12])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 124, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_7__getitem__, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup___getitem, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[13])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 131, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_12);
   #endif
-  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_getitem, __pyx_t_12) < (0)) __PYX_ERR(0, 124, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_getitem, __pyx_t_12) < (0)) __PYX_ERR(0, 131, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-  /* "pdf_group.pyx":130
+  /* "pdf_group.pyx":137
  *             return(self.pdf_list[arg])
  * 
  *     def log_loss(self, y_test, eps=1e-16):             # <<<<<<<<<<<<<<
  *         """Computes the log-loss (Negative log likelihood) based on prob density."""
  *         if type(y_test)!= np.ndarray:
 */
-  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_9log_loss, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_log_loss, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[13])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 130, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_9log_loss, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_log_loss, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[14])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 137, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_12);
   #endif
-  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_12, __pyx_mstate_global->__pyx_tuple[14]);
-  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_log_loss, __pyx_t_12) < (0)) __PYX_ERR(0, 130, __pyx_L1_error)
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_12, __pyx_mstate_global->__pyx_tuple[15]);
+  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_log_loss, __pyx_t_12) < (0)) __PYX_ERR(0, 137, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-  /* "pdf_group.pyx":143
+  /* "pdf_group.pyx":150
  *         return(-np.mean(np.log(density_vals)))
  * 
  *     def crps_mean(self, y_test, eps=1e-16):             # <<<<<<<<<<<<<<
  *         """Computes the log-loss (Negative log likelihood) based on prob density."""
  *         if type(y_test)!= np.ndarray:
 */
-  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_11crps_mean, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_crps_mean, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[14])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 143, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_11crps_mean, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_crps_mean, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[15])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 150, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_12);
   #endif
-  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_12, __pyx_mstate_global->__pyx_tuple[14]);
-  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_crps_mean, __pyx_t_12) < (0)) __PYX_ERR(0, 143, __pyx_L1_error)
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_12, __pyx_mstate_global->__pyx_tuple[15]);
+  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_crps_mean, __pyx_t_12) < (0)) __PYX_ERR(0, 150, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-  /* "pdf_group.pyx":155
+  /* "pdf_group.pyx":162
  *         return(np.mean(crps_vals))
  * 
  *     def mean(self):             # <<<<<<<<<<<<<<
  *         "Returns an array of means of the associated pdfs"
  *         if self.pdf_list is None:
 */
-  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_13mean, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_mean, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[15])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 155, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_13mean, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_mean, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[16])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_12);
   #endif
-  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_mean, __pyx_t_12) < (0)) __PYX_ERR(0, 155, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_mean, __pyx_t_12) < (0)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-  /* "pdf_group.pyx":161
+  /* "pdf_group.pyx":168
  *         return(np.array([pdf.mean() for pdf in self.pdf_list]))
  * 
  *     def median(self):             # <<<<<<<<<<<<<<
  *         "Returns an array of medians of the associated pdfs"
  *         if self.pdf_list is None:
 */
-  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_15median, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_median, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[16])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_15median, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_median, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[17])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 168, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_12);
   #endif
-  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_median, __pyx_t_12) < (0)) __PYX_ERR(0, 161, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_median, __pyx_t_12) < (0)) __PYX_ERR(0, 168, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-  /* "pdf_group.pyx":167
+  /* "pdf_group.pyx":174
  *         return(np.array([pdf.median() for pdf in self.pdf_list]))
  * 
  *     def quantile(self, val):             # <<<<<<<<<<<<<<
  *         "Returns the `val`th quantile of the associated pdfs"
  *         if self.pdf_list is None:
 */
-  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_17quantile, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_quantile, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[17])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 167, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_17quantile, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_quantile, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[18])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 174, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_12);
   #endif
-  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_quantile, __pyx_t_12) < (0)) __PYX_ERR(0, 167, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_quantile, __pyx_t_12) < (0)) __PYX_ERR(0, 174, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-  /* "pdf_group.pyx":173
+  /* "pdf_group.pyx":180
  *         return(np.array([pdf.quantile(val) for pdf in self.pdf_list]))
  * 
  *     def quantiles(self, vals):             # <<<<<<<<<<<<<<
  *         "Returns a matrix with the specified quantiles of the associated pdfs"
  *         if self.pdf_list is None:
 */
-  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_19quantiles, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_quantiles, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[18])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 173, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_19quantiles, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_quantiles, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[19])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 180, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_12);
   #endif
-  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_quantiles, __pyx_t_12) < (0)) __PYX_ERR(0, 173, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_quantiles, __pyx_t_12) < (0)) __PYX_ERR(0, 180, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-  /* "pdf_group.pyx":179
+  /* "pdf_group.pyx":186
  *         return(np.array([pdf.quantiles(vals) for pdf in self.pdf_list]))
  * 
  *     def test_between_quantiles(self, test_vals, q_left, q_right):             # <<<<<<<<<<<<<<
  *         "Returns boolean array indicating inclusion of test values between quantiles"
  *         if self.pdf_list is None:
 */
-  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_21test_between_quantiles, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_test_between_quantiles, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[19])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 179, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_21test_between_quantiles, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_test_between_quantiles, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[20])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 186, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_12);
   #endif
-  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_test_between_quantiles, __pyx_t_12) < (0)) __PYX_ERR(0, 179, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_test_between_quantiles, __pyx_t_12) < (0)) __PYX_ERR(0, 186, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-  /* "pdf_group.pyx":185
+  /* "pdf_group.pyx":192
  *         return((test_vals>=self.quantile(q_left)) & (test_vals<=self.quantile(q_right)))
  * 
  *     def test_in_pred_regions(self, test_vals, alpha):             # <<<<<<<<<<<<<<
  *         if self.pdf_list is None:
  *             self.make_pdf_list()
 */
-  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_23test_in_pred_regions, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_test_in_pred_regions, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[20])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 185, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_23test_in_pred_regions, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_test_in_pred_regions, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[21])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 192, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_12);
   #endif
-  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_test_in_pred_regions, __pyx_t_12) < (0)) __PYX_ERR(0, 185, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_test_in_pred_regions, __pyx_t_12) < (0)) __PYX_ERR(0, 192, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-  /* "pdf_group.pyx":190
+  /* "pdf_group.pyx":197
  *         return(test_in_pred_regions(test_vals, self.pred_regions(alpha)))
  * 
  *     def quantile_widths(self, q_left, q_right):             # <<<<<<<<<<<<<<
  *         if self.pdf_list is None:
  *             self.make_pdf_list()
 */
-  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_25quantile_widths, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_quantile_widths, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[21])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 190, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_25quantile_widths, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_quantile_widths, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[22])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 197, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_12);
   #endif
-  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_quantile_widths, __pyx_t_12) < (0)) __PYX_ERR(0, 190, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_quantile_widths, __pyx_t_12) < (0)) __PYX_ERR(0, 197, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-  /* "pdf_group.pyx":196
+  /* "pdf_group.pyx":203
  * 
  * 
  *     def pred_region_sizes(self, coverage):             # <<<<<<<<<<<<<<
  *         if self.pdf_list is None:
  *             self.make_pdf_list()
 */
-  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_27pred_region_sizes, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_pred_region_sizes, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[22])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 196, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_27pred_region_sizes, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_pred_region_sizes, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[23])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 203, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_12);
   #endif
-  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_pred_region_sizes, __pyx_t_12) < (0)) __PYX_ERR(0, 196, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_pred_region_sizes, __pyx_t_12) < (0)) __PYX_ERR(0, 203, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-  /* "pdf_group.pyx":203
+  /* "pdf_group.pyx":210
  * 
  * 
  *     def pred_regions(self, coverage):             # <<<<<<<<<<<<<<
  *         if self.pdf_list is None:
  *             self.make_pdf_list()
 */
-  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_29pred_regions, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_pred_regions, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[23])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 203, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_29pred_regions, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_pred_regions, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[24])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 210, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_12);
   #endif
-  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_pred_regions, __pyx_t_12) < (0)) __PYX_ERR(0, 203, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_pred_regions, __pyx_t_12) < (0)) __PYX_ERR(0, 210, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-  /* "pdf_group.pyx":208
+  /* "pdf_group.pyx":215
  *         return(np.array([pdf.pred_region(coverage) for pdf in self.pdf_list], dtype=object))
  * 
  *     def bins_to_probs(self, new_binpt_vec, eps=1e-16):             # <<<<<<<<<<<<<<
  *         """Assumes new_binpt_vec contains same first and last point. Row blocks run in threads; each row gets the
  *         same values as when the whole matrix is processed at once."""
 */
-  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_31bins_to_probs, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_bins_to_probs, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[24])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 208, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_8PdfGroup_31bins_to_probs, 0, __pyx_mstate_global->__pyx_n_u_PdfGroup_bins_to_probs, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[25])); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 215, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_12);
   #endif
-  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_12, __pyx_mstate_global->__pyx_tuple[14]);
-  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_bins_to_probs, __pyx_t_12) < (0)) __PYX_ERR(0, 208, __pyx_L1_error)
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_12, __pyx_mstate_global->__pyx_tuple[15]);
+  if (__Pyx_SetNameInClass(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_bins_to_probs, __pyx_t_12) < (0)) __PYX_ERR(0, 215, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-  /* "pdf_group.pyx":45
+  /* "pdf_group.pyx":52
  * from cython.parallel cimport prange
  * 
  * class PdfGroup(object):             # <<<<<<<<<<<<<<
  *     """Represents a group of PdfDiscrete objects with the same bin points.
  * 
 */
-  __pyx_t_12 = __Pyx_Py3ClassCreate(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_PdfGroup, __pyx_t_5, __pyx_t_11, NULL, 0, 0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_Py3ClassCreate(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_PdfGroup, __pyx_t_5, __pyx_t_11, NULL, 0, 0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_12);
   #endif
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_PdfGroup, __pyx_t_12) < (0)) __PYX_ERR(0, 45, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_PdfGroup, __pyx_t_12) < (0)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
   __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "pdf_group.pyx":230
+  /* "pdf_group.pyx":237
  * 
  * 
  * def test_in_pred_regions(test_vals, regions):             # <<<<<<<<<<<<<<
  *     return(np.array([np.any([((test_vals[i]>=interval[0]) and (test_vals[i]<=interval[1]))
  *                      for interval in regions[i]])
 */
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_7test_in_pred_regions, 0, __pyx_mstate_global->__pyx_n_u_test_in_pred_regions, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[25])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 230, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_9test_in_pred_regions, 0, __pyx_mstate_global->__pyx_n_u_test_in_pred_regions, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[26])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 237, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_5);
   #endif
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_test_in_pred_regions, __pyx_t_5) < (0)) __PYX_ERR(0, 230, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_test_in_pred_regions, __pyx_t_5) < (0)) __PYX_ERR(0, 237, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "pdf_group.pyx":236
+  /* "pdf_group.pyx":243
  * 
  * 
  * def log_loss_pdf(y_true, pdf_set):             # <<<<<<<<<<<<<<
  *     """This computes the log loss for a truth set and a DensitySet object"""
  *     return pdf_set.log_loss(y_true)
 */
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_9log_loss_pdf, 0, __pyx_mstate_global->__pyx_n_u_log_loss_pdf, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[26])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 236, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_11log_loss_pdf, 0, __pyx_mstate_global->__pyx_n_u_log_loss_pdf, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[27])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 243, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_5);
   #endif
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_log_loss_pdf, __pyx_t_5) < (0)) __PYX_ERR(0, 236, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_log_loss_pdf, __pyx_t_5) < (0)) __PYX_ERR(0, 243, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "pdf_group.pyx":240
+  /* "pdf_group.pyx":247
  *     return pdf_set.log_loss(y_true)
  * 
  * def crps_mean(y_true, pdf_set):             # <<<<<<<<<<<<<<
  *     """This computes the log loss for a truth set and a DensitySet object"""
  *     return pdf_set.crps_mean(y_true)
 */
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_11crps_mean, 0, __pyx_mstate_global->__pyx_n_u_crps_mean, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[27])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 240, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_13crps_mean, 0, __pyx_mstate_global->__pyx_n_u_crps_mean, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[28])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 247, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_5);
   #endif
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_crps_mean, __pyx_t_5) < (0)) __PYX_ERR(0, 240, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_crps_mean, __pyx_t_5) < (0)) __PYX_ERR(0, 247, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "pdf_group.pyx":244
+  /* "pdf_group.pyx":251
  *     return pdf_set.crps_mean(y_true)
  * 
  * def size_of_pred_region(pr):             # <<<<<<<<<<<<<<
  *     return(np.sum([x[1]-x[0] for x in pr]))
  * 
 */
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_13size_of_pred_region, 0, __pyx_mstate_global->__pyx_n_u_size_of_pred_region, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[28])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 244, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_15size_of_pred_region, 0, __pyx_mstate_global->__pyx_n_u_size_of_pred_region, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[29])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 251, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_5);
   #endif
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_size_of_pred_region, __pyx_t_5) < (0)) __PYX_ERR(0, 244, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_size_of_pred_region, __pyx_t_5) < (0)) __PYX_ERR(0, 251, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "pdf_group.pyx":248
+  /* "pdf_group.pyx":255
  * 
  * 
  * def test_between_quantiles_pdf(test_vals, pdf_set, q_left, q_right):             # <<<<<<<<<<<<<<
  *     """Tests inclusion of the test_vals in the interval defined by the given quantiles"""
  *     return(pdf_set.test_between_quantiles(test_vals, q_left, q_right))
 */
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_15test_between_quantiles_pdf, 0, __pyx_mstate_global->__pyx_n_u_test_between_quantiles_pdf, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[29])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 248, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_17test_between_quantiles_pdf, 0, __pyx_mstate_global->__pyx_n_u_test_between_quantiles_pdf, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[30])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 255, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_5);
   #endif
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_test_between_quantiles_pdf, __pyx_t_5) < (0)) __PYX_ERR(0, 248, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_test_between_quantiles_pdf, __pyx_t_5) < (0)) __PYX_ERR(0, 255, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "pdf_group.pyx":252
+  /* "pdf_group.pyx":259
  *     return(pdf_set.test_between_quantiles(test_vals, q_left, q_right))
  * 
  * @cython.boundscheck(False)  # Deactivate bounds checking             # <<<<<<<<<<<<<<
  * @cython.wraparound(False)   # Deactivate negative indexing.
  * def explode_densities(np.ndarray[double, ndim=2] densitymat,
 */
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_17explode_densities, 0, __pyx_mstate_global->__pyx_n_u_explode_densities, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[30])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 252, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_9pdf_group_19explode_densities, 0, __pyx_mstate_global->__pyx_n_u_explode_densities, NULL, __pyx_mstate_global->__pyx_n_u_pdf_group, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[31])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 259, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_5);
   #endif
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_explode_densities, __pyx_t_5) < (0)) __PYX_ERR(0, 252, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_explode_densities, __pyx_t_5) < (0)) __PYX_ERR(0, 259, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
   /* "pdf_group.pyx":1
@@ -35976,9 +36241,9 @@ static int __Pyx_InitCachedBuiltins(__pyx_mstatetype *__pyx_mstate) {
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   CYTHON_UNUSED_VAR(__pyx_mstate);
-  __pyx_builtin_object = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_object); if (!__pyx_builtin_object) __PYX_ERR(0, 45, __pyx_L1_error)
-  __pyx_builtin_all = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_all); if (!__pyx_builtin_all) __PYX_ERR(0, 38, __pyx_L1_error)
-  __pyx_builtin_enumerate = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_enumerate); if (!__pyx_builtin_enumerate) __PYX_ERR(0, 139, __pyx_L1_error)
+  __pyx_builtin_object = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_object); if (!__pyx_builtin_object) __PYX_ERR(0, 52, __pyx_L1_error)
+  __pyx_builtin_all = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_all); if (!__pyx_builtin_all) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_builtin_enumerate = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_enumerate); if (!__pyx_builtin_enumerate) __PYX_ERR(0, 146, __pyx_L1_error)
   __pyx_builtin___import__ = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_import); if (!__pyx_builtin___import__) __PYX_ERR(1, 119, __pyx_L1_error)
   __pyx_builtin_Ellipsis = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_Ellipsis); if (!__pyx_builtin_Ellipsis) __PYX_ERR(1, 436, __pyx_L1_error)
   __pyx_builtin_id = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_id); if (!__pyx_builtin_id) __PYX_ERR(1, 662, __pyx_L1_error)
@@ -36043,7 +36308,7 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   if (__Pyx_PyTuple_SET_ITEM(__pyx_mstate_global->__pyx_tuple[1], 0, __pyx_mstate_global->__pyx_slice[0]) != (0)) __PYX_ERR(1, 763, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[1]);
 
-  /* "pdf_group.pyx":38
+  /* "pdf_group.pyx":45
  * 
  * def _rows_sum_close(mat, ptol):
  *     return all(row_blocks(lambda lo, hi: bool(np.allclose(np.abs(np.sum(mat[lo:hi], axis=1)), 1.0, ptol, ptol)), mat.shape[0]))             # <<<<<<<<<<<<<<
@@ -36052,26 +36317,26 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
 */
   {
     PyObject* __pyx_temp[1] = {__pyx_mstate_global->__pyx_n_u_axis};
-    __pyx_mstate_global->__pyx_tuple[2] = __Pyx_PyTuple_FromArray(__pyx_temp, 1); if (unlikely(!__pyx_mstate_global->__pyx_tuple[2])) __PYX_ERR(0, 38, __pyx_L1_error)
+    __pyx_mstate_global->__pyx_tuple[2] = __Pyx_PyTuple_FromArray(__pyx_temp, 1); if (unlikely(!__pyx_mstate_global->__pyx_tuple[2])) __PYX_ERR(0, 45, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[2]);
   }
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[2]);
 
-  /* "pdf_group.pyx":95
+  /* "pdf_group.pyx":102
  *                 if not _rows_sum_close(self.probmat, ptol):
  *                     warnings.warn('The Probabilities do not sum to 1.')
  *             self.bin_widths = self.binvec[1:] - self.binvec[:-1]             # <<<<<<<<<<<<<<
  *             bw = self.bin_widths
  *             self.densitymat = row_map(lambda m: m / bw, self.probmat)
 */
-  __pyx_mstate_global->__pyx_slice[1] = PySlice_New(__pyx_mstate_global->__pyx_int_1, Py_None, Py_None); if (unlikely(!__pyx_mstate_global->__pyx_slice[1])) __PYX_ERR(0, 95, __pyx_L1_error)
+  __pyx_mstate_global->__pyx_slice[1] = PySlice_New(__pyx_mstate_global->__pyx_int_1, Py_None, Py_None); if (unlikely(!__pyx_mstate_global->__pyx_slice[1])) __PYX_ERR(0, 102, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_slice[1]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_slice[1]);
-  __pyx_mstate_global->__pyx_slice[2] = PySlice_New(Py_None, __pyx_mstate_global->__pyx_int_neg_1, Py_None); if (unlikely(!__pyx_mstate_global->__pyx_slice[2])) __PYX_ERR(0, 95, __pyx_L1_error)
+  __pyx_mstate_global->__pyx_slice[2] = PySlice_New(Py_None, __pyx_mstate_global->__pyx_int_neg_1, Py_None); if (unlikely(!__pyx_mstate_global->__pyx_slice[2])) __PYX_ERR(0, 102, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_slice[2]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_slice[2]);
 
-  /* "pdf_group.pyx":117
+  /* "pdf_group.pyx":124
  *     def calculate_cum_prob_mat(self):
  *         nrows = self.probmat.shape[0]
  *         self.cum_prob_mat = np.cumsum(np.hstack((np.zeros(nrows).reshape(-1,1),             # <<<<<<<<<<<<<<
@@ -36080,12 +36345,12 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
 */
   {
     PyObject* __pyx_temp[2] = {__pyx_mstate_global->__pyx_int_neg_1, __pyx_mstate_global->__pyx_int_1};
-    __pyx_mstate_global->__pyx_tuple[3] = __Pyx_PyTuple_FromArray(__pyx_temp, 2); if (unlikely(!__pyx_mstate_global->__pyx_tuple[3])) __PYX_ERR(0, 117, __pyx_L1_error)
+    __pyx_mstate_global->__pyx_tuple[3] = __Pyx_PyTuple_FromArray(__pyx_temp, 2); if (unlikely(!__pyx_mstate_global->__pyx_tuple[3])) __PYX_ERR(0, 124, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[3]);
   }
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[3]);
 
-  /* "pdf_group.pyx":121
+  /* "pdf_group.pyx":128
  * 
  *     def make_pdf_list(self, check=False):
  *         self.pdf_list = [PdfDiscrete(self.binvec, self.probmat[i,:], check_sum=False)             # <<<<<<<<<<<<<<
@@ -36094,12 +36359,12 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
 */
   {
     PyObject* __pyx_temp[1] = {__pyx_mstate_global->__pyx_n_u_check_sum};
-    __pyx_mstate_global->__pyx_tuple[4] = __Pyx_PyTuple_FromArray(__pyx_temp, 1); if (unlikely(!__pyx_mstate_global->__pyx_tuple[4])) __PYX_ERR(0, 121, __pyx_L1_error)
+    __pyx_mstate_global->__pyx_tuple[4] = __Pyx_PyTuple_FromArray(__pyx_temp, 1); if (unlikely(!__pyx_mstate_global->__pyx_tuple[4])) __PYX_ERR(0, 128, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[4]);
   }
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[4]);
 
-  /* "pdf_group.pyx":206
+  /* "pdf_group.pyx":213
  *         if self.pdf_list is None:
  *             self.make_pdf_list()
  *         return(np.array([pdf.pred_region(coverage) for pdf in self.pdf_list], dtype=object))             # <<<<<<<<<<<<<<
@@ -36108,12 +36373,12 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
 */
   {
     PyObject* __pyx_temp[1] = {__pyx_mstate_global->__pyx_n_u_dtype};
-    __pyx_mstate_global->__pyx_tuple[5] = __Pyx_PyTuple_FromArray(__pyx_temp, 1); if (unlikely(!__pyx_mstate_global->__pyx_tuple[5])) __PYX_ERR(0, 206, __pyx_L1_error)
+    __pyx_mstate_global->__pyx_tuple[5] = __Pyx_PyTuple_FromArray(__pyx_temp, 1); if (unlikely(!__pyx_mstate_global->__pyx_tuple[5])) __PYX_ERR(0, 213, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[5]);
   }
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[5]);
 
-  /* "pdf_group.pyx":224
+  /* "pdf_group.pyx":231
  *         def blk(m):
  *             bigmat = np.cumsum(m*fbw if fbw is not None else m, axis=1)
  *             new_probs = np.diff(bigmat[:, cols], axis=1, prepend=0)             # <<<<<<<<<<<<<<
@@ -36122,12 +36387,12 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
 */
   {
     PyObject* __pyx_temp[2] = {__pyx_mstate_global->__pyx_n_u_axis, __pyx_mstate_global->__pyx_n_u_prepend};
-    __pyx_mstate_global->__pyx_tuple[6] = __Pyx_PyTuple_FromArray(__pyx_temp, 2); if (unlikely(!__pyx_mstate_global->__pyx_tuple[6])) __PYX_ERR(0, 224, __pyx_L1_error)
+    __pyx_mstate_global->__pyx_tuple[6] = __Pyx_PyTuple_FromArray(__pyx_temp, 2); if (unlikely(!__pyx_mstate_global->__pyx_tuple[6])) __PYX_ERR(0, 231, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[6]);
   }
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[6]);
 
-  /* "pdf_group.pyx":227
+  /* "pdf_group.pyx":234
  *             new_probs = np.maximum(new_probs, eps)
  *             return new_probs/np.sum(new_probs, axis=1).reshape(-1,1)
  *         return(row_map(blk, src, ncols=len(cols)))             # <<<<<<<<<<<<<<
@@ -36136,12 +36401,26 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
 */
   {
     PyObject* __pyx_temp[1] = {__pyx_mstate_global->__pyx_n_u_ncols};
-    __pyx_mstate_global->__pyx_tuple[7] = __Pyx_PyTuple_FromArray(__pyx_temp, 1); if (unlikely(!__pyx_mstate_global->__pyx_tuple[7])) __PYX_ERR(0, 227, __pyx_L1_error)
+    __pyx_mstate_global->__pyx_tuple[7] = __Pyx_PyTuple_FromArray(__pyx_temp, 1); if (unlikely(!__pyx_mstate_global->__pyx_tuple[7])) __PYX_ERR(0, 234, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[7]);
   }
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[7]);
 
   /* "pdf_group.pyx":16
+ * 
+ * 
+ * def team_size(work, grain=100000):             # <<<<<<<<<<<<<<
+ *     """OpenMP threads for a parallel loop of about `work` inner operations: one per `grain`, at most STB_THREADS.
+ *     Small loops (deep tree nodes, small data) stay on few threads; a full 32-thread team on them costs more than the
+*/
+  {
+    PyObject* __pyx_temp[1] = {((PyObject*)__pyx_mstate_global->__pyx_int_100000)};
+    __pyx_mstate_global->__pyx_tuple[8] = __Pyx_PyTuple_FromArray(__pyx_temp, 1); if (unlikely(!__pyx_mstate_global->__pyx_tuple[8])) __PYX_ERR(0, 16, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[8]);
+  }
+  __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[8]);
+
+  /* "pdf_group.pyx":23
  * 
  * 
  * def row_blocks(fn, nrows, min_rows=2000):             # <<<<<<<<<<<<<<
@@ -36150,12 +36429,12 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
 */
   {
     PyObject* __pyx_temp[1] = {((PyObject*)__pyx_mstate_global->__pyx_int_2000)};
-    __pyx_mstate_global->__pyx_tuple[8] = __Pyx_PyTuple_FromArray(__pyx_temp, 1); if (unlikely(!__pyx_mstate_global->__pyx_tuple[8])) __PYX_ERR(0, 16, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[8]);
+    __pyx_mstate_global->__pyx_tuple[9] = __Pyx_PyTuple_FromArray(__pyx_temp, 1); if (unlikely(!__pyx_mstate_global->__pyx_tuple[9])) __PYX_ERR(0, 23, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[9]);
   }
-  __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[8]);
+  __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[9]);
 
-  /* "pdf_group.pyx":28
+  /* "pdf_group.pyx":35
  * 
  * 
  * def row_map(fn, mat, ncols=None):             # <<<<<<<<<<<<<<
@@ -36164,12 +36443,12 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
 */
   {
     PyObject* __pyx_temp[1] = {Py_None};
-    __pyx_mstate_global->__pyx_tuple[9] = __Pyx_PyTuple_FromArray(__pyx_temp, 1); if (unlikely(!__pyx_mstate_global->__pyx_tuple[9])) __PYX_ERR(0, 28, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[9]);
+    __pyx_mstate_global->__pyx_tuple[10] = __Pyx_PyTuple_FromArray(__pyx_temp, 1); if (unlikely(!__pyx_mstate_global->__pyx_tuple[10])) __PYX_ERR(0, 35, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[10]);
   }
-  __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[9]);
+  __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[10]);
 
-  /* "pdf_group.pyx":45
+  /* "pdf_group.pyx":52
  * from cython.parallel cimport prange
  * 
  * class PdfGroup(object):             # <<<<<<<<<<<<<<
@@ -36178,18 +36457,18 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
 */
   {
     PyObject* __pyx_temp[1] = {__pyx_builtin_object};
-    __pyx_mstate_global->__pyx_tuple[10] = __Pyx_PyTuple_FromArray(__pyx_temp, 1); if (unlikely(!__pyx_mstate_global->__pyx_tuple[10])) __PYX_ERR(0, 45, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[10]);
-  }
-  __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[10]);
-  {
-    PyObject* __pyx_temp[1] = {__pyx_builtin_object};
-    __pyx_mstate_global->__pyx_tuple[11] = __Pyx_PyTuple_FromArray(__pyx_temp, 1); if (unlikely(!__pyx_mstate_global->__pyx_tuple[11])) __PYX_ERR(0, 45, __pyx_L1_error)
+    __pyx_mstate_global->__pyx_tuple[11] = __Pyx_PyTuple_FromArray(__pyx_temp, 1); if (unlikely(!__pyx_mstate_global->__pyx_tuple[11])) __PYX_ERR(0, 52, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[11]);
   }
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[11]);
+  {
+    PyObject* __pyx_temp[1] = {__pyx_builtin_object};
+    __pyx_mstate_global->__pyx_tuple[12] = __Pyx_PyTuple_FromArray(__pyx_temp, 1); if (unlikely(!__pyx_mstate_global->__pyx_tuple[12])) __PYX_ERR(0, 52, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[12]);
+  }
+  __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[12]);
 
-  /* "pdf_group.pyx":84
+  /* "pdf_group.pyx":91
  *         True.  Can be turned off for computational efficiency.
  * """
  *     def __init__(self, binvec, probmat=None, densitymat=None,             # <<<<<<<<<<<<<<
@@ -36198,12 +36477,12 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
 */
   {
     PyObject* __pyx_temp[4] = {Py_None, Py_None, ((PyObject*)__pyx_mstate_global->__pyx_float_1eneg_6), ((PyObject*)Py_True)};
-    __pyx_mstate_global->__pyx_tuple[12] = __Pyx_PyTuple_FromArray(__pyx_temp, 4); if (unlikely(!__pyx_mstate_global->__pyx_tuple[12])) __PYX_ERR(0, 84, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[12]);
+    __pyx_mstate_global->__pyx_tuple[13] = __Pyx_PyTuple_FromArray(__pyx_temp, 4); if (unlikely(!__pyx_mstate_global->__pyx_tuple[13])) __PYX_ERR(0, 91, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[13]);
   }
-  __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[12]);
+  __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[13]);
 
-  /* "pdf_group.pyx":120
+  /* "pdf_group.pyx":127
  *                                     self.probmat)), axis=1)
  * 
  *     def make_pdf_list(self, check=False):             # <<<<<<<<<<<<<<
@@ -36212,12 +36491,12 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
 */
   {
     PyObject* __pyx_temp[1] = {((PyObject*)Py_False)};
-    __pyx_mstate_global->__pyx_tuple[13] = __Pyx_PyTuple_FromArray(__pyx_temp, 1); if (unlikely(!__pyx_mstate_global->__pyx_tuple[13])) __PYX_ERR(0, 120, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[13]);
+    __pyx_mstate_global->__pyx_tuple[14] = __Pyx_PyTuple_FromArray(__pyx_temp, 1); if (unlikely(!__pyx_mstate_global->__pyx_tuple[14])) __PYX_ERR(0, 127, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[14]);
   }
-  __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[13]);
+  __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[14]);
 
-  /* "pdf_group.pyx":130
+  /* "pdf_group.pyx":137
  *             return(self.pdf_list[arg])
  * 
  *     def log_loss(self, y_test, eps=1e-16):             # <<<<<<<<<<<<<<
@@ -36226,14 +36505,14 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
 */
   {
     PyObject* __pyx_temp[1] = {((PyObject*)__pyx_mstate_global->__pyx_float_1eneg_16)};
-    __pyx_mstate_global->__pyx_tuple[14] = __Pyx_PyTuple_FromArray(__pyx_temp, 1); if (unlikely(!__pyx_mstate_global->__pyx_tuple[14])) __PYX_ERR(0, 130, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[14]);
+    __pyx_mstate_global->__pyx_tuple[15] = __Pyx_PyTuple_FromArray(__pyx_temp, 1); if (unlikely(!__pyx_mstate_global->__pyx_tuple[15])) __PYX_ERR(0, 137, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[15]);
   }
-  __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[14]);
+  __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[15]);
   #if CYTHON_IMMORTAL_CONSTANTS
   {
     PyObject **table = __pyx_mstate->__pyx_tuple;
-    for (Py_ssize_t i=0; i<15; ++i) {
+    for (Py_ssize_t i=0; i<16; ++i) {
       #if PY_VERSION_HEX >= 0x030F0000
       PyUnstable_SetImmortal(table[i]);
       #elif CYTHON_COMPILING_IN_CPYTHON_FREETHREADING
@@ -36290,38 +36569,38 @@ static int __Pyx_InitConstants(__pyx_mstatetype *__pyx_mstate) {
   int __pyx_clineno = 0;
   CYTHON_UNUSED_VAR(__pyx_mstate);
   {
-    const struct { const unsigned int length: 11; } str_length_index[] = {{6},{8},{1},{2},{15},{23},{25},{32},{20},{22},{1},{1},{51},{37},{45},{22},{34},{179},{62},{54},{1529},{34},{8},{15},{7},{6},{2},{9},{50},{39},{34},{28},{30},{37},{8},{5},{8},{11},{8},{20},{17},{35},{22},{35},{31},{18},{17},{22},{13},{15},{26},{21},{17},{24},{18},{31},{29},{11},{8},{18},{15},{5},{20},{12},{9},{17},{8},{7},{8},{11},{12},{10},{8},{8},{13},{10},{15},{8},{7},{11},{14},{11},{10},{19},{14},{12},{10},{17},{13},{12},{12},{19},{8},{13},{15},{33},{3},{3},{3},{8},{15},{5},{3},{3},{8},{5},{17},{6},{18},{4},{4},{6},{10},{10},{13},{6},{3},{2},{1},{22},{5},{9},{18},{4},{18},{5},{8},{9},{9},{14},{9},{12},{6},{8},{8},{7},{14},{12},{10},{2},{4},{2},{5},{15},{5},{5},{6},{9},{7},{3},{5},{17},{3},{11},{15},{8},{8},{5},{2},{6},{7},{3},{2},{6},{1},{2},{5},{7},{5},{8},{4},{5},{8},{1},{8},{2},{3},{8},{12},{1},{13},{3},{3},{7},{4},{6},{7},{8},{4},{4},{5},{4},{13},{9},{13},{2},{5},{8},{13},{8},{5},{1},{3},{6},{2},{3},{4},{3},{12},{9},{8},{7},{3},{2},{11},{17},{12},{7},{7},{3},{4},{6},{7},{8},{15},{9},{7},{8},{7},{10},{28},{7},{20},{7},{4},{10},{5},{4},{19},{3},{5},{4},{4},{6},{3},{11},{11},{22},{26},{20},{9},{6},{7},{6},{6},{3},{4},{6},{4},{8},{1},{6},{6},{5}};
-    const struct { const unsigned int length: 9; } bytes_length_index[] = {{1},{33},{79},{28},{13},{13},{18},{182},{23},{55},{52},{41},{38},{43},{58},{45},{45},{47},{47},{49},{92},{22},{47},{8},{8},{61},{111},{51},{149},{357},{126},{164}};
+    const struct { const unsigned int length: 11; } str_length_index[] = {{6},{8},{1},{2},{15},{23},{25},{32},{20},{22},{1},{1},{51},{37},{45},{22},{34},{179},{62},{54},{1529},{34},{8},{15},{7},{6},{2},{9},{50},{39},{34},{28},{30},{37},{8},{5},{8},{11},{8},{20},{17},{35},{22},{35},{31},{18},{17},{22},{13},{15},{26},{21},{17},{24},{18},{31},{29},{11},{8},{18},{15},{5},{20},{12},{9},{17},{8},{7},{8},{11},{12},{10},{8},{8},{13},{10},{15},{8},{7},{11},{14},{11},{10},{19},{14},{12},{10},{17},{13},{12},{12},{19},{8},{13},{15},{33},{3},{3},{3},{8},{15},{5},{3},{3},{8},{5},{17},{6},{18},{4},{4},{6},{10},{10},{13},{6},{3},{2},{1},{22},{5},{9},{18},{4},{18},{5},{8},{9},{9},{14},{9},{12},{6},{8},{8},{7},{14},{12},{10},{2},{4},{2},{5},{15},{5},{5},{6},{9},{7},{3},{5},{17},{3},{11},{15},{8},{8},{5},{2},{6},{7},{3},{5},{2},{6},{1},{2},{5},{7},{5},{8},{4},{5},{8},{1},{8},{2},{3},{8},{12},{1},{13},{3},{3},{7},{4},{6},{7},{8},{4},{4},{5},{4},{13},{9},{13},{2},{5},{3},{8},{13},{8},{5},{1},{3},{6},{2},{3},{4},{3},{12},{9},{8},{7},{3},{2},{11},{17},{12},{7},{7},{3},{4},{6},{7},{8},{15},{9},{7},{8},{7},{10},{28},{7},{20},{7},{4},{10},{5},{4},{19},{3},{5},{4},{4},{6},{3},{11},{11},{9},{22},{26},{20},{9},{6},{7},{6},{6},{3},{4},{6},{4},{8},{4},{1},{6},{6},{5}};
+    const struct { const unsigned int length: 9; } bytes_length_index[] = {{1},{33},{79},{28},{13},{13},{18},{198},{23},{55},{52},{41},{38},{43},{58},{45},{45},{47},{47},{49},{92},{22},{47},{8},{8},{24},{61},{111},{51},{149},{357},{126},{164}};
     #ifndef CYTHON_COMPRESS_STRINGS
       #define CYTHON_COMPRESS_STRINGS 90
     #endif
-    #if (CYTHON_COMPRESS_STRINGS) == 1 /* compression: zlib (3364 bytes) */
-static const char cstring[] = "x\332\265XK{\323V\032\306`J\200\024\342\220p+\235*\341\022h\023w\014)mS\312\214s\201\322\241@.\3452\363LUY:\266\005\262$\353\022\3070\317\224\245\227Zj\251\245\226Zj\351\245\227^z\231\237\320\2370\357wd\331\016Ia\0263yH\244s\316w\276\313\373]\205 9\302\237w\004\243\364\222\311\316\335\374\222p\347\047V3\254\346S\2255\004\243,\334\221\r\335Q+\256\341\332\202\244+\202\242ZD\370\356\266\252\247\007\266c\251\nSF\210\005\303z\357\371\336\275\001\345\335\277,\033NU0-\243\324\027\315t[uTf\013\025u\233\351\363\202Z\321\rK\325+\303\223\374\212\244\353\206#H\266\215C\3011\004\213I\312\202\241kM\241\306\355\332\206]\017\364mIS\025\241f(l^`;&\304A\372\234<G\252\316\225\r\313\261$}n^\250\200UJlW%\223A;A\332Qm\341!\323+P\016\0005E\207\331\2160\363\275\240\273\265\022\263h\317T\312\366#\303a\202S\005\274+M\247j\350\002n)LSA\"9\014\372\220\321\220k\021\221.<Y{\262\260\370\315\"7\324b\344\014[\260\335\222\254\301\024X\014\246%W\325\034\310w\232&\014\025\036@\264\341\n:\203\346\260\323\004\335\350\005\247\312t\301f\016\275\010s\034\025\311Q\r]\304u@6\327\307\036@\322\355{\222f\263\374\243\201\001\262\241\2715\235\213M\260m\326`\210b\2001\301\213\205\\\035\261\267\244\352\366\310mr\231TR\265\304Y\357\277\265\301L\213\331L\207\271\222P\261\014\327\244\243\047JyU\265e\213\001\303$4m\241\241\002p\262\306\226j\214.\013\246\241\342^\376\304\t\001?[U\000\254r\303\005\303uL\327!F\264\372\025\022\024@-**a^r\t\007\373W\004\004\374\242\010p7\221q&\300\316\220U\211\242a`\204\355\2502\\R\201\2326.\362\250\321\206R\231\340\352\n\263\264&\005\342Az\313\360n\211\201C\231YL\227\301\272\324\244(g;\210\275|\245\317\350\356]\212\232\212\360=\361\270O8\\\317\347\3637F\316\304\257pH4\377\370\352\237{\266\363\246f\300\270\304O\327o\010\227/S\0307\020zl\033HS\2244$\335!?+F\"\355\211d\001D\004\237\315\227\013\203\237\344\030\340n3YX\022t3/Y\226\324\\\320\324W\tB\251\321C\374!I\205_\255\324\221\034s%E\001\024\314B\006!\226H\231\2046\205\233~\206\301\322Lc-I\225\262\2523%/\010\233U\303\325\024\202\220\247=OA[f""(\023\000\334\260\200}~\300\254\230\252\316\203e\240\241Z35\nE}\241@\232!\213P\225\206\232\r\"\213\0138@3\272\373\245p}\277\2528\270\321w \035~\0104\331\260\200\221i$\272\357\345\217`e\022\260I\325\232\347\206R\322X\352\016pC\360p\035-\243a\017\230\356\005\235J\347\266\252\270\222&\364C\235G:0\\Ib\220\327\003Cxd\350C\275\324\362Ha\225 \004jm\363j\214\364tP=q\3751\325O\\J\223\233\212\301\260\"Sm\030\260\263\007\336J\371\364\361\031\251#\377=DC\315\376\257\360<S5\215T\346\r\205,/\357\013Q\322\033a\231\0325\217r\3147t&\243.HV\223.Q\225{\307l\32314\030\\\326\014\311\231\247\250\226\\\215_,\260\205\333{,\007!Z\003\n\204\340\332\320\241A\005\\\2562\371\025\001\221h\364N\310\330n\215\334Y\350\213\342\304\"m.\t%\303\320\366\210\333\262\334\241A\317\252(}T\204-\2562x\360\273I\273z\217\034AX\035p\034\352\016\316\303\020s\\\013i\013w\225ya\225\215\032*1\357<\200\235\225\313\252\254\242\0106\363\047\310\344\047\3574\n\256\315@\232\244(\"6\030\232\221F\255\212|%\225d\370N*i\214\351\364\267\"\253v\362\246\350\306\300^Q\204\027]\231\211\242\240\270\274\301\351\206\276\000\217o\253\320B\024eUW\035QD+2\233y\021!\307\3625\334SyL\neI\325\222\246\212\272\201Y`\224\314E\034T\367Q \230\\\031\2263\300n;_RU\346\255,o6w\\\256\035\321J\232f\310(\312B\"F\221\034)\177\300i2hPz%c\221\235\277\243I\265\222\"\335-n\256<x\260\246i\252i\253\366H\253I;F\372\314\213b\2059\252\303j\2428\262\227\030\275o\003\354!X\263\357\016\344\014H\250C\213\216!\362\031\354\340\335\341\355\222\366j@\202\035\331\325`\215(\2735N(\002\270\341\261e\332b\215I\372`G3*\242f\330C!5\351\025\023\tHj\300\303\335\321;5t\365\221%uy\370\275BC\216\255\276f\366A\047\303\315\272\213\236\0107\356\333\020\033\252\342T\367\023\016wh\340\023K\314i \010\305?8VuqT\354\346\326\262\270\365\303\306Zqus\223\325]\232\003\266\2524\233>A\242\256\3550\331u\014\213f\356\374p\374\026\237<~\374\020\016k\356\340w\225\006\230Gl\307\331`eQ\354\317s\010p\0043M|\303\227\201\347E\221\017=\3644dz\224]\235?G(\360j\247|\222P\346o<.D\270\014V\320\2239\322@""\n\306\037W\343\027j\226!\242\266Z\310]Z\352\230(\370\023\232\343\007\326\233h\047\374\025\026\360\002\203\324NV}\241\364J\343l\362\346\352\246*\277\002\3575=\245\333v(=\210\007`\326R\tir\017\336d>a\217l\260\035Z\240\335\r\264\262G,\035\274\017\357q\237\301r\233\322\034\343#f\017\221Z\t\225S\000k\330\357.\367g\rJ\223T\262\221\306\370\307I\322\214\026Kn\031\263\237\244\231UI\322\233\222U\301?\336\261x!\30003\370\226\352o\020&\222\335\324e\325\310\017\364\261\351\303\243$\331\254\244V\220L\310B\261\246*\246c\323[\022\263{23\231\204\220\225\245\206|p>r\237\014\272\206\254\221\321\340\205\217\037\231\225$\034\031\032\351&\273h\311\272\223/\273T\342\260\343\352\216L\323\234Ta\262\351\212\311F\232\322\374\305F\317\202\337\314d\233\206\254=r\335\032\344Qo\027Ue\207?M\307\352\017\010\375\207\010\365a[\272\"\026\303\tBQ\025\265\\Vj\n\001\305\377\220\347\222\201\233)\025\264\374\232\3514\221d\030\325\031\202\211\177r1}[\2650\304\2306\263,\324\362\035\214\315\n\023\007#F\271\324\240\221\263/\230\277\016%\362%\224\244\047\241\\\326\244\212]\326\321\342\3500\371`D2U\325*\"\013-\033\n\322\204O#\007\346\003\014-\267\027\323\311E\265)\277X\315N\376\274f\257\000\274m\002s\315@\031L+a\372\244\"X\333S\rk\222\t\2415\204C\315\255\021\344I!\304\367-}\334\326\340A\nU\372L\241\340\327\311\213P\243Fy\311m\023\021\026\264\340Q\242\033\342\340\300\326M\235\256R\372\221\221\364L!\341\213\376\241\3314\200u\002\267a\323\307\026L\206v\244`:\370\017z`\2525=\221x\246a\232\326He\334W\265G\253&\325\020\014\372\375\371\313\264l\232\246\352\242\306\312N]\264\324J\325I\253\357;\305{P\224\373\214\350\201a\226FK\352\256\260C,!9_\331\303\267\375\tMg\300\272\377\330\323\350h\017\321`3\255\014\233\372c\007g\315m\300\257h\224\3674\000KF`\320\244\200\370s\0143\231\030lJ\004\223\227]\270s\360J\221rP\2079x\227\342\342\240\226\303\367(o\200\031\214wul\026\024\024Y8\3135\025\372:\2244:\307\257\313\354\206d\351\364\213\314\265w\222\377\324\300_\314v\257\001\227\375\370m\246\227=\331\272\331\332\362r\336\214W\360""\212\336\206W\3673~\316\277\354o\005\323\201\224\022<\355\037:~\301_\361\233a&\234\014o\206\317\243\365H\211\257\306\315N\2463\331\271\331y\336\375\371i\367\351\263\336\364\005\377R\360,,\206\353\275\363\227\3745b\024\330\341LXH\330\335jI\255\327~\256{\261\336\255;]\347u\367\365\233\356\233\177\275\315\354\342\354k\357\006D\024\323\305\347~\321_\357/\272\2237\302\\\370E\364<\306\316\357\247\016\035\275\350_\014nck\246\227\375\223/\007\271`>\224\302z/{\301\317\365\262_@\277\247Q!z\334\276\r\335\n\275\354Xk\334[\203e3\275\261\t/\343]\362\327{c\047[\337y\222\267\343\327\203#\301\255@\217\212\304<\226z\343g=\251\227]\214\226\243r\274\034\277\354@\355K~\261\227\375\324\337\350~V\210r\021D\236\3673\275\343\047z\343\237\372\353>nLx\343\2604\027\314\364&r@\363\206\177\047\260\240\333\215\350&@\222\310\354\302\333\"I,\264VZ\333\034\347#\034\314z\262\275\010H\316@\006\030\235\002\277\261S-\305[\200b\231\336\330\351\226\345\235%\277t/\314\003\324\255h*z\032\027\016\2766\240\305\356C\270\351b\264\0305b\245=\337)w\267~\376\243;\216\367-\200~\036\254\007\n4.D\305? \354\236\276\034\024\202\277\205N\364};\323\316\275Cu\306\373\316\227|\047\3706\\\215\306\342L\234\333\305\326\242\327\0142\001\047\235\360\262\336\017\376\275`&(\364\306\306\273\343\227\374e\277\002\231\245\360XhE\223\321\3558\027_k\217u\016wf;\305\336\225\353\341x\264\026\343\346\356\007\354\\\013\316\004\253\340\341D\205\017\023\337\207\243\225p\016\030\256\177\230\370\001\264c\341b\330@\230\317|\230\374G\304\3716\374s.\316\306\305\203\311\047\274\343\376\244\277\310S\350Bt9z\021\227\332\331\366\203\316zGjez\343\323\010\214\006@\204\337\203sa6\274\037-\305\233\355\243\355\365\336\370y\377\260\177\025\007\037q\365\247#9>\337\316%\333\327\001\351w\241D\036 ?n\300\007\344%\027\361[\005\377\303\355\031\377\363`\031\312\271<|\246#)\262\342\311\270\340\177\031N\205\353a):\016\344g\343U\370t\262\275\330\256w\216t\n\235\225\216\333\335z\321}\361K\367\027\271+\253]\365e\260\024n\300Q\271\340et8\232\215\212\335C\323\336\372n""\366Dk\266u\317\233\365V\274m\244\202\022\\\016\236\206\205\360^t->\022/A\363\354\321\335\354)\244\274\333\247H\222\241{\350\242?\263\233=\312\027\255\237\374\263\276\215\334\311\036{k\265\316\264\212\204k\335;\214\242t\2132\361\330\333\355\326\246\207T\230\350N\314\362\370\311\216\267\226[*O\242\257\203Y\030GAT\207^3\304p\021\227\217z[Tc\376J\350\265\245.O\340\261\361\326Cx\352\223\240\030l\001\376+\200G\212\267\333\177\357\324{\027>\365\177\016\256\006u\200\376Ct/\236\211\013\335\354g~=\361a\335;\346\271\344E\362Ob\003\337\177\343_\203\243&\203\233\301&\374\toL\245%f\277\347\317y\026\214\254\367\306?\206)c\274\310\322\345i\270s\026~\3766.\306[p(\247;\217B\222\2172)\nWa\347a\377\n\305\005)\365o\324\325\211O|J\242\326\217^\311\377\210\016\022\333\250\244\334\207\363yb~\343}\rU \377$h\307O\267\032^\231G\207\025L\005\340p\336?\232\224.\010\351MP\246\376\206\020q\302\245h\2757u\251_\314\270\366J0\207Rv\005\201\222\215\356\307\267\250@\346\274)o=9E\nw\257}C!O\254\336\370sAn\310\374\343\363\37612\3724\320\200\365\301a8k5\314\214HO\340\371\240\234\223\360\363L\367\362W\321V\234{\277\312\000\34212\254\021\310hR\005\324\242cQ\235\264\213\327\351\350\021p4x\216f\342) ~\016\345f\246\037\030\375\252T\354f\205 \363\277\363\374\224\267L\310\047\236?\315S\230\224^D.\235\213\217\267s\355+\355~!\231F7\202\213\277\010\013\277\177t\350\370\205\276\323-\336@\177\243\032\224\260\007\236i\224\\\tT\264\274\361\311\356$U\346\325\360c\340s\241\r\277M\"#\271F\273\240u(\000r\250S\216\277\004\327\217\235\361nz/\006\234_G\237\245U\267\263\321iP\007\037\243h\201.\273c\307\177?q\350\370\004_\271\000\370l\322\310\377\003\335\266\034\n";
-    PyObject *data = __Pyx_DecompressString(cstring, 3364, 1);
+    #if (CYTHON_COMPRESS_STRINGS) == 1 /* compression: zlib (3411 bytes) */
+static const char cstring[] = "x\332\265XK{\323V\032&`J\200\264\304!\\K[\205[\240M\3341\244\264\245\224\031\347\002\245C\201@\312e\346\231\252\307\322\261-\220%Y\2278\206yfXz\251\245\226Zj\251\245\226^z\351\245\227\374\004~\302\274\337\221e;$\205Y\314\344!\221\3169\337\371.\357w\025\022s\245?mIf\3719W\334\233\205\353\322\215_x\335\264[\2175\336\224\314\212tC1\rW\253z\246\347H\314P%U\263\211\360\335m\315\310\016\034\327\326T\256\216\021K\246\375\336\363\355{C\312\233\177^6\335\232d\331fy \232\033\216\346j\334\221\252\332&7\026$\255j\230\266fTG\047\205\025f\030\246+1\307\301\241\344\232\222\315\231\272h\032zK\252\013\2736a\327\035c\223\351\232*\325M\225/H|\313\2028H\237W\346I\325\371\212i\27363\346\027\244*Xe\304N\215Y\034\332IlKs\244\273\334\250B9\000\324\222]\356\270\322\334\217\222\341\325\313\334\246=K\2558\367L\227Kn\r\360\256\264\334\232iH\270\245r]\003\ts9\364!\243!\327&\"Cz\260\366`q\351\273%a\250\315\311\031\216\344xeE\207)\260\030L\313\236\246\273\220\357\266,\030*\335\201h\323\223\014\016\315a\247\005\272\361\013n\215\033\222\303]z\221\346\005*\314\325LC\306u@6?\300\036@\322\355[Lwx\341\336\320\000\305\324\275\272!\304\246\330\266\3520D5\301\230\340\305B\251\215\331[\326\014g\3546\271\214\2255=u\326\373o=\344\226\315\035n\300\\&Um\323\263\350\350\201ZY\325\034\305\346\3000\rMGjj\000\234\254qX\235\323e\31125\334+\034:$\341g\243\006\2005a\270dz\256\345\271\304\210V\277C\202\n\250eU#\314\313\036\341\340\374\216\200\200_T\t\356&2\301\004\330\231\212\306(\032\206F8\256\246\300%U\250\351\340\242\210\032}$\225K\236\241r[oQ \356\246\267\002\357\22698T\270\315\r\005\254\313-\212r\276\205\330+T\007\214n\336\244\250\251J?\022\217\333\204\303\245B\241py\354L\376\006\207D\363\367o\376\261m\273`\351&\214K\375t\351\262t\356\034\205q\023\241\3077\2014EI\223\031.\371Y5Si\017\230\r\020\021|\216X.\016\177\322c\200\273\311\025\351\272dX\005f\333\254\265\250k/R\2042\243G\370C\222\006\277\332\231#\005\346j\206\002(\270\215\014B,\2212)m\0067\375\214\202\245\225\305Z\232*\025\315\340jA\222\036\325LOW\tB\221""\366\"\005\035\205\243L\000p\323\006\366\205!\263R\246\272\010\226\241\206Z\335\322)\024\215\305\"i\206,BU\032i6\214,!`\027\315\350\356\327\322\245\235\252\342\340\362\300\201t\370!\320\024\323\006F\226\231\352\276\235?\202\2253`\223\251\265 \014\245\244\261\265-\340\206\340\021:\332f\323\0312\335\016:\225\316MM\365\230.\rB]D:0\\IcP\324\003S\272g\032#\275\264\312Xae\020\002\2656E5Fz\272\250\236\270~\237\352\047.e\311M\305`T\221\2516\014\3319Coe|\006\370\214\325\221\377\036\242\221f\377Wx\236h\272N*\213\206B\226Wv\204(\351\215\260\314\214Z@9\026\033\006WP\027\230\335\242KT\345\3361\333rM\035\006Wt\223\271\013\024\325\314\323\305\305\"_\274\266\315r\020\2425\240@H\236\003\035\232T\300\225\032W^\020\020\251F\357\204\214\343\325\311\235\305\201(A,\323\346u\251l\232\3726q\033\26672\350I\r\245\217\212\260-T\006\017q7mW\357\221#I\253C\216#\335\301y\024b\256g#m\341\256\212(\254\212YG%\026\235\007\260\363JES4\024\301V\341\020\231\374\340\235F!\264\031Jc\252*c\203\243\031\351\324\252\310W\254\254\300w\254\254sn\320\337\252\2429\351\233j\230C{e\031^\364\024.\313\222\352\211\006g\230\306\"<\276\251A\013YV4Cse\031\255\310j\025d\204\034/\324qO\0231)U\230\246\247M\025u\003\263\3008\231\2078\250\355\240@0y\n,\347\200\335q\277\246\252,ZY\301jmyB;\242e\272n*(\312R*Fe.+\354r\232\016\032\224^\351X\344\024n\350\254^V\331\315\322\243\225;w\326t]\263\034\315\031k5Y\307\310\236\005Y\256rWsy]\226\307\366R\243wl\200=\004\353\316\315\241\234!\tuh\3315e1\203\355\276;\272]\326_\014I\260\243x:\254\221\025\257.\010e\0007:\266-G\256sf\014wt\263*\353\2463\022Rg/\270L@R\003\036\355\216\337\251\243\253\217-\251\313\303\357U\032r\034\355%wv;\031m6<\364D\270q\307\206\334\324T\267\266\223p\264C\003\237\\\346n\023A(\377\301\261f\310\343b\037m,\313\033?=\\+\255>z\304\033\036\315\001\0335\232M\037 Q\327\266\270\342\271\246M3wa4~\313\017\356\337\277\013\207\265\266\360\273J\003\314=\276\345>\344\025Y\036\314s\010p\0043M|\243\227\241\347eY\014=\3644\025zT<C<\307(\360\352d|\322P\026o\".d\270\014V\320\223\273l""(\005\343\217\247\213\013u\333\224Q[m\344.-\rL\024\342\t\315\361\003\353-\264\023\361\n\013D\201Aj\247\253\201Pz\245q6}\363\014KS^\200\367\232\221\321m\272\224\036\304\0030\353\231\204,\271\207o\212\230\260\3076\370\026-\320\356\206Z9c\226\016\337G\367\204\317`\271Ci\216\361\021\263\207L\255\204\312)\2005\235w\227;\263\006\245\211\225\035\2441\376\t\222,\243\345\262W\301\354\307t\253\306\230\321bv\025\377D\307\022\205\000\303\314\360[j\260A\2300\247e(\232Y\030\352\343\320\207G\2319\274\254U\221L\310B\271\256\251\226\353\320[\032\263\33323\235\204\220\225\345\246\262{>\n\237\014\273\206\242\223\321\340\205\217\037\205\227\031\216L\235tS<\264d\303-T<*q\330\361\014W\241i\216U\271byr\272\221\245\264xq\320\263\3407+\335\246!k\233\\\257\016y\324\333eM\335\022O\313\265\007\003\302\340!C}\330\226\255\210\305h\202P5U\253T\324\272J@\211?\344\271t\340\346j\025-\277n\271-$\031Fu\216`\022\237\\\334\330\324l\0141\226\303m\033\265|\013c\263\312\345\341\210Q)7i\344\034\010\026\257#\211b\t%\351I(WtVu*\006Z\034\035\246\037\214H\246\252\215\224\251i5\204\027\3726\264\2441\237\346\016\014\t\230\\\256-e\343\213\346P\222\361\272\223\376y\311_\000}\307\002\360\272\211Z\230\225\303\354I\225\260\276\255$\326\231\005\311u\304D\335\253\023\356i5\304G.}\341\326\341F\212W\372V\241\0140\310\225P\243N\311)\014\224\021\033\264\020\241b\230\362\360\3001,\203\256\032n\215\322\220\214\245g\006\215X\210s\352\212&0Oa7\035\372\350\202\325P\220t\314>\000\206\2750S\234\236H@\313\264,{\254B\356\250\336\343\325\223j\t\006\376\301\034f\331\016MU\rY\347\025\267!\333Z\265\346fU\370\235\">,\316\003F\364\300PK#&uY\330!\227\221\244/\234\321\333\316\304\2463\300=xlkx\264\207\250p\270^\201M\203\361C\260\0266\340W6+\333\032\201\255 6hb@\034\272\246\225N\016\016%\204%\312/<:|\245`au\001\307\356-g\367]\212\221\335z\220\330\243D\002x@\3013\260YTQu\3415\317R\351s\221\351t\216_\217;Mf\033\364\213Tv\232\246\375b+\375\237\016\374\305\300\367\022\3309\367_O\364s\207\333W\332\033~\336\237\363\213~\311\177\3507\202\211 \037""\234\0136\302c!\313\010\036\017\016\335\240\030\254\004\255h\"\232\211\256DO\343\365XM.$\255\356Dw\246{\245\373\264\367\353\343\336\343\047\375c\247\2023\341\223\250\024\255\367O\236\t\326\210Q\350DsQ1ew\265\315\332/\203|\357t\243\327p{\356\313\336\313W\275W\377|=\361\006g\337\372\227!\242\224-\276\014J\301\372`\321\233\271\034\345\243\257\342\247\tv\336~\262g\377\351\340tx\r[s\375\334\347\201\022\346\303\205\210E\215~\356T\220\357\347\276\202~\217\343b|\277s\r\272\025\373\271\311\366\224\277\006\313\346\372\223\323\376\204\177&X\357O\036n\377\3403\177+h\204\373\302\253\241\021\227\210y\302\372S\307}\326\317-\305\313q%YN\236w\241\366\231\240\324\317}\026<\354}Q\214\3631D\236\014\260{\324\377\036\032>\013\313\321D\377\340\241\376\324g\301z\357\363\333\235F\177j\332\237\202\345\371p\256?\235\007\272\227\203\033\241\r]/\307W\000\032#\030\212\257K\244A\261\275\322\336\024\270\357\023\3406\322\355%@t\0242\301\350\223\200\365\047?i\253\376\"\024\235\350O\036i\333\376q\362S\357\324\002@\336\210g\343\307Iq\367kCZ\354\336\205\333N\307Kq3Q;\013\335Jo\343\327?\272\343\n\263\236\206\353\241\n\215\213q\351\017\010{G\316\205\305\360\257\221\033\377\330\231\350\344\337\241:\352\377\020\260\300\r\277\217V\343\311d\"\311\277\301\326\222\337\n\047BA:\355\347\374\237\202[\341\\X\354ON\365\246\316\004\313A\0252\313\321\201\310\216g\342kI>\271\330\231\354\356\355\236\355\226\372\347/ES\361Z\202\233o>`\347Zx4\\\005\0177.~\230\3706\034\257F\363\300p\375\303\304w\240\035\217\226\242&\302~\356\303\344?#\3567\341\237\023I.)\355N>\355\037\014f\202%\221R\247\342s\361\263\244\334\311u\356t\327\273\254=\321\237:\206\300h\002D\370=<\021\345\242\333\361\365\344Qg\177g\275?u2\330\033\\\300\301GB\375c\261\222\234\354\344\323\355K\200\364\207\210\221\007\310\217\017\341\003\362\222\207x\256\201\377\336\316\\\360e\270\014\345<\021>\307b\026\333\311LR\014\276\216f\243\365\250\034\037\004\362g\223U\370t\246\263\324it\367u\213\335\225\256\327\333x\326{\366[\3577\245\247h=\355yx=z\010G\345\303\347\361""\336\370l\\\352\355\231\365Ko\047\367\354\237B\212s\377\333`\021\002V\242Fo\3171\177\375M\356P\373l\373\226\177\326_\3617\203\365@\r\317\205\217\243bt+\276\230\354K\256\303\242\334\3767\271OP\032\274\001E\232$\275=\247\203\2717\271\375b\321\376%8\0368\310\251\334\201\327v\373h\273Dx7\374\275(^W)c\017\274\336l?\362\221\"\323\275\351\263\"\256rS\355\345\266&\222\353\333\360,\214\246\340j@\3379b\270\204\313\373\375\r\252E\177!T;\254\047\022}r\252}\027\036\3744,\205\033p\313y\300\306\222\315\316\337\272\215\376\251\317\202_\303\013a\003\316\370)\276\225\314%\305^\356\213\240\221\372\266\341\037\360=\362.\371-\265A\354\277\n.\302\2013\341\225\360\021\374\014/\315f\245hgD\234\360m\030\211\n\3621L\231\024\305\230.\037\203\233\317\302\377\337\047\245d\003\216\026t\047Q`\n\361D\206\302\005\330\27178O\361BJ\375\013\365w\372\323\200\222\253\375\263_\016>\242\203\3246*5\267\021\024\"a\277\203\253\346H\376a\320N\035i7\375\212\210\032;\234\r\301\341d\260_X\202\223F\177\2322\370\337\010\0357\272\036\257\367g\317\014\212\234\320^\r\347Q\342\316#\200r\361\355\344*\025\322\274?\353\257\247\247H\355\336\305\357(\025\210\325\253`>\314\217\230\177|28@F\037\001\032\260>\334\013g\255\242\250\216\244\247\360|P\316a\370y\256w\356\233x#\311\277_e\000q\037\231\327\014\0254\263\"j\324\201\270A\332%\353tt\0178\232\"w\047\222Y ~\002ehn\020\030\203jU\352\345\244p\342\177\347\371Y\177\231\220O=\177D\2446)\275\204\034;\221\034\354\344;\347;\203\002s\014]\013.\376**\276\375h\317\301S\003\247\333\242\321\376\233jS\312\036xfQr>\324\320\032\247fz3T\261W\243\217\201\317\251\016\3746\203\214\024\032\275\001\255K\001\220G\375r\203\353p\375\344Q\377\212\377l\310\371e\374EV\215\273\017\273M\352\364\223\024-\320\345\315\344\301\267\207\366\034\234\026+\017\000\037O\033\376\177\000\364\2474\216";
+    PyObject *data = __Pyx_DecompressString(cstring, 3411, 1);
     #define __Pyx_DecompressString_LZSS_UNUSED
     if (unlikely(!data)) __PYX_ERR(0, 1, __pyx_L1_error)
     const char* const bytes = __Pyx_PyBytes_AsString(data);
     #if !CYTHON_ASSUME_SAFE_MACROS
     if (likely(bytes)); else { Py_DECREF(data); __PYX_ERR(0, 1, __pyx_L1_error) }
     #endif
-    #elif (CYTHON_COMPRESS_STRINGS) > 0 && (CYTHON_COMPRESS_STRINGS) <= 90 /* compression: lzss (4541 bytes) */
-static const char cstring[] = "\377 at 0x o\377bject>.:\377 <Memory\377View of \377<contigu\377ous and gdir%\001\007\rin\021\005\177strided\"\010o or \004\031><(\t\376A\006>?Both \357probt\004ens\377ities gi\377ven, ign\177oring d\022\005\377.Cannot \367ass\032\000 to \377read-onl\327y m\323\002v\325\000In\377valid mo\177de, exp\370\000\356\257\000\047c\047\247\001\047fo\377rtran\047, \371gH\000%\005shape\376\305\000 axis L\347eng\232\000\236 y_t\377est != n\337umber\261!pd\377fsNote t\375h\334 Cython\275 3\000deli \000a3te\215\000\245!ct.\000\"\000\377n PEP-48\3554\337\"re\211As s\217ubcl\310\000\357\000\207@b\377uiltin t\377ypes. If\177 you ne\351 \362\345\000p\360\000%\tthen\357 set\200\000e \047~\221\"ation_<\000\342\260 \047\302D\306 \242!Fal\357se.N\270\006col\317umns\375A\326#ym\306\245`do\371 \333!\n\000ch\236\345\010bins3\010\257Aa\347bil\247C\030\033Rep\277resent\334` \337group\362aPd\177fDiscre\301 \236\225\204\003s wi\213`\324\000 \337same p\000 p\373oi5\000.\n\n  \217  Th\224@\227@\036\001o\237utput\273\204\001,\001`\376_\000dict_di6\231\204\001bu\204!s`\216`\225@\303d \354@\241!@\002\265`oc\355i\235@d \274\006sti\225c\304`g\244\000s\276 \261bl\375sm\006e unde\347rly\205\204\001\244\021can\377 be refe\377renced bmy\214\205\001ex\371`.g\270\004\367>> \263`g = \372\371\000G\204!(...)\314\326\002\026\003_5\032\000 \001[5=]\n\n.plo\332\000\231\205\002\277y() ##\356\205\001w\336\370`ever\241bwa\275n\207`o do\247#P\323ar\302 \372`s\267\"--\341-\000\000\002\001\306#\315@vec\377 : np.ar\377ray-likex\342\"\345#\364) whi\213`\311r\301E\355bd\266E\237@er\315v\334` o\211\001&\003th\324C\007\243gy\301\206\004y\245\205\003fi\377ned.  Sh\227oul\262 e\361\206\003\376\205\002socend\366\206\001or\371 M.\221\006A \264\004\250bn\233d\337 impl\264\207\001n-\3731 \201ainct \340\220\007\321f\323\207\002\336\006\271\204\013/ (\036\231\017ies)\371d\244\210\001\225=\377correspo\374\266\003\231\205\013of eac\365h\216\006,\347\207\002 mat\307rix\341 \272`\307\206\002ro\343ws\201F\347+\201\212\001vid\217ual ""\344\204\004\345\204\002\301 C|\376c\213\207\002o Non\303G{if\265\211\007 are\355\211\001\375v\275\212\002instea\342\377!O\274\211\0012\000\327\210\002rob\270\211\207\001\210\213\002\356cmat\223fs\016\245FproC\002\231\206\004\275\207\010\274y\364\225+\320\212\006 \302\200ZWill\034\240\206\001\314\213\002ed \221 \223\204\r\374\210\001{is\224&, bu\300`\377s necess\307ary1\001\367\213\001\350\014pt\377ol : flo\377at, defa{ul4\0021e-6\305\205\n\376&\000erance \357used\356An cOheck\336\214\001\214\003 \314\211\013\227sum\337\214\0011\373\210\004(\002_~\021\001: boolb\n\367Tru\267\206\007Whetmh\247\214\001r \252\215\001toc\0038\251\214\003\337\211\001Q\024  D\270\006\204\207\007\374W\000\331gturned\357 off\324\211\002com\367put\365\213\002al e\377fficienc\377y.\nThe P\307rob\235\213\t\211\002\315\006ad\377d_noteco\357llec\305\204\003abc\377disablee\275n\002\001gcis\004\003d\373no\326&__red\377uce__ du\375e\203\217\001non-tr\377ivial __\377cinit__n\377umpy._co\257re.m\224@i\347\210\002 \357fail\317\215\003imp\367ort\033\tumat}h\021\016struc\367\000\375e\364 st/pdf}_\306\214\002.pyxu\243\002\376\207\220\001allocat\373e a\003data.\360\013\020\343\217\003\350\221\001\305\221\003s.<l\377ambda>AS\377CIIEllip\307sis\230\215\010\252\213\005\262\213\005._\377_getitem\203__\t\010\357\003\000\016\\\000\224\000l\343s>_\006?\006\324\216\001_toq_\377\221\002\000\0234\007blkx\006\377calculat\337e_cum:\002_m\373at\025\007rps_m\367ean\251\006log_\357loss\272\006mak;e_\305!lis/\007\047\n\217medi8\010\342\216\001\365@g\036\341\220\001sizeB\007\017\010W\007\037quant\346@\254&\t\005?_width\027\017\222\007\376\355\222\001_betweesn_@\005\020\014in_k\t\377STB_THRE\177ADSSequ\204\217\001\373Th\230\224\001PoolE\177xecutor\360\225\001}.\365\225\007_POOL\277@\277yx_PyD\275\220\001N\377extRef__>\311\222\004e____\236\223\002\000\006\346\360G__\360\220\002 \000doc\216%\001fun\003\002\223f\242bsAt\243AF\000\347\204\003N\001\230\205\003_\260@\274\303\000`\000meta]\006m\357odult\002mro\377_entries\356""\204\001nam\213\002new~\223\001prepar\235\002)p\277\000\305\210\002s\212`_\n\001n\004\364\025\001\313\224\001_\020\002unpi\333ckY\000En \005vt\210\347\206\001\342\001\254@lZ\005\325\206\005\336\206\006c\330\335\225\002\211!\361\206\004ex\226!se;t_\216\005set\341\006\003\006\274.\007\316B__is\212\207\001o?utine_\346\215\001\313\211\001\326\337 os\000\014e\244\205\017ab\377cabsalla\317llcl/\000\350\206\005_b\377ufferalp\377haanyarg\276\000\000where\327\221\002a\361s\331\231\007\n\004\337\226\001asyn\177cio.cor\212\003\375s\365\227\001basebi\337gmatb\337`mi\017dpts\006\001\256\204\003\243\206\n\277\222\003?blkbwc\372\205\023\331\213\002\366\255\213\006cl\361\001in_t\377raceback\367col\230\001curr?ent.fu\337\210\001\253\000\357untc\312\222\001age?cpu_co\r\001\313\206\005\275c\330\206\001sing\242`p\361t\t\002\373\222\001\374\206\tcums{um\261\232\001_idx\003\002\347ptr\342\227\004\351\227\004_bi\341n\331\000\006\005\276\223\001\200\230\007did?iffdmd\210\231\001\000\002\374\266A\276\234\003edgese\377mptyenco\377deenumer\377ateenvir\377onepserr\377orexplod;e_\263\233\006fbw\357\223\001r\004\300\006\002\362\230\007\025\002\242\000\221\224\001\352\230\001fl\377agsfnfor\367mat\252\233\004geth\257ihst\267 i\236\000n\267dex\223\235\001ce\213 tK64\202\225\005i\232 \230\212\001s\000\002oizek\366 sp\361 \037lolog\202\211\005\212\211\005\201\211\001\375m\201\211\nmapmat\177maximum\302\211\001\356\203\211\003mem\331\234\001min\360\265\204\002\331\234\001\217\206\001\202 lsnd\363im\224\206\001\320\"_vec\334\241\206\001\325\235\002no_\020\006sn\203pn\333\223\001\373\205\001\317\232\001\203\206\001\213%s\374\220\206\001\026\004pyoobj\346\255\237\003os\351\231\001\252`pdf\340\364\214\001\361\226\005\373\214\006\274\212\005\221\215\001set\037poppr\240\212\010\245\212\016\241\212\t\336\300\207\001endp\355\223\003pr\375s\312\221\001q_left\177q_right\276\212\005\254\256\212\014\214\212\006re\214\213\001s\003\001s\365t\365@e\302\236\002row_?blocks\000\007\365\214\017\340\"\001\351 \000\004""\334\214\n=\001ptr\177selfset\317\222\004\374\235\237\002\365\213\002ize_of\376\364\212\nrcstart\273st\375`top\254\217\003sj\205\205\001p\340\217\001_\314@su\004\004\006\260\231\001st\320\213\017\342\213\023\242\215\001\215\214\002\344\213\014\354\241\214\002\366\231\001to\300\215\001uni\277on1dun\347`k\377updateva\375l\226\232\001values\357warn\000\001ing\373sx\317\240\003y_tru\377ezerosO\200\377\001\330\004\013\2102\210T\377\220\021\220!\2201\220A\377\220R\220q\230\001\230\021\377\230#\230T\240\025\240a\372\031\005V\026\004t\2301\230C\377\230y\250\001\250\022\2502\377\250X\260Q\260d\270%\377\270y\310\001\310\022\3102\377\310X\320UV\320VW\377\330\025\031\230\034\240W\250\377A\250Q\330\030\034\230E~E\001\240s\250!\2501j\003\3773\210a\210z\230\021\320\377\032q\320qt\320tz\377\320z{\320{|\200\001]\340\211\0007\220)`\000A\005\005\337*\230A\230Q\023\004\320\022\377)\250\021\250+\260X\270\376\017\000\360\016\000\005\032\230\032\373\2406\020\000!\330\004\036\230\377c\240\021\240,\250a\250\377q\330\004\031\230\021\330\004\375+\235\000V\2601\260O\300\3756\231\0001\330\004\010\210\014\373\220E\327\000!\330\010\020\220\377\001\220\034\230Q\330\010\013\377\210;\220a\220x\230q\377\240\003\2403\240n\260A\376Y\001\270a\330\014\026\220a\377\330\0044\260B\260f\270\357B\270j\310\244 \034\230A\377\330\004\035\230R\320\0371\367\260\021\260p\000\030\230\001\330\377\t\n\330\014\035\230Q\230\356/\000\020\220\014\347\000\021\240!\367\330\020\021\313 )\230<\240\235r\254\000)\2602\242 J\000\013\357\2101\200An\0011\210C\253\210v\343\"\003\310\"q\021\0034z\220 \023a\000\014\020\220\016M\000\277\010\016\210d\220-\226\000\001\177\330\010\017\210r\220\026\224A\367\320\031,\322 T\260\024\260\347V\2701!\023#\006\230\023\230\375L\244@\032\2604\260w\270\377d\300,\310f\320TU\356\034\025t\2209\346 X\240Q\257\240d\250)\262 AF\024\320\377\017#\2401\240K\250t\277\260=\300\001\300\021\253\014\023\377\220;\230a\230t\2409\377\250D\260\010\270\001\270\021\377\340\014\023\2204\220y\240\373\001\240&\002\020""\220\004\220H\377\230F\240!\2401\330\010\377\014\320\014\034\230B\230g\376q\000b\250\007\250r\260\022\377\2606\270\021\270&\300\010\377\310\002\310\"\310A\330$\277(\250\014\260E\270b\000\340\370\245@\217-\334\tE\240\023\240D\246A\000t\260\340 \r\035G\346@d\273\250\047\301 Q\200A:\035I\376\217 e\2504\250w\260d\373\270!\r\037J\240a\240v\377\250T\260\027\270\004\270A\376H\023\020\220\t\230\022\2304\376\276\205\002\031\260#\260Y\270b\377\300\004\300I\310Q\310a\377\210\001\330\014\025\220R\220\365w\302 q\261 \027\250\004\250\377G\260:\270S\300\005\300\377Q\330\014\030\230\002\230%\357\230q\240\006\241@\047\260\025\277\260c\270\030\300\021\021\003(\236\320 ;\250a\330\354 \304AR|\201@\242Au\260B\260h]\000\177\002\300!\230*\240B\232\000\375u\272b\025\260a\260r\270\377\022\2701\230/\250\024\250\337Q\250b\260\t\367 \"\270\375D\321@\022\3004\300q\310\377\003\3101\310C\310u\320\377TY\320Y^\320^c\377\320ci\320ij\240:\373\250R\246@\021\240j\260\002\377\260\"\260A\320\000\025\220\377Q\340\004\n\210\"\210F\377\220\"\220C\220v\230Q\377\230d\240#\240V\2501\377\250F\260&\270\003\270:\376\267\000\004\005\340\004\016\210a\363\210u\033\004\207\205\003\320\000\032\230\357!\340\004\005\375\207\0011\210M\377\230\026\230s\240!\330\004\177\007\200r\210\023\210A\361\204\001\177q\220\002\220!\2203\206\206\001\377\007\200v\210S\220\001\330\337\010\020\320\020\"\273b\004\014\377\210B\210i\220q\230\003O\2307\240\"\332\000\301aq\225\000\375!\316\210\0014\210q\220\005\220\365T\340\207\001@\272!\300a\320\004\376\275\206\001\010\014\210L\230\001\230\377\033\240A\240T\250\031\260\375$\234 a\270v\300Z\310\377q\330\031\035\230U\240%\373\240q\362 H\260F\270!\177\2701\320\004\037\230q\366c\037q\220\007\220u\231\206\001\234A\342\001\375a\270\207\0014\210{\230&\240\377\001\240\022\2402\240S\250k\001\250\213@\024\333\207\005\013\210\301\206\r\367\027\220r\342\000q\330\014\r\362\310\000\010\340\211\0029\001\025\240d\250}\"\345@9\270A\270T\316@\375\010$\001\030\240\021\240.\260]\001\376\005%\220q\372@$\224a""\376\221\001~\250Q\330\020\033\230~\301\205\001\210J\220b\230\006\255ay\330\327\002\317\207\001G\2401\240\345\207\002\3778\2207\230!\330\014\020\373\220\013)\000\014\017\210w\220\377f\230A\230R\230r\240\273\024\240?\000\030\230\005\265\210\003\017\357\210q\330\020\246\206\001\177\240a\377\240t\250:\260Q\330\024\371\034\306\210\004\212\210\002d\240\047\250\021\373\250$\246`\004\260G\2703\276\235\211\001\021\220\024\220QX\001\016\256\277\206\001\320&8\357\204\001\330b\000{\277\230\047\240\021\330\020U\005\r\357\030\230\007\230\362\000\017\210zv\372\001\240\002\252@D\250\001\027\007\364\351\210\004G\036\013\345@!\320#5\217\260T\270\021d\001\231\027\342@O\377\2304\230w\240c\250\022\377\2501\250D\260\007\260q\366\215\206\001\270Q\240!N\230$\230\335o\237\206\002\001\270\024\357 \027\310\327\002\310!\267#\001\217\210\004A\320\357\004 \240\001\260\202G\024\220B\344\366!\364C\017\276\206\002\344!4\250r\377\260\027\270\t\300\021\300$\373\300a\340\212\003\025\220a\220q\377\320\004+\2501\360\006\000+\t\031\356Dr\274\215\002\177\200\210\001\361c\274\302`\236e$\240i\250\321`\022\273\320\022\226\212\001D\250\r\235 \031\335\300\363@\022\220\"\351\214\003\340\014w\027\220t\375A\021\220\026\006\000\375:\370@\010\023\2202\220Yw\230a\230T\003z\260\037\356\211\005/\310R\310w\276\216\001\010\252a\211\000\377\340\010\t\360\n\000\t\020\376\271`a\220u\230E\240\026\000\303\216\003";
-    PyObject *data = __Pyx_DecompressString_LZSS(cstring, 4541, 6753);
+    #elif (CYTHON_COMPRESS_STRINGS) > 0 && (CYTHON_COMPRESS_STRINGS) <= 90 /* compression: lzss (4601 bytes) */
+static const char cstring[] = "\377 at 0x o\377bject>.:\377 <Memory\377View of \377<contigu\377ous and gdir%\001\007\rin\021\005\177strided\"\010o or \004\031><(\t\376A\006>?Both \357probt\004ens\377ities gi\377ven, ign\177oring d\022\005\377.Cannot \367ass\032\000 to \377read-onl\327y m\323\002v\325\000In\377valid mo\177de, exp\370\000\356\257\000\047c\047\247\001\047fo\377rtran\047, \371gH\000%\005shape\376\305\000 axis L\347eng\232\000\236 y_t\377est != n\337umber\261!pd\377fsNote t\375h\334 Cython\275 3\000deli \000a3te\215\000\245!ct.\000\"\000\377n PEP-48\3554\337\"re\211As s\217ubcl\310\000\357\000\207@b\377uiltin t\377ypes. If\177 you ne\351 \362\345\000p\360\000%\tthen\357 set\200\000e \047~\221\"ation_<\000\342\260 \047\302D\306 \242!Fal\357se.N\270\006col\317umns\375A\326#ym\306\245`do\371 \333!\n\000ch\236\345\010bins3\010\257Aa\347bil\247C\030\033Rep\277resent\334` \337group\362aPd\177fDiscre\301 \236\225\204\003s wi\213`\324\000 \337same p\000 p\373oi5\000.\n\n  \217  Th\224@\227@\036\001o\237utput\273\204\001,\001`\376_\000dict_di6\231\204\001bu\204!s`\216`\225@\303d \354@\241!@\002\265`oc\355i\235@d \274\006sti\225c\304`g\244\000s\276 \261bl\375sm\006e unde\347rly\205\204\001\244\021can\377 be refe\377renced bmy\214\205\001ex\371`.g\270\004\367>> \263`g = \372\371\000G\204!(...)\314\326\002\026\003_5\032\000 \001[5=]\n\n.plo\332\000\231\205\002\277y() ##\356\205\001w\336\370`ever\241bwa\275n\207`o do\247#P\323ar\302 \372`s\267\"--\341-\000\000\002\001\306#\315@vec\377 : np.ar\377ray-likex\342\"\345#\364) whi\213`\311r\301E\355bd\266E\237@er\315v\334` o\211\001&\003th\324C\007\243gy\301\206\004y\245\205\003fi\377ned.  Sh\227oul\262 e\361\206\003\376\205\002socend\366\206\001or\371 M.\221\006A \264\004\250bn\233d\337 impl\264\207\001n-\3731 \201ainct \340\220\007\321f\323\207\002\336\006\271\204\013/ (\036\231\017ies)\371d\244\210\001\225=\377correspo\374\266\003\231\205\013of eac\365h\216\006,\347\207\002 mat\307rix\341 \272`\307\206\002ro\343ws\201F\347+\201\212\001vid\217ual ""\344\204\004\345\204\002\301 C|\376c\213\207\002o Non\303G{if\265\211\007 are\355\211\001\375v\275\212\002instea\342\377!O\274\211\0012\000\327\210\002rob\270\211\207\001\210\213\002\356cmat\223fs\016\245FproC\002\231\206\004\275\207\010\274y\364\225+\320\212\006 \302\200ZWill\034\240\206\001\314\213\002ed \221 \223\204\r\374\210\001{is\224&, bu\300`\377s necess\307ary1\001\367\213\001\350\014pt\377ol : flo\377at, defa{ul4\0021e-6\305\205\n\376&\000erance \357used\356An cOheck\336\214\001\214\003 \314\211\013\227sum\337\214\0011\373\210\004(\002_~\021\001: boolb\n\367Tru\267\206\007Whetmh\247\214\001r \252\215\001toc\0038\251\214\003\337\211\001Q\024  D\270\006\204\207\007\374W\000\331gturned\357 off\324\211\002com\367put\365\213\002al e\377fficienc\377y.\nThe P\307rob\235\213\t\211\002\315\006ad\377d_noteco\357llec\305\204\003abc\377disablee\275n\002\001gcis\004\003d\373no\326&__red\377uce__ du\375e\203\217\001non-tr\377ivial __\377cinit__n\377umpy._co\257re.m\224@i\347\210\002 \357fail\317\215\003imp\367ort\033\tumat}h\021\016struc\367\000\375e\364 st/pdf}_\306\214\002.pyxu\243\002\376\207\220\001allocat\373e a\003data.\360\013\020\343\217\003\350\221\001\305\221\003s.<l\377ambda>AS\377CIIEllip\307sis\230\215\010\252\213\005\262\213\005._\377_getitem\203__\t\010\357\003\000\016\\\000\224\000l\343s>_\006?\006\324\216\001_toq_\377\221\002\000\0234\007blkx\006\377calculat\337e_cum:\002_m\373at\025\007rps_m\367ean\251\006log_\357loss\272\006mak;e_\305!lis/\007\047\n\217medi8\010\342\216\001\365@g\036\341\220\001sizeB\007\017\010W\007\037quant\346@\254&\t\005?_width\027\017\222\007\376\355\222\001_betweesn_@\005\020\014in_k\t\377STB_THRE\177ADSSequ\204\217\001\373Th\230\224\001PoolE\177xecutor\360\225\001}.\365\225\007_POOL\277@\277yx_PyD\275\220\001N\377extRef__>\311\222\004e____\236\223\002\000\006\346\360G__\360\220\002 \000doc\216%\001fun\003\002\223f\242bsAt\243AF\000\347\204\003N\001\230\205\003_\260@\274\303\000`\000meta]\006m\357odult\002mro\377_entries\356""\204\001nam\213\002new~\223\001prepar\235\002)p\277\000\305\210\002s\212`_\n\001n\004\364\025\001\313\224\001_\020\002unpi\333ckY\000En \005vt\210\347\206\001\342\001\254@lZ\005\325\206\005\336\206\006c\330\335\225\002\211!\361\206\004ex\226!se;t_\216\005set\341\006\003\006\274.\007\316B__is\212\207\001o?utine_\346\215\001\313\211\001\326\337 os\000\014e\244\205\017ab\377cabsalla\317llcl/\000\350\206\005_b\377ufferalp\377haanyarg\276\000\000where\327\221\002a\361s\331\231\007\n\004\337\226\001asyn\177cio.cor\212\003\375s\365\227\001basebi\337gmatb\337`mi\017dpts\006\001\256\204\003\243\206\n\277\222\003?blkbwc\372\205\023\331\213\002\366\255\213\006cl\361\001in_t\377raceback\367col\230\001curr?ent.fu\337\210\001\253\000\357untc\312\222\001age?cpu_co\r\001\313\206\005\275c\330\206\001sing\242`p\361t\t\002\373\222\001\374\206\tcums{um\261\232\001_idx\003\002\347ptr\342\227\004\351\227\004_bi\341n\331\000\006\005\276\223\001\200\230\007did?iffdmd\210\231\001\000\002\374\266A\276\234\003edgese\377mptyenco\377deenumer\377ateenvir\377onepserr\377orexplod;e_\263\233\006fbw\357\223\001r\004\300\006\002\362\230\007\025\002\242\000\221\224\001\352\230\001fl\377agsfnfor\367mat\252\233\004getg\377rainhihs\365t\274 i\243\000ndexv\230\235\001ce\220 t64\207\225\005\351i\237 \235\212\001s\000\002ize\355k\373 sp\366 lol\243og\207\211\005\217\211\005\206\211\001m\206\211\nm\377apmatmax\317imum\307\211\001\210\211\003me\035m\336\234\001min\272\204\002\336\234\001\224\206\001~\207 lsndim\231\206\001\236\325\"_vec\246\206\001\332\235\002n{o_\020\006snpn\340\223\001\207nth\203\206\001\327\232\001\213\206\001\223%sx\230\206\001\033\002\271\215\001oobj\265\237\003sos\361\231\001\262`pdf\374\214\001\360\371\226\005\203\215\006\304\212\005\231\215\001setp\017oppr\250\212\010\255\212\016\251\212\t\310\207\001\357endp\365\223\003prs\376\322\221\001q_leftq?_right\306\212\005\266\212\014\326\224\212\006re\224\213\001s\003\001st\372\375@e\312\236\002row_b\037locks\000\007\375\214\017\"\001\360""\354 \000\004\344\214\n=\001ptrs?elfset\327\222\004\245\237\002~\375\213\002ize_of\374\212\n\377rcstarts\177tepstop\264\217\003\325s\215\205\001p\350\217\001_\317@su\034\004\004\270\231\001am_\311\214\001\335\213\023\363\213\023`\263\215\001\236\214\002\365\213\014\262\214\002\207\232\001to\321\215\001\377union1du\375n\363`kupdat\357eval\247\232\001val\177ueswarn\000\001\377ingswork\375x\344\240\003y_true\377zerosO\200\001\377\330\004\013\2102\210T\220\377\021\220!\2201\220A\220\377R\220q\230\001\230\021\230\177#\230T\240\025\240a\031\005\375V\026\004t\2301\230C\230\377y\250\001\250\022\2502\250\377X\260Q\260d\270%\270\377y\310\001\310\022\3102\310\377X\320UV\320VW\330\377\025\031\230\034\240W\250A\177\250Q\330\030\034\230EE\001\277\240s\250!\2501j\0033\377\210a\210z\230\021\320\032\377q\320qt\320tz\320\377z{\320{|\200\001\340\256\211\0007\220)`\000A\005\005*\357\230A\230Q\023\004\320\022)\177\250\021\250+\260X\270\017\000\377\360\016\000\005\032\230\032\240\3756\020\000!\330\004\036\230c\377\240\021\240,\250a\250q\377\330\004\031\230\021\330\004+\376\235\000V\2601\260O\3006\376\231\0001\330\004\010\210\014\220\375E\327\000!\330\010\020\220\001\377\220\034\230Q\330\010\013\210\377;\220a\220x\230q\240\177\003\2403\240n\260AY\001\377\270a\330\014\026\220a\330\377\0044\260B\260f\270B\367\270j\310\244 \034\230A\330\377\004\035\230R\320\0371\260\333\021\260p\000\030\230\272 \023\220\3759\237\000Y\240b\250\001\330\377\t\n\330\014\035\230Q\320\377\036G\300q\330\014\020\220\375\014\367\000\021\240!\330\020\021\276\333 )\230<\240r\274\000)\363\2602\262 Z\000\013\2101\200}A~\0011\210C\210v\363\"U\003\330\"q\021\0034\240 \023q\000\376F\000\016\230a\330\010\016\210\367d\220-\246\000\001\330\010\017\357\210r\220\026\244A\320\031,\376\342 T\260\024\260V\2701\274!\023#\006\230\023\230L\264@\032\377\2604\260w\270d\300,_\310f\320TU\034\025t\322\002\177X\240Q\240d\250)\302 \375AF\024\320\017#\2401\240\377K\250t\260=\300\001\300\375\021\253\014\023\220;\230a\230\377t\2409\250D\260""\010\270\377\001\270\021\340\014\023\2204\337\220y\240\001\240&\002\020\220\377\004\220H\230F\240!\240\3771\330\010\014\320\014\034\230\367B\230gq\000b\250\007\250\377r\260\022\2606\270\021\270\377&\300\010\310\002\310\"\310\377A\330$(\250\014\260E\305\270b\000\340\265@\217-\334\tE\2407\023\240DA\000t\260\340 \r\035\335G\366@d\250\047\301 Q\200\365A:\035I\217 e\2504\250\337w\260d\270!\r\037J\240\377a\240v\250T\260\027\270\367\004\270AH\023\020\220\t\230\367\022\2304\316\205\002\031\260#\260\377Y\270b\300\004\300I\310\377Q\310a\210\001\330\014\025\257\220R\220w\302 q\261 \027\377\250\004\250G\260:\270S\377\300\005\300Q\330\014\030\230\177\002\230%\230q\240\006\241@\377\047\260\025\260c\270\030\300\365\021\021\003(\320 ;\250a\330\345\014\231\204\003R\201@\242Au\260B\373\260h]\000\002\300!\230*\353\240B\232\000u\272b\025\260a\377\260r\270\022\2701\230/\377\250\024\250Q\250b\260\t\356\367 \"\270D\321@\022\3004\377\300q\310\003\3101\310C\377\310u\320TY\320Y^\377\320^c\320ci\320i\337j\240:\250R\246@\021\240\377j\260\002\260\"\260A\320\377\000\024\220A\360\010\000\005\377\014\2103\210e\2207\230\377-\240u\250C\250q\320\377\000\025\220Q\340\004\n\210\377\"\210F\220\"\220C\220\377v\230Q\230d\240#\240\377V\2501\250F\260&\270\367\003\270:\317\000\004\005\340\004\237\016\210a\210u\033\004\237\205\003\320\177\000\032\230!\340\004\005\245\210\001\3771\210M\230\026\230s\240\377!\330\004\007\200r\210\023\373\210A\211\205\001q\220\002\220!\373\2203\256\206\001\007\200v\210S\377\220\001\330\010\020\320\020\"\376\323b\004\014\210B\210i\220\177q\230\003\2307\240\"\362\000\352\331aq\255\000!\366\210\0014\210q\257\220\005\220T\210\210\001@\322!\300\367a\320\004\345\206\001\010\014\210L\377\230\001\230\033\240A\240T\357\250\031\260$\264 a\270v\377\300Z\310q\330\031\035\230\337U\240%\240q\212@H\260\377F\270!\2701\320\004\037\373\230q\216\204\003q\220\007\220u\350\261\206\001\264A\342\001a\340\207\0014\210{\377\230&\240\001\240\022\2402_\240S\250\001\250\243@\024\203\210\005\273\013\210\331""\206\r\027\220r\342\000q\227\330\014\r\310\000\010\210\212\0029\001\025\357\240d\250\"\375@9\270A\353\270T\346@\010$\001\030\240\021\357\240.\260\001\376\005%\220q\362\222`$\254a\221\001~\250Q\330\367\020\033\230\331\205\001\210J\220b\313\230\006\305a\330\327\002\347\207\001G\240\2531\240\375\207\0028\250@!\256\210\001\013\376)\000\014\017\210w\220f\230\377A\230R\230r\240\024\240n?\000\030\230\005\255@a\330\027\000\367q\330\020\276\206\001\177\240a\240\377t\250:\260Q\330\024\034\374\336\210\004\242\210\002d\240\047\250\021\250}$\276`\004\260G\2703\305\211\001_\021\220\024\220Q\212\211\001\016\327\206\001\347\320&8\207\205\001G\001{\230\047\357\240\021\330\020U\005\r\030\230\327\007\230q`\001z\372\001\240\002\216\252@D\250\001\027\007\201\211\004G\036\013\376\345@!\320#5\260T\270\371\021\225\033\342@O\2304\230w\377\240c\250\022\2501\250Do\260\007\260q\245\206\001\270Q\240!\337N\230$\230o\267\206\002\001\270}\024\357 \027\310\002\310!\267#\375\001\247\210\004A\320\004 \240\001N\260\202G\024\220B\366!\364C\017\326\206\002\376\344!4\250r\260\027\270\t\277\300\021\300$\300a\370\212\003\025\377\220a\220q\320\004+\250\2771\360\006\000\t\031\356Drr\344\215\002\177\230\210\001\361cq\330\014\236e\377$\240i\250q\330\014\022\273\320\022\256\212\001D\250\r\235 \031]\300\363@\022\220\"\221\215\003\340)\000\375t\375A\021\220\026\220t\230\375:\370@\010\023\2202\220Yw\230a\230T\003z\260\037\206\212\005/\310R\310w\346\216\001\010\252a\211\000\377\340\010\t\360\n\000\t\020\376\271`a\220u\230E\240\026\000\353\216\003";
+    PyObject *data = __Pyx_DecompressString_LZSS(cstring, 4601, 6814);
     #define __Pyx_DecompressString_UNUSED
     if (unlikely(!data)) __PYX_ERR(0, 1, __pyx_L1_error)
     const char* const bytes = __Pyx_PyBytes_AsString(data);
     #if !CYTHON_ASSUME_SAFE_MACROS
     if (likely(bytes)); else { Py_DECREF(data); __PYX_ERR(0, 1, __pyx_L1_error) }
     #endif
-    #else /* compression: none (6753 bytes) */
-static const char bytes[] = " at 0x object>.: <MemoryView of <contiguous and direct><contiguous and indirect><strided and direct or indirect><strided and direct><strided and indirect>>?Both probs and densities given, ignoring densities.Cannot assign to read-only memoryviewInvalid mode, expected \047c\047 or \047fortran\047, got Invalid shape in axis Length of y_test != number of pdfsNote that Cython is deliberately stricter than PEP-484 and rejects subclasses of builtin types. If you need to pass subclasses then set the \047annotation_typing\047 directive to False.Number of columns of densitymat does not match number of bins.Number of probabilities does not match number of bins.Represents a group of PdfDiscrete objects with the same bin points.\n\n    This is the output of the `predict_distributions` method for the\n    associated probabilistic regression models.\n\n    The underlying PdfDiscrete objects can be referenced by index, e.g.\n\n    >> pdfg = PdfGroup(...)\n    >> pdf_5 = pdfg[5]\n    >> pdf_5.plot_density() ## or whatever you want to do\n\n    Parameters\n    ----------\n\n    binvec : np.array-like\n        The bin points which represent the discrete intervals over which the\n        probability density is defined.  Should be given in ascending order.\n        A binvec with n points implies n-1 distinct intervals with the given\n        probabilities / (probability densities).\n\n    probvec : np.array-like\n        The corresponding probabilities of each interval, in a matrix where the rows\n        represent the individual distribtions.  Can be set to None\n        if densities are provided instead.  Only one of probmat and densitymat\n        should be provided.\n\n    densitymat : np.array-like\n        The corresponding densities of each interval, in a matrix where the rows\n        represent the individual distribtions.  Will be ignored if the\n        probmat is provided, but is necessary if not provided.\n\n    ptol : float, default is 1e-6\n        The tolerance used when ""checking if the probabilities sum to 1.\n\n    check_sum : bool, default is True\n        Whether or not to check that the probabilities sum to 1.  Default is\n        True.  Can be turned off for computational efficiency.\nThe Probabilities do not sum to 1.add_notecollections.abcdisableenablegcisenabledno default __reduce__ due to non-trivial __cinit__numpy._core.multiarray failed to importnumpy._core.umath failed to importstructureboost/pdf_group.pyxunable to allocate array data.unable to allocate shape and strides.<lambda>ASCIIEllipsisPdfDiscretePdfGroupPdfGroup.__getitem__PdfGroup.__init__PdfGroup.__init__.<locals>.<lambda>PdfGroup.bins_to_probsPdfGroup.bins_to_probs.<locals>.blkPdfGroup.calculate_cum_prob_matPdfGroup.crps_meanPdfGroup.log_lossPdfGroup.make_pdf_listPdfGroup.meanPdfGroup.medianPdfGroup.pred_region_sizesPdfGroup.pred_regionsPdfGroup.quantilePdfGroup.quantile_widthsPdfGroup.quantilesPdfGroup.test_between_quantilesPdfGroup.test_in_pred_regionsSTB_THREADSSequenceThreadPoolExecutorView.MemoryView_POOL__Pyx_PyDict_NextRef__annotate____class____class_getitem____dict____doc____func____getitem____getstate____import____init____main____metaclass____module____mro_entries____name____new____prepare____pyx_checksum__pyx_state__pyx_type__pyx_unpickle_Enum__pyx_vtable____qualname____reduce____reduce_cython____reduce_ex____set_name____setstate____setstate_cython____test___is_coroutine_rows_sum_close_rows_sum_close.<locals>.<lambda>abcabsallallcloseallocate_bufferalphaanyargargwherearrayascontiguousarrayastypeasyncio.coroutinesaxisbasebigmatbin_midptsbin_widthsbins_to_probsbinvecblkbwccalculate_cum_prob_matcheckcheck_sumcline_in_tracebackcolsconcurrent.futurescountcoveragecpu_countcrps_meancrps_single_ptcrps_valscum_prob_matcumsumdens_idxdens_ptrdensitydensity_binptsdensity_valsdensitymatdidiffdmdtypedtype_is_objectedgesemptyencodeenumerateenvironepserrorexplode_densitiesfbwfine_binptsfine_densitymatfine_ptrfinebinsflagsfnformatfortrangethihstackiidindexindicesint6""4intervalisinitemsitemsizeklinspacelologlog_losslog_loss_pdfmmake_pdf_listmapmatmaximummeanmedianmemviewmin_rowsmodenamencolsndimnew_binpt_vecnew_probsno_new_binptsnpnrowsnum_binsnum_fine_binsnum_rowsnumpyoobjobjectosoutpackpdfpdf_discretepdf_grouppdf_listpdf_setpopprpred_regionpred_region_sizespred_regionsprependprobmatprsptolq_leftq_rightquantilequantile_widthsquantilesregionsregisterreshaperow_blocksrow_blocks.<locals>.<lambda>row_maprow_map.<locals>.blkrow_ptrselfsetdefaultshapesizesize_of_pred_regionsrcstartstepstopstructsumsupport_maxsupport_mintest_between_quantilestest_between_quantiles_pdftest_in_pred_regionstest_valstolistunion1dunpackupdatevalvalsvalueswarnwarningsxy_testy_truezerosO\200\001\330\004\013\2102\210T\220\021\220!\2201\220A\220R\220q\230\001\230\021\230#\230T\240\025\240a\200\001\330\004\013\2102\210V\2201\220A\220R\220t\2301\230C\230y\250\001\250\022\2502\250X\260Q\260d\270%\270y\310\001\310\022\3102\310X\320UV\320VW\330\025\031\230\034\240W\250A\250Q\330\030\034\230E\240\025\240a\240s\250!\2501\200\001\330\004\013\2103\210a\210z\230\021\320\032q\320qt\320tz\320z{\320{|\200\001\340\004\013\2107\220)\2301\230A\200\001\340\004\013\2107\220*\230A\230Q\200\001\340\004\013\2107\320\022)\250\021\250+\260X\270Q\200\001\360\016\000\005\032\230\032\2406\250\021\250!\330\004\036\230c\240\021\240,\250a\250q\330\004\031\230\021\330\004+\2502\250V\2601\260O\3006\310\022\3101\330\004\010\210\014\220E\230\021\230!\330\010\020\220\001\220\034\230Q\330\010\013\210;\220a\220x\230q\240\003\2403\240n\260A\260X\270Q\270a\330\014\026\220a\330\0044\260B\260f\270B\270j\310\001\330\004\034\230A\330\004\035\230R\320\0371\260\021\260!\330\004\030\230\001\330\t\n\330\014\035\230Q\230a\330\014\020\220\014\230E\240\021\240!\330\020\021\220\021\220)\230<\240r\250\021\250)\2602\260Q\260a\330\004\013\2101\200A\330\010\013\2101\210C\210v\220R\220q\230\003\2301\230C\230q\200A\330\010\013\2104\210z\230\023\230A\330\014\020\220\016\230a\330\010\016\210d\220-\230q\240\001\330""\010\017\210r\220\026\220q\230\001\320\031,\250A\250T\260\024\260V\2701\200A\330\010\013\2104\210z\230\023\230A\330\014\020\220\016\230a\330\010\017\210r\220\026\220q\230\001\230\023\230L\250\001\250\032\2604\260w\270d\300,\310f\320TU\200A\330\010\013\2104\210z\230\023\230A\330\014\020\220\016\230a\330\010\017\210t\2209\230A\230X\240Q\240d\250)\2601\260A\200A\330\010\013\2104\210z\230\023\230A\330\014\020\220\016\230a\330\010\017\320\017#\2401\240K\250t\260=\300\001\300\021\200A\330\010\013\2104\210z\230\023\230A\330\014\023\220;\230a\230t\2409\250D\260\010\270\001\270\021\340\014\023\2204\220y\240\001\240\021\200A\330\010\020\220\004\220H\230F\240!\2401\330\010\014\320\014\034\230B\230g\240Q\240b\250\007\250r\260\022\2606\270\021\270&\300\010\310\002\310\"\310A\330$(\250\014\260E\270\021\200A\340\010\013\2104\210z\230\023\230A\330\014\020\220\016\230a\330\010\017\210r\220\026\220q\230\001\230\023\230E\240\023\240D\250\007\250t\2601\200A\340\010\013\2104\210z\230\023\230A\330\014\020\220\016\230a\330\010\017\210r\220\026\220q\230\001\230\023\230G\2403\240d\250\047\260\024\260Q\200A\340\010\013\2104\210z\230\023\230A\330\014\020\220\016\230a\330\010\017\210r\220\026\220q\230\001\230\023\230I\240Q\240e\2504\250w\260d\270!\200A\340\010\013\2104\210z\230\023\230A\330\014\020\220\016\230a\330\010\017\210r\220\026\220q\230\001\230\023\230J\240a\240v\250T\260\027\270\004\270A\200A\340\010\013\2104\210z\230\023\230A\330\014\020\220\016\230a\330\010\020\220\t\230\022\2304\230y\250\001\250\031\260#\260Y\270b\300\004\300I\310Q\310a\210\001\330\014\025\220R\220w\230a\230q\240\001\240\027\250\004\250G\260:\270S\300\005\300Q\330\014\030\230\002\230%\230q\240\006\240d\250\047\260\025\260c\270\030\300\021\330\014\030\230\002\230(\240!\240;\250a\330\014\023\2209\230A\230R\230t\2401\240K\250u\260B\260h\270b\300\002\300!\230*\240B\240a\240u\250A\250T\260\025\260a\260r\270\022\2701\230/\250\024\250Q\250b\260\t\270\021\270\"\270D\300\001\300\022\3004\300q\310\003\3101\310C\310u\320TY""\320Y^\320^c\320ci\320ij\240:\250R\250r\260\021\240j\260\002\260\"\260A\320\000\025\220Q\340\004\n\210\"\210F\220\"\220C\220v\230Q\230d\240#\240V\2501\250F\260&\270\003\270:\300Q\330\004\005\340\004\016\210a\210u\220C\220v\230Q\230a\330\004\013\2101\320\000\032\230!\340\004\005\330\004\013\2101\210M\230\026\230s\240!\330\004\007\200r\210\023\210A\330\010\017\210q\220\002\220!\2203\220a\330\004\007\200v\210S\220\001\330\010\020\320\020\"\240!\2401\330\004\014\210B\210i\220q\230\003\2307\240\"\240B\240b\250\007\250q\260\002\260!\330\004\013\2104\210q\220\005\220T\230\021\320\032@\300\005\300Q\300a\320\004\034\230A\330\010\014\210L\230\001\230\033\240A\240T\250\031\260$\260h\270a\270v\300Z\310q\330\031\035\230U\240%\240q\250\004\250H\260F\270!\2701\320\004\037\230q\340\010\013\2104\210q\220\007\220u\230A\330\014\025\220R\220v\230Q\230a\330\010\013\2104\210{\230&\240\001\240\022\2402\240S\250\001\250\021\330\014\024\220E\230\021\230!\330\010\013\2104\210z\230\023\230A\330\014\020\220\016\230a\330\010\027\220r\230\026\230q\330\014\r\210S\220\010\230\001\230\021\230&\240\001\240\025\240d\250\"\250G\2609\270A\270T\300\021\330\010\027\220r\230\030\240\021\240.\260\001\330\010\017\210q\220\002\220%\220q\230\002\230$\230a\230q\320\004\037\230~\250Q\330\020\033\2301\330\010\014\210J\220b\230\006\230a\230q\330\010\014\210L\230\003\2301\230G\2401\240A\330\010\013\2108\2207\230!\330\014\020\220\013\2301\330\014\017\210w\220f\230A\230R\230r\240\024\240Q\330\020\030\230\005\230Q\230a\330\014\017\210q\330\020\023\2204\220\177\240a\240t\250:\260Q\330\024\034\230E\240\021\240!\330\014\020\220\016\230d\240\047\250\021\250$\250b\260\004\260G\2703\270a\330\014\021\220\024\220Q\330\014\020\220\016\230g\240Q\320&8\270\004\270A\330\014\017\210{\230\047\240\021\330\020\030\230\005\230Q\230a\330\r\030\230\007\230q\330\014\017\210z\230\026\230q\240\002\240\"\240D\250\001\330\020\030\230\005\230Q\230a\330\014\020\220\016\230a\330\014\020\220\016\230d\240\047\250\021\250$\250b\260\004\260G\2703""\270a\330\014\021\220\024\220Q\330\014\020\220\013\2307\240!\320#5\260T\270\021\330\014\017\210q\330\020\023\2204\220\177\240a\240t\250:\260Q\330\024\034\230E\240\021\240!\330\010\014\210O\2304\230w\240c\250\022\2501\250D\260\007\260q\270\004\270A\270Q\330\010\014\210N\230$\230o\250T\260\027\270\001\270\024\270T\300\027\310\002\310!\330\010\014\210L\230\001\330\010\014\320\014\034\230A\320\004 \240\001\340\010\013\2104\210q\220\007\220u\230A\330\014\025\220R\220v\230Q\230a\330\010\013\2104\210{\230&\240\001\240\022\2402\240S\250\001\250\021\330\014\024\220E\230\021\230!\330\010\013\2104\210z\230\023\230A\330\014\020\220\016\230a\330\010\024\220B\220f\230A\330\014\r\210S\220\017\230q\240\006\240a\240t\2504\250r\260\027\270\t\300\021\300$\300a\330\010\017\210r\220\025\220a\220q\320\004+\2501\360\006\000\t\031\230\002\230$\230a\230r\240\025\240a\240\177\260d\270!\330\010\013\2104\210q\330\014\027\220r\230\030\240\021\240$\240i\250q\330\014\022\320\022#\2401\240D\250\r\260T\270\031\300!\330\014\022\220\"\220E\230\021\230!\340\014\027\220t\2301\330\014\021\220\026\220t\230:\240Q\330\010\023\2202\220Y\230a\230r\240\025\240a\240z\260\037\300\010\310\002\310\"\310A\310R\310w\320VW\330\010\017\210w\220a\220q\340\010\t\360\n\000\t\020\210w\220a\220u\230E\240\026\240s\250!\2501";
+    #else /* compression: none (6814 bytes) */
+static const char bytes[] = " at 0x object>.: <MemoryView of <contiguous and direct><contiguous and indirect><strided and direct or indirect><strided and direct><strided and indirect>>?Both probs and densities given, ignoring densities.Cannot assign to read-only memoryviewInvalid mode, expected \047c\047 or \047fortran\047, got Invalid shape in axis Length of y_test != number of pdfsNote that Cython is deliberately stricter than PEP-484 and rejects subclasses of builtin types. If you need to pass subclasses then set the \047annotation_typing\047 directive to False.Number of columns of densitymat does not match number of bins.Number of probabilities does not match number of bins.Represents a group of PdfDiscrete objects with the same bin points.\n\n    This is the output of the `predict_distributions` method for the\n    associated probabilistic regression models.\n\n    The underlying PdfDiscrete objects can be referenced by index, e.g.\n\n    >> pdfg = PdfGroup(...)\n    >> pdf_5 = pdfg[5]\n    >> pdf_5.plot_density() ## or whatever you want to do\n\n    Parameters\n    ----------\n\n    binvec : np.array-like\n        The bin points which represent the discrete intervals over which the\n        probability density is defined.  Should be given in ascending order.\n        A binvec with n points implies n-1 distinct intervals with the given\n        probabilities / (probability densities).\n\n    probvec : np.array-like\n        The corresponding probabilities of each interval, in a matrix where the rows\n        represent the individual distribtions.  Can be set to None\n        if densities are provided instead.  Only one of probmat and densitymat\n        should be provided.\n\n    densitymat : np.array-like\n        The corresponding densities of each interval, in a matrix where the rows\n        represent the individual distribtions.  Will be ignored if the\n        probmat is provided, but is necessary if not provided.\n\n    ptol : float, default is 1e-6\n        The tolerance used when ""checking if the probabilities sum to 1.\n\n    check_sum : bool, default is True\n        Whether or not to check that the probabilities sum to 1.  Default is\n        True.  Can be turned off for computational efficiency.\nThe Probabilities do not sum to 1.add_notecollections.abcdisableenablegcisenabledno default __reduce__ due to non-trivial __cinit__numpy._core.multiarray failed to importnumpy._core.umath failed to importstructureboost/pdf_group.pyxunable to allocate array data.unable to allocate shape and strides.<lambda>ASCIIEllipsisPdfDiscretePdfGroupPdfGroup.__getitem__PdfGroup.__init__PdfGroup.__init__.<locals>.<lambda>PdfGroup.bins_to_probsPdfGroup.bins_to_probs.<locals>.blkPdfGroup.calculate_cum_prob_matPdfGroup.crps_meanPdfGroup.log_lossPdfGroup.make_pdf_listPdfGroup.meanPdfGroup.medianPdfGroup.pred_region_sizesPdfGroup.pred_regionsPdfGroup.quantilePdfGroup.quantile_widthsPdfGroup.quantilesPdfGroup.test_between_quantilesPdfGroup.test_in_pred_regionsSTB_THREADSSequenceThreadPoolExecutorView.MemoryView_POOL__Pyx_PyDict_NextRef__annotate____class____class_getitem____dict____doc____func____getitem____getstate____import____init____main____metaclass____module____mro_entries____name____new____prepare____pyx_checksum__pyx_state__pyx_type__pyx_unpickle_Enum__pyx_vtable____qualname____reduce____reduce_cython____reduce_ex____set_name____setstate____setstate_cython____test___is_coroutine_rows_sum_close_rows_sum_close.<locals>.<lambda>abcabsallallcloseallocate_bufferalphaanyargargwherearrayascontiguousarrayastypeasyncio.coroutinesaxisbasebigmatbin_midptsbin_widthsbins_to_probsbinvecblkbwccalculate_cum_prob_matcheckcheck_sumcline_in_tracebackcolsconcurrent.futurescountcoveragecpu_countcrps_meancrps_single_ptcrps_valscum_prob_matcumsumdens_idxdens_ptrdensitydensity_binptsdensity_valsdensitymatdidiffdmdtypedtype_is_objectedgesemptyencodeenumerateenvironepserrorexplode_densitiesfbwfine_binptsfine_densitymatfine_ptrfinebinsflagsfnformatfortrangetgrainhihstackiidindexindice""sint64intervalisinitemsitemsizeklinspacelologlog_losslog_loss_pdfmmake_pdf_listmapmatmaximummeanmedianmemviewmin_rowsmodenamencolsndimnew_binpt_vecnew_probsno_new_binptsnpnrowsnthnum_binsnum_fine_binsnum_rowsnumpyoobjobjectosoutpackpdfpdf_discretepdf_grouppdf_listpdf_setpopprpred_regionpred_region_sizespred_regionsprependprobmatprsptolq_leftq_rightquantilequantile_widthsquantilesregionsregisterreshaperow_blocksrow_blocks.<locals>.<lambda>row_maprow_map.<locals>.blkrow_ptrselfsetdefaultshapesizesize_of_pred_regionsrcstartstepstopstructsumsupport_maxsupport_minteam_sizetest_between_quantilestest_between_quantiles_pdftest_in_pred_regionstest_valstolistunion1dunpackupdatevalvalsvalueswarnwarningsworkxy_testy_truezerosO\200\001\330\004\013\2102\210T\220\021\220!\2201\220A\220R\220q\230\001\230\021\230#\230T\240\025\240a\200\001\330\004\013\2102\210V\2201\220A\220R\220t\2301\230C\230y\250\001\250\022\2502\250X\260Q\260d\270%\270y\310\001\310\022\3102\310X\320UV\320VW\330\025\031\230\034\240W\250A\250Q\330\030\034\230E\240\025\240a\240s\250!\2501\200\001\330\004\013\2103\210a\210z\230\021\320\032q\320qt\320tz\320z{\320{|\200\001\340\004\013\2107\220)\2301\230A\200\001\340\004\013\2107\220*\230A\230Q\200\001\340\004\013\2107\320\022)\250\021\250+\260X\270Q\200\001\360\016\000\005\032\230\032\2406\250\021\250!\330\004\036\230c\240\021\240,\250a\250q\330\004\031\230\021\330\004+\2502\250V\2601\260O\3006\310\022\3101\330\004\010\210\014\220E\230\021\230!\330\010\020\220\001\220\034\230Q\330\010\013\210;\220a\220x\230q\240\003\2403\240n\260A\260X\270Q\270a\330\014\026\220a\330\0044\260B\260f\270B\270j\310\001\330\004\034\230A\330\004\035\230R\320\0371\260\021\260!\330\004\030\230\001\330\004\023\2209\230A\230Y\240b\250\001\330\t\n\330\014\035\230Q\320\036G\300q\330\014\020\220\014\230E\240\021\240!\330\020\021\220\021\220)\230<\240r\250\021\250)\2602\260Q\260a\330\004\013\2101\200A\330\010\013\2101\210C\210v\220R\220q\230\003\2301\230C\230q\200A\330\010\013\2104\210z\230\023""\230A\330\014\020\220\016\230a\330\010\016\210d\220-\230q\240\001\330\010\017\210r\220\026\220q\230\001\320\031,\250A\250T\260\024\260V\2701\200A\330\010\013\2104\210z\230\023\230A\330\014\020\220\016\230a\330\010\017\210r\220\026\220q\230\001\230\023\230L\250\001\250\032\2604\260w\270d\300,\310f\320TU\200A\330\010\013\2104\210z\230\023\230A\330\014\020\220\016\230a\330\010\017\210t\2209\230A\230X\240Q\240d\250)\2601\260A\200A\330\010\013\2104\210z\230\023\230A\330\014\020\220\016\230a\330\010\017\320\017#\2401\240K\250t\260=\300\001\300\021\200A\330\010\013\2104\210z\230\023\230A\330\014\023\220;\230a\230t\2409\250D\260\010\270\001\270\021\340\014\023\2204\220y\240\001\240\021\200A\330\010\020\220\004\220H\230F\240!\2401\330\010\014\320\014\034\230B\230g\240Q\240b\250\007\250r\260\022\2606\270\021\270&\300\010\310\002\310\"\310A\330$(\250\014\260E\270\021\200A\340\010\013\2104\210z\230\023\230A\330\014\020\220\016\230a\330\010\017\210r\220\026\220q\230\001\230\023\230E\240\023\240D\250\007\250t\2601\200A\340\010\013\2104\210z\230\023\230A\330\014\020\220\016\230a\330\010\017\210r\220\026\220q\230\001\230\023\230G\2403\240d\250\047\260\024\260Q\200A\340\010\013\2104\210z\230\023\230A\330\014\020\220\016\230a\330\010\017\210r\220\026\220q\230\001\230\023\230I\240Q\240e\2504\250w\260d\270!\200A\340\010\013\2104\210z\230\023\230A\330\014\020\220\016\230a\330\010\017\210r\220\026\220q\230\001\230\023\230J\240a\240v\250T\260\027\270\004\270A\200A\340\010\013\2104\210z\230\023\230A\330\014\020\220\016\230a\330\010\020\220\t\230\022\2304\230y\250\001\250\031\260#\260Y\270b\300\004\300I\310Q\310a\210\001\330\014\025\220R\220w\230a\230q\240\001\240\027\250\004\250G\260:\270S\300\005\300Q\330\014\030\230\002\230%\230q\240\006\240d\250\047\260\025\260c\270\030\300\021\330\014\030\230\002\230(\240!\240;\250a\330\014\023\2209\230A\230R\230t\2401\240K\250u\260B\260h\270b\300\002\300!\230*\240B\240a\240u\250A\250T\260\025\260a\260r\270\022\2701\230/\250\024\250Q\250b\260\t\270""\021\270\"\270D\300\001\300\022\3004\300q\310\003\3101\310C\310u\320TY\320Y^\320^c\320ci\320ij\240:\250R\250r\260\021\240j\260\002\260\"\260A\320\000\024\220A\360\010\000\005\014\2103\210e\2207\230-\240u\250C\250q\320\000\025\220Q\340\004\n\210\"\210F\220\"\220C\220v\230Q\230d\240#\240V\2501\250F\260&\270\003\270:\300Q\330\004\005\340\004\016\210a\210u\220C\220v\230Q\230a\330\004\013\2101\320\000\032\230!\340\004\005\330\004\013\2101\210M\230\026\230s\240!\330\004\007\200r\210\023\210A\330\010\017\210q\220\002\220!\2203\220a\330\004\007\200v\210S\220\001\330\010\020\320\020\"\240!\2401\330\004\014\210B\210i\220q\230\003\2307\240\"\240B\240b\250\007\250q\260\002\260!\330\004\013\2104\210q\220\005\220T\230\021\320\032@\300\005\300Q\300a\320\004\034\230A\330\010\014\210L\230\001\230\033\240A\240T\250\031\260$\260h\270a\270v\300Z\310q\330\031\035\230U\240%\240q\250\004\250H\260F\270!\2701\320\004\037\230q\340\010\013\2104\210q\220\007\220u\230A\330\014\025\220R\220v\230Q\230a\330\010\013\2104\210{\230&\240\001\240\022\2402\240S\250\001\250\021\330\014\024\220E\230\021\230!\330\010\013\2104\210z\230\023\230A\330\014\020\220\016\230a\330\010\027\220r\230\026\230q\330\014\r\210S\220\010\230\001\230\021\230&\240\001\240\025\240d\250\"\250G\2609\270A\270T\300\021\330\010\027\220r\230\030\240\021\240.\260\001\330\010\017\210q\220\002\220%\220q\230\002\230$\230a\230q\320\004\037\230~\250Q\330\020\033\2301\330\010\014\210J\220b\230\006\230a\230q\330\010\014\210L\230\003\2301\230G\2401\240A\330\010\013\2108\2207\230!\330\014\020\220\013\2301\330\014\017\210w\220f\230A\230R\230r\240\024\240Q\330\020\030\230\005\230Q\230a\330\014\017\210q\330\020\023\2204\220\177\240a\240t\250:\260Q\330\024\034\230E\240\021\240!\330\014\020\220\016\230d\240\047\250\021\250$\250b\260\004\260G\2703\270a\330\014\021\220\024\220Q\330\014\020\220\016\230g\240Q\320&8\270\004\270A\330\014\017\210{\230\047\240\021\330\020\030\230\005\230Q\230a\330\r\030\230\007\230q\330\014\017\210z\230\026\230q\240\002""\240\"\240D\250\001\330\020\030\230\005\230Q\230a\330\014\020\220\016\230a\330\014\020\220\016\230d\240\047\250\021\250$\250b\260\004\260G\2703\270a\330\014\021\220\024\220Q\330\014\020\220\013\2307\240!\320#5\260T\270\021\330\014\017\210q\330\020\023\2204\220\177\240a\240t\250:\260Q\330\024\034\230E\240\021\240!\330\010\014\210O\2304\230w\240c\250\022\2501\250D\260\007\260q\270\004\270A\270Q\330\010\014\210N\230$\230o\250T\260\027\270\001\270\024\270T\300\027\310\002\310!\330\010\014\210L\230\001\330\010\014\320\014\034\230A\320\004 \240\001\340\010\013\2104\210q\220\007\220u\230A\330\014\025\220R\220v\230Q\230a\330\010\013\2104\210{\230&\240\001\240\022\2402\240S\250\001\250\021\330\014\024\220E\230\021\230!\330\010\013\2104\210z\230\023\230A\330\014\020\220\016\230a\330\010\024\220B\220f\230A\330\014\r\210S\220\017\230q\240\006\240a\240t\2504\250r\260\027\270\t\300\021\300$\300a\330\010\017\210r\220\025\220a\220q\320\004+\2501\360\006\000\t\031\230\002\230$\230a\230r\240\025\240a\240\177\260d\270!\330\010\013\2104\210q\330\014\027\220r\230\030\240\021\240$\240i\250q\330\014\022\320\022#\2401\240D\250\r\260T\270\031\300!\330\014\022\220\"\220E\230\021\230!\340\014\027\220t\2301\330\014\021\220\026\220t\230:\240Q\330\010\023\2202\220Y\230a\230r\240\025\240a\240z\260\037\300\010\310\002\310\"\310A\310R\310w\320VW\330\010\017\210w\220a\220q\340\010\t\360\n\000\t\020\210w\220a\220u\230E\240\026\240s\250!\2501";
     PyObject *data = NULL;
     #define __Pyx_DecompressString_UNUSED
     #define __Pyx_DecompressString_LZSS_UNUSED
     #endif
     PyObject **stringtab = __pyx_mstate->__pyx_string_tab;
     Py_ssize_t pos = 0;
-    for (int i = 0; i < 264; i++) {
+    for (int i = 0; i < 268; i++) {
       Py_ssize_t bytes_length = str_length_index[i].length;
       PyObject *string = PyUnicode_DecodeUTF8(bytes + pos, bytes_length, NULL);
       if (likely(string) && i >= 34) PyUnicode_InternInPlace(&string);
@@ -36332,8 +36611,8 @@ static const char bytes[] = " at 0x object>.: <MemoryView of <contiguous and dir
       stringtab[i] = string;
       pos += bytes_length;
     }
-    for (int i = 264; i < 296; i++) {
-      Py_ssize_t bytes_length = bytes_length_index[i-264].length;
+    for (int i = 268; i < 301; i++) {
+      Py_ssize_t bytes_length = bytes_length_index[i-268].length;
       PyObject *string = PyBytes_FromStringAndSize(bytes + pos, bytes_length);
       stringtab[i] = string;
       pos += bytes_length;
@@ -36343,15 +36622,15 @@ static const char bytes[] = " at 0x object>.: <MemoryView of <contiguous and dir
       }
     }
     Py_XDECREF(data);
-    for (Py_ssize_t i = 0; i < 296; i++) {
+    for (Py_ssize_t i = 0; i < 301; i++) {
       if (unlikely(PyObject_Hash(stringtab[i]) == -1)) {
         __PYX_ERR(0, 1, __pyx_L1_error)
       }
     }
     #if CYTHON_IMMORTAL_CONSTANTS
     {
-      PyObject **table = stringtab + 264;
-      for (Py_ssize_t i=0; i<32; ++i) {
+      PyObject **table = stringtab + 268;
+      for (Py_ssize_t i=0; i<33; ++i) {
         #if PY_VERSION_HEX >= 0x030F0000
         PyUnstable_SetImmortal(table[i]);
         #elif CYTHON_COMPILING_IN_CPYTHON_FREETHREADING
@@ -36384,8 +36663,8 @@ static const char bytes[] = " at 0x object>.: <MemoryView of <contiguous and dir
     PyObject **numbertab = __pyx_mstate->__pyx_number_tab + 3;
     int8_t const cint_constants_1[] = {0,-1,1,2};
     int16_t const cint_constants_2[] = {2000};
-    int32_t const cint_constants_4[] = {136983863L};
-    for (int i = 0; i < 6; i++) {
+    int32_t const cint_constants_4[] = {100000L,136983863L};
+    for (int i = 0; i < 7; i++) {
       numbertab[i] = PyLong_FromLong((i < 4 ? cint_constants_1[i - 0] : (i < 5 ? cint_constants_2[i - 4] : cint_constants_4[i - 5])));
       if (unlikely(!numbertab[i])) __PYX_ERR(0, 1, __pyx_L1_error)
     }
@@ -36393,7 +36672,7 @@ static const char bytes[] = " at 0x object>.: <MemoryView of <contiguous and dir
   #if CYTHON_IMMORTAL_CONSTANTS
   {
     PyObject **table = __pyx_mstate->__pyx_number_tab;
-    for (Py_ssize_t i=0; i<9; ++i) {
+    for (Py_ssize_t i=0; i<10; ++i) {
       #if PY_VERSION_HEX >= 0x030F0000
       PyUnstable_SetImmortal(table[i]);
       #elif CYTHON_COMPILING_IN_CPYTHON_FREETHREADING
@@ -36427,7 +36706,7 @@ typedef struct {
     unsigned int num_kwonly_args : 1;
     unsigned int nlocals : 4;
     unsigned int flags : 10;
-    unsigned int first_line : 8;
+    unsigned int first_line : 9;
 } __Pyx_PyCode_New_function_description;
 #ifdef __cplusplus
 } /* anonymous namespace */
@@ -36447,159 +36726,164 @@ static int __Pyx_CreateCodeObjects(__pyx_mstatetype *__pyx_mstate) {
   PyObject* tuple_dedup_map = PyDict_New();
   if (unlikely(!tuple_dedup_map)) return -1;
   {
-    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 25};
+    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 32};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_i};
     __pyx_mstate_global->__pyx_codeobj_tab[0] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_lambda, __pyx_mstate->__pyx_kp_b_iso88591_BauAT_ar_1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[0])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 31};
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 38};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_lo, __pyx_mstate->__pyx_n_u_hi};
     __pyx_mstate_global->__pyx_codeobj_tab[1] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_blk, __pyx_mstate->__pyx_kp_b_iso88591_A_1CvRq_1Cq, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[1])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 38};
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 45};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_lo, __pyx_mstate->__pyx_n_u_hi};
     __pyx_mstate_global->__pyx_codeobj_tab[2] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_lambda, __pyx_mstate->__pyx_kp_b_iso88591_Qb_D_4q_1CuTYY_cciij, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[2])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 97};
+    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 104};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_m};
     __pyx_mstate_global->__pyx_codeobj_tab[3] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_lambda, __pyx_mstate->__pyx_kp_b_iso88591_j_A, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[3])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 106};
+    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 113};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_m};
     __pyx_mstate_global->__pyx_codeobj_tab[4] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_lambda, __pyx_mstate->__pyx_kp_b_iso88591_Rr, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[4])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 222};
+    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 229};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_m, __pyx_mstate->__pyx_n_u_bigmat, __pyx_mstate->__pyx_n_u_new_probs};
     __pyx_mstate_global->__pyx_codeobj_tab[5] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_blk, __pyx_mstate->__pyx_kp_b_iso88591_Rwaq_G_S_Q_q_d_c_a_9ARt1KuBhb, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[5])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 5, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 16};
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 16};
+    PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_work, __pyx_mstate->__pyx_n_u_grain};
+    __pyx_mstate_global->__pyx_codeobj_tab[6] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_team_size, __pyx_mstate->__pyx_kp_b_iso88591_A_3e7_uCq, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[6])) goto bad;
+  }
+  {
+    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 5, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 23};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_fn, __pyx_mstate->__pyx_n_u_nrows, __pyx_mstate->__pyx_n_u_min_rows, __pyx_mstate->__pyx_n_u_k, __pyx_mstate->__pyx_n_u_edges};
-    __pyx_mstate_global->__pyx_codeobj_tab[6] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_row_blocks, __pyx_mstate->__pyx_kp_b_iso88591_1M_s_r_A_q_3a_vS_1_Biq_7_Bb_q_4, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[6])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[7] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_row_blocks, __pyx_mstate->__pyx_kp_b_iso88591_1M_s_r_A_q_3a_vS_1_Biq_7_Bb_q_4, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[7])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 6, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 28};
+    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 6, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 35};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_fn, __pyx_mstate->__pyx_n_u_mat, __pyx_mstate->__pyx_n_u_ncols, __pyx_mstate->__pyx_n_u_out, __pyx_mstate->__pyx_n_u_blk, __pyx_mstate->__pyx_n_u_blk};
-    __pyx_mstate_global->__pyx_codeobj_tab[7] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_row_map, __pyx_mstate->__pyx_kp_b_iso88591_Q_F_CvQd_V1F_Q_auCvQa_1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[7])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[8] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_row_map, __pyx_mstate->__pyx_kp_b_iso88591_Q_F_CvQd_V1F_Q_auCvQa_1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[8])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 37};
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 44};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_mat, __pyx_mstate->__pyx_n_u_ptol};
-    __pyx_mstate_global->__pyx_codeobj_tab[8] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_rows_sum_close, __pyx_mstate->__pyx_kp_b_iso88591_3az_qqttzz, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[8])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[9] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_rows_sum_close, __pyx_mstate->__pyx_kp_b_iso88591_3az_qqttzz, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[9])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {6, 0, 0, 7, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 84};
+    const __Pyx_PyCode_New_function_description descr = {6, 0, 0, 7, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 91};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_binvec, __pyx_mstate->__pyx_n_u_probmat, __pyx_mstate->__pyx_n_u_densitymat, __pyx_mstate->__pyx_n_u_ptol, __pyx_mstate->__pyx_n_u_check_sum, __pyx_mstate->__pyx_n_u_bw};
-    __pyx_mstate_global->__pyx_codeobj_tab[9] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_init, __pyx_mstate->__pyx_kp_b_iso88591_Q_1_Jb_aq_L_1G1A_87_1_wfARr_Q_Q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[9])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[10] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_init, __pyx_mstate->__pyx_kp_b_iso88591_Q_1_Jb_aq_L_1G1A_87_1_wfARr_Q_Q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[10])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 115};
+    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 122};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_nrows};
-    __pyx_mstate_global->__pyx_codeobj_tab[10] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_calculate_cum_prob_mat, __pyx_mstate->__pyx_kp_b_iso88591_A_HF_1_BgQb_r_6_A_E, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[10])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[11] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_calculate_cum_prob_mat, __pyx_mstate->__pyx_kp_b_iso88591_A_HF_1_BgQb_r_6_A_E, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[11])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 120};
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 127};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_check, __pyx_mstate->__pyx_n_u_i};
-    __pyx_mstate_global->__pyx_codeobj_tab[11] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_make_pdf_list, __pyx_mstate->__pyx_kp_b_iso88591_A_L_AT_havZq_U_q_HF_1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[11])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[12] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_make_pdf_list, __pyx_mstate->__pyx_kp_b_iso88591_A_L_AT_havZq_U_q_HF_1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[12])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 124};
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 131};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_arg};
-    __pyx_mstate_global->__pyx_codeobj_tab[12] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_getitem, __pyx_mstate->__pyx_kp_b_iso88591_A_4z_A_at9D_4y, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[12])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[13] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_getitem, __pyx_mstate->__pyx_kp_b_iso88591_A_4z_A_at9D_4y, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[13])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 6, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 130};
+    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 6, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 137};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_y_test, __pyx_mstate->__pyx_n_u_eps, __pyx_mstate->__pyx_n_u_density_vals, __pyx_mstate->__pyx_n_u_i, __pyx_mstate->__pyx_n_u_pdf};
-    __pyx_mstate_global->__pyx_codeobj_tab[13] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_log_loss, __pyx_mstate->__pyx_kp_b_iso88591_q_4q_uA_RvQa_4_2S_E_4z_A_a_r_q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[13])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[14] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_log_loss, __pyx_mstate->__pyx_kp_b_iso88591_q_4q_uA_RvQa_4_2S_E_4z_A_a_r_q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[14])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 6, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 143};
+    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 6, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 150};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_y_test, __pyx_mstate->__pyx_n_u_eps, __pyx_mstate->__pyx_n_u_crps_vals, __pyx_mstate->__pyx_n_u_i, __pyx_mstate->__pyx_n_u_pdf};
-    __pyx_mstate_global->__pyx_codeobj_tab[14] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_crps_mean, __pyx_mstate->__pyx_kp_b_iso88591_4q_uA_RvQa_4_2S_E_4z_A_a_BfA_S, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[14])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[15] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_crps_mean, __pyx_mstate->__pyx_kp_b_iso88591_4q_uA_RvQa_4_2S_E_4z_A_a_BfA_S, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[15])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 155};
+    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 162};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_pdf};
-    __pyx_mstate_global->__pyx_codeobj_tab[15] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_mean, __pyx_mstate->__pyx_kp_b_iso88591_A_4z_A_a_r_q_E_D_t1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[15])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[16] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_mean, __pyx_mstate->__pyx_kp_b_iso88591_A_4z_A_a_r_q_E_D_t1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[16])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 161};
+    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 168};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_pdf};
-    __pyx_mstate_global->__pyx_codeobj_tab[16] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_median, __pyx_mstate->__pyx_kp_b_iso88591_A_4z_A_a_r_q_G3d_Q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[16])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[17] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_median, __pyx_mstate->__pyx_kp_b_iso88591_A_4z_A_a_r_q_G3d_Q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[17])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 167};
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 174};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_val, __pyx_mstate->__pyx_n_u_pdf};
-    __pyx_mstate_global->__pyx_codeobj_tab[17] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_quantile, __pyx_mstate->__pyx_kp_b_iso88591_A_4z_A_a_r_q_IQe4wd, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[17])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[18] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_quantile, __pyx_mstate->__pyx_kp_b_iso88591_A_4z_A_a_r_q_IQe4wd, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[18])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 173};
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 180};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_vals, __pyx_mstate->__pyx_n_u_pdf};
-    __pyx_mstate_global->__pyx_codeobj_tab[18] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_quantiles, __pyx_mstate->__pyx_kp_b_iso88591_A_4z_A_a_r_q_JavT_A, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[18])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[19] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_quantiles, __pyx_mstate->__pyx_kp_b_iso88591_A_4z_A_a_r_q_JavT_A, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[19])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {4, 0, 0, 4, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 179};
+    const __Pyx_PyCode_New_function_description descr = {4, 0, 0, 4, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 186};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_test_vals, __pyx_mstate->__pyx_n_u_q_left, __pyx_mstate->__pyx_n_u_q_right};
-    __pyx_mstate_global->__pyx_codeobj_tab[19] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_test_between_quantiles, __pyx_mstate->__pyx_kp_b_iso88591_A_4z_A_a_4y_Yb_IQa, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[19])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[20] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_test_between_quantiles, __pyx_mstate->__pyx_kp_b_iso88591_A_4z_A_a_4y_Yb_IQa, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[20])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 185};
+    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 192};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_test_vals, __pyx_mstate->__pyx_n_u_alpha};
-    __pyx_mstate_global->__pyx_codeobj_tab[20] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_test_in_pred_regions, __pyx_mstate->__pyx_kp_b_iso88591_A_4z_A_a_1Kt, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[20])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[21] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_test_in_pred_regions, __pyx_mstate->__pyx_kp_b_iso88591_A_4z_A_a_1Kt, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[21])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 190};
+    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 197};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_q_left, __pyx_mstate->__pyx_n_u_q_right};
-    __pyx_mstate_global->__pyx_codeobj_tab[21] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_quantile_widths, __pyx_mstate->__pyx_kp_b_iso88591_A_4z_A_a_t9AXQd_1A, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[21])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[22] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_quantile_widths, __pyx_mstate->__pyx_kp_b_iso88591_A_4z_A_a_t9AXQd_1A, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[22])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 4, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 196};
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 4, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 203};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_coverage, __pyx_mstate->__pyx_n_u_prs, __pyx_mstate->__pyx_n_u_pr};
-    __pyx_mstate_global->__pyx_codeobj_tab[22] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_pred_region_sizes, __pyx_mstate->__pyx_kp_b_iso88591_A_4z_A_a_d_q_r_q_AT_V1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[22])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[23] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_pred_region_sizes, __pyx_mstate->__pyx_kp_b_iso88591_A_4z_A_a_d_q_r_q_AT_V1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[23])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 203};
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 210};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_coverage, __pyx_mstate->__pyx_n_u_pdf};
-    __pyx_mstate_global->__pyx_codeobj_tab[23] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_pred_regions, __pyx_mstate->__pyx_kp_b_iso88591_A_4z_A_a_r_q_L_4wd_fTU, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[23])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[24] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_pred_regions, __pyx_mstate->__pyx_kp_b_iso88591_A_4z_A_a_r_q_L_4wd_fTU, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[24])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 11, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 208};
+    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 11, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 215};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_new_binpt_vec, __pyx_mstate->__pyx_n_u_eps, __pyx_mstate->__pyx_n_u_no_new_binpts, __pyx_mstate->__pyx_n_u_finebins, __pyx_mstate->__pyx_n_u_src, __pyx_mstate->__pyx_n_u_fbw, __pyx_mstate->__pyx_n_u_indices, __pyx_mstate->__pyx_n_u_cols, __pyx_mstate->__pyx_n_u_blk, __pyx_mstate->__pyx_n_u_blk};
-    __pyx_mstate_global->__pyx_codeobj_tab[24] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_bins_to_probs, __pyx_mstate->__pyx_kp_b_iso88591_1_ar_a_d_4q_r_iq_1D_T_E_t1_t_Q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[24])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[25] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_bins_to_probs, __pyx_mstate->__pyx_kp_b_iso88591_1_ar_a_d_4q_r_iq_1D_T_E_t1_t_Q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[25])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 4, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 230};
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 4, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 237};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_test_vals, __pyx_mstate->__pyx_n_u_regions, __pyx_mstate->__pyx_n_u_i, __pyx_mstate->__pyx_n_u_interval};
-    __pyx_mstate_global->__pyx_codeobj_tab[25] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_test_in_pred_regions, __pyx_mstate->__pyx_kp_b_iso88591_2V1ARt1Cy_2XQd_y_2XUVVW_WAQ_E_a, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[25])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[26] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_test_in_pred_regions, __pyx_mstate->__pyx_kp_b_iso88591_2V1ARt1Cy_2XQd_y_2XUVVW_WAQ_E_a, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[26])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 236};
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 243};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_y_true, __pyx_mstate->__pyx_n_u_pdf_set};
-    __pyx_mstate_global->__pyx_codeobj_tab[26] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_log_loss_pdf, __pyx_mstate->__pyx_kp_b_iso88591_7_1A, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[26])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[27] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_log_loss_pdf, __pyx_mstate->__pyx_kp_b_iso88591_7_1A, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[27])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 240};
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 247};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_y_true, __pyx_mstate->__pyx_n_u_pdf_set};
-    __pyx_mstate_global->__pyx_codeobj_tab[27] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_crps_mean, __pyx_mstate->__pyx_kp_b_iso88591_7_AQ, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[27])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[28] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_crps_mean, __pyx_mstate->__pyx_kp_b_iso88591_7_AQ, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[28])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 244};
+    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 251};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_pr, __pyx_mstate->__pyx_n_u_x};
-    __pyx_mstate_global->__pyx_codeobj_tab[28] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_size_of_pred_region, __pyx_mstate->__pyx_kp_b_iso88591_2T_1ARq_T_a, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[28])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[29] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_size_of_pred_region, __pyx_mstate->__pyx_kp_b_iso88591_2T_1ARq_T_a, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[29])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {4, 0, 0, 4, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 248};
+    const __Pyx_PyCode_New_function_description descr = {4, 0, 0, 4, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 255};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_test_vals, __pyx_mstate->__pyx_n_u_pdf_set, __pyx_mstate->__pyx_n_u_q_left, __pyx_mstate->__pyx_n_u_q_right};
-    __pyx_mstate_global->__pyx_codeobj_tab[29] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_test_between_quantiles_pdf, __pyx_mstate->__pyx_kp_b_iso88591_7_XQ, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[29])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[30] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_test_between_quantiles_pdf, __pyx_mstate->__pyx_kp_b_iso88591_7_XQ, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[30])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 13, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 252};
-    PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_densitymat, __pyx_mstate->__pyx_n_u_density_binpts, __pyx_mstate->__pyx_n_u_fine_binpts, __pyx_mstate->__pyx_n_u_num_rows, __pyx_mstate->__pyx_n_u_num_fine_bins, __pyx_mstate->__pyx_n_u_dens_ptr, __pyx_mstate->__pyx_n_u_row_ptr, __pyx_mstate->__pyx_n_u_fine_ptr, __pyx_mstate->__pyx_n_u_dens_idx, __pyx_mstate->__pyx_n_u_fine_densitymat, __pyx_mstate->__pyx_n_u_o, __pyx_mstate->__pyx_n_u_dm, __pyx_mstate->__pyx_n_u_di};
-    __pyx_mstate_global->__pyx_codeobj_tab[30] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_explode_densities, __pyx_mstate->__pyx_kp_b_iso88591_6_c_aq_2V1O6_1_E_Q_axq_3nAXQa_a, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[30])) goto bad;
+    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 14, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 259};
+    PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_densitymat, __pyx_mstate->__pyx_n_u_density_binpts, __pyx_mstate->__pyx_n_u_fine_binpts, __pyx_mstate->__pyx_n_u_num_rows, __pyx_mstate->__pyx_n_u_num_fine_bins, __pyx_mstate->__pyx_n_u_dens_ptr, __pyx_mstate->__pyx_n_u_row_ptr, __pyx_mstate->__pyx_n_u_fine_ptr, __pyx_mstate->__pyx_n_u_dens_idx, __pyx_mstate->__pyx_n_u_fine_densitymat, __pyx_mstate->__pyx_n_u_o, __pyx_mstate->__pyx_n_u_dm, __pyx_mstate->__pyx_n_u_di, __pyx_mstate->__pyx_n_u_nth};
+    __pyx_mstate_global->__pyx_codeobj_tab[31] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_structureboost_pdf_group_pyx, __pyx_mstate->__pyx_n_u_explode_densities, __pyx_mstate->__pyx_kp_b_iso88591_6_c_aq_2V1O6_1_E_Q_axq_3nAXQa_a, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[31])) goto bad;
   }
   Py_DECREF(tuple_dedup_map);
   return 0;
@@ -39888,103 +40172,6 @@ static CYTHON_INLINE long __Pyx_div_long(long a, long b, int b_is_constant) {
     return q - adapt_python;
 }
 
-/* RaiseClosureNameError */
-static void __Pyx_RaiseClosureNameError(const char *varname) {
-    PyErr_Format(PyExc_NameError, "free variable '%s' referenced before assignment in enclosing scope", varname);
-}
-
-/* PyLongBinop */
-#if !CYTHON_COMPILING_IN_PYPY
-static PyObject* __Pyx_Fallback___Pyx_PyLong_AddObjC(PyObject *op1, PyObject *op2, int inplace) {
-    return (inplace ? PyNumber_InPlaceAdd : PyNumber_Add)(op1, op2);
-}
-#if CYTHON_USE_PYLONG_INTERNALS
-static PyObject* __Pyx_Unpacked___Pyx_PyLong_AddObjC(PyObject *op1, PyObject *op2, long intval, int inplace, int zerodivision_check) {
-    CYTHON_MAYBE_UNUSED_VAR(inplace);
-    CYTHON_UNUSED_VAR(zerodivision_check);
-    const long b = intval;
-    long a;
-    const PY_LONG_LONG llb = intval;
-    PY_LONG_LONG lla;
-    if (unlikely(__Pyx_PyLong_IsZero(op1))) {
-        return __Pyx_NewRef(op2);
-    }
-    const int is_positive = __Pyx_PyLong_IsPos(op1);
-    const digit* digits = __Pyx_PyLong_Digits(op1);
-    const Py_ssize_t size = __Pyx_PyLong_DigitCount(op1);
-    if (likely(size == 1)) {
-        a = (long) digits[0];
-        if (!is_positive) a *= -1;
-    } else {
-        if (size == 2 && 8 * sizeof(long) - 1 > 2 * PyLong_SHIFT) {
-            a = (long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
-            if (!is_positive) a *= -1;
-            goto calculate_long;
-        } else if (size == 2 && 8 * sizeof(PY_LONG_LONG) - 1 > 2 * PyLong_SHIFT) {
-            lla = (PY_LONG_LONG) (((((unsigned PY_LONG_LONG)digits[1]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[0]));
-            if (!is_positive) lla *= -1;
-            goto calculate_long_long;
-        } else
-        if (size == 3 && 8 * sizeof(long) - 1 > 3 * PyLong_SHIFT) {
-            a = (long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
-            if (!is_positive) a *= -1;
-            goto calculate_long;
-        } else if (size == 3 && 8 * sizeof(PY_LONG_LONG) - 1 > 3 * PyLong_SHIFT) {
-            lla = (PY_LONG_LONG) (((((((unsigned PY_LONG_LONG)digits[2]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[1]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[0]));
-            if (!is_positive) lla *= -1;
-            goto calculate_long_long;
-        } else
-        if (size == 4 && 8 * sizeof(long) - 1 > 4 * PyLong_SHIFT) {
-            a = (long) (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
-            if (!is_positive) a *= -1;
-            goto calculate_long;
-        } else if (size == 4 && 8 * sizeof(PY_LONG_LONG) - 1 > 4 * PyLong_SHIFT) {
-            lla = (PY_LONG_LONG) (((((((((unsigned PY_LONG_LONG)digits[3]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[2]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[1]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[0]));
-            if (!is_positive) lla *= -1;
-            goto calculate_long_long;
-        } else
-        {}
-        return PyLong_Type.tp_as_number->nb_add(op1, op2);
-    }
-    calculate_long:
-        {
-            long x;
-            x = a + b;
-            return PyLong_FromLong(x);
-        }
-    calculate_long_long:
-        {
-            PY_LONG_LONG llx;
-            llx = lla + llb;
-            return PyLong_FromLongLong(llx);
-        }
-    
-}
-#endif
-static PyObject* __Pyx_Float___Pyx_PyLong_AddObjC(PyObject *float_val, long intval, int zerodivision_check) {
-    CYTHON_UNUSED_VAR(zerodivision_check);
-    const long b = intval;
-    double a = __Pyx_PyFloat_AS_DOUBLE(float_val);
-        double result;
-        
-        result = ((double)a) + (double)b;
-        return PyFloat_FromDouble(result);
-}
-static CYTHON_INLINE PyObject* __Pyx_PyLong_AddObjC(PyObject *op1, PyObject *op2, long intval, int inplace, int zerodivision_check) {
-    CYTHON_MAYBE_UNUSED_VAR(intval);
-    CYTHON_UNUSED_VAR(zerodivision_check);
-    #if CYTHON_USE_PYLONG_INTERNALS
-    if (likely(PyLong_CheckExact(op1))) {
-        return __Pyx_Unpacked___Pyx_PyLong_AddObjC(op1, op2, intval, inplace, zerodivision_check);
-    }
-    #endif
-    if (PyFloat_CheckExact(op1)) {
-        return __Pyx_Float___Pyx_PyLong_AddObjC(op1, intval, zerodivision_check);
-    }
-    return __Pyx_Fallback___Pyx_PyLong_AddObjC(op1, op2, inplace);
-}
-#endif
-
 /* PyObjectCompare */
 #ifndef __Pyx_DEFINED_PyObject_CompareStrStrBoolLt
 #define __Pyx_DEFINED_PyObject_CompareStrStrBoolLt
@@ -40374,6 +40561,229 @@ __pyx_return_true:
 __pyx_return_false:
     return 0;
 }
+
+/* PyObjectCompare */
+#ifndef __Pyx_DEFINED_PyObject_CompareFloatIntBoolGt
+#define __Pyx_DEFINED_PyObject_CompareFloatIntBoolGt
+static int __Pyx_PyObject_CompareFloatIntBoolGt(PyObject *op1, PyObject *op2) {
+    double float_op1 = __Pyx_PyFloat_AS_DOUBLE(op1);
+    #if !CYTHON_ASSUME_SAFE_MACROS
+    if (unlikely(float_op1 == -1. && PyErr_Occurred())) return -1;
+    #endif
+    #if CYTHON_USE_PYLONG_INTERNALS
+    if (__Pyx_PyLong_IsCompact(op2)) {
+        Py_ssize_t iop2 = __Pyx_PyLong_CompactValue(op2);
+        if (float_op1 > ((double)iop2)) goto __pyx_return_true; else goto __pyx_return_false;
+    }
+    if (unlikely(!isfinite(float_op1))) {
+        if (float_op1 > 0.0) goto __pyx_return_true; else goto __pyx_return_false;
+    } else {
+        int sign2 = __Pyx_PyLong_Sign(op2);
+        if (float_op1 >= 0.) {
+            if (sign2 < 0) goto __pyx_return_true;
+            if (float_op1 < (double) (1L << PyLong_SHIFT)) goto __pyx_return_false;
+        } else {
+            if (sign2 > 0) goto __pyx_return_false;
+            if (float_op1 > -(double) (1L << PyLong_SHIFT)) goto __pyx_return_true;
+        }
+    }
+    #else
+    if (unlikely(!isfinite(float_op1))) {
+        if (float_op1 > 0.0) goto __pyx_return_true; else goto __pyx_return_false;
+    } else {
+        int overflow2;
+        long iop2 = PyLong_AsLongAndOverflow(op2, &overflow2);
+        if (likely(!overflow2)) {
+            if ((long long) iop2 >= (1LL << 53)) {
+                overflow2 = 1;
+            } else if ((long long) iop2 <= - (1LL << 53)) {
+                overflow2 = -1;
+            } else {
+                if (float_op1 > ((double) iop2)) goto __pyx_return_true; else goto __pyx_return_false;
+            }
+        }
+        if (overflow2 > 0) {
+            if (float_op1 < ((double) (1LL << 53))) goto __pyx_return_false;
+        } else {
+            if (float_op1 > - ((double) (1LL << 53))) goto __pyx_return_true;
+        }
+    }
+    #endif
+    return __Pyx_PyObject_RichCompareBool(op1, op2, Py_GT);
+__pyx_return_true:
+    return 1;
+__pyx_return_false:
+    return 0;
+}
+#endif
+#ifndef __Pyx_DEFINED_PyObject_CompareIntIntBoolGt
+#define __Pyx_DEFINED_PyObject_CompareIntIntBoolGt
+static int __Pyx_PyObject_CompareIntIntBoolGt(PyObject *op1, PyObject *op2) {
+#if CYTHON_USE_PYLONG_INTERNALS
+    Py_ssize_t cmp = __Pyx_PyLong_CompareSignAndSize(op1, op2);
+    if (cmp == 0) {
+        Py_ssize_t size = __Pyx_PyLong_DigitCount(op1);
+        if (size > 0) {
+            const digit* digits1 = __Pyx_PyLong_Digits(op1);
+            const digit* digits2 = __Pyx_PyLong_Digits(op2);
+            if (size == 1) {
+                cmp = (Py_ssize_t) digits1[0] - (Py_ssize_t) digits2[0];
+            } else if ((size == 2) && (8 * sizeof(Py_ssize_t) >= 2 * PyLong_SHIFT)) {
+                cmp = (Py_ssize_t) (((((size_t)digits1[1]) << PyLong_SHIFT) | (size_t)digits1[0])) - (Py_ssize_t) (((((size_t)digits2[1]) << PyLong_SHIFT) | (size_t)digits2[0]));
+            } else {
+                for (Py_ssize_t i=size-1; i >= 0 && !cmp; --i) {
+                    cmp = (Py_ssize_t) digits1[i] - (Py_ssize_t) digits2[i];
+                }
+            }
+        }
+        if (cmp == 0) goto __pyx_return_false;
+        if (__Pyx_PyLong_IsNeg(op1)) cmp = -cmp;
+    }
+    if (cmp < 0) goto __pyx_return_false; else goto __pyx_return_true;
+#else
+    int overflow1, overflow2;
+    long long iop1 = PyLong_AsLongLongAndOverflow(op1, &overflow1);
+    long long iop2 = PyLong_AsLongLongAndOverflow(op2, &overflow2);
+    if (likely(!(overflow1 | overflow2))) {
+        if (iop1 > iop2) goto __pyx_return_true; else goto __pyx_return_false;
+    } else if (overflow1 != overflow2) {
+        if (overflow1 > overflow2) goto __pyx_return_true; else goto __pyx_return_false;
+    } else {
+        return __Pyx_PyObject_RichCompareBool(op1, op2, Py_GT);
+    }
+#endif
+__pyx_return_true:
+    return 1;
+__pyx_return_false:
+    return 0;
+}
+#endif
+static CYTHON_INLINE int __Pyx_PyObject_CompareBoolGt_object_int(PyObject *op1, PyObject *op2, int pyop) {
+    CYTHON_UNUSED_VAR(pyop);
+    if (unlikely(op2 == Py_None)) {
+        goto __pyx_richcmp;
+    }
+    if (op1 == op2) goto __pyx_return_false;
+    if (PyFloat_CheckExact(op1)) {
+        if (likely(op2 != Py_None)) {
+            return __Pyx_PyObject_CompareFloatIntBoolGt(op1, op2);
+        }
+        goto __pyx_richcmp;
+    }
+    if (likely(PyLong_CheckExact(op1))) {
+        if (op1 == op2) goto __pyx_return_false;
+        if (likely(op2 != Py_None)) {
+            return __Pyx_PyObject_CompareIntIntBoolGt(op1, op2);
+        }
+        goto __pyx_richcmp;
+    }
+    if ((0)) goto __pyx_richcmp;
+    if ((0)) goto __pyx_return_true;
+    if ((0)) goto __pyx_return_false;
+__pyx_richcmp:
+    return __Pyx_PyObject_RichCompareBool(op1, op2, Py_GT);
+__pyx_return_true:
+    return 1;
+__pyx_return_false:
+    return 0;
+}
+
+/* RaiseClosureNameError */
+static void __Pyx_RaiseClosureNameError(const char *varname) {
+    PyErr_Format(PyExc_NameError, "free variable '%s' referenced before assignment in enclosing scope", varname);
+}
+
+/* PyLongBinop */
+#if !CYTHON_COMPILING_IN_PYPY
+static PyObject* __Pyx_Fallback___Pyx_PyLong_AddObjC(PyObject *op1, PyObject *op2, int inplace) {
+    return (inplace ? PyNumber_InPlaceAdd : PyNumber_Add)(op1, op2);
+}
+#if CYTHON_USE_PYLONG_INTERNALS
+static PyObject* __Pyx_Unpacked___Pyx_PyLong_AddObjC(PyObject *op1, PyObject *op2, long intval, int inplace, int zerodivision_check) {
+    CYTHON_MAYBE_UNUSED_VAR(inplace);
+    CYTHON_UNUSED_VAR(zerodivision_check);
+    const long b = intval;
+    long a;
+    const PY_LONG_LONG llb = intval;
+    PY_LONG_LONG lla;
+    if (unlikely(__Pyx_PyLong_IsZero(op1))) {
+        return __Pyx_NewRef(op2);
+    }
+    const int is_positive = __Pyx_PyLong_IsPos(op1);
+    const digit* digits = __Pyx_PyLong_Digits(op1);
+    const Py_ssize_t size = __Pyx_PyLong_DigitCount(op1);
+    if (likely(size == 1)) {
+        a = (long) digits[0];
+        if (!is_positive) a *= -1;
+    } else {
+        if (size == 2 && 8 * sizeof(long) - 1 > 2 * PyLong_SHIFT) {
+            a = (long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
+            if (!is_positive) a *= -1;
+            goto calculate_long;
+        } else if (size == 2 && 8 * sizeof(PY_LONG_LONG) - 1 > 2 * PyLong_SHIFT) {
+            lla = (PY_LONG_LONG) (((((unsigned PY_LONG_LONG)digits[1]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[0]));
+            if (!is_positive) lla *= -1;
+            goto calculate_long_long;
+        } else
+        if (size == 3 && 8 * sizeof(long) - 1 > 3 * PyLong_SHIFT) {
+            a = (long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
+            if (!is_positive) a *= -1;
+            goto calculate_long;
+        } else if (size == 3 && 8 * sizeof(PY_LONG_LONG) - 1 > 3 * PyLong_SHIFT) {
+            lla = (PY_LONG_LONG) (((((((unsigned PY_LONG_LONG)digits[2]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[1]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[0]));
+            if (!is_positive) lla *= -1;
+            goto calculate_long_long;
+        } else
+        if (size == 4 && 8 * sizeof(long) - 1 > 4 * PyLong_SHIFT) {
+            a = (long) (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
+            if (!is_positive) a *= -1;
+            goto calculate_long;
+        } else if (size == 4 && 8 * sizeof(PY_LONG_LONG) - 1 > 4 * PyLong_SHIFT) {
+            lla = (PY_LONG_LONG) (((((((((unsigned PY_LONG_LONG)digits[3]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[2]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[1]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[0]));
+            if (!is_positive) lla *= -1;
+            goto calculate_long_long;
+        } else
+        {}
+        return PyLong_Type.tp_as_number->nb_add(op1, op2);
+    }
+    calculate_long:
+        {
+            long x;
+            x = a + b;
+            return PyLong_FromLong(x);
+        }
+    calculate_long_long:
+        {
+            PY_LONG_LONG llx;
+            llx = lla + llb;
+            return PyLong_FromLongLong(llx);
+        }
+    
+}
+#endif
+static PyObject* __Pyx_Float___Pyx_PyLong_AddObjC(PyObject *float_val, long intval, int zerodivision_check) {
+    CYTHON_UNUSED_VAR(zerodivision_check);
+    const long b = intval;
+    double a = __Pyx_PyFloat_AS_DOUBLE(float_val);
+        double result;
+        
+        result = ((double)a) + (double)b;
+        return PyFloat_FromDouble(result);
+}
+static CYTHON_INLINE PyObject* __Pyx_PyLong_AddObjC(PyObject *op1, PyObject *op2, long intval, int inplace, int zerodivision_check) {
+    CYTHON_MAYBE_UNUSED_VAR(intval);
+    CYTHON_UNUSED_VAR(zerodivision_check);
+    #if CYTHON_USE_PYLONG_INTERNALS
+    if (likely(PyLong_CheckExact(op1))) {
+        return __Pyx_Unpacked___Pyx_PyLong_AddObjC(op1, op2, intval, inplace, zerodivision_check);
+    }
+    #endif
+    if (PyFloat_CheckExact(op1)) {
+        return __Pyx_Float___Pyx_PyLong_AddObjC(op1, intval, zerodivision_check);
+    }
+    return __Pyx_Fallback___Pyx_PyLong_AddObjC(op1, op2, inplace);
+}
+#endif
 
 /* PyObjectCompare */
 #ifndef __Pyx_DEFINED_PyObject_CompareFloatIntBoolLe
@@ -47707,100 +48117,6 @@ static CYTHON_INLINE long __Pyx_PyLong_As_long(PyObject *x) {
     }
 }
 
-/* PyObjectCallMethod1 (used by UpdateUnpickledDict) */
-static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethod1(PyObject* obj, PyObject* method_name, PyObject* arg) {
-#if CYTHON_VECTORCALL && (__PYX_LIMITED_VERSION_HEX >= 0x030C0000 || !CYTHON_COMPILING_IN_LIMITED_API)
-    PyObject *args[2] = {obj, arg};
-    return PyObject_VectorcallMethod(method_name, args, 2 | PY_VECTORCALL_ARGUMENTS_OFFSET, NULL);
-#elif CYTHON_COMPILING_IN_LIMITED_API
-    return PyObject_CallMethodObjArgs(obj, method_name, arg, NULL);
-#else
-    return PyObject_CallMethodOneArg(obj, method_name, arg);
-#endif
-}
-
-/* UpdateUnpickledDict */
-static int __Pyx__UpdateUnpickledDict(PyObject *obj, PyObject *state, Py_ssize_t index) {
-    PyObject *state_dict = __Pyx_PySequence_ITEM(state, index);
-    if (unlikely(!state_dict)) {
-        return -1;
-    }
-    int non_empty = PyObject_IsTrue(state_dict);
-    if (non_empty == 0) {
-        Py_DECREF(state_dict);
-        return 0;
-    } else if (unlikely(non_empty == -1)) {
-        return -1;
-    }
-    PyObject *dict;
-    #if CYTHON_COMPILING_IN_LIMITED_API && __PYX_LIMITED_VERSION_HEX < 0x030A0000
-    dict = PyObject_GetAttrString(obj, "__dict__");
-    #else
-    dict = PyObject_GenericGetDict(obj, NULL);
-    #endif
-    if (unlikely(!dict)) {
-        Py_DECREF(state_dict);
-        return -1;
-    }
-    int result;
-    if (likely(PyDict_CheckExact(dict))) {
-        result = PyDict_Update(dict, state_dict);
-    } else {
-        PyObject *obj_result = __Pyx_PyObject_CallMethod1(dict, __pyx_mstate_global->__pyx_n_u_update, state_dict);
-        if (likely(obj_result)) {
-            Py_DECREF(obj_result);
-            result = 0;
-        } else {
-            result = -1;
-        }
-    }
-    Py_DECREF(state_dict);
-    Py_DECREF(dict);
-    return result;
-}
-static int __Pyx_UpdateUnpickledDict(PyObject *obj, PyObject *state, Py_ssize_t index) {
-    Py_ssize_t state_size = __Pyx_PyTuple_GET_SIZE(state);
-    #if !CYTHON_ASSUME_SAFE_SIZE
-    if (unlikely(state_size == -1)) return -1;
-    #endif
-    if (state_size <= index) {
-        return 0;
-    }
-    return __Pyx__UpdateUnpickledDict(obj, state, index);
-}
-
-/* CheckUnpickleChecksumError (used by CheckUnpickleChecksum) */
-static void __Pyx_RaiseUnpickleChecksumError(long checksum, long checksum1, long checksum2, long checksum3, const char *members) {
-    PyObject *pickle_module = PyImport_ImportModule("pickle");
-    if (unlikely(!pickle_module)) return;
-    PyObject *pickle_error = PyObject_GetAttrString(pickle_module, "PickleError");
-    Py_DECREF(pickle_module);
-    if (unlikely(!pickle_error)) return;
-    if (checksum2 == checksum1) {
-        PyErr_Format(pickle_error, "Incompatible checksums (0x%x vs (0x%x) = (%s))",
-            checksum, checksum1, members);
-    } else if (checksum3 == checksum2) {
-        PyErr_Format(pickle_error, "Incompatible checksums (0x%x vs (0x%x, 0x%x) = (%s))",
-            checksum, checksum1, checksum2, members);
-    } else {
-        PyErr_Format(pickle_error, "Incompatible checksums (0x%x vs (0x%x, 0x%x, 0x%x) = (%s))",
-            checksum, checksum1, checksum2, checksum3, members);
-    }
-    Py_DECREF(pickle_error);
-}
-
-/* CheckUnpickleChecksum */
-static int __Pyx_CheckUnpickleChecksum(long checksum, long checksum1, long checksum2, long checksum3, const char *members) {
-    int found = 0;
-    found |= checksum1 == checksum;
-    found |= checksum2 == checksum;
-    found |= checksum3 == checksum;
-    if (likely(found))
-        return 0;
-    __Pyx_RaiseUnpickleChecksumError(checksum, checksum1, checksum2, checksum3, members);
-    return -1;
-}
-
 /* CIntFromPy */
 static int __Pyx_LargePyLong___Pyx_PyLong_As_int(PyObject *x);
 static int __Pyx_raise_neg_overflow___Pyx_PyLong_As_int(void) {
@@ -48100,6 +48416,100 @@ static CYTHON_INLINE int __Pyx_PyLong_As_int(PyObject *x) {
     } else {
         return __Pyx_NonPyLong___Pyx_PyLong_As_int(x);
     }
+}
+
+/* PyObjectCallMethod1 (used by UpdateUnpickledDict) */
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethod1(PyObject* obj, PyObject* method_name, PyObject* arg) {
+#if CYTHON_VECTORCALL && (__PYX_LIMITED_VERSION_HEX >= 0x030C0000 || !CYTHON_COMPILING_IN_LIMITED_API)
+    PyObject *args[2] = {obj, arg};
+    return PyObject_VectorcallMethod(method_name, args, 2 | PY_VECTORCALL_ARGUMENTS_OFFSET, NULL);
+#elif CYTHON_COMPILING_IN_LIMITED_API
+    return PyObject_CallMethodObjArgs(obj, method_name, arg, NULL);
+#else
+    return PyObject_CallMethodOneArg(obj, method_name, arg);
+#endif
+}
+
+/* UpdateUnpickledDict */
+static int __Pyx__UpdateUnpickledDict(PyObject *obj, PyObject *state, Py_ssize_t index) {
+    PyObject *state_dict = __Pyx_PySequence_ITEM(state, index);
+    if (unlikely(!state_dict)) {
+        return -1;
+    }
+    int non_empty = PyObject_IsTrue(state_dict);
+    if (non_empty == 0) {
+        Py_DECREF(state_dict);
+        return 0;
+    } else if (unlikely(non_empty == -1)) {
+        return -1;
+    }
+    PyObject *dict;
+    #if CYTHON_COMPILING_IN_LIMITED_API && __PYX_LIMITED_VERSION_HEX < 0x030A0000
+    dict = PyObject_GetAttrString(obj, "__dict__");
+    #else
+    dict = PyObject_GenericGetDict(obj, NULL);
+    #endif
+    if (unlikely(!dict)) {
+        Py_DECREF(state_dict);
+        return -1;
+    }
+    int result;
+    if (likely(PyDict_CheckExact(dict))) {
+        result = PyDict_Update(dict, state_dict);
+    } else {
+        PyObject *obj_result = __Pyx_PyObject_CallMethod1(dict, __pyx_mstate_global->__pyx_n_u_update, state_dict);
+        if (likely(obj_result)) {
+            Py_DECREF(obj_result);
+            result = 0;
+        } else {
+            result = -1;
+        }
+    }
+    Py_DECREF(state_dict);
+    Py_DECREF(dict);
+    return result;
+}
+static int __Pyx_UpdateUnpickledDict(PyObject *obj, PyObject *state, Py_ssize_t index) {
+    Py_ssize_t state_size = __Pyx_PyTuple_GET_SIZE(state);
+    #if !CYTHON_ASSUME_SAFE_SIZE
+    if (unlikely(state_size == -1)) return -1;
+    #endif
+    if (state_size <= index) {
+        return 0;
+    }
+    return __Pyx__UpdateUnpickledDict(obj, state, index);
+}
+
+/* CheckUnpickleChecksumError (used by CheckUnpickleChecksum) */
+static void __Pyx_RaiseUnpickleChecksumError(long checksum, long checksum1, long checksum2, long checksum3, const char *members) {
+    PyObject *pickle_module = PyImport_ImportModule("pickle");
+    if (unlikely(!pickle_module)) return;
+    PyObject *pickle_error = PyObject_GetAttrString(pickle_module, "PickleError");
+    Py_DECREF(pickle_module);
+    if (unlikely(!pickle_error)) return;
+    if (checksum2 == checksum1) {
+        PyErr_Format(pickle_error, "Incompatible checksums (0x%x vs (0x%x) = (%s))",
+            checksum, checksum1, members);
+    } else if (checksum3 == checksum2) {
+        PyErr_Format(pickle_error, "Incompatible checksums (0x%x vs (0x%x, 0x%x) = (%s))",
+            checksum, checksum1, checksum2, members);
+    } else {
+        PyErr_Format(pickle_error, "Incompatible checksums (0x%x vs (0x%x, 0x%x, 0x%x) = (%s))",
+            checksum, checksum1, checksum2, checksum3, members);
+    }
+    Py_DECREF(pickle_error);
+}
+
+/* CheckUnpickleChecksum */
+static int __Pyx_CheckUnpickleChecksum(long checksum, long checksum1, long checksum2, long checksum3, const char *members) {
+    int found = 0;
+    found |= checksum1 == checksum;
+    found |= checksum2 == checksum;
+    found |= checksum3 == checksum;
+    if (likely(found))
+        return 0;
+    __Pyx_RaiseUnpickleChecksumError(checksum, checksum1, checksum2, checksum3, members);
+    return -1;
 }
 
 /* CIntToPy */

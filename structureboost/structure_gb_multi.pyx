@@ -13,7 +13,7 @@ from libc.math cimport log as clog
 from libc.math cimport exp
 from structure_dt_multi import StructureDecisionTreeMulti
 from scipy.special import softmax
-from pdf_group import row_map
+from pdf_group import row_map, team_size
 cimport numpy as np
 np.import_array()
 cimport cython
@@ -589,8 +589,9 @@ def c_entropy_link_der_12_vec_sp(np.ndarray[np.int32_t] y_true,
     cdef np.int32_t[:] yv = y_true
     cdef long i,j,k
 
+    cdef int nth = team_size(N * m)
     with nogil:
-        for i in prange(N, schedule='static'):
+        for i in prange(N, schedule='static', num_threads=nth):
             for j in range(m):
                 if yv[i]==j:
                     Y[i,j]=(exp_phi_pred[i,j]/exp_phi_sum_vec[i])-1
@@ -626,8 +627,9 @@ def c_str_entropy_link_der_12_vec_sp(np.ndarray[np.int32_t] y_true,
     # partitions added in qqq order, so running rows in parallel (for i: for qqq) gives the same values. The weight
     # was always weight_vec[ind] with ind = 0; kept as is.
     curr_wt = weight_vec[ind]
+    cdef int nth = team_size(N * m * num_part)
     with nogil:
-        for i in prange(N, schedule='static'):
+        for i in prange(N, schedule='static', num_threads=nth):
             for qqq in range(num_part):
                 xyz=0
                 # get y_true value from y_true onehot (passed in)
