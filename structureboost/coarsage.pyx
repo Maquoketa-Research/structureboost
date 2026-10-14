@@ -809,21 +809,34 @@ def update_densities_to_logprobs(np.ndarray[double, ndim=2] densitymat,
 def tensor_result_sum_fine(np.ndarray[double, ndim=3] coarse_pred,
                            np.ndarray[double, ndim=2] bv_mat,
                            np.ndarray[double] fine_binpts, double lr):
-
+    """outmat[r, f] = sum over trees i (in order) of lr * coarse_pred[r, i, coarse bin of fine bin f in tree i].
+    The coarse bin of each (fine bin, tree) is found once, in the original sequence; rows then run in parallel, each
+    summing its trees in the same order as the original loops, so the values are unchanged."""
     cdef long num_rows = coarse_pred.shape[0]
     cdef long nt = coarse_pred.shape[1]
     cdef long num_fi = fine_binpts.shape[0]-1
     cdef np.ndarray[double, ndim=2] outmat = np.zeros((num_rows,num_fi))
-    cdef long fi_ptr = 0
+    cdef long fi_ptr = 0, i
     cdef np.ndarray[np.int32_t] coarse_ptr_arr = np.zeros(nt, dtype=np.int32)
+    cdef np.ndarray[np.int32_t, ndim=2] cidx = np.empty((num_fi, nt), dtype=np.int32)
     cdef long row_ptr = 0
+    cdef double acc
 
     for fi_ptr in range(num_fi):
         for i in range(nt):
-            for row_ptr in range(num_rows):
-                outmat[row_ptr, fi_ptr] += coarse_pred[row_ptr, i, coarse_ptr_arr[i]] * lr
+            cidx[fi_ptr, i] = coarse_ptr_arr[i]
             if fine_binpts[fi_ptr+1] >= bv_mat[i,coarse_ptr_arr[i]+1]:
                 coarse_ptr_arr[i]+=1
+    cdef double[:, :, ::1] cp = np.ascontiguousarray(coarse_pred)
+    cdef np.int32_t[:, ::1] cv = cidx
+    cdef double[:, ::1] o = outmat
+    with nogil:
+        for row_ptr in prange(num_rows, schedule='static'):
+            for fi_ptr in range(num_fi):
+                acc = 0
+                for i in range(nt):
+                    acc = acc + cp[row_ptr, i, cv[fi_ptr, i]] * lr
+                o[row_ptr, fi_ptr] = acc
     return(outmat)
 
 # @cython.boundscheck(False)  # Deactivate bounds checking
